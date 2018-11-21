@@ -18,11 +18,11 @@ Authors@R: c(
 Description: Implements various quality evaluation statistics to assess the
     value of plant germplasm core collections using qualitative and quantitative
     phenotypic trait data <doi:10.1007/s00122-012-1971-y>.
-Depends: R (>= 3.5.1)
+Depends: R (>= 3.5.0)
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.0.9000
+RoxygenNote: 6.1.1
 RdMacros: Rdpack
 Imports:
     agricolae,
@@ -31,7 +31,10 @@ Imports:
     dplyr,
     ecodist,
     entropy,
+    ggcorrplot,
+    ggplot2,
     kSamples,
     psych,
     reshape2,
+    Rdpack,
     stats
