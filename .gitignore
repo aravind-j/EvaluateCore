@@ -1,2 +1,5 @@
-Release.R
 .Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+Release.R
