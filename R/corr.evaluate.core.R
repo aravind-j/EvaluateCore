@@ -12,7 +12,7 @@
 #'
 #' @import ggcorrplot
 #' @import ggplot2
-#' @importFrom ecodist mantel
+#' @importFrom vegan mantel
 #' @export
 #'
 #' @examples
