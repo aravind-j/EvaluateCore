@@ -5,8 +5,19 @@ Authors@R: c(
     person(given = "J.", family = "Aravind",
            email = "aravindj@nbpgr.ernet.in",
            role = c("aut", "cre"),
-		       comment = c(ORCID = "0000-0002-4791-442X")))
-Description: Implements various core collection quality evaluation parameters.
+		       comment = c(ORCID = "0000-0002-4791-442X")),
+    person(given = "Vikender", family = "Kaur",
+           email = "vikender.kaur@icar.gov.in",
+		       role = "aut"),
+		person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede", 
+           email = "d.wankhede@icar.gov.in",
+		       role = "aut"),
+    person("ICAR-NBGPR",
+           role = c("cph"),
+		       comment = c(url = "www.nbpgr.ernet.in")))
+Description: Implements various quality evaluation statistics to assess the
+    value of plant germplasm core collections using qualitative and quantitative
+    phenotypic trait data <doi:10.1007/s00122-012-1971-y>.
 Depends: R (>= 3.5.1)
 License: GPL-2 | GPL-3
 Encoding: UTF-8
