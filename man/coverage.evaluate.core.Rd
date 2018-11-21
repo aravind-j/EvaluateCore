@@ -23,7 +23,7 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Compute the Class Coverage \insertCite{kim_powercore_2007}{EvaluateCore} to
+Compute the Class Coverage \insertCite{kim_powercore:_2007}{EvaluateCore} to
 compare the distribution frequencies of qualitative traits between entire
 collection (EC) and core set (CS).
 }

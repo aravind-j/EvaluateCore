@@ -2,7 +2,7 @@
 #'
 #' Test difference between means of entire collection (EC) and core set (CS) for
 #' quantitative traits by Newman-Keuls or Student-Newman-Keuls test
-#' \insertCite{newman_distribution_1939, keuls_use_1952}{EvaluateCore}.
+#' \insertCite{newman_distribution_1939,keuls_use_1952}{EvaluateCore}.
 #'
 #' @param data The data as a data frame object. The data frame should possess
 #'   one row per individual and columns with the individual names and multiple
