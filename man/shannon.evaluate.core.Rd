@@ -13,8 +13,8 @@ trait/character data.}
 
 \item{names}{Name of column with the individual names as a character string}
 
-\item{qualitative}{Name of columns with the qualitative traits as a
-character vector.}
+\item{qualitative}{Name of columns with the qualitative traits as a character
+vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
@@ -27,11 +27,15 @@ Compute the Shannon-Weaver Diversity Index
 (\ifelse{html}{\out{<i>H'</i>}}{\eqn{H'}}), Maximum diversity
 (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) and Shannon
 Equitability Index (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}})
-to compare the phenotypic diversity for qualitative traits between entire
-collection (EC) and core set (CS).
+\insertCite{shannon_mathematical_1949}{EvaluateCore} to compare the
+phenotypic diversity for qualitative traits between entire collection (EC)
+and core set (CS).
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[psych:misc]{shannon}}

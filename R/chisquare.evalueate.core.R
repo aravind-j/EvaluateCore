@@ -1,11 +1,12 @@
 #' Chi-squared Test for Homogenity
 #'
 #' Compare the distribution frequencies of qualitative traits between entire
-#' collection (EC) and core set (CS) by Chi-squared test for homogenity.
+#' collection (EC) and core set (CS) by Chi-squared test for homogenity
+#' \insertCite{pearson_x._1900,snedecor_chi-square_1933}{EvaluateCore}.
 #'
 #' @inheritParams snk.evaluate.core
-#' @param qualitative Name of columns with the qualitative traits as a
-#'   character vector.
+#' @param qualitative Name of columns with the qualitative traits as a character
+#'   vector.
 #'
 #' @return
 #'
@@ -13,6 +14,10 @@
 #'
 #' @importFrom dplyr bind_rows
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

@@ -23,12 +23,16 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Plot Quantile-Quantile (QQ) plots to graphically compare the probability
-distributions of quantitative traits between entire collection (EC) and core
-set (CS).
+Plot Quantile-Quantile (QQ) plots
+\insertCite{wilk_probability_1968}{EvaluateCore} to graphically compare the
+probability distributions of quantitative traits between entire collection
+(EC) and core set (CS).
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[stats:qqnorm]{qqplot}}

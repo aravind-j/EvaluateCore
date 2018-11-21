@@ -7,7 +7,7 @@
 #'
 #' @return
 #'
-#' @seealso \code{\link[graphics]{barplot}}
+#' @seealso \code{\link[graphics]{barplot}}, \code{\link[ggplot2]{geom_bar}}
 #'
 #' @import ggplot2
 #' @export

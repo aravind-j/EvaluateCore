@@ -23,9 +23,13 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Test difference between means and variances of entire collection (EC) and core set (CS) for
-quantitative traits by Sign test.
+Test difference between means and variances of entire collection (EC) and
+core set (CS) for quantitative traits by Sign test
+\insertCite{basigalup_development_1995,tai_core_2001}{EvaluateCore}.
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }

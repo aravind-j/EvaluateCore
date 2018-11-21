@@ -4,8 +4,9 @@
 #' (\ifelse{html}{\out{<i>H'</i>}}{\eqn{H'}}), Maximum diversity
 #' (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) and Shannon
 #' Equitability Index (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}})
-#' to compare the phenotypic diversity for qualitative traits between entire
-#' collection (EC) and core set (CS).
+#' \insertCite{shannon_mathematical_1949}{EvaluateCore} to compare the
+#' phenotypic diversity for qualitative traits between entire collection (EC)
+#' and core set (CS).
 #'
 #' @inheritParams chisquare.evaluate.core
 #'
@@ -16,6 +17,10 @@
 #' @importFrom psych shannon
 #' @importFrom dplyr bind_rows
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

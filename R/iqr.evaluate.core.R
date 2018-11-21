@@ -1,7 +1,8 @@
 #' Interquartile Range
 #'
-#' Compute the Interquartile Range (IQR) to compare quantitative traits of
-#' the entire collection (EC) and core set (CS).
+#' Compute the Interquartile Range (IQR)
+#' \insertCite{upton_general_1996}{EvaluateCore} to compare quantitative traits
+#' of the entire collection (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -10,6 +11,10 @@
 #' @seealso \code{\link[stats]{IQR}}
 #'
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

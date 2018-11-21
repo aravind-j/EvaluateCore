@@ -1,7 +1,7 @@
 #' Levene's Test
 #'
 #' Test for homogenity of variances of the entire collection (EC) and core set
-#' (CS) for quantitative traits by Levene's test.
+#' (CS) for quantitative traits by Levene's test \insertCite{levene_robust_1960}{EvaluateCore}.
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -12,6 +12,10 @@
 #' @importFrom car leveneTest
 #' @importFrom dplyr bind_rows
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

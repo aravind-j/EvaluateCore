@@ -16,8 +16,8 @@ trait/character data.}
 \item{quantitative}{Name of columns with the quantitative traits as a
 character vector.}
 
-\item{qualitative}{Name of columns with the qualitative traits as a
-character vector.}
+\item{qualitative}{Name of columns with the qualitative traits as a character
+vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
@@ -27,8 +27,9 @@ core collection and present in the \code{names} column.}
 }
 \description{
 Compute Average entry-to-nearest-entry distance, Average
-accession-to-nearest-entry distance and Average entry-to-entry distance to
-evaluate a core set (CS) selected from an entire collection (EC).
+accession-to-nearest-entry distance and Average entry-to-entry distance
+\insertCite{odong_quality_2013}{EvaluateCore} to evaluate a core set (CS)
+selected from an entire collection (EC).
 }
 \details{
 This function is a wrapper around the \code{\link[corehunter]{evaluateCore}}
@@ -36,6 +37,9 @@ function of the \code{\link[corehunter]{corehunter}} package.
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[corehunter]{evaluateCore}}

@@ -24,10 +24,14 @@ core collection and present in the \code{names} column.}
 }
 \description{
 Test difference between means of entire collection (EC) and core set (CS) for
-quantitative traits by Newman-Keuls or Student-Newman-Keuls test.
+quantitative traits by Newman-Keuls or Student-Newman-Keuls test
+\insertCite{newman_distribution_1939, keuls_use_1952}{EvaluateCore}.
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[agricolae]{SNK.test}}

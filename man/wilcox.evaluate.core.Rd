@@ -24,11 +24,15 @@ core collection and present in the \code{names} column.}
 }
 \description{
 Compare the medians of quantitative traits between entire collection (EC) and
-core set (CS) by Wilcoxon rank sum test or Mann-Whitney-Wilcoxon test or Mann-Whitney
-U test.
+core set (CS) by Wilcoxon rank sum test or Mann-Whitney-Wilcoxon test or
+Mann-Whitney U test
+\insertCite{wilcoxon_individual_1945,mann_test_1947}{EvaluateCore}.
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[stats]{wilcox.test}}

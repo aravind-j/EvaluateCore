@@ -23,9 +23,12 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Compute Kullback–Leibler, Kolmogorov-Smirnov and Anderson-Darling Distances
-between the probability distributions of collection (EC) and core set (CS)
-for quantitative traits.
+Compute Kullback–Leibler
+\insertCite{kullback_information_1951}{EvaluateCore}, Kolmogorov-Smirnov
+\insertCite{kolmogorov_sulla_1933,smirnov_table_1948}{EvaluateCore} and
+Anderson-Darling Distances
+\insertCite{anderson_asymptotic_1952}{EvaluateCore} between the probability
+distributions of collection (EC) and core set (CS) for quantitative traits.
 }
 \examples{
 

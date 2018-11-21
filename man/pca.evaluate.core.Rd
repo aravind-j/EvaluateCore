@@ -24,12 +24,16 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Plot Box-and-Whisker plots to graphically compare the probability
-distributions of quantitative traits between entire collection (EC) and core
-set (CS).
+Compute Principal Component Analysis Statistics
+\insertCite{mardia_multivariate_1979}{EvaluateCore} to compare the
+probability distributions of quantitative traits between entire collection
+(EC) and core set (CS).
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[prcomp]{stats}}

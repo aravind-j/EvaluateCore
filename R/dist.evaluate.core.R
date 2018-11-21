@@ -1,8 +1,9 @@
 #' Distance Measures
 #'
 #' Compute Average entry-to-nearest-entry distance, Average
-#' accession-to-nearest-entry distance and Average entry-to-entry distance to
-#' evaluate a core set (CS) selected from an entire collection (EC).
+#' accession-to-nearest-entry distance and Average entry-to-entry distance
+#' \insertCite{odong_quality_2013}{EvaluateCore} to evaluate a core set (CS)
+#' selected from an entire collection (EC).
 #'
 #' This function is a wrapper around the \code{\link[corehunter]{evaluateCore}}
 #' function of the \code{\link[corehunter]{corehunter}} package.
@@ -11,6 +12,10 @@
 #' @inheritParams chisquare.evaluate.core
 #'
 #' @return
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @seealso \code{\link[corehunter]{evaluateCore}}
 #'

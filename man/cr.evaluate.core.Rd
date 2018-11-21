@@ -23,11 +23,15 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Compute the Coincidence Rate of Range (CR) to compare quantitative traits of
-the entire collection (EC) and core set (CS).
+Compute the Coincidence Rate of Range (CR)
+\insertCite{diwan_methods_1995,hu_methods_2000}{EvaluateCore} to compare
+quantitative traits of the entire collection (EC) and core set (CS).
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[stats]{wilcox.test}}

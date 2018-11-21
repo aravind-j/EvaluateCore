@@ -1,13 +1,18 @@
 #' Variable Rate of Coefficient of Variation
 #'
-#' Compute the Variable Rate of Coefficient of Variation (VR) to compare
-#' quantitative traits of the entire collection (EC) and core set (CS).
+#' Compute the Variable Rate of Coefficient of Variation (VR)
+#' \insertCite{hu_methods_2000}{EvaluateCore} to compare quantitative traits of
+#' the entire collection (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
 #'
 #' @return
 #'
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

@@ -1,7 +1,8 @@
 #' Coincidence Rate of Range
 #'
-#' Compute the Coincidence Rate of Range (CR) to compare quantitative traits of
-#' the entire collection (EC) and core set (CS).
+#' Compute the Coincidence Rate of Range (CR)
+#' \insertCite{diwan_methods_1995,hu_methods_2000}{EvaluateCore} to compare
+#' quantitative traits of the entire collection (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -10,6 +11,10 @@
 #' @seealso \code{\link[stats]{wilcox.test}}
 #'
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

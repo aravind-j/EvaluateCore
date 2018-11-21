@@ -1,7 +1,8 @@
 #' Sign Test
 #'
-#' Test difference between means and variances of entire collection (EC) and core set (CS) for
-#' quantitative traits by Sign test.
+#' Test difference between means and variances of entire collection (EC) and
+#' core set (CS) for quantitative traits by Sign test
+#' \insertCite{basigalup_development_1995,tai_core_2001}{EvaluateCore}.
 #'
 #' @param data The data as a data frame object. The data frame should possess
 #'   one row per individual and columns with the individual names and multiple
@@ -15,6 +16,10 @@
 #' @return
 #'
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

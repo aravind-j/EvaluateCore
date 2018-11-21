@@ -1,7 +1,8 @@
 #' Student's t Test
 #'
 #' Test difference between means of entire collection (EC) and core set (CS) for
-#' quantitative traits by Student's t test.
+#' quantitative traits by Student's t test
+#' \insertCite{student_probable_1908}{EvaluateCore}.
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -12,6 +13,10 @@
 #' @importFrom stats t.test
 #' @importFrom dplyr bind_rows
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

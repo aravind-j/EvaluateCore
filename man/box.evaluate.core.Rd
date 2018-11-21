@@ -23,13 +23,17 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Plot Box-and-Whisker plots to graphically compare the probability
-distributions of quantitative traits between entire collection (EC) and core
-set (CS).
+Plot Box-and-Whisker plots
+\insertCite{tukey_exploratory_1970,mcgill_variations_1978}{EvaluateCore} to
+graphically compare the probability distributions of quantitative traits
+between entire collection (EC) and core set (CS).
 }
 \examples{
 
 }
+\references{
+\insertAllCited{}
+}
 \seealso{
-\code{\link[graphics]{boxplot}}
+\code{\link[graphics]{boxplot}}, \code{\link[ggplot2]{geom_boxplot}}
 }

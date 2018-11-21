@@ -23,9 +23,13 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Compute the Variable Rate of Coefficient of Variation (VR) to compare
-quantitative traits of the entire collection (EC) and core set (CS).
+Compute the Variable Rate of Coefficient of Variation (VR)
+\insertCite{hu_methods_2000}{EvaluateCore} to compare quantitative traits of
+the entire collection (EC) and core set (CS).
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }

@@ -1,8 +1,9 @@
 #' Principal Component Analysis
 #'
-#' Plot Box-and-Whisker plots to graphically compare the probability
-#' distributions of quantitative traits between entire collection (EC) and core
-#' set (CS).
+#' Compute Principal Component Analysis Statistics
+#' \insertCite{mardia_multivariate_1979}{EvaluateCore} to compare the
+#' probability distributions of quantitative traits between entire collection
+#' (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -14,6 +15,10 @@
 #' @importFrom reshape2 melt
 #' @import ggplot2
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

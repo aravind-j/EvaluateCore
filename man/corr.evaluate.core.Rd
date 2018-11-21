@@ -16,8 +16,8 @@ trait/character data.}
 \item{quantitative}{Name of columns with the quantitative traits as a
 character vector.}
 
-\item{qualitative}{Name of columns with the qualitative traits as a
-character vector.}
+\item{qualitative}{Name of columns with the qualitative traits as a character
+vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
@@ -26,12 +26,19 @@ core collection and present in the \code{names} column.}
 
 }
 \description{
-Compute phenotypic correlations between traits to compare entire collection
-(EC) and core set (CS).
+Compute phenotypic correlations \insertCite{pearson_note_1895}{EvaluateCore}
+between traits, plot correlation matrices as correlograms
+\insertCite{friendly_corrgrams_2002}{EvaluateCore} and calculate mantel
+correlation \insertCite{legendre_interpretation_2012}{EvaluateCore} between
+them to compare entire collection (EC) and core set (CS).
 }
 \examples{
 
 }
+\references{
+\insertAllCited{}
+}
 \seealso{
-\code{\link[stats]{cor}}, \code{\link[ggcorrplot]{ggcorrplot}}
+\code{\link[stats]{cor}}, \code{\link[ggcorrplot]{cor_pmat}},
+  \code{\link[ggcorrplot]{ggcorrplot}}, \code{\link[vegan]{mantel}}
 }

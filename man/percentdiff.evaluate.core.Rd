@@ -26,10 +26,14 @@ core collection and present in the \code{names} column.}
 \description{
 Compute the percentage of significant differences between the entire
 collection (EC) and core set (CS) as Mean difference percentage (MD) and
-Variance difference percentage (VD).
+Variance difference percentage (VD)
+\insertCite{hu_methods_2000}{EvaluateCore}.
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[EvaluateCore]{snk.evaluate.core}},

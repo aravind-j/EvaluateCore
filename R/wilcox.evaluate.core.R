@@ -1,8 +1,9 @@
 #' Wilcoxon Rank Sum Test
 #'
 #' Compare the medians of quantitative traits between entire collection (EC) and
-#' core set (CS) by Wilcoxon rank sum test or Mann-Whitney-Wilcoxon test or Mann-Whitney
-#' U test.
+#' core set (CS) by Wilcoxon rank sum test or Mann-Whitney-Wilcoxon test or
+#' Mann-Whitney U test
+#' \insertCite{wilcoxon_individual_1945,mann_test_1947}{EvaluateCore}.
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -13,6 +14,10 @@
 #' @importFrom stats wilcox.test
 #' @importFrom dplyr bind_rows
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

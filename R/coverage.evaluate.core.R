@@ -1,13 +1,18 @@
 #' Class Coverage
 #'
-#' Compute the Class Coverage to compare the distribution frequencies of
-#' qualitative traits between entire collection (EC) and core set (CS).
+#' Compute the Class Coverage \insertCite{kim_powercore_2007}{EvaluateCore} to
+#' compare the distribution frequencies of qualitative traits between entire
+#' collection (EC) and core set (CS).
 #'
 #' @inheritParams chisquare.evaluate.core
 #'
 #' @return
 #'
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'

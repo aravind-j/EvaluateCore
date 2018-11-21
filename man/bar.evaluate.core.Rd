@@ -13,8 +13,8 @@ trait/character data.}
 
 \item{names}{Name of column with the individual names as a character string}
 
-\item{qualitative}{Name of columns with the qualitative traits as a
-character vector.}
+\item{qualitative}{Name of columns with the qualitative traits as a character
+vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
@@ -30,5 +30,5 @@ qualitative traits between entire collection (EC) and core set (CS).
 
 }
 \seealso{
-\code{\link[graphics]{barplot}}
+\code{\link[graphics]{barplot}}, \code{\link[ggplot2]{geom_bar}}
 }

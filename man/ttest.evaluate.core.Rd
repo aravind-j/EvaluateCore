@@ -24,10 +24,14 @@ core collection and present in the \code{names} column.}
 }
 \description{
 Test difference between means of entire collection (EC) and core set (CS) for
-quantitative traits by Student's t test.
+quantitative traits by Student's t test
+\insertCite{student_probable_1908}{EvaluateCore}.
 }
 \examples{
 
+}
+\references{
+\insertAllCited{}
 }
 \seealso{
 \code{\link[stats]{t.test}}

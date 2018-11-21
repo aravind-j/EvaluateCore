@@ -1,19 +1,27 @@
 #' Phenotypic Correlations
 #'
-#' Compute phenotypic correlations between traits to compare entire collection
-#' (EC) and core set (CS).
+#' Compute phenotypic correlations \insertCite{pearson_note_1895}{EvaluateCore}
+#' between traits, plot correlation matrices as correlograms
+#' \insertCite{friendly_corrgrams_2002}{EvaluateCore} and calculate mantel
+#' correlation \insertCite{legendre_interpretation_2012}{EvaluateCore} between
+#' them to compare entire collection (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
 #' @inheritParams chisquare.evaluate.core
 #'
 #' @return
 #'
-#' @seealso \code{\link[stats]{cor}}, \code{\link[ggcorrplot]{ggcorrplot}}
+#' @seealso \code{\link[stats]{cor}}, \code{\link[ggcorrplot]{cor_pmat}},
+#'   \code{\link[ggcorrplot]{ggcorrplot}}, \code{\link[vegan]{mantel}}
 #'
 #' @import ggcorrplot
 #' @import ggplot2
 #' @importFrom vegan mantel
 #' @export
+#'
+#' @references
+#'
+#' \insertAllCited{}
 #'
 #' @examples
 #'
