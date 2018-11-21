@@ -1,0 +1,82 @@
+#' Student-Newman-Keuls Test
+#'
+#' Test difference between means of entire collection (EC) and core set (CS) for
+#' quantitative traits by Newman-Keuls or Student-Newman-Keuls test.
+#'
+#' @param data The data as a data frame object. The data frame should possess
+#'   one row per individual and columns with the individual names and multiple
+#'   trait/character data.
+#' @param names Name of column with the individual names as a character string
+#' @param quantitative Name of columns with the quantitative traits as a
+#'   character vector.
+#' @param selected Character vector with the names of individuals selected in
+#'   core collection and present in the \code{names} column.
+#'
+#' @return
+#'
+#' @seealso \code{\link[agricolae]{SNK.test}}
+#'
+#' @importFrom agricolae SNK.test
+#' @importFrom dplyr bind_rows
+#' @export
+#'
+#' @examples
+#'
+snk.evaluate.core <- function(data, names, quantitative, selected){
+  # Checks
+  checks.evaluate.core(data = data, names = names,
+                      quantitative = quantitative,
+                      selected = selected)
+
+  if (any(c("tbl_dataf", "tbl") %in% class(data))) {
+    warning('"data" is of type tibble\nCoercing to data frame')
+    data <- as.data.frame(data)
+  }
+
+  dataf <- data[, c(names, quantitative)]
+
+  datafcore <- dataf[dataf[,names] %in% selected,]
+
+  dataf$`[Type]` <- "EC"
+  datafcore$`[Type]` <- "CS"
+
+  dataf <- rbind(dataf, datafcore)
+  rm(datafcore)
+
+  outdf <- vector(mode = "list", length = length(quantitative))
+  names(outdf) <- quantitative
+
+  for (i in seq_along(quantitative)) {
+    formula <- as.formula(paste("`", quantitative[i], "` ~ `[Type]`", sep = ""))
+    model <- aov(formula, data = dataf)
+    snkout <- agricolae::SNK.test(model,"[Type]", group = FALSE, console = FALSE)
+    snkpvalue <- snkout$comparison$pvalue
+
+    # out <- mutoss::snk(formula, data = dataf,
+    #                    alpha=0.05, MSE=NULL, df = NULL, silent = FALSE)
+    # out <- t.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+    #               dataf[dataf$`[Type]` == "CS", quantitative[i]])
+
+    outdf[[quantitative[i]]] <- data.frame(`Trait` = quantitative[i],
+                                           `EC_Min` = min(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
+                                           `EC_Max` = max(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
+                                           `EC_Mean` = mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
+                                           `EC_SE` = sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "EC", quantitative[i]])),
+                                           `CS_Min` = min(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
+                                           `CS_Max` = max(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
+                                           `CS_Mean` = mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
+                                           `CS_SE` = sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
+                                           `SNK_pvalue` = snkpvalue,
+                                           stringsAsFactors = F)
+
+    rm(snkout, snkpvalue, formula, model)
+  }
+
+  outdf <- dplyr::bind_rows(outdf)
+
+  outdf$SNK_significance <- ifelse(outdf$SNK_pvalue <= 0.01, "**",
+                                   ifelse(outdf$SNK_pvalue <= 0.05, "*", "ns"))
+
+  return(outdf)
+
+}
