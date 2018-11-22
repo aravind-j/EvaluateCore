@@ -13,6 +13,9 @@
 #' @seealso \code{\link[stats]{chisq.test}}
 #'
 #' @importFrom dplyr bind_rows
+#' @importFrom stats chisq.test
+#' @importFrom stats pchisq
+#'
 #' @export
 #'
 #' @references
@@ -49,7 +52,7 @@ chisquare.evaluate.core <- function(data, names, qualitative, selected){
 
   for (i in seq_along(qualitative)) {
 
-    chiout <- chisq.test(dataf$`[Type]`, dataf[, qualitative[i]],
+    chiout <- stats::chisq.test(dataf$`[Type]`, dataf[, qualitative[i]],
                          simulate.p.value = TRUE, B = 10000)
     ECclasses <- as.data.frame(table((dataf[dataf$`[Type]` == "EC", qualitative[i]])))
     CSclasses <- as.data.frame(table((dataf[dataf$`[Type]` == "CS", qualitative[i]])))

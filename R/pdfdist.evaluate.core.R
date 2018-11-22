@@ -18,6 +18,7 @@
 #' @importFrom entropy discretize
 #' @importFrom stats ks.test
 #' @importFrom kSamples ad.test
+#' @importFrom grDevices nclass.FD
 #' @importFrom dplyr bind_rows
 #' @export
 #'
@@ -50,7 +51,7 @@ pdfdist.evaluate.core <- function(data, names, quantitative, selected){
   for (i in seq_along(quantitative)) {
 
   # Kullback–Leibler distance
-  nbinscs <- nclass.FD(dataf[dataf$`[Type]` == "CS", quantitative[i]])
+  nbinscs <- grDevices::nclass.FD(dataf[dataf$`[Type]` == "CS", quantitative[i]])
   rangeec <- range(dataf[dataf$`[Type]` == "EC", quantitative[i]])
 
   g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC", quantitative[i]],

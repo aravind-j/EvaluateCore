@@ -11,11 +11,12 @@
 #'
 #' @return
 #'
-#' @seealso \code{\link[stats]{cor}}, \code{\link[ggcorrplot]{cor_pmat}},
+#' @seealso \code{\link[stats]{cor}}, \code{\link[ggcorrplot:ggcorrplot]{cor_pmat}}
 #'   \code{\link[ggcorrplot]{ggcorrplot}}, \code{\link[vegan]{mantel}}
 #'
 #' @import ggcorrplot
 #' @import ggplot2
+#' @importFrom stats cor
 #' @importFrom vegan mantel
 #' @export
 #'
@@ -53,7 +54,7 @@ corr.evaluate.core <- function(data, names, quantitative, qualitative,
 
   # EC corr
   #########
-  eccorr <- cor(dataf[dataf$`[Type]` == "EC", c(quantitative, qualitative)])
+  eccorr <- stats::cor(dataf[dataf$`[Type]` == "EC", c(quantitative, qualitative)])
   ecpmat <- ggcorrplot::cor_pmat(dataf[dataf$`[Type]` == "EC", c(quantitative, qualitative)])
 
   eccorrdf <- formatC(round(eccorr, 2), digits = 2, format = "f")
@@ -64,7 +65,7 @@ corr.evaluate.core <- function(data, names, quantitative, qualitative,
 
  # CS corr
   #########
-  cscorr <- cor(dataf[dataf$`[Type]` == "CS", c(quantitative, qualitative)])
+  cscorr <- stats::cor(dataf[dataf$`[Type]` == "CS", c(quantitative, qualitative)])
   cspmat <- ggcorrplot::cor_pmat(dataf[dataf$`[Type]` == "CS", c(quantitative, qualitative)])
 
   cscorrdf <- formatC(round(cscorr, 2), digits = 2, format = "f")

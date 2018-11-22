@@ -39,6 +39,6 @@ them to compare entire collection (EC) and core set (CS).
 \insertAllCited{}
 }
 \seealso{
-\code{\link[stats]{cor}}, \code{\link[ggcorrplot]{cor_pmat}},
+\code{\link[stats]{cor}}, \code{\link[ggcorrplot:ggcorrplot]{cor_pmat}}
   \code{\link[ggcorrplot]{ggcorrplot}}, \code{\link[vegan]{mantel}}
 }

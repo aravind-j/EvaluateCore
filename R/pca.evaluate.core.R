@@ -9,7 +9,7 @@
 #'
 #' @return
 #'
-#' @seealso \code{\link[prcomp]{stats}}
+#' @seealso \code{\link[stats]{prcomp}}
 #'
 #' @importFrom stats prcomp
 #' @importFrom reshape2 melt

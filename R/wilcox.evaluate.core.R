@@ -13,6 +13,7 @@
 #'
 #' @importFrom stats wilcox.test
 #' @importFrom dplyr bind_rows
+#' @importFrom stats median
 #' @export
 #'
 #' @references
@@ -51,8 +52,8 @@ wilcox.evaluate.core <- function(data, names, quantitative, selected){
                              alternative = "two.sided")
 
     outdf[[quantitative[i]]] <- data.frame(`Trait` = quantitative[i],
-                                           `EC_Med` = median(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `CS_Med` = median(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
+                                           `EC_Med` = stats::median(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
+                                           `CS_Med` = stats::median(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `Wilcox_pvalue` = wilcoxout$p.value,
                                            stringsAsFactors = F)
 

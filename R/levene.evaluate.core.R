@@ -11,6 +11,8 @@
 #'
 #' @importFrom car leveneTest
 #' @importFrom dplyr bind_rows
+#' @importFrom stats formula
+#' @importFrom stats sd
 #' @export
 #'
 #' @references
@@ -46,18 +48,18 @@ levene.evaluate.core <- function(data, names, quantitative, selected){
   names(outdf) <- quantitative
 
   for (i in seq_along(quantitative)) {
-    formula <- as.formula(paste("`", quantitative[i], "` ~ `[Type]`", sep = ""))
+    frmla <- stats::formula(paste("`", quantitative[i], "` ~ `[Type]`", sep = ""))
 
-    leveneout <- car::leveneTest(formula, data = dataf)
+    leveneout <- car::leveneTest(frmla, data = dataf)
 
     outdf[[quantitative[i]]] <- data.frame(`Trait` = quantitative[i],
-                                           `EC_CV` = sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `CS_CV` = sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
+                                           `EC_CV` = stats::sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
+                                           `CS_CV` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `Levene_Fvalue` = leveneout["group", "F value"],
                                            `Levene_pvalue` = leveneout["group", "Pr(>F)"],
                                            stringsAsFactors = F)
 
-    rm(leveneout, formula)
+    rm(leveneout, frmla)
   }
 
   outdf <- dplyr::bind_rows(outdf)

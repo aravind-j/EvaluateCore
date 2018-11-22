@@ -19,6 +19,9 @@
 #'
 #' @importFrom agricolae SNK.test
 #' @importFrom dplyr bind_rows
+#' @importFrom stats formula
+#' @importFrom stats aov
+#' @importFrom stats sd
 #' @export
 #'
 #' @references
@@ -52,12 +55,14 @@ snk.evaluate.core <- function(data, names, quantitative, selected){
   names(outdf) <- quantitative
 
   for (i in seq_along(quantitative)) {
-    formula <- as.formula(paste("`", quantitative[i], "` ~ `[Type]`", sep = ""))
-    model <- aov(formula, data = dataf)
-    snkout <- agricolae::SNK.test(model,"[Type]", group = FALSE, console = FALSE)
+    frmla <- stats::formula(paste("`", quantitative[i], "` ~ `[Type]`",
+                                       sep = ""))
+    model <- stats::aov(frmla, data = dataf)
+    snkout <- agricolae::SNK.test(model, "[Type]", group = FALSE,
+                                  console = FALSE)
     snkpvalue <- snkout$comparison$pvalue
 
-    # out <- mutoss::snk(formula, data = dataf,
+    # out <- mutoss::snk(frmla, data = dataf,
     #                    alpha=0.05, MSE=NULL, df = NULL, silent = FALSE)
     # out <- t.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
     #               dataf[dataf$`[Type]` == "CS", quantitative[i]])
@@ -66,15 +71,15 @@ snk.evaluate.core <- function(data, names, quantitative, selected){
                                            `EC_Min` = min(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `EC_Max` = max(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `EC_Mean` = mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `EC_SE` = sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "EC", quantitative[i]])),
+                                           `EC_SE` = stats::sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "EC", quantitative[i]])),
                                            `CS_Min` = min(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `CS_Max` = max(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `CS_Mean` = mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `CS_SE` = sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
+                                           `CS_SE` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
                                            `SNK_pvalue` = snkpvalue,
                                            stringsAsFactors = F)
 
-    rm(snkout, snkpvalue, formula, model)
+    rm(snkout, snkpvalue, frmla, model)
   }
 
   outdf <- dplyr::bind_rows(outdf)

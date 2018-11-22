@@ -36,5 +36,5 @@ probability distributions of quantitative traits between entire collection
 \insertAllCited{}
 }
 \seealso{
-\code{\link[prcomp]{stats}}
+\code{\link[stats]{prcomp}}
 }

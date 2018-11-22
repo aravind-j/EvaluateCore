@@ -10,6 +10,7 @@
 #'
 #' @seealso \code{\link[stats]{IQR}}
 #'
+#' @importFrom stats IQR
 #' @export
 #'
 #' @references
@@ -41,7 +42,7 @@ iqr.evaluate.core <- function(data, names, quantitative, selected){
 
 
   outdf <- data.frame(`Trait` = quantitative,
-                      `EC_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "EC", quantitative], IQR)),
-                      `CS_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "CS", quantitative], IQR)))
+                      `EC_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "EC", quantitative], stats::IQR)),
+                      `CS_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "CS", quantitative], stats::IQR)))
   return(outdf)
 }
