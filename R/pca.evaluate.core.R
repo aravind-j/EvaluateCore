@@ -6,7 +6,7 @@
 #' (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
-#' @inheritParams stats::prcomp
+#' @inheritParams base::scale
 #' @param npc.plot The number of principal components for which eigen values are
 #'   to be plotted. The default value is 6.
 #'

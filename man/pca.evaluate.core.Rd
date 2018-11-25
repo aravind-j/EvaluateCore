@@ -20,10 +20,13 @@ character vector.}
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
 
-\item{center}{a logical value indicating whether the variables
-    should be shifted to be zero centered. Alternately, a vector of
-    length equal the number of columns of \code{x} can be supplied.
-    The value is passed to \code{scale}.}
+\item{center}{either a logical value or numeric-alike vector of length
+    equal to the number of columns of \code{x}, where
+    \sQuote{numeric-alike} means that \code{\link{as.numeric}(.)} will
+    be applied successfully if \code{\link{is.numeric}(.)} is not true.}
+
+\item{scale}{either a logical value or a numeric-alike vector of length
+    equal to the number of columns of \code{x}.}
 
 \item{npc.plot}{The number of principal components for which eigen values are
 to be plotted. The default value is 6.}
