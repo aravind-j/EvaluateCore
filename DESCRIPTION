@@ -42,3 +42,5 @@ Imports:
     Rdpack,
     stats,
     vegan
+Suggests:
+    ccChooser

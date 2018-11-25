@@ -1,5 +1,8 @@
 pandoc: 2.1.3
-pkgdown: 1.1.0.9000
-pkgdown_sha: 33c059119873eb94656ec119f5ba62e86b3e7977
+pkgdown: 1.2.0
+pkgdown_sha: ~
 articles: {}
+urls:
+  reference: https://aravind-j.github.io/EvaluateCore//reference
+  article: https://aravind-j.github.io/EvaluateCore//articles
 
