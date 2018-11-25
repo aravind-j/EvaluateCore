@@ -1,0 +1,8 @@
+template:
+  params:
+    bootswatch: united
+
+development:
+  mode: unreleased
+
+url: https://aravind-j.github.io/EvaluateCore/
