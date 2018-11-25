@@ -26,7 +26,6 @@ RdMacros: Rdpack
 SystemRequirements: Java JRE 8 or higher
 Depends:
     R (>= 3.5.0),
-    rJava (>= 0.9-8)
 Imports:
     agricolae,
     car,
@@ -39,6 +38,7 @@ Imports:
     kSamples,
     psych,
     reshape2,
+    rJava (>= 0.9-8),
     Rdpack,
     stats,
     vegan
