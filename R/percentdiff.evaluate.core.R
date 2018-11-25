@@ -6,6 +6,7 @@
 #' \insertCite{hu_methods_2000}{EvaluateCore}.
 #'
 #' @inheritParams snk.evaluate.core
+#' @param alpha Type I error probability (Significance level) of difference.
 #'
 #' @return
 #'
@@ -30,6 +31,11 @@ percentdiff.evaluate.core <- function(data, names, quantitative,
   if (any(c("tbl_dataf", "tbl") %in% class(data))) {
     warning('"data" is of type tibble\nCoercing to data frame')
     data <- as.data.frame(data)
+  }
+
+  # Check alpha value
+  if (!(0 < alpha && alpha < 1)) {
+    stop('"alpha" should be between 0 and 1 (0 < alpha < 1)')
   }
 
   mdiff <- snk.evaluate.core(data, names, quantitative,

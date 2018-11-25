@@ -19,6 +19,8 @@ character vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
+
+\item{alpha}{Type I error probability (Significance level) of difference.}
 }
 \value{
 
