@@ -79,19 +79,27 @@ shannon.evaluate.core <- function(data, names, qualitative, selected){
 
   # dataf[, qualitative] <- lapply(dataf[, qualitative], as.integer)
 
-  EC_H <- psych::shannon(dataf[dataf$`[Type]` == "EC", !colnames(dataf) %in% c(names, "[Type]")],
+  EC_H <- psych::shannon(dataf[dataf$`[Type]` == "EC",
+                               !colnames(dataf) %in% c(names, "[Type]")],
                          base =  exp(1), correct = FALSE)
-  CS_H <- psych::shannon(dataf[dataf$`[Type]` == "CS", !colnames(dataf) %in% c(names, "[Type]")],
+  CS_H <- psych::shannon(dataf[dataf$`[Type]` == "CS",
+                               !colnames(dataf) %in% c(names, "[Type]")],
                          base =  exp(1), correct = FALSE)
 
-  EC_EH <- psych::shannon(dataf[dataf$`[Type]` == "EC", !colnames(dataf) %in% c(names, "[Type]")],
+  EC_EH <- psych::shannon(dataf[dataf$`[Type]` == "EC",
+                                !colnames(dataf) %in% c(names, "[Type]")],
                          base =  exp(1), correct = TRUE)
-  CS_EH <- psych::shannon(dataf[dataf$`[Type]` == "CS", !colnames(dataf) %in% c(names, "[Type]")],
+  CS_EH <- psych::shannon(dataf[dataf$`[Type]` == "CS",
+                                !colnames(dataf) %in% c(names, "[Type]")],
                           base =  exp(1), correct = TRUE)
 
-  EC_No.Classes <- unlist(lapply(dataf[dataf$`[Type]` == "EC", !colnames(dataf) %in% c(names, "[Type]")],
+  EC_No.Classes <- unlist(lapply(dataf[dataf$`[Type]` == "EC",
+                                       !colnames(dataf) %in% c(names,
+                                                               "[Type]")],
                           function(x) length(levels(droplevels(x)))))
-  CS_No.Classes <- unlist(lapply(dataf[dataf$`[Type]` == "CS", !colnames(dataf) %in% c(names, "[Type]")],
+  CS_No.Classes <- unlist(lapply(dataf[dataf$`[Type]` == "CS",
+                                       !colnames(dataf) %in% c(names,
+                                                               "[Type]")],
                           function(x) length(levels(droplevels(x)))))
 
   outdf <- cbind(EC_H = EC_H[qualitative],

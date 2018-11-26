@@ -107,7 +107,7 @@ snk.evaluate.core <- function(data, names, quantitative, selected){
                                            `CS_Mean` = mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `CS_SE` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
                                            `SNK_pvalue` = snkpvalue,
-                                           stringsAsFactors = F)
+                                           stringsAsFactors = FALSE)
 
     rm(snkout, snkpvalue, frmla, model)
   }

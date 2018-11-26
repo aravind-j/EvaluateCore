@@ -79,7 +79,8 @@ box.evaluate.core <- function(data, names, quantitative, selected){
   for (i in seq_along(quantitative)) {
 
     # Generate the box plot
-    outlist[[i]] <- ggplot(dataf, aes_string(y = quantitative2[i], x = "`[Type]`")) +
+    outlist[[i]] <- ggplot(dataf, aes_string(y = quantitative2[i],
+                                             x = "`[Type]`")) +
       geom_boxplot(fill = "lemonchiffon") +
       stat_summary(fun.y = mean, geom = "point",
                    shape = 18, size = 3, color = "red") +

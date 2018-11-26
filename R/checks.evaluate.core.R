@@ -49,7 +49,8 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
   if (!is.null(quantitative)) {
     if (FALSE %in% (quantitative %in% colnames(data)))  {
       stop(paste('The following column(s) specified in "quantitative" not present in "data":\n',
-                 paste(quantitative[!(quantitative %in% colnames(data))], collapse = ", "),
+                 paste(quantitative[!(quantitative %in% colnames(data))],
+                       collapse = ", "),
                  sep = ""))
     }
   }
@@ -58,7 +59,8 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
   if (!is.null(qualitative)) {
     if (FALSE %in% (qualitative %in% colnames(data)))  {
       stop(paste('The following column(s) specified in "qualitative" not present in "data":\n',
-                 paste(qualitative[!(qualitative %in% colnames(data))], collapse = ", "),
+                 paste(qualitative[!(qualitative %in% colnames(data))],
+                       collapse = ", "),
                  sep = ""))
     }
   }

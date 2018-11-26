@@ -84,7 +84,7 @@ signtest.evaluate.core <- function(data, names, quantitative, selected){
   outdf <- data.frame(Comparison = c("Mean", "Variance"),
                       ChiSq = c(mteststat, vteststat),
                       p.value = c(mpvalue, vpvalue),
-                      stringsAsFactors = F, row.names = NULL)
+                      stringsAsFactors = FALSE, row.names = NULL)
 
   outdf$significance <- ifelse(outdf$p.value <= 0.01, "**",
          ifelse(outdf$p.value <= 0.05, "*", "ns"))

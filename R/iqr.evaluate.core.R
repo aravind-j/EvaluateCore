@@ -72,7 +72,11 @@ iqr.evaluate.core <- function(data, names, quantitative, selected){
 
 
   outdf <- data.frame(`Trait` = quantitative,
-                      `EC_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "EC", quantitative], stats::IQR)),
-                      `CS_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "CS", quantitative], stats::IQR)))
+                      `EC_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "EC",
+                                                     quantitative],
+                                               stats::IQR)),
+                      `CS_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "CS",
+                                                     quantitative],
+                                               stats::IQR)))
   return(outdf)
 }

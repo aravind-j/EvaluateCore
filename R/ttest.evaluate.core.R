@@ -89,7 +89,7 @@ ttest.evaluate.core <- function(data, names, quantitative, selected){
                                            `CS_Mean` = mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `CS_SE` = sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
                                            `ttest_pvalue` = tout$p.value,
-                                           stringsAsFactors = F)
+                                           stringsAsFactors = FALSE)
 
     rm(tout)
   }
@@ -97,7 +97,8 @@ ttest.evaluate.core <- function(data, names, quantitative, selected){
   outdf <- dplyr::bind_rows(outdf)
 
   outdf$ttest_significance <- ifelse(outdf$ttest_pvalue <= 0.01, "**",
-                                   ifelse(outdf$ttest_pvalue <= 0.05, "*", "ns"))
+                                   ifelse(outdf$ttest_pvalue <= 0.05, "*",
+                                          "ns"))
 
   return(outdf)
 

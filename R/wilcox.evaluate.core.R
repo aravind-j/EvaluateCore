@@ -85,7 +85,7 @@ wilcox.evaluate.core <- function(data, names, quantitative, selected){
                                            `EC_Med` = stats::median(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `CS_Med` = stats::median(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `Wilcox_pvalue` = wilcoxout$p.value,
-                                           stringsAsFactors = F)
+                                           stringsAsFactors = FALSE)
 
     rm(wilcoxout)
   }
@@ -93,7 +93,8 @@ wilcox.evaluate.core <- function(data, names, quantitative, selected){
   outdf <- dplyr::bind_rows(outdf)
 
   outdf$Wilcox_significance <- ifelse(outdf$Wilcox_pvalue <= 0.01, "**",
-                                   ifelse(outdf$Wilcox_pvalue <= 0.05, "*", "ns"))
+                                   ifelse(outdf$Wilcox_pvalue <= 0.05, "*",
+                                          "ns"))
 
   return(outdf)
 

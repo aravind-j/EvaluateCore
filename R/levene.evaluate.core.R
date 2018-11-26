@@ -1,7 +1,8 @@
 #' Levene's Test
 #'
 #' Test for homogenity of variances of the entire collection (EC) and core set
-#' (CS) for quantitative traits by Levene's test \insertCite{levene_robust_1960}{EvaluateCore}.
+#' (CS) for quantitative traits by Levene's test
+#' \insertCite{levene_robust_1960}{EvaluateCore}.
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -87,7 +88,7 @@ levene.evaluate.core <- function(data, names, quantitative, selected){
                                            `CS_CV` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `Levene_Fvalue` = leveneout["group", "F value"],
                                            `Levene_pvalue` = leveneout["group", "Pr(>F)"],
-                                           stringsAsFactors = F)
+                                           stringsAsFactors = FALSE)
 
     rm(leveneout, frmla)
   }
@@ -95,7 +96,8 @@ levene.evaluate.core <- function(data, names, quantitative, selected){
   outdf <- dplyr::bind_rows(outdf)
 
   outdf$Levene_significance <- ifelse(outdf$Levene_pvalue <= 0.01, "**",
-                                   ifelse(outdf$Levene_pvalue <= 0.05, "*", "ns"))
+                                   ifelse(outdf$Levene_pvalue <= 0.05, "*",
+                                          "ns"))
 
   # DescTools::LeveneTest(dataf[, quantitative[i]], dataf$`[Type]`)
 

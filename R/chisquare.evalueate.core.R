@@ -84,8 +84,10 @@ chisquare.evaluate.core <- function(data, names, qualitative, selected){
 
     chiout <- stats::chisq.test(dataf$`[Type]`, dataf[, qualitative[i]],
                          simulate.p.value = TRUE, B = 10000)
-    ECclasses <- as.data.frame(table((dataf[dataf$`[Type]` == "EC", qualitative[i]])))
-    CSclasses <- as.data.frame(table((dataf[dataf$`[Type]` == "CS", qualitative[i]])))
+    ECclasses <- as.data.frame(table((dataf[dataf$`[Type]` == "EC",
+                                            qualitative[i]])))
+    CSclasses <- as.data.frame(table((dataf[dataf$`[Type]` == "CS",
+                                            qualitative[i]])))
     ECclasses$classfreq <- paste(ECclasses$Var1, "(", ECclasses$Freq, ")",
                                  sep = "")
     CSclasses$classfreq <- paste(CSclasses$Var1, "(", CSclasses$Freq, ")",
@@ -97,14 +99,15 @@ chisquare.evaluate.core <- function(data, names, qualitative, selected){
                                           `CS_Classes` = paste(CSclasses$classfreq, collapse = "; "),
                                           `chisq_statistic` = chiout$statistic,
                                           `chisq_pvalue` = chiout$p.value,
-                                           stringsAsFactors = F)
+                                           stringsAsFactors = FALSE)
     rm(chiout, ECclasses, CSclasses)
   }
 
   outdf <- dplyr::bind_rows(outdf)
 
   outdf$chisq_significance <- ifelse(outdf$chisq_pvalue <= 0.01, "**",
-                                      ifelse(outdf$chisq_pvalue <= 0.05, "*", "ns"))
+                                      ifelse(outdf$chisq_pvalue <= 0.05, "*",
+                                             "ns"))
 
 
 
