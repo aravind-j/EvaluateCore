@@ -24,7 +24,8 @@ core collection and present in the \code{names} column.}
 }
 \description{
 Test for homogenity of variances of the entire collection (EC) and core set
-(CS) for quantitative traits by Levene's test \insertCite{levene_robust_1960}{EvaluateCore}.
+(CS) for quantitative traits by Levene's test
+\insertCite{levene_robust_1960}{EvaluateCore}.
 }
 \examples{
 
