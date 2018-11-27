@@ -22,6 +22,7 @@
 #' @importFrom stats formula
 #' @importFrom stats aov
 #' @importFrom stats sd
+#' @importFrom Rdpack reprompt
 #' @export
 #'
 #' @references
