@@ -12,7 +12,11 @@
 #' \insertCite{kim_powercore:_2007}{EvaluateCore} \item Average of absolute
 #' differences between variances
 #' (\ifelse{html}{\out{<em>VD\%<sub>Kim</sub></em>}}{\eqn{VD\%_{Kim}}})
-#' \insertCite{kim_powercore:_2007}{EvaluateCore} }
+#' \insertCite{kim_powercore:_2007}{EvaluateCore} \item Percentage difference
+#' between the mean squared Euclidean distance among accessions
+#' (\ifelse{html}{\out{<em><span
+#' style="text-decoration:overline">d</span>D\%</em>}}{\eqn{\overline{d}D\%}})
+#' \insertCite{studnicki_comparing_2013}{EvaluateCore} }
 #'
 #' The differences are computed as follows.
 #'
@@ -21,7 +25,7 @@
 #' &times; 100</p>}}{\deqn{MD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
 #' 100}}
 #'
-#' Where \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
+#' Where, \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
 #' of traits with a significant difference between the means of the EC and the
 #' CS and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
 #' traits.
@@ -31,7 +35,7 @@
 #' &times; 100</p>}}{\deqn{VD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
 #' 100}}
 #'
-#' Where \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
+#' Where, \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
 #' of traits with a significant difference between the variances of the EC and
 #' the CS and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
 #' traits.
@@ -44,7 +48,7 @@
 #' 100</em></p>}}{\deqn{MD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
 #' M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}}
 #'
-#' Where
+#' Where,
 #' \ifelse{html}{\out{<em>M<sub>EC<sub>i</sub></sub></em>}}{\eqn{M_{EC_{i}}}} is
 #' the mean of the EC for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait,
 #' \ifelse{html}{\out{<em>M<sub>CS<sub>i</sub></sub></em>}}{\eqn{M_{CS_{i}}}} is
@@ -59,7 +63,7 @@
 #' 100</em></p>}}{\deqn{VD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
 #' V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}}
 #'
-#' Where
+#' Where,
 #' \ifelse{html}{\out{<em>V<sub>EC<sub>i</sub></sub></em>}}{\eqn{V_{EC_{i}}}} is
 #' the variance of the EC for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th
 #' trait,
@@ -67,6 +71,22 @@
 #' the variance of the CS for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th
 #' trait and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
 #' traits.
+#'
+#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
+#' style="text-decoration: overline;">d</span>D\% = <big>[ </big><sup><span
+#' style="text-decoration: overline;">d</span>D<sub>CS</sub> &minus; <span
+#' style="text-decoration: overline;">d</span>D<sub>EC</sub></sup> &frasl;
+#' <sub><span style="text-decoration:
+#' overline;">d</span>D<sub>EC</sub></sub><big> ] </big>&times; 100<br
+#' /></em></p>}}{\deqn{\overline{d}D\% =
+#' \frac{\overline{d}_{CS}-\overline{d}_{EC}}{\overline{d}_{EC}} \times 100}}
+#'
+#' Where, \ifelse{html}{\out{<em><span style="text-decoration:
+#' overline;">d</span>D<sub>CS</sub></em>}}{\eqn{\overline{d}_{CS}}} is the mean
+#' squared Euclidean distance among accessions in the CS and
+#' \ifelse{html}{\out{<em><span style="text-decoration:
+#' overline;">d</span>D<sub>EC</sub></em>}}{\eqn{\overline{d}_{EC}}} is the mean
+#' squared Euclidean distance among accessions in the EC.
 #'
 #' @inheritParams snk.evaluate.core
 #' @param alpha Type I error probability (Significance level) of difference.
@@ -131,15 +151,31 @@ percentdiff.evaluate.core <- function(data, names, quantitative,
     stop('"alpha" should be between 0 and 1 (0 < alpha < 1)')
   }
 
-  mdiff <- snk.evaluate.core(data, names, quantitative,
-                             selected)
-  vdiff <- levene.evaluate.core(data, names, quantitative,
-                                selected)
+  dataf <- data[, c(names, quantitative)]
+
+  datafcore <- dataf[dataf[,names] %in% selected,]
+
+  dataf$`[Type]` <- "EC"
+  datafcore$`[Type]` <- "CS"
+
+  dataf <- rbind(dataf, datafcore)
+  rm(datafcore)
+
+  dataf$`[Type]` <- as.factor(dataf$`[Type]`)
+
+  d_EC <- mean(cluster::daisy(dataf[dataf$`[Type]` == "EC", quantitative],
+                              metric = "euclidean"))
+  d_CS <- mean(cluster::daisy(dataf[dataf$`[Type]` == "CS", quantitative],
+                              metric = "euclidean"))
+
+  mdiff <- snk.evaluate.core(data, names, quantitative, selected)
+  vdiff <- levene.evaluate.core(data, names, quantitative, selected)
 
   outdf <- data.frame(MDPercent_Hu = (sum(mdiff$SNK_pvalue <= alpha)/ length(quantitative)) * 100,
                       VDPercent_Hu = (sum(vdiff$Levene_pvalue <= alpha)/ length(quantitative)) * 100,
                       MDPercent_Kim = (sum(abs(mdiff$EC_Mean - mdiff$CS_Mean)/mdiff$CS_Mean)/length(quantitative)) * 100,
-                      VDPercent_Kim = (sum(abs(vdiff$EC_V - vdiff$CS_V)/vdiff$CS_V)/length(quantitative)) * 100)
+                      VDPercent_Kim = (sum(abs(vdiff$EC_V - vdiff$CS_V)/vdiff$CS_V)/length(quantitative)) * 100,
+                      DDPercent = ((d_CS - d_EC)/d_EC) * 100)
 
   return(outdf)
 

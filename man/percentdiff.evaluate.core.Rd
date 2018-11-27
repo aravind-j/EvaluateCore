@@ -38,7 +38,11 @@ differences between means
 \insertCite{kim_powercore:_2007}{EvaluateCore} \item Average of absolute
 differences between variances
 (\ifelse{html}{\out{<em>VD\%<sub>Kim</sub></em>}}{\eqn{VD\%_{Kim}}})
-\insertCite{kim_powercore:_2007}{EvaluateCore} }
+\insertCite{kim_powercore:_2007}{EvaluateCore} \item Percentage difference
+between the mean squared Euclidean distance among accessions
+(\ifelse{html}{\out{<em><span
+style="text-decoration:overline">d</span>D\%</em>}}{\eqn{\overline{d}D\%}})
+\insertCite{studnicki_comparing_2013}{EvaluateCore} }
 }
 \details{
 The differences are computed as follows.
@@ -48,7 +52,7 @@ The differences are computed as follows.
 &times; 100</p>}}{\deqn{MD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
 100}}
 
-Where \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
+Where, \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
 of traits with a significant difference between the means of the EC and the
 CS and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
 traits.
@@ -58,7 +62,7 @@ traits.
 &times; 100</p>}}{\deqn{VD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
 100}}
 
-Where \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
+Where, \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
 of traits with a significant difference between the variances of the EC and
 the CS and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
 traits.
@@ -71,7 +75,7 @@ traits.
 100</em></p>}}{\deqn{MD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
 M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}}
 
-Where
+Where,
 \ifelse{html}{\out{<em>M<sub>EC<sub>i</sub></sub></em>}}{\eqn{M_{EC_{i}}}} is
 the mean of the EC for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait,
 \ifelse{html}{\out{<em>M<sub>CS<sub>i</sub></sub></em>}}{\eqn{M_{CS_{i}}}} is
@@ -86,7 +90,7 @@ and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of traits.
 100</em></p>}}{\deqn{VD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
 V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}}
 
-Where
+Where,
 \ifelse{html}{\out{<em>V<sub>EC<sub>i</sub></sub></em>}}{\eqn{V_{EC_{i}}}} is
 the variance of the EC for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th
 trait,
@@ -94,6 +98,22 @@ trait,
 the variance of the CS for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th
 trait and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
 traits.
+
+\ifelse{html}{\out{<p style="text-align: center;"><em><span
+style="text-decoration: overline;">d</span>D\% = <big>[ </big><sup><span
+style="text-decoration: overline;">d</span>D<sub>CS</sub> &minus; <span
+style="text-decoration: overline;">d</span>D<sub>EC</sub></sup> &frasl;
+<sub><span style="text-decoration:
+overline;">d</span>D<sub>EC</sub></sub><big> ] </big>&times; 100<br
+/></em></p>}}{\deqn{\overline{d}D\% =
+\frac{\overline{d}_{CS}-\overline{d}_{EC}}{\overline{d}_{EC}} \times 100}}
+
+Where, \ifelse{html}{\out{<em><span style="text-decoration:
+overline;">d</span>D<sub>CS</sub></em>}}{\eqn{\overline{d}_{CS}}} is the mean
+squared Euclidean distance among accessions in the CS and
+\ifelse{html}{\out{<em><span style="text-decoration:
+overline;">d</span>D<sub>EC</sub></em>}}{\eqn{\overline{d}_{EC}}} is the mean
+squared Euclidean distance among accessions in the EC.
 }
 \examples{
 
