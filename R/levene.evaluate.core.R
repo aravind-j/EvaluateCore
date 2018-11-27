@@ -14,6 +14,7 @@
 #' @importFrom dplyr bind_rows
 #' @importFrom stats formula
 #' @importFrom stats sd
+#' @importFrom stats var
 #' @export
 #'
 #' @references
@@ -84,6 +85,8 @@ levene.evaluate.core <- function(data, names, quantitative, selected){
     leveneout <- car::leveneTest(frmla, data = dataf)
 
     outdf[[quantitative[i]]] <- data.frame(`Trait` = quantitative[i],
+                                           `EC_V` = stats::var(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
+                                           `CS_V` = stats::var(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `EC_CV` = stats::sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `CS_CV` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `Levene_Fvalue` = leveneout["group", "F value"],
