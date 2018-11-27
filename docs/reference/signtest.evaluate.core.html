@@ -36,6 +36,8 @@
 
 <meta property="og:description" content="Test difference between means and variances of entire collection (EC) and
 core set (CS) for quantitative traits by Sign test
+(&amp;plus; versus
+&amp;minus;)
 (Basigalup et al. 1995; Tai and Miller 2001)
 ." />
 <meta name="twitter:card" content="summary" />
@@ -108,6 +110,8 @@ core set (CS) for quantitative traits by Sign test
     
     <p>Test difference between means and variances of entire collection (EC) and
 core set (CS) for quantitative traits by Sign test
+(&plus; versus
+&minus;)
 (Basigalup et al. 1995; Tai and Miller 2001)
 .</p>
     
@@ -145,6 +149,25 @@ core collection and present in the <code>names</code> column.</p></td>
     
 
 
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The test statistic for Sign test
+(<em>&chi;<sup>2</sup></em>) is computed
+as follows.</p>
+<p><p style="text-align: center;"><em>&chi;<sup>2</sup> =
+<sup>(N<sub>1</sub> &minus; N<sub>2</sub>)<sup>2</sup></sup> &frasl;
+<sub>(N<sub>1</sub> &plus; N<sub>2</sub>)</sub></em></p></p>
+<p>Where, where <em>N<sub>1</sub></em> is the
+number of variables for which the mean or variance of the CS is
+greater than the mean or variance of the EC (number of
+&plus; signs);
+<em>N<sub>2</sub></em> is the number of
+variables for which the mean or variance of the CS is less than
+the mean or variance of the EC (number of
+&minus; signs). The value of
+<em>&chi;<sup>2</sup></em> is compared
+with a Chi-square distribution with 1 degree of freedom.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -210,6 +233,8 @@ core collection and present in the <code>names</code> column.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
 
       <li><a href="#references">References</a></li>
       

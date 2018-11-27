@@ -34,7 +34,8 @@
   
 <meta property="og:title" content="Coincidence Rate of Range — cr.evaluate.core" />
 
-<meta property="og:description" content="Compute the Coincidence Rate of Range (CR)
+<meta property="og:description" content="Compute the Coincidence Rate of Range
+(CR)
 (Diwan et al. 1995; Hu et al. 2000)
  to compare
 quantitative traits of the entire collection (EC) and core set (CS)." />
@@ -106,7 +107,8 @@ quantitative traits of the entire collection (EC) and core set (CS)." />
 
     <div class="ref-description">
     
-    <p>Compute the Coincidence Rate of Range (CR)
+    <p>Compute the Coincidence Rate of Range
+(<em>CR</em>)
 (Diwan et al. 1995; Hu et al. 2000)
  to compare
 quantitative traits of the entire collection (EC) and core set (CS).</p>
@@ -145,6 +147,24 @@ core collection and present in the <code>names</code> column.</p></td>
     
 
 
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The Coincidence Rate of Range (<em>CR</em>) is
+computed as follows.</p>
+<p><p style="text-align: center;"><em>CR = <big>(</big>
+<sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub style="line-height:
+1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
+<sup>R<sub>CS<sub>i</sub></sup> &frasl; <sub>R<sub>EC<sub>i</sub></sub>
+<big>]</big><big>)</big> &times; 100</em></p></p>
+<p>Where,
+<em>R<sub>CS<sub>i</sub></sub></em> is
+the range of the
+<em>i</em>th trait in the CS,
+<em>R<sub>EC<sub>i</sub></sub></em> is
+the range of the
+<em>i</em>th trait in the EC and
+<em>n</em> is the total number of traits.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -203,6 +223,8 @@ core collection and present in the <code>names</code> column.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
 
       <li><a href="#references">References</a></li>
 

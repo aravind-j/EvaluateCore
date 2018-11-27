@@ -34,7 +34,8 @@
   
 <meta property="og:title" content="Variable Rate of Coefficient of Variation — vr.evaluate.core" />
 
-<meta property="og:description" content="Compute the Variable Rate of Coefficient of Variation (VR)
+<meta property="og:description" content="Compute the Variable Rate of Coefficient of Variation
+(VR)
 (Hu et al. 2000)
  to compare quantitative traits of
 the entire collection (EC) and core set (CS)." />
@@ -106,7 +107,8 @@ the entire collection (EC) and core set (CS)." />
 
     <div class="ref-description">
     
-    <p>Compute the Variable Rate of Coefficient of Variation (VR)
+    <p>Compute the Variable Rate of Coefficient of Variation
+(<em>VR</em>)
 (Hu et al. 2000)
  to compare quantitative traits of
 the entire collection (EC) and core set (CS).</p>
@@ -145,6 +147,24 @@ core collection and present in the <code>names</code> column.</p></td>
     
 
 
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The Variable Rate of Coefficient of Variation
+(<em>VR</em>) is computed as follows.</p>
+<p><p style="text-align: center;"><em>VR = <big>(</big>
+<sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub style="line-height:
+1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
+<sup>CV<sub>CS<sub>i</sub></sup> &frasl; <sub>CV<sub>EC<sub>i</sub></sub>
+<big>]</big><big>)</big> &times; 100</em></p></p>
+<p>Where,
+<em>CV<sub>CS<sub>i</sub></sub></em>
+is the coefficients of variation for the
+<em>i</em>th trait in the CS,
+<em>CV<sub>EC<sub>i</sub></sub></em>
+is the coefficients of variation for the
+<em>i</em>th trait in the EC and
+<em>n</em> is the total number of traits</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -197,6 +217,8 @@ core collection and present in the <code>names</code> column.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
 
       <li><a href="#references">References</a></li>
       

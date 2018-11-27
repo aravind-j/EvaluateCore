@@ -25,7 +25,30 @@ core collection and present in the \code{names} column.}
 \description{
 Test difference between means and variances of entire collection (EC) and
 core set (CS) for quantitative traits by Sign test
+(\ifelse{html}{\out{&plus;}}{\eqn{+}} versus
+\ifelse{html}{\out{&minus;}}{\eqn{-}})
 \insertCite{basigalup_development_1995,tai_core_2001}{EvaluateCore}.
+}
+\details{
+The test statistic for Sign test
+(\ifelse{html}{\out{<em>&chi;<sup>2</sup></em>}}{\eqn{\chi^{2}}}) is computed
+as follows.
+
+\ifelse{html}{\out{<p style="text-align: center;"><em>&chi;<sup>2</sup> =
+<sup>(N<sub>1</sub> &minus; N<sub>2</sub>)<sup>2</sup></sup> &frasl;
+<sub>(N<sub>1</sub> &plus; N<sub>2</sub>)</sub></em></p>}}{\deqn{\chi^{2} =
+\frac{(N_{1}-N_{2})^{2}}{N_{1}+N_{2}}}}
+
+Where, where \ifelse{html}{\out{<em>N<sub>1</sub></em>}}{\eqn{N_{1}}} is the
+number of variables for which the mean or variance of the CS is
+greater than the mean or variance of the EC (number of
+\ifelse{html}{\out{&plus;}}{\eqn{+}} signs);
+\ifelse{html}{\out{<em>N<sub>2</sub></em>}}{\eqn{N_{2}}} is the number of
+variables for which the mean or variance of the CS is less than
+the mean or variance of the EC (number of
+\ifelse{html}{\out{&minus;}}{\eqn{-}} signs). The value of
+\ifelse{html}{\out{<em>&chi;<sup>2</sup></em>}}{\eqn{\chi^{2}}} is compared
+with a Chi-square distribution with 1 degree of freedom.
 }
 \examples{
 

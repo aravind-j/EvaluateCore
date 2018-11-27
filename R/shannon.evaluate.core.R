@@ -8,6 +8,30 @@
 #' phenotypic diversity for qualitative traits between entire collection (EC)
 #' and core set (CS).
 #'
+#' Shannon-Weaver Diversity Index (\ifelse{html}{\out{<i>H'</i>}}{\eqn{H'}}) is
+#' computed as follows.
+#'
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>H' = &minus;
+#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
+#' p<sub>i</sub>log(p<sub>i</sub>)</em></p>}}{\deqn{H' =
+#' -\sum_{i=1}^{k}p_{i}log(p_{i})}}
+#'
+#' Where \ifelse{html}{\out{<em>p<sub>i</sub></em>}}{\eqn{p_{i}}} denotes the
+#' proportion in the group \ifelse{html}{\out{<em>k</em>}}{\eqn{k}}.
+#'
+#' The maximum value of the index
+#' (\ifelse{html}{\out{<em>H'<sub>max</sub></em>}}{\eqn{H'_{max}}}) is
+#' \ifelse{html}{\out{ln(<em>k</em>)}}{\eqn{\ln(k)}}. This value occurs when
+#' each group has the same frequency.
+#'
+#' The Shannon equitability index
+#' (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) is the Shannon
+#' diversity index divided by the maximum diversity.
+#'
+#' \ifelse{html}{\out{<em><p style="text-align: center;"><em>E<sub>H</sub> =
+#' <sup>H</sup></em> &frasl; <sub>ln(<em>k</em>)</sub></p></em>}}{\deqn{E_{H} =
+#' \frac{H}{\ln{(k)}}}}
+#'
 #' @inheritParams chisquare.evaluate.core
 #'
 #' @return
