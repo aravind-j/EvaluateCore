@@ -63,6 +63,14 @@ pca.evaluate.core <- function(data, names, quantitative, selected,
                        quantitative = quantitative,
                        selected = selected)
 
+  if (length(quantitative) < npc.plot) {
+    stop('Length of "quantitative" is less than "npc.plot" specified' )
+  }
+
+  if (length(quantitative) == 1) {
+    stop('Only one trait specified as "quantitative"')
+  }
+
   if (any(c("tbl_dataf", "tbl") %in% class(data))) {
     warning('"data" is of type tibble\nCoercing to data frame')
     data <- as.data.frame(data)

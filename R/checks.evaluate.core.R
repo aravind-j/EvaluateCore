@@ -65,6 +65,16 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
     }
   }
 
+  # check if overlap exists between 'quantitative' and 'qualitative'
+  if ((!is.null(quantitative)) & (!is.null(qualitative))) {
+    if (length(intersect(quantitative, qualitative)) != 0) {
+      stop(paste('The following column(s) is/are specified in "quantitative" and "qualitative":\n',
+                 paste(intersect(quantitative, qualitative),
+                       collapse = ", "),
+                 sep = ""))
+    }
+  }
+
   # check if 'names' column is of type character
   if (!is.character(data[, names])) {
     stop('"names" column in "data" should be of type character')
@@ -94,6 +104,11 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
   # check if 'selected' is a vector of type character
   if (!is.vector(selected, mode = "character")) {
     stop('"selected" should be a character vector')
+  }
+
+  # check if selected > entire collection
+  if (length(selected) > nrow(data)) {
+    stop('"selected" is more than the number of records in "data"')
   }
 
   # check if 'selected' present in 'names' column
