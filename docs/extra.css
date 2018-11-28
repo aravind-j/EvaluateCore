@@ -7,12 +7,8 @@
     --lightBlue-hover: #82b5c9;
     --lightBlue-alpha: rgba(71, 140, 167, 0.3);
 
-    --lightGreen: #006600;
-    --lightGreen-hover: #003300;
-    --lightGreen-alpha03: rgba(78, 165, 0, 0.3);
-	
-	--lightOrchid: #7c1671;
-    --lightOrchidhover: #490d43ff;
+    --lightOrchid: #7c1671;
+    --lightOrchid-hover: #490d43ff;
     --lightOrchid-alpha03: rgba(124, 22, 113, 0.3);
 
     --darkRed: #951d2d;
@@ -68,6 +64,12 @@ a:hover{
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
   background-color: var(--lightOrchid-hover) !important;
   border-color: var(--lightOrchid-hover) !important;
+}
+
+/*button formatting*/
+.btn, .btn-primary, .btn-copy-ex {
+  background-color: var(--lightOrchid) !important;
+  border-color: var(--lightOrchid) !important;
 }
 
 
