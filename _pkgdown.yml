@@ -6,3 +6,60 @@ development:
   mode: unreleased
 
 url: https://aravind-j.github.io/EvaluateCore/
+
+navbar:
+  title: EvaluateCore
+  type: default
+  left:
+    - icon: fa-home fa-lg
+      text: Home
+      href: /index.html
+    - icon: fa-code
+      text: Reference
+      href: reference/index.html
+    - icon: fa-newspaper-o
+      text: News
+      href: news/index.html
+  right:
+    - icon: fa-github-alt
+      text: Github
+      href: https://github.com/aravind-j/EvaluateCore
+
+reference:
+    - title: Quantitative traits - Compare Measures of Location
+      contents:
+         - '`snk.evaluate.core`'
+         - '`wilcox.evaluate.core`'
+         - '`ttest.evaluate.core`'
+         - '`signtest.evaluate.core`'
+
+    - title: Quantitative traits - Compare Measures of Scale
+      contents:
+         - '`levene.evaluate.core`'
+         - '`iqr.evaluate.core`'
+         - '`cr.evaluate.core`'
+         - '`vr.evaluate.core`'
+
+    - title: Quantitative traits - Compare Measures of Distribution
+      contents:
+         - '`box.evaluate.core`'
+         - '`pdfdist.evaluate.core`'
+         - '`qq.evaluate.core`'
+
+    - title: Quantitative traits - Other comparisons
+      contents:
+         - '`percentdiff.evaluate.core`'
+         - '`pca.evaluate.core`'
+
+    - title: Qualitative trait comparisons
+      contents:
+          - '`bar.evaluate.core`'
+          - '`chisquare.evaluate.core`'
+          - '`coverage.evaluate.core`'
+          - '`shannon.evaluate.core`'
+
+    - title: Compare both qualitative and quantitative traits
+      contents:
+          - '`corr.evaluate.core`'
+          - '`dist.evaluate.core`'
+
