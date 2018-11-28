@@ -16,15 +16,14 @@
 #' \frac{(N_{1}-N_{2})^{2}}{N_{1}+N_{2}}}}
 #'
 #' Where, where \ifelse{html}{\out{<em>N<sub>1</sub></em>}}{\eqn{N_{1}}} is the
-#' number of variables for which the mean or variance of the CS is
-#' greater than the mean or variance of the EC (number of
+#' number of variables for which the mean or variance of the CS is greater than
+#' the mean or variance of the EC (number of
 #' \ifelse{html}{\out{&plus;}}{\eqn{+}} signs);
 #' \ifelse{html}{\out{<em>N<sub>2</sub></em>}}{\eqn{N_{2}}} is the number of
-#' variables for which the mean or variance of the CS is less than
-#' the mean or variance of the EC (number of
-#' \ifelse{html}{\out{&minus;}}{\eqn{-}} signs). The value of
-#' \ifelse{html}{\out{<em>&chi;<sup>2</sup></em>}}{\eqn{\chi^{2}}} is compared
-#' with a Chi-square distribution with 1 degree of freedom.
+#' variables for which the mean or variance of the CS is less than the mean or
+#' variance of the EC (number of \ifelse{html}{\out{&minus;}}{\eqn{-}} signs).
+#' The value of \ifelse{html}{\out{<em>&chi;<sup>2</sup></em>}}{\eqn{\chi^{2}}}
+#' is compared with a Chi-square distribution with 1 degree of freedom.
 #'
 #' @param data The data as a data frame object. The data frame should possess
 #'   one row per individual and columns with the individual names and multiple
@@ -35,7 +34,14 @@
 #' @param selected Character vector with the names of individuals selected in
 #'   core collection and present in the \code{names} column.
 #'
-#' @return
+#' @return A data frame with the following components. \item{Comparison}{The
+#'   comparison measure.} \item{ChiSq}{The test statistic
+#'   (\ifelse{html}{\out{<em>&chi;<sup>2</sup></em>}}{\eqn{\chi^{2}}}).}
+#'   \item{p.value}{The p value for the test statistic.} \item{significance}{The
+#'   significance of the test statistic (*: p
+#'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
+#'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
+#'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
 #'
 #' @export
 #'
@@ -71,8 +77,8 @@
 #' # EvaluateCore
 #' ####################################
 #'
-#' pdfdist.evaluate.core(data = ec, names = "genotypes",
-#'                       quantitative = quant, selected = core)
+#' signtest.evaluate.core(data = ec, names = "genotypes",
+#'                        quantitative = quant, selected = core)
 #'
 #'
 signtest.evaluate.core <- function(data, names, quantitative, selected){

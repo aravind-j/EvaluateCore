@@ -27,7 +27,7 @@
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return
+#' @return The \ifelse{html}{\out{<em>VR</em>}}{\eqn{VR}} value.
 #'
 #' @export
 #'

@@ -91,7 +91,13 @@
 #' @inheritParams snk.evaluate.core
 #' @param alpha Type I error probability (Significance level) of difference.
 #'
-#' @return
+#' @return A data frame with the values of
+#'   \ifelse{html}{\out{<em>MD\%<sub>Hu</sub></em>}}{\eqn{MD\%_{Hu}}},
+#'   \ifelse{html}{\out{<em>VD\%<sub>Hu</sub></em>}}{\eqn{VD\%_{Hu}}},
+#'   \ifelse{html}{\out{<em>MD\%<sub>Kim</sub></em>}}{\eqn{MD\%_{Kim}}},
+#'   \ifelse{html}{\out{<em>VD\%<sub>Kim</sub></em>}}{\eqn{VD\%_{Kim}}} and
+#'   \ifelse{html}{\out{<em><span
+#'   style="text-decoration:overline">d</span>D\%</em>}}{\eqn{\overline{d}D\%}}.
 #'
 #' @seealso \code{\link[EvaluateCore]{snk.evaluate.core}},
 #'   \code{\link[EvaluateCore]{snk.evaluate.core}}

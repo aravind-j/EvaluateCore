@@ -20,7 +20,7 @@ vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+The Class Coverage value.
 }
 \description{
 Compute the Class Coverage \insertCite{kim_powercore:_2007}{EvaluateCore} to

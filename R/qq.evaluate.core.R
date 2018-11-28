@@ -7,7 +7,8 @@
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return
+#' @return A list with the \code{ggplot} objects of QQ plots of CS vs EC for
+#'   each trait specified as \code{quantitative}.
 #'
 #' @seealso \code{\link[stats:qqnorm]{qqplot}}
 #'

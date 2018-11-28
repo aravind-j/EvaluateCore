@@ -20,7 +20,8 @@ character vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+A data frame with the IQR values of the EC and CS for the traits
+  specified as \code{quantitative}.
 }
 \description{
 Compute the Interquartile Range (IQR)

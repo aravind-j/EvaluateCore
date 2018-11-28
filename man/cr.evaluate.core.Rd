@@ -20,7 +20,7 @@ character vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+The \ifelse{html}{\out{<em>CR</em>}}{\eqn{CR}} value.
 }
 \description{
 Compute the Coincidence Rate of Range

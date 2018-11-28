@@ -7,7 +7,8 @@
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return
+#' @return A list with the \code{ggplot} objects of box plots of CS and EC for
+#'   each trait specified as \code{quantitative}.
 #'
 #' @seealso \code{\link[graphics]{boxplot}}, \code{\link[ggplot2]{geom_boxplot}}
 #'

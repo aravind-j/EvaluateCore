@@ -20,7 +20,8 @@ character vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+A list with the \code{ggplot} objects of QQ plots of CS vs EC for
+  each trait specified as \code{quantitative}.
 }
 \description{
 Plot Quantile-Quantile (QQ) plots

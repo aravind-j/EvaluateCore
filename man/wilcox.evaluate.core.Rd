@@ -20,7 +20,11 @@ character vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+\item{Trait}{The quantitative trait.} \item{EC_Med}{The median value
+  of the trait in EC.} \item{CS_Med}{The median value of the trait in CS.}
+  \item{Wilcox_pvalue}{The p value of the Wilcoxon test for equality of
+  medians of EC and CS.} \item{Wilcox_significance}{The significance of the
+  Wilcoxon test for equality of medians of EC and CS.}
 }
 \description{
 Compare the medians of quantitative traits between entire collection (EC) and

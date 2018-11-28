@@ -34,12 +34,12 @@
   
 <meta property="og:title" content="Distance Between Probability Distributions — pdfdist.evaluate.core" />
 
-<meta property="og:description" content="Compute Kullback–Leibler
+<meta property="og:description" content="Compute Kullback-Leibler
 (Kullback and Leibler 1951)
 , Kolmogorov-Smirnov
 (Kolmogorov 1933; Smirnov 1948)
  and
-Anderson-Darling Distances
+Anderson-Darling distances
 (Anderson and Darling 1952)
  between the probability
 distributions of collection (EC) and core set (CS) for quantitative traits." />
@@ -129,12 +129,12 @@ distributions of collection (EC) and core set (CS) for quantitative traits." />
 
     <div class="ref-description">
     
-    <p>Compute Kullback–Leibler
+    <p>Compute Kullback-Leibler
 (Kullback and Leibler 1951)
 , Kolmogorov-Smirnov
 (Kolmogorov 1933; Smirnov 1948)
  and
-Anderson-Darling Distances
+Anderson-Darling distances
 (Anderson and Darling 1952)
  between the probability
 distributions of collection (EC) and core set (CS) for quantitative traits.</p>
@@ -170,8 +170,27 @@ core collection and present in the <code>names</code> column.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-
+    <p>A data frame with the following columns.</p>
+<dt>Trait</dt><dd><p>The
+  quantitative trait.</p></dd> <dt>KL_Distance</dt><dd><p>The Kullback-Leibler distance
+  (Kullback and Leibler 1951)
+ between EC and CS.</p></dd>
+  <dt>KS_Distance</dt><dd><p>The Kolmogorov-Smirnov distance
+  (Kolmogorov 1933; Smirnov 1948)
+ between
+  EC and CS.</p></dd> <dt>KS_pvalue</dt><dd><p>The p value of the Kolmogorov-Smirnov distance.</p></dd>
+  <dt>AD_Distance</dt><dd><p>Anderson-Darling distance
+  (Anderson and Darling 1952)
+ between EC and CS.</p></dd>
+  <dt>AD_pvalue</dt><dd><p>The p value of the Anderson-Darling distance.</p></dd>
+  <dt>KS_significance</dt><dd><p>The significance of the Kolmogorov-Smirnov distance (*: p
+  &leq; 0.01; **: p
+  &leq; 0.05; ns: p
+  &gt; 0.05).</p></dd>
+  <dt>AD_pvalue</dt><dd><p>The significance of the Anderson-Darling distance (*: p
+  &leq; 0.01; **: p
+  &leq; 0.05; ns: p
+  &gt; 0.05).</p></dd>
 
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>

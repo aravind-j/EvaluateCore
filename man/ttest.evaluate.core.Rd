@@ -20,7 +20,17 @@ character vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+\item{Trait}{The
+  quantitative trait.} \item{EC_Min}{The minimum value of the trait in EC.}
+  \item{EC_Max}{The maximum value of the trait in EC.} \item{EC_Mean}{The
+  mean value of the trait in EC.} \item{EC_SE}{The standard error of the
+  trait in EC.} \item{CS_Min}{The minimum value of the trait in CS.}
+  \item{CS_Max}{The maximum value of the trait in CS.} \item{CS_Mean}{The
+  mean value of the trait in CS.} \item{CS_SE}{The standard error of the
+  trait in CS.} \item{ttest_pvalue}{The p value of the Student's t
+  test for equality of means of EC and CS.} \item{ttest_significance}{The
+  significance of the Student's t test for equality of means of EC
+  and CS.}
 }
 \description{
 Test difference between means of entire collection (EC) and core set (CS) for

@@ -164,8 +164,15 @@ core collection and present in the <code>names</code> column.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-
+    <p>A data frame with the following components.</p>
+<dt>Comparison</dt><dd><p>The
+  comparison measure.</p></dd> <dt>ChiSq</dt><dd><p>The test statistic
+  (<em>&chi;<sup>2</sup></em>).</p></dd>
+  <dt>p.value</dt><dd><p>The p value for the test statistic.</p></dd> <dt>significance</dt><dd><p>The
+  significance of the test statistic (*: p
+  &leq; 0.01; **: p
+  &leq; 0.05; ns: p
+  &gt; 0.05).</p></dd>
 
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -177,15 +184,14 @@ as follows.</p>
 <sup>(N<sub>1</sub> &minus; N<sub>2</sub>)<sup>2</sup></sup> &frasl;
 <sub>(N<sub>1</sub> &plus; N<sub>2</sub>)</sub></em></p></p>
 <p>Where, where <em>N<sub>1</sub></em> is the
-number of variables for which the mean or variance of the CS is
-greater than the mean or variance of the EC (number of
+number of variables for which the mean or variance of the CS is greater than
+the mean or variance of the EC (number of
 &plus; signs);
 <em>N<sub>2</sub></em> is the number of
-variables for which the mean or variance of the CS is less than
-the mean or variance of the EC (number of
-&minus; signs). The value of
-<em>&chi;<sup>2</sup></em> is compared
-with a Chi-square distribution with 1 degree of freedom.</p>
+variables for which the mean or variance of the CS is less than the mean or
+variance of the EC (number of &minus; signs).
+The value of <em>&chi;<sup>2</sup></em>
+is compared with a Chi-square distribution with 1 degree of freedom.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -229,19 +235,10 @@ with a Chi-square distribution with 1 degree of freedom.</p>
 <span class='co'># EvaluateCore</span>
 <span class='co'>####################################</span>
 
-<span class='fu'><a href='pdfdist.evaluate.core.html'>pdfdist.evaluate.core</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>ec</span>, <span class='kw'>names</span> <span class='kw'>=</span> <span class='st'>"genotypes"</span>,
-                      <span class='kw'>quantitative</span> <span class='kw'>=</span> <span class='no'>quant</span>, <span class='kw'>selected</span> <span class='kw'>=</span> <span class='no'>core</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: p-value will be approximate in the presence of ties</span></div><div class='output co'>#&gt; <span class='warning'>Warning: p-value will be approximate in the presence of ties</span></div><div class='output co'>#&gt; <span class='warning'>Warning: p-value will be approximate in the presence of ties</span></div><div class='output co'>#&gt; <span class='warning'>Warning: p-value will be approximate in the presence of ties</span></div><div class='output co'>#&gt; <span class='warning'>Warning: p-value will be approximate in the presence of ties</span></div><div class='output co'>#&gt;   Trait KL_Distance KS_Distance  KS_pvalue AD_Distance  AD_pvalue
-#&gt; 1    X2  0.10477307  0.03352160 0.98783942     0.30292 0.93604000
-#&gt; 2    X3  0.04422509  0.06656674 0.40549135     1.48630 0.17966000
-#&gt; 3    X4  0.02861614  0.07531542 0.26159518     2.54120 0.04728700
-#&gt; 4    X5  0.08421608  0.08809463 0.12406512     3.01030 0.02711600
-#&gt; 5    X8  0.07322450  0.10720163 0.03260334     5.94860 0.00099556
-#&gt;   KS_significance AD_significance
-#&gt; 1              ns              ns
-#&gt; 2              ns              ns
-#&gt; 3              ns               *
-#&gt; 4              ns               *
-#&gt; 5               *              **</div><div class='input'>
+<span class='fu'>signtest.evaluate.core</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>ec</span>, <span class='kw'>names</span> <span class='kw'>=</span> <span class='st'>"genotypes"</span>,
+                       <span class='kw'>quantitative</span> <span class='kw'>=</span> <span class='no'>quant</span>, <span class='kw'>selected</span> <span class='kw'>=</span> <span class='no'>core</span>)</div><div class='output co'>#&gt;   Comparison ChiSq    p.value significance
+#&gt; 1       Mean   1.8 0.17971249           ns
+#&gt; 2   Variance   5.0 0.02534732            *</div><div class='input'>
 
 </div></pre>
   </div>

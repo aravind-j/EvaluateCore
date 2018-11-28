@@ -20,7 +20,8 @@ vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+A list with the \code{ggplot} objects of relative frequency bar plots
+  of CS and EC for each trait specified as \code{qualitative}.
 }
 \description{
 Plot Bar plots to graphically compare the frequency distributions of

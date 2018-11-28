@@ -27,7 +27,7 @@
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return
+#' @return The \ifelse{html}{\out{<em>CR</em>}}{\eqn{CR}} value.
 #'
 #' @seealso \code{\link[stats]{wilcox.test}}
 #'

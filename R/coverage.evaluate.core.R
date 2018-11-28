@@ -26,7 +26,7 @@
 #'
 #' @inheritParams chisquare.evaluate.core
 #'
-#' @return
+#' @return The Class Coverage value.
 #'
 #' @export
 #'

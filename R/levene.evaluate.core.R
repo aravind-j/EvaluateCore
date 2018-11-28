@@ -6,7 +6,15 @@
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return
+#' @return A data frame with the following columns \item{Trait}{The quantitative
+#'   trait.} \item{EC_V}{The variance of the EC.} \item{CS_V}{The variance of
+#'   the CS.} \item{EC_CV}{The coefficient of variance of the EC.}
+#'   \item{CS_CV}{The coefficient of variance of the CS.}
+#'   \item{Levene_Fvalue}{The test statistic.} \item{Levene_pvalue}{The p value
+#'   for the test statistic.} \item{Levene_significance}{The significance of the
+#'   test statistic (*: p \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
+#'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
+#'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
 #'
 #' @seealso \code{\link[car]{leveneTest}}
 #'

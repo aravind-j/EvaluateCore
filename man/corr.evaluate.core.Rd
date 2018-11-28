@@ -23,7 +23,16 @@ vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+A list with the following components. \item{Correlation Matrix}{The
+  matrix with phenotypic correlations between traits in EC (below diagonal)
+  and CS (above diagonal).} \item{Correologram}{A correlogram of phenotypic
+  correlations between traits in EC (below diagonal) and CS (above diagonal)
+  as a \code{ggplot} object.} \item{Mantel Correlation}{A data frame with
+  Mantel correlation coefficient (\ifelse{html}{\out{<em>r</em>}}{\eqn{r}})
+  between EC and CS phenotypic correlation matrics, it's p value and
+  significance (*: p \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
+  \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
+  \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
 }
 \description{
 Compute phenotypic correlations \insertCite{pearson_note_1895}{EvaluateCore}

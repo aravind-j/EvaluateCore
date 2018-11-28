@@ -10,7 +10,15 @@
 #' @param npc.plot The number of principal components for which eigen values are
 #'   to be plotted. The default value is 6.
 #'
-#' @return
+#' @return A list with the following components. \item{EC PC Importance}{A data
+#'   frame of importance of principal components for EC} \item{EC PC Loadings}{A
+#'   data frame with eigen vectors of principal components for EC} \item{CS PC
+#'   Importance}{A data frame of importance of principal components for CS}
+#'   \item{CS PC Loadings}{A data frame with eigen vectors of principal
+#'   components for CS} \item{Scree Plot}{The scree plot of principal components
+#'   for EC and CS as a \code{ggplot} object.} \item{PC Loadings Plot}{A plot of
+#'   the eigen vector values of principal components for EC and CS as specified
+#'   by \code{npc.plot} as a \code{ggplot2} object.}
 #'
 #' @seealso \code{\link[stats]{prcomp}}
 #'

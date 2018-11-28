@@ -20,7 +20,7 @@ character vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+The \ifelse{html}{\out{<em>VR</em>}}{\eqn{VR}} value.
 }
 \description{
 Compute the Variable Rate of Coefficient of Variation

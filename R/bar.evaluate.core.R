@@ -5,7 +5,9 @@
 #'
 #' @inheritParams chisquare.evaluate.core
 #'
-#' @return
+#' @return A list with the \code{ggplot} objects of relative frequency bar plots
+#'   of CS and EC for each trait specified as \code{qualitative}.
+#'
 #'
 #' @seealso \code{\link[graphics]{barplot}}, \code{\link[ggplot2]{geom_bar}}
 #'

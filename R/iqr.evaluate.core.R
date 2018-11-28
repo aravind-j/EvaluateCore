@@ -6,7 +6,8 @@
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return
+#' @return A data frame with the IQR values of the EC and CS for the traits
+#'   specified as \code{quantitative}.
 #'
 #' @seealso \code{\link[stats]{IQR}}
 #'

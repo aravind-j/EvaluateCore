@@ -23,11 +23,18 @@ vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+A data frame with the average values of
+  \ifelse{html}{\out{<em>E-NE</em>}}{\eqn{E\textnormal{-}EN}},
+  \ifelse{html}{\out{<em>A-NE</em>}}{\eqn{A\textnormal{-}EN}} and
+  \ifelse{html}{\out{<em>E-E</em>}}{\eqn{E\textnormal{-}E}}.
 }
 \description{
-Compute Average entry-to-nearest-entry distance, Average
-accession-to-nearest-entry distance and Average entry-to-entry distance
+Compute average Entry-to-nearest-entry distance
+(\ifelse{html}{\out{<em>E-NE</em>}}{\eqn{E\textnormal{-}EN}}),
+Accession-to-nearest-entry distance
+(\ifelse{html}{\out{<em>A-NE</em>}}{\eqn{A\textnormal{-}EN}}) and
+Entry-to-entry distance
+(\ifelse{html}{\out{<em>E-E</em>}}{\eqn{E\textnormal{-}E}})
 \insertCite{odong_quality_2013}{EvaluateCore} to evaluate a core set (CS)
 selected from an entire collection (EC).
 }

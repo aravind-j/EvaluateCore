@@ -20,13 +20,29 @@ character vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-
+A data frame with the following columns. \item{Trait}{The
+  quantitative trait.} \item{KL_Distance}{The Kullback-Leibler distance
+  \insertCite{kullback_information_1951}{EvaluateCore} between EC and CS.}
+  \item{KS_Distance}{The Kolmogorov-Smirnov distance
+  \insertCite{kolmogorov_sulla_1933,smirnov_table_1948}{EvaluateCore} between
+  EC and CS.} \item{KS_pvalue}{The p value of the Kolmogorov-Smirnov distance.}
+  \item{AD_Distance}{Anderson-Darling distance
+  \insertCite{anderson_asymptotic_1952}{EvaluateCore} between EC and CS.}
+  \item{AD_pvalue}{The p value of the Anderson-Darling distance.}
+  \item{KS_significance}{The significance of the Kolmogorov-Smirnov distance (*: p
+  \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
+  \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
+  \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
+  \item{AD_pvalue}{The significance of the Anderson-Darling distance (*: p
+  \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
+  \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
+  \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
 }
 \description{
-Compute Kullback–Leibler
+Compute Kullback-Leibler
 \insertCite{kullback_information_1951}{EvaluateCore}, Kolmogorov-Smirnov
 \insertCite{kolmogorov_sulla_1933,smirnov_table_1948}{EvaluateCore} and
-Anderson-Darling Distances
+Anderson-Darling distances
 \insertCite{anderson_asymptotic_1952}{EvaluateCore} between the probability
 distributions of collection (EC) and core set (CS) for quantitative traits.
 }
