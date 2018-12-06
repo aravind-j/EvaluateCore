@@ -29,6 +29,7 @@ Depends:
 Imports:
     agricolae,
     car,
+    cluster,
     corehunter,
     dplyr,
     entropy,
