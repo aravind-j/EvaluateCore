@@ -1,7 +1,25 @@
-#' Chi-squared Test for Homogenity
+### This file is part of 'EvaluateCore' package for R.
+
+### Copyright (C) 2018, ICAR-NBPGR.
+#
+# EvaluateCore is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# EvaluateCore is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  https://www.r-project.org/Licenses/
+
+
+#' Chi-squared Test for Homogeneity
 #'
 #' Compare the distribution frequencies of qualitative traits between entire
-#' collection (EC) and core set (CS) by Chi-squared test for homogenity
+#' collection (EC) and core set (CS) by Chi-squared test for homogeneity
 #' \insertCite{pearson_x._1900,snedecor_chi-square_1933}{EvaluateCore}.
 #'
 #' @inheritParams snk.evaluate.core
@@ -78,7 +96,7 @@ chisquare.evaluate.core <- function(data, names, qualitative, selected){
 
   dataf <- data[, c(names, qualitative)]
 
-  datafcore <- dataf[dataf[,names] %in% selected,]
+  datafcore <- dataf[dataf[, names] %in% selected, ]
 
   dataf$`[Type]` <- "EC"
   datafcore$`[Type]` <- "CS"

@@ -1,3 +1,21 @@
+### This file is part of 'EvaluateCore' package for R.
+
+### Copyright (C) 2018, ICAR-NBPGR.
+#
+# EvaluateCore is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# EvaluateCore is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  https://www.r-project.org/Licenses/
+
+
 #' Percentage Difference of Means and Variances
 #'
 #' Compute the following differences between the entire collection (EC) and core
@@ -102,6 +120,7 @@
 #' @seealso \code{\link[EvaluateCore]{snk.evaluate.core}},
 #'   \code{\link[EvaluateCore]{snk.evaluate.core}}
 #'
+#' @importFrom cluster daisy
 #' @export
 #'
 #' @references
@@ -159,7 +178,7 @@ percentdiff.evaluate.core <- function(data, names, quantitative,
 
   dataf <- data[, c(names, quantitative)]
 
-  datafcore <- dataf[dataf[,names] %in% selected,]
+  datafcore <- dataf[dataf[, names] %in% selected, ]
 
   dataf$`[Type]` <- "EC"
   datafcore$`[Type]` <- "CS"
@@ -177,11 +196,11 @@ percentdiff.evaluate.core <- function(data, names, quantitative,
   mdiff <- snk.evaluate.core(data, names, quantitative, selected)
   vdiff <- levene.evaluate.core(data, names, quantitative, selected)
 
-  outdf <- data.frame(MDPercent_Hu = (sum(mdiff$SNK_pvalue <= alpha)/ length(quantitative)) * 100,
-                      VDPercent_Hu = (sum(vdiff$Levene_pvalue <= alpha)/ length(quantitative)) * 100,
-                      MDPercent_Kim = (sum(abs(mdiff$EC_Mean - mdiff$CS_Mean)/mdiff$CS_Mean)/length(quantitative)) * 100,
-                      VDPercent_Kim = (sum(abs(vdiff$EC_V - vdiff$CS_V)/vdiff$CS_V)/length(quantitative)) * 100,
-                      DDPercent = ((d_CS - d_EC)/d_EC) * 100)
+  outdf <- data.frame(MDPercent_Hu = (sum(mdiff$SNK_pvalue <= alpha) / length(quantitative)) * 100,
+                      VDPercent_Hu = (sum(vdiff$Levene_pvalue <= alpha) / length(quantitative)) * 100,
+                      MDPercent_Kim = (sum(abs(mdiff$EC_Mean - mdiff$CS_Mean) / mdiff$CS_Mean) / length(quantitative)) * 100,
+                      VDPercent_Kim = (sum(abs(vdiff$EC_V - vdiff$CS_V) / vdiff$CS_V) / length(quantitative)) * 100,
+                      DDPercent = ((d_CS - d_EC) / d_EC) * 100)
 
   return(outdf)
 

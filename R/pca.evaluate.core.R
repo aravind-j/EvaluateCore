@@ -1,3 +1,21 @@
+### This file is part of 'EvaluateCore' package for R.
+
+### Copyright (C) 2018, ICAR-NBPGR.
+#
+# EvaluateCore is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# EvaluateCore is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  https://www.r-project.org/Licenses/
+
+
 #' Principal Component Analysis
 #'
 #' Compute Principal Component Analysis Statistics
@@ -86,7 +104,7 @@ pca.evaluate.core <- function(data, names, quantitative, selected,
 
   dataf <- data[, c(names, quantitative)]
 
-  datafcore <- dataf[dataf[,names] %in% selected,]
+  datafcore <- dataf[dataf[, names] %in% selected, ]
 
   dataf$`[Type]` <- "EC"
   datafcore$`[Type]` <- "CS"
@@ -137,7 +155,6 @@ pca.evaluate.core <- function(data, names, quantitative, selected,
     theme(axis.text = element_text(colour = "black"))
 
   # Rotation plot
-  pc <- 3
   ecrot2 <- as.data.frame(ecrot[, 1:npc.plot])
   ecrot2$Trait <- rownames(ecrot2)
   ecrot2$Ty <- "EC"
@@ -152,7 +169,7 @@ pca.evaluate.core <- function(data, names, quantitative, selected,
   PCArot <- reshape2::melt(data = PCArot, id.vars = c("Trait", "Ty"))
 
   grot <- ggplot(data = PCArot, aes(x = value, y = Trait)) +
-    geom_vline(xintercept=0, colour = "red") +
+    geom_vline(xintercept = 0, colour = "red") +
     geom_point() +
     geom_segment(aes(x = 0, xend = value, yend = Trait)) +
     theme_bw() +

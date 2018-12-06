@@ -1,3 +1,21 @@
+### This file is part of 'EvaluateCore' package for R.
+
+### Copyright (C) 2018, ICAR-NBPGR.
+#
+# EvaluateCore is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# EvaluateCore is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  https://www.r-project.org/Licenses/
+
+
 #' Sign Test
 #'
 #' Test difference between means and variances of entire collection (EC) and
@@ -99,11 +117,11 @@ signtest.evaluate.core <- function(data, names, quantitative, selected){
 
   mn1 <- sum(mdiff$CS_Mean > mdiff$EC_Mean)
   mn2 <- sum(mdiff$CS_Mean < mdiff$EC_Mean)
-  mteststat <- ((mn1 - mn2)^2)/(mn1 + mn2)
+  mteststat <- ((mn1 - mn2)^2) / (mn1 + mn2)
 
   vn1 <- sum(vdiff$CS_CV > vdiff$EC_CV)
   vn2 <- sum(vdiff$CS_CV < vdiff$EC_CV)
-  vteststat <- ((vn1 - vn2)^2)/(vn1 + vn2)
+  vteststat <- ((vn1 - vn2)^2) / (vn1 + vn2)
 
   mpvalue <- pchisq(mteststat, df = 1, lower.tail = FALSE)
 

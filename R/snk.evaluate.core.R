@@ -84,7 +84,7 @@ snk.evaluate.core <- function(data, names, quantitative, selected){
 
   dataf <- data[, c(names, quantitative)]
 
-  datafcore <- dataf[dataf[,names] %in% selected,]
+  datafcore <- dataf[dataf[, names] %in% selected, ]
 
   dataf$`[Type]` <- "EC"
   datafcore$`[Type]` <- "CS"
@@ -112,11 +112,11 @@ snk.evaluate.core <- function(data, names, quantitative, selected){
                                            `EC_Min` = min(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `EC_Max` = max(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `EC_Mean` = mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `EC_SE` = stats::sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "EC", quantitative[i]])),
+                                           `EC_SE` = stats::sd(dataf[dataf$`[Type]` == "EC", quantitative[i]]) / sqrt(length(dataf[dataf$`[Type]` == "EC", quantitative[i]])),
                                            `CS_Min` = min(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `CS_Max` = max(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `CS_Mean` = mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `CS_SE` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
+                                           `CS_SE` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]]) / sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
                                            `SNK_pvalue` = snkpvalue,
                                            stringsAsFactors = FALSE)
 

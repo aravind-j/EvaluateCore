@@ -1,6 +1,24 @@
+### This file is part of 'EvaluateCore' package for R.
+
+### Copyright (C) 2018, ICAR-NBPGR.
+#
+# EvaluateCore is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# EvaluateCore is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  https://www.r-project.org/Licenses/
+
+
 #' Levene's Test
 #'
-#' Test for homogenity of variances of the entire collection (EC) and core set
+#' Test for  of variances of the entire collection (EC) and core set
 #' (CS) for quantitative traits by Levene's test
 #' \insertCite{levene_robust_1960}{EvaluateCore}.
 #'
@@ -74,7 +92,7 @@ levene.evaluate.core <- function(data, names, quantitative, selected){
 
   dataf <- data[, c(names, quantitative)]
 
-  datafcore <- dataf[dataf[,names] %in% selected,]
+  datafcore <- dataf[dataf[, names] %in% selected, ]
 
   dataf$`[Type]` <- "EC"
   datafcore$`[Type]` <- "CS"
@@ -95,8 +113,8 @@ levene.evaluate.core <- function(data, names, quantitative, selected){
     outdf[[quantitative[i]]] <- data.frame(`Trait` = quantitative[i],
                                            `EC_V` = stats::var(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `CS_V` = stats::var(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `EC_CV` = stats::sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `CS_CV` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
+                                           `EC_CV` = stats::sd(dataf[dataf$`[Type]` == "EC", quantitative[i]]) / mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
+                                           `CS_CV` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]]) / mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `Levene_Fvalue` = leveneout["group", "F value"],
                                            `Levene_pvalue` = leveneout["group", "Pr(>F)"],
                                            stringsAsFactors = FALSE)

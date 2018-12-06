@@ -1,3 +1,21 @@
+### This file is part of 'EvaluateCore' package for R.
+
+### Copyright (C) 2018, ICAR-NBPGR.
+#
+# EvaluateCore is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# EvaluateCore is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  https://www.r-project.org/Licenses/
+
+
 #' Distance Between Probability Distributions
 #'
 #' Compute Kullback-Leibler
@@ -83,7 +101,7 @@ pdfdist.evaluate.core <- function(data, names, quantitative, selected){
 
   dataf <- data[, c(names, quantitative)]
 
-  datafcore <- dataf[dataf[,names] %in% selected,]
+  datafcore <- dataf[dataf[, names] %in% selected, ]
 
   dataf$`[Type]` <- "EC"
   datafcore$`[Type]` <- "CS"
@@ -103,10 +121,10 @@ pdfdist.evaluate.core <- function(data, names, quantitative, selected){
 
   g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC", quantitative[i]],
                             nbinscs, rangeec)
-  g1[g1==0] <- 0.000000001 #Smoothing
+  g1[g1 == 0] <- 0.000000001 #Smoothing
   g2 <- entropy::discretize(dataf[dataf$`[Type]` == "CS", quantitative[i]],
                             nbinscs, rangeec)
-  g2[g2==0] <- 0.000000001 #Smoothing
+  g2[g2 == 0] <- 0.000000001 #Smoothing
 
   kl <- entropy::KL.plugin(g1, g2)
 

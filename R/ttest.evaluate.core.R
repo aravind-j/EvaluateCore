@@ -1,3 +1,21 @@
+### This file is part of 'EvaluateCore' package for R.
+
+### Copyright (C) 2018, ICAR-NBPGR.
+#
+# EvaluateCore is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# EvaluateCore is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  https://www.r-project.org/Licenses/
+
+
 #' Student's t Test
 #'
 #' Test difference between means of entire collection (EC) and core set (CS) for
@@ -73,7 +91,7 @@ ttest.evaluate.core <- function(data, names, quantitative, selected){
 
   dataf <- data[, c(names, quantitative)]
 
-  datafcore <- dataf[dataf[,names] %in% selected,]
+  datafcore <- dataf[dataf[, names] %in% selected, ]
 
   dataf$`[Type]` <- "EC"
   datafcore$`[Type]` <- "CS"
@@ -93,11 +111,11 @@ ttest.evaluate.core <- function(data, names, quantitative, selected){
                                            `EC_Min` = min(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `EC_Max` = max(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
                                            `EC_Mean` = mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `EC_SE` = sd(dataf[dataf$`[Type]` == "EC", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "EC", quantitative[i]])),
+                                           `EC_SE` = sd(dataf[dataf$`[Type]` == "EC", quantitative[i]]) / sqrt(length(dataf[dataf$`[Type]` == "EC", quantitative[i]])),
                                            `CS_Min` = min(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `CS_Max` = max(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
                                            `CS_Mean` = mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `CS_SE` = sd(dataf[dataf$`[Type]` == "CS", quantitative[i]])/sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
+                                           `CS_SE` = sd(dataf[dataf$`[Type]` == "CS", quantitative[i]]) / sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
                                            `ttest_pvalue` = tout$p.value,
                                            stringsAsFactors = FALSE)
 

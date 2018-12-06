@@ -1,3 +1,21 @@
+### This file is part of 'EvaluateCore' package for R.
+
+### Copyright (C) 2018, ICAR-NBPGR.
+#
+# EvaluateCore is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# EvaluateCore is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  https://www.r-project.org/Licenses/
+
+
 #' Phenotypic Correlations
 #'
 #' Compute phenotypic correlations \insertCite{pearson_note_1895}{EvaluateCore}
@@ -15,7 +33,7 @@
 #'   correlations between traits in EC (below diagonal) and CS (above diagonal)
 #'   as a \code{ggplot} object.} \item{Mantel Correlation}{A data frame with
 #'   Mantel correlation coefficient (\ifelse{html}{\out{<em>r</em>}}{\eqn{r}})
-#'   between EC and CS phenotypic correlation matrics, it's p value and
+#'   between EC and CS phenotypic correlation matrices, it's p value and
 #'   significance (*: p \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
 #'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
 #'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
@@ -68,6 +86,19 @@
 #'
 corr.evaluate.core <- function(data, names, quantitative, qualitative,
                                selected){
+
+  if(missing(quantitative)) {
+    quantitative <- NULL
+  }
+
+  if(missing(qualitative)) {
+    qualitative <- NULL
+  }
+
+  if (length(c(quantitative, qualitative)) == 1) {
+    stop('Only one trait specified')
+  }
+
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,
@@ -81,7 +112,7 @@ corr.evaluate.core <- function(data, names, quantitative, qualitative,
 
   dataf <- data[, c(names, quantitative, qualitative)]
 
-  datafcore <- dataf[dataf[,names] %in% selected,]
+  datafcore <- dataf[dataf[, names] %in% selected, ]
 
   dataf$`[Type]` <- "EC"
   datafcore$`[Type]` <- "CS"
