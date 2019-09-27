@@ -2,7 +2,7 @@
 % Please edit documentation in R/chisquare.evalueate.core.R
 \name{chisquare.evaluate.core}
 \alias{chisquare.evaluate.core}
-\title{Chi-squared Test for Homogenity}
+\title{Chi-squared Test for Homogeneity}
 \usage{
 chisquare.evaluate.core(data, names, qualitative, selected)
 }
@@ -35,7 +35,7 @@ A a data frame with the following columns. \item{Trait}{The
 }
 \description{
 Compare the distribution frequencies of qualitative traits between entire
-collection (EC) and core set (CS) by Chi-squared test for homogenity
+collection (EC) and core set (CS) by Chi-squared test for homogeneity
 \insertCite{pearson_x._1900,snedecor_chi-square_1933}{EvaluateCore}.
 }
 \examples{

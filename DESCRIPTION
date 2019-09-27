@@ -3,18 +3,21 @@ Title: Quality Evaluation of Core Collections
 Version: 0.0.0.9000
 Authors@R: c(
     person(given = "J.", family = "Aravind",
-           email = "aravindj@nbpgr.ernet.in",
+           email = "j.aravind@icar.gov.in",
            role = c("aut", "cre"),
 		       comment = c(ORCID = "0000-0002-4791-442X")),
     person(given = "Vikender", family = "Kaur",
            email = "vikender.kaur@icar.gov.in",
 		       role = "aut"),
-		person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede", 
+	person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede", 
            email = "d.wankhede@icar.gov.in",
+		       role = "aut"),
+	person(given = "Nanjundan", family = "Joghee", 
+           email = "j.nanjundan@icar.gov.in",
 		       role = "aut"),
     person("ICAR-NBGPR",
            role = c("cph"),
-		       comment = c(url = "www.nbpgr.ernet.in")))
+		   comment = c(url = "www.nbpgr.ernet.in")))
 Description: Implements various quality evaluation statistics to assess the
     value of plant germplasm core collections using qualitative and quantitative
     phenotypic trait data <doi:10.1007/s00122-012-1971-y>.
@@ -25,7 +28,7 @@ RoxygenNote: 6.1.1
 RdMacros: Rdpack
 SystemRequirements: Java JRE 8 or higher
 Depends:
-    R (>= 3.5.0),
+    R (>= 3.5.0)
 Imports:
     agricolae,
     car,

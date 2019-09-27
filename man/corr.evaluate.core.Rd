@@ -29,7 +29,7 @@ A list with the following components. \item{Correlation Matrix}{The
   correlations between traits in EC (below diagonal) and CS (above diagonal)
   as a \code{ggplot} object.} \item{Mantel Correlation}{A data frame with
   Mantel correlation coefficient (\ifelse{html}{\out{<em>r</em>}}{\eqn{r}})
-  between EC and CS phenotypic correlation matrics, it's p value and
+  between EC and CS phenotypic correlation matrices, it's p value and
   significance (*: p \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}

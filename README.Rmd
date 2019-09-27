@@ -26,11 +26,12 @@ devtools::load_all(".")
 
 
 
-##### *Aravind, J.^1^, Kaur, V.^2^ and Wankhede, D. P.^3^*
+##### *Aravind, J.^1^, Kaur, V.^2^, Wankhede, D. P.^3^ and Joghee, N.^4^*
 
 1. Division of Germplasm Conservation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
 2. Division of Germplasm Evaluation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
 3. Division of Genomic Resources, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+4. ICAR-Indian Agricultural Research Institute, Regional Station, Wellington, Tamil Nadu.
 
 ***
 [![minimal R version](https://img.shields.io/badge/R>%3D-3.5.0-6666ff.svg)](https://cran.r-project.org/)
@@ -38,6 +39,13 @@ devtools::load_all(".")
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/EvaluateCore)](https://cran.r-project.org/package=EvaluateCore)
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/EvaluateCore?color=green)](https://CRAN.R-project.org/package=EvaluateCore)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/EvaluateCore) -->
+```{r, results='asis', echo=FALSE, eval=FALSE}
+dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("EvaluateCore")) != "",
+               yes = getNamespaceVersion("EvaluateCore"),
+               no = gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/EvaluateCore", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/EvaluateCore", "/master/DESCRIPTION")))]))
+
+cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/aravind-j/EvaluateCore)", sep = ""))
+```
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/EvaluateCore/total.svg)] -->
 [![Project Status: WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
@@ -49,12 +57,12 @@ devtools::load_all(".")
 ***
 
 ## Description
-<!--  `r gsub("(<doi:)(.+)(>)", "[doi:\\2](https://doi.org/\\2)", gsub("\\n", " ", packageDescription("EvaluateCore", fields = "Description")))` -->
+`r gsub("(<doi:)(.+)(>)", "[doi:\\2](https://doi.org/\\2)", gsub("\\n", " ", packageDescription("EvaluateCore", fields = "Description")))`
 
 ## Installation
-The package can be installed from CRAN as follows:
+<!-- The package can be installed from CRAN as follows: -->
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=FALSE}
 # Install from CRAN
 install.packages('EvaluateCore', dependencies=TRUE)
 ```
@@ -66,13 +74,13 @@ The development version can be installed from github as follows:
 devtools::install_github("aravind-j/EvaluateCore")
 ```
 
-## Detailed tutorial
+<!-- ## Detailed tutorial
 For a detailed tutorial (vignette) on how to used this package type:
 
 ```{r, eval=FALSE}
 browseVignettes(package = 'EvaluateCore')
 ```
-The vignette for the latest version is also available [online](https://aravind-j.github.io/EvaluateCore/articles.html).
+The vignette for the latest version is also available [online](https://aravind-j.github.io/EvaluateCore/articles.html).-->
 
 ## What's new
 To know whats new in this version type:

@@ -33,7 +33,7 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
   }
 
   if (any(c("tbl_dataf", "tbl") %in% class(data))) {
-    # warning('"data" is of type tibble\nCoercing to data frame')
+    warning('"data" is of type tibble\nCoercing to data frame')
     data <- as.data.frame(data)
   }
 

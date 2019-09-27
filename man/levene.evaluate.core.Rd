@@ -31,7 +31,7 @@ A data frame with the following columns \item{Trait}{The quantitative
   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
 }
 \description{
-Test for homogenity of variances of the entire collection (EC) and core set
+Test for  of variances of the entire collection (EC) and core set
 (CS) for quantitative traits by Levene's test
 \insertCite{levene_robust_1960}{EvaluateCore}.
 }
