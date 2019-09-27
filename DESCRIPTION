@@ -12,7 +12,7 @@ Authors@R: c(
 	person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede", 
            email = "d.wankhede@icar.gov.in",
 		       role = "aut"),
-	person(given = "Nanjundan", family = "Joghee", 
+	person(given = "Joghee", family = "Nanjundan", 
            email = "j.nanjundan@icar.gov.in",
 		       role = "aut"),
     person("ICAR-NBGPR",

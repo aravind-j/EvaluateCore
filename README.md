@@ -26,9 +26,8 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/EvaluateCore?color=green)](https://CRAN.R-project.org/package=EvaluateCore)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/EvaluateCore) -->
-
+[![develVersion](https://img.shields.io/badge/devel%20version-0.0.0.9000-orange.svg)](https://github.com/aravind-j/EvaluateCore)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/EvaluateCore/total.svg)] -->
-
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
@@ -78,9 +77,9 @@ news(package='EvaluateCore')
 
 <!-- [CRAN page](https://cran.r-project.org/package=EvaluateCore) -->
 
-<!-- [Github page](https://github.com/aravind-j/EvaluateCore) -->
+[Github page](https://github.com/aravind-j/EvaluateCore)
 
-<!-- [Documentation website](https://aravind-j.github.io/EvaluateCore/) -->
+[Documentation website](https://aravind-j.github.io/EvaluateCore/)
 
 <!-- [Zenodo DOI](https://doi.org/10.5281/zenodo.1310011) -->
 
@@ -104,7 +103,7 @@ A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {EvaluateCore: Quality Evaluation of Core Collections},
-    author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and Nanjundan Joghee},
+    author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and Joghee Nanjundan},
     year = {2019},
     note = {R package version 0.0.0.9000},
     note = {https://aravind-j.github.io/EvaluateCore/},
