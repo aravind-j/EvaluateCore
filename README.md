@@ -7,7 +7,7 @@
 
 <!-- ###### Version : [0.0.0.9000](https://aravind-j.github.io/EvaluateCore/); Copyright (C) 2015-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/) -->
 
-##### *Aravind, J.<sup>1</sup>, Kaur, V.<sup>2</sup>, Wankhede, D. P.<sup>3</sup> and Joghee, N.<sup>4</sup>*
+##### *Aravind, J.<sup>1</sup>, Kaur, V.<sup>2</sup>, Wankhede, D. P.<sup>3</sup> and Nanjundan, J.<sup>4</sup>*
 
 1.  Division of Germplasm Conservation, ICAR-National Bureau of Plant
     Genetic Resources, New Delhi.
@@ -105,7 +105,7 @@ A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {EvaluateCore: Quality Evaluation of Core Collections},
-    author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and Joghee Nanjundan},
+    author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and J. Nanjundan},
     year = {2019},
     note = {R package version 0.0.0.9000},
     note = {https://aravind-j.github.io/EvaluateCore/},

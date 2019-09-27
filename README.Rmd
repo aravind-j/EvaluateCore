@@ -27,7 +27,7 @@ devtools::load_all(".")
 
 
 
-##### *Aravind, J.^1^, Kaur, V.^2^, Wankhede, D. P.^3^ and Joghee, N.^4^*
+##### *Aravind, J.^1^, Kaur, V.^2^, Wankhede, D. P.^3^ and Nanjundan, J.^4^*
 
 1. Division of Germplasm Conservation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
 2. Division of Germplasm Evaluation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
