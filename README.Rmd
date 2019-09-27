@@ -10,12 +10,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, out.width = '20%', echo = FALSE, eval = FALSE}
+<!-- 
+```{r, out.width = '20%', echo = FALSE, eval = TRUE}
 knitr::include_graphics("https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png") 
 ```
+-->
 
-## `EvaluateCore`: Quality Evaluation of Core Collections
-<!-- <img src="https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;"> -->
+## `EvaluateCore`: Quality Evaluation of Core Collections <img src="https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
 ```{r,echo = FALSE, message = FALSE}
 devtools::load_all(".")

@@ -1,7 +1,9 @@
 
-## `EvaluateCore`: Quality Evaluation of Core Collections
+<!-- 
+<img src="https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png" width="20%" />
+-->
 
-<!-- <img src="https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;"> -->
+## `EvaluateCore`: Quality Evaluation of Core Collections <img src="https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
 <!-- ###### Version : [0.0.0.9000](https://aravind-j.github.io/EvaluateCore/); Copyright (C) 2015-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/) -->
 
