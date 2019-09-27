@@ -17,3 +17,4 @@
 ^EvaluateCore\.pdf$
 ^pkgdown$
 ^cran-comments\.md$
+^vignettes$
