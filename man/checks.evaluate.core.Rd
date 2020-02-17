@@ -4,8 +4,13 @@
 \alias{checks.evaluate.core}
 \title{Common checks for all functions}
 \usage{
-checks.evaluate.core(data, names, quantitative = NULL,
-  qualitative = NULL, selected)
+checks.evaluate.core(
+  data,
+  names,
+  quantitative = NULL,
+  qualitative = NULL,
+  selected
+)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess

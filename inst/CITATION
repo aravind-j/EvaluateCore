@@ -20,7 +20,7 @@ citEntry(entry  = "Manual",
                                     email = "d.wankhede@icar.gov.in",
 									role = "aut"),
 							 person(given = "J.", family = "Nanjundan",
-                                    email = "d.wankhede@icar.gov.in",
+                                    email = "j.nanjundan@icar.gov.in",
 									role = "aut")),
          year = year,
          textVersion = paste(

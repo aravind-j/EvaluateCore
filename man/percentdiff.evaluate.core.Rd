@@ -4,8 +4,7 @@
 \alias{percentdiff.evaluate.core}
 \title{Percentage Difference of Means and Variances}
 \usage{
-percentdiff.evaluate.core(data, names, quantitative, selected,
-  alpha = 0.05)
+percentdiff.evaluate.core(data, names, quantitative, selected, alpha = 0.05)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess

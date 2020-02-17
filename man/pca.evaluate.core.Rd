@@ -4,8 +4,15 @@
 \alias{pca.evaluate.core}
 \title{Principal Component Analysis}
 \usage{
-pca.evaluate.core(data, names, quantitative, selected, center = TRUE,
-  scale = TRUE, npc.plot = 6)
+pca.evaluate.core(
+  data,
+  names,
+  quantitative,
+  selected,
+  center = TRUE,
+  scale = TRUE,
+  npc.plot = 6
+)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -22,8 +29,8 @@ core collection and present in the \code{names} column.}
 
 \item{center}{either a logical value or numeric-alike vector of length
     equal to the number of columns of \code{x}, where
-    \sQuote{numeric-alike} means that \code{\link{as.numeric}(.)} will
-    be applied successfully if \code{\link{is.numeric}(.)} is not true.}
+    \sQuote{numeric-alike} means that \code{\link[base]{as.numeric}(.)} will
+    be applied successfully if \code{\link[base]{is.numeric}(.)} is not true.}
 
 \item{scale}{either a logical value or a numeric-alike vector of length
     equal to the number of columns of \code{x}.}

@@ -33,7 +33,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/EvaluateCore?color=gree
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-<!-- [![Last-changedate](https://img.shields.io/badge/last%20change-2019--09--27-yellowgreen.svg)](/commits/master) -->
+<!-- [![Last-changedate](https://img.shields.io/badge/last%20change-2020--02--17-yellowgreen.svg)](/commits/master) -->
 [![Rdoc](http://www.rdocumentation.org/badges/version/EvaluateCore)](http://www.rdocumentation.org/packages/EvaluateCore)
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310011.svg)](https://doi.org/10.5281/zenodo.1310011) -->
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-148941781-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
@@ -97,21 +97,21 @@ citation("EvaluateCore")
 
 To cite the R package 'EvaluateCore' in publications use:
 
-  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2019).
-  EvaluateCore: Quality Evaluation of Core Collections. R package
-  version 0.0.0.9000, https://aravind-j.github.io/EvaluateCore/.
+  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).
+  EvaluateCore: Quality Evaluation of Core Collections. R package version
+  0.0.0.9000, https://aravind-j.github.io/EvaluateCore/.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {EvaluateCore: Quality Evaluation of Core Collections},
     author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and J. Nanjundan},
-    year = {2019},
+    year = {2020},
     note = {R package version 0.0.0.9000},
     note = {https://aravind-j.github.io/EvaluateCore/},
   }
 
-This free and open-source software implements academic research by
-the authors and co-workers. If you use it, please support the
-project by citing the package.
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by citing
+the package.
 ```
