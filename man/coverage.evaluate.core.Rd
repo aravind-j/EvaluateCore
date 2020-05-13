@@ -36,7 +36,7 @@ follows.
 style="line-height: 1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
 <sup>A<sub>CS<sub>i</sub></sub></sup> &frasl;
 <sub>A<sub>EC<sub></sub></sub></sub> <big>]</big><big>)</big> &times;
-100</em></p>}}{\eqn{Class\, Coverage = \left ( \frac{1}{n} \sum_{i=1}^{n}
+100</em></p>}}{\deqn{Class\, Coverage = \left ( \frac{1}{n} \sum_{i=1}^{n}
 \frac{A_{CS_{i}}}{A_{EC_{i}}} \right ) \times 100}}
 
 Where,
