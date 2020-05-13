@@ -24,7 +24,10 @@ Description: Implements various quality evaluation statistics to assess the
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
+URL: https://github.com/aravind-j/EvaluateCore
+    https://aravind-j.github.io/EvaluateCore
+BugReports: https://github.com/aravind-j/EvaluateCore/issues
 RdMacros: Rdpack
 SystemRequirements: Java JRE 8 or higher
 Depends:
