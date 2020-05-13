@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 #' @inheritParams chisquare.evaluate.core
 #
 checks.evaluate.core <- function(data, names, quantitative = NULL,
-                                qualitative = NULL, selected){
+                                qualitative = NULL, selected) {
   # check if 'data' is a data frame object
   if (!is.data.frame(data)) {
     stop('"data" should be a data frame object')
@@ -135,7 +135,8 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
   }
 
   # check for missing values
-  missvcols <- unlist(lapply(data[, quantitative], function(x) TRUE %in% is.na(x)))
+  missvcols <- unlist(lapply(data[, quantitative],
+                             function(x) TRUE %in% is.na(x)))
   if (TRUE %in% missvcols) {
     stop(paste('The following column(s) in "data" have missing values:\n',
                paste(names(missvcols[missvcols]), collapse = ", ")))

@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -33,13 +33,13 @@ wlcm <- paste0("\n",
                "  suppressPackageStartupMessages(library(EvaluateCore))", "\n",
                "--------------------------------------------------------------------------------\n")
 
-.onAttach <- function(lib, pkg, ...){
+.onAttach <- function(lib, pkg, ...) {
   packageStartupMessage(wlcm)
 
 }
 
 #' @import rJava
-.onLoad <- function(libname, pkgname){
+.onLoad <- function(libname, pkgname) {
   rJava::.jpackage("corehunter")
   rJava::.jpackage(pkgname, lib.loc = libname)
 

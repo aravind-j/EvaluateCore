@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -32,15 +32,15 @@
 #'   \insertCite{kullback_information_1951}{EvaluateCore} between EC and CS.}
 #'   \item{KS_Distance}{The Kolmogorov-Smirnov distance
 #'   \insertCite{kolmogorov_sulla_1933,smirnov_table_1948}{EvaluateCore} between
-#'   EC and CS.} \item{KS_pvalue}{The p value of the Kolmogorov-Smirnov distance.}
-#'   \item{AD_Distance}{Anderson-Darling distance
+#'   EC and CS.} \item{KS_pvalue}{The p value of the Kolmogorov-Smirnov
+#'   distance.} \item{AD_Distance}{Anderson-Darling distance
 #'   \insertCite{anderson_asymptotic_1952}{EvaluateCore} between EC and CS.}
 #'   \item{AD_pvalue}{The p value of the Anderson-Darling distance.}
-#'   \item{KS_significance}{The significance of the Kolmogorov-Smirnov distance (*: p
-#'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
+#'   \item{KS_significance}{The significance of the Kolmogorov-Smirnov distance
+#'   (*: p \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
 #'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
-#'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
-#'   \item{AD_pvalue}{The significance of the Anderson-Darling distance (*: p
+#'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).} \item{AD_pvalue}{The
+#'   significance of the Anderson-Darling distance (*: p
 #'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
 #'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
 #'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
@@ -88,7 +88,7 @@
 #'                       quantitative = quant, selected = core)
 #'
 #'
-pdfdist.evaluate.core <- function(data, names, quantitative, selected){
+pdfdist.evaluate.core <- function(data, names, quantitative, selected) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,

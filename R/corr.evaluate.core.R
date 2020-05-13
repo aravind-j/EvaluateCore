@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -85,18 +85,18 @@
 #'
 #'
 corr.evaluate.core <- function(data, names, quantitative, qualitative,
-                               selected){
+                               selected) {
 
-  if(missing(quantitative)) {
+  if (missing(quantitative)) {
     quantitative <- NULL
   }
 
-  if(missing(qualitative)) {
+  if (missing(qualitative)) {
     qualitative <- NULL
   }
 
   if (length(c(quantitative, qualitative)) == 1) {
-    stop('Only one trait specified')
+    stop("Only one trait specified")
   }
 
   # Checks
@@ -189,8 +189,9 @@ corr.evaluate.core <- function(data, names, quantitative, qualitative,
                   `Correologram` = corrg,
                   `Mantel Correlation` = data.frame(r = mcorr$statistic,
                                                     p.value = mcorr$signif,
-                                                    significance = ifelse(mcorr$signif <= 0.01, "**",
-                                                                          ifelse(mcorr$signif <= 0.05, "*", "ns"))))
+                                                    significance =
+                                                      ifelse(mcorr$signif <= 0.01, "**",
+                                                             ifelse(mcorr$signif <= 0.05, "*", "ns"))))
 
 
   return(outlist)

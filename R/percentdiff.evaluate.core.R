@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -160,7 +160,7 @@
 #'
 #'
 percentdiff.evaluate.core <- function(data, names, quantitative,
-                              selected, alpha = 0.05){
+                              selected, alpha = 0.05) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,
@@ -196,10 +196,18 @@ percentdiff.evaluate.core <- function(data, names, quantitative,
   mdiff <- snk.evaluate.core(data, names, quantitative, selected)
   vdiff <- levene.evaluate.core(data, names, quantitative, selected)
 
-  outdf <- data.frame(MDPercent_Hu = (sum(mdiff$SNK_pvalue <= alpha) / length(quantitative)) * 100,
-                      VDPercent_Hu = (sum(vdiff$Levene_pvalue <= alpha) / length(quantitative)) * 100,
-                      MDPercent_Kim = (sum(abs(mdiff$EC_Mean - mdiff$CS_Mean) / mdiff$CS_Mean) / length(quantitative)) * 100,
-                      VDPercent_Kim = (sum(abs(vdiff$EC_V - vdiff$CS_V) / vdiff$CS_V) / length(quantitative)) * 100,
+  outdf <- data.frame(MDPercent_Hu =
+                        (sum(mdiff$SNK_pvalue <= alpha) /
+                           length(quantitative)) * 100,
+                      VDPercent_Hu =
+                        (sum(vdiff$Levene_pvalue <= alpha) /
+                           length(quantitative)) * 100,
+                      MDPercent_Kim =
+                        (sum(abs(mdiff$EC_Mean - mdiff$CS_Mean) /
+                               mdiff$CS_Mean) / length(quantitative)) * 100,
+                      VDPercent_Kim =
+                        (sum(abs(vdiff$EC_V - vdiff$CS_V) /
+                               vdiff$CS_V) / length(quantitative)) * 100,
                       DDPercent = ((d_CS - d_EC) / d_EC) * 100)
 
   return(outdf)

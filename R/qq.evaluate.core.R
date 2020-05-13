@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -70,7 +70,7 @@
 #'                  quantitative = quant, selected = core)
 #'
 #'
-qq.evaluate.core <- function(data, names, quantitative, selected){
+qq.evaluate.core <- function(data, names, quantitative, selected) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,
@@ -105,7 +105,7 @@ qq.evaluate.core <- function(data, names, quantitative, selected){
     xylim <- range(c(qqdf$x, qqdf$y))
 
     # Generate the QQ plot
-    outlist[[i]] <- ggplot(qqdf, aes( x = x, y = y)) +
+    outlist[[i]] <- ggplot(qqdf, aes(x = x, y = y)) +
       geom_point() +
       geom_abline(intercept = 0, slope = 1) +
       coord_fixed(ratio = 1, xlim = xylim, ylim = xylim) +

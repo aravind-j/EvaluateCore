@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -99,7 +99,7 @@
 #'                        quantitative = quant, selected = core)
 #'
 #'
-signtest.evaluate.core <- function(data, names, quantitative, selected){
+signtest.evaluate.core <- function(data, names, quantitative, selected) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,

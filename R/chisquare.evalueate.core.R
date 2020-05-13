@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -83,7 +83,7 @@
 #'                         qualitative = qual, selected = core)
 #'
 #'
-chisquare.evaluate.core <- function(data, names, qualitative, selected){
+chisquare.evaluate.core <- function(data, names, qualitative, selected) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
@@ -122,10 +122,16 @@ chisquare.evaluate.core <- function(data, names, qualitative, selected){
     CSclasses$classfreq <- paste(CSclasses$Var1, "(", CSclasses$Freq, ")",
                                  sep = "")
     outdf[[qualitative[i]]] <- data.frame(`Trait` = qualitative[i],
-                                          `EC_No.Classes` = length(levels(droplevels(dataf[dataf$`[Type]` == "EC", qualitative[i]]))),
-                                          `EC_Classes` = paste(ECclasses$classfreq, collapse = "; "),
-                                          `CS_No.Classes` = length(levels(droplevels(dataf[dataf$`[Type]` == "CS", qualitative[i]]))),
-                                          `CS_Classes` = paste(CSclasses$classfreq, collapse = "; "),
+                                          `EC_No.Classes` = length(levels(droplevels(dataf[dataf$`[Type]` == "EC",
+                                                                                           qualitative[i]]))),
+                                          `EC_Classes` =
+                                            paste(ECclasses$classfreq,
+                                                  collapse = "; "),
+                                          `CS_No.Classes` = length(levels(droplevels(dataf[dataf$`[Type]` == "CS",
+                                                                                           qualitative[i]]))),
+                                          `CS_Classes` =
+                                            paste(CSclasses$classfreq,
+                                                  collapse = "; "),
                                           `chisq_statistic` = chiout$statistic,
                                           `chisq_pvalue` = chiout$p.value,
                                            stringsAsFactors = FALSE)

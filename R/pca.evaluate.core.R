@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -83,14 +83,14 @@
 #'
 #'
 pca.evaluate.core <- function(data, names, quantitative, selected,
-                              center = TRUE, scale = TRUE, npc.plot = 6){
+                              center = TRUE, scale = TRUE, npc.plot = 6) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,
                        selected = selected)
 
   if (length(quantitative) < npc.plot) {
-    stop('Length of "quantitative" is less than "npc.plot" specified' )
+    stop('Length of "quantitative" is less than "npc.plot" specified')
   }
 
   if (length(quantitative) == 1) {

@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
 #' style="line-height: 1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
 #' <sup>A<sub>CS<sub>i</sub></sub></sup> &frasl;
 #' <sub>A<sub>EC<sub></sub></sub></sub> <big>]</big><big>)</big> &times;
-#' 100</em></p>}}{\eqn{Class\, Coverage = \left ( \frac{1}{n} \sum_{i=1}^{n}
+#' 100</em></p>}}{\deqn{Class\, Coverage = \left ( \frac{1}{n} \sum_{i=1}^{n}
 #' \frac{A_{CS_{i}}}{A_{EC_{i}}} \right ) \times 100}}
 #'
 #' Where,
@@ -84,7 +84,7 @@
 #'                        qualitative = qual, selected = core)
 #'
 #'
-coverage.evaluate.core <- function(data, names, qualitative, selected){
+coverage.evaluate.core <- function(data, names, qualitative, selected) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
@@ -98,7 +98,8 @@ coverage.evaluate.core <- function(data, names, qualitative, selected){
   cdiff <- chisquare.evaluate.core(data, names, qualitative,
                                    selected)
 
-  coverage <- (sum(cdiff$CS_No.Classes / cdiff$EC_No.Classes) / length(qualitative)) * 100
+  coverage <- (sum(cdiff$CS_No.Classes /
+                     cdiff$EC_No.Classes) / length(qualitative)) * 100
 
 
   return(coverage)

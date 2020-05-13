@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018, ICAR-NBPGR.
+### Copyright (C) 2018-2020, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -59,10 +59,11 @@
 #'   for CS.} \item{EC_Hmax}{The Maximum diversity value
 #'   (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) for EC.}
 #'   \item{CS_Hmax}{The Maximum diversity value
-#' (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) for CS.}
-#' \item{EC_EH}{The Shannon Equitability Index
-#' (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for EC.} \item{CS_EH}{The Shannon
-#' Equitability Index (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for CS.}
+#'   (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) for CS.}
+#'   \item{EC_EH}{The Shannon Equitability Index
+#'   (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for EC.}
+#'   \item{CS_EH}{The Shannon Equitability Index
+#'   (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for CS.}
 #'
 #' @seealso \code{\link[psych:misc]{shannon}}
 #'
@@ -106,7 +107,7 @@
 #'                       qualitative = qual, selected = core)
 #'
 #'
-shannon.evaluate.core <- function(data, names, qualitative, selected){
+shannon.evaluate.core <- function(data, names, qualitative, selected) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
