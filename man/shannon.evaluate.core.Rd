@@ -27,10 +27,11 @@ A data frame with the following columns. \item{Trait}{The qualitative
   for CS.} \item{EC_Hmax}{The Maximum diversity value
   (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) for EC.}
   \item{CS_Hmax}{The Maximum diversity value
-(\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) for CS.}
-\item{EC_EH}{The Shannon Equitability Index
-(\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for EC.} \item{CS_EH}{The Shannon
-Equitability Index (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for CS.}
+  (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) for CS.}
+  \item{EC_EH}{The Shannon Equitability Index
+  (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for EC.}
+  \item{CS_EH}{The Shannon Equitability Index
+  (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for CS.}
 }
 \description{
 Compute the Shannon-Weaver Diversity Index
