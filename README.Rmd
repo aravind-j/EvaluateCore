@@ -60,6 +60,9 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 ## Description
 `r gsub("(<doi:)(.+)(>)", "[doi:\\2](https://doi.org/\\2)", gsub("\\n", " ", packageDescription("EvaluateCore", fields = "Description")))`
 
+<!-- ## System Requirements
+The function `dist.evaluate.core` is a wrapper around the `evaluateCore` function of the `corehunter` package which implemented in Java 8. Hence you need to have [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) (JRE) version 8 or higher for the package to work.-->
+
 ## Installation
 <!-- The package can be installed from CRAN as follows: -->
 

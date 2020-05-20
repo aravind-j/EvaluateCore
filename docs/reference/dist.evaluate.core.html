@@ -158,7 +158,7 @@ Entry-to-entry distance
 selected from an entire collection (EC).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dist.evaluate.core</span>(<span class='no'>data</span>, <span class='no'>names</span>, <span class='no'>quantitative</span>, <span class='no'>qualitative</span>, <span class='no'>selected</span>)</pre>
+    <pre class="usage"><span class='fu'>dist.evaluate.core</span>(<span class='no'>data</span>, <span class='no'>names</span>, <span class='no'>quantitative</span>, <span class='no'>qualitative</span>, <span class='no'>selected</span>, <span class='kw'>d</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -188,6 +188,14 @@ vector.</p></td>
       <td><p>Character vector with the names of individuals selected in
 core collection and present in the <code>names</code> column.</p></td>
     </tr>
+    <tr>
+      <th>d</th>
+      <td><p>A distance matrix of class "<code>dist</code>" with individual names in
+the <code>names</code> column in data as labels. If <code>NULL</code> (default),
+then a distance matrix is computed using Gower's metric.
+(Gower 1971)
+.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -196,13 +204,11 @@ core collection and present in the <code>names</code> column.</p></td>
   <em>E-NE</em>,
   <em>A-NE</em> and
   <em>E-E</em>.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>This function is a wrapper around the <code><a href='https://rdrr.io/pkg/corehunter/man/evaluateCore.html'>evaluateCore</a></code>
-function of the <code><a href='https://rdrr.io/pkg/corehunter/man/corehunter.html'>corehunter</a></code> package.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Odong TL, Jansen J, van
+    <p>Gower JC (1971).
+&#8220;A general coefficient of similarity and some of its properties.&#8221;
+<em>Biometrics</em>, <b>27</b>(4), 857--871.<br /><br /> Odong TL, Jansen J, van
 Eeuwijk FA, van
 Hintum TJL (2013).
 &#8220;Quality of core collections for effective utilisation of genetic resources review, discussion and interpretation.&#8221;
@@ -249,6 +255,26 @@ Hintum TJL (2013).
 #&gt; 1             E-NE 0.04333294
 #&gt; 2             A-NE 0.02906529
 #&gt; 3              E-E 0.30813683</div><div class='input'>
+<span class='co'># \donttest{</span>
+<span class='co'>####################################</span>
+<span class='co'># Compare with corehunter</span>
+<span class='co'>####################################</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>corehunter</span>)</div><div class='output co'>#&gt; <span class='message'>Loading required package: rJava</span></div><div class='input'><span class='co'># Prepare phenotype dataset</span>
+<span class='no'>dtype</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='st'>"RD"</span>, <span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>quant</span>)),
+           <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='st'>"NS"</span>, <span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>qual</span>)))
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>ec</span>) <span class='kw'>&lt;-</span> <span class='no'>ec</span>[, <span class='st'>"genotypes"</span>]
+<span class='no'>ecdata</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>corehunter</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/corehunter/man/phenotypes.html'>phenotypes</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>ec</span>[, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>quant</span>, <span class='no'>qual</span>)],
+                                 <span class='kw'>types</span> <span class='kw'>=</span> <span class='no'>dtype</span>)
+
+<span class='co'># Compute average distances</span>
+<span class='no'>EN</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/corehunter/man/evaluateCore.html'>evaluateCore</a></span>(<span class='kw'>core</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>dactylis_CC</span>), <span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>ecdata</span>,
+                   <span class='kw'>objective</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/corehunter/man/objective.html'>objective</a></span>(<span class='st'>"EN"</span>, <span class='st'>"GD"</span>))
+<span class='no'>AN</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/corehunter/man/evaluateCore.html'>evaluateCore</a></span>(<span class='kw'>core</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>dactylis_CC</span>), <span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>ecdata</span>,
+                   <span class='kw'>objective</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/corehunter/man/objective.html'>objective</a></span>(<span class='st'>"AN"</span>, <span class='st'>"GD"</span>))
+<span class='no'>EE</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/corehunter/man/evaluateCore.html'>evaluateCore</a></span>(<span class='kw'>core</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>dactylis_CC</span>), <span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>ecdata</span>,
+                   <span class='kw'>objective</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/corehunter/man/objective.html'>objective</a></span>(<span class='st'>"EE"</span>, <span class='st'>"GD"</span>))
+<span class='no'>EN</span></div><div class='output co'>#&gt; [1] 0.04333294</div><div class='input'><span class='no'>AN</span></div><div class='output co'>#&gt; [1] 0.02906529</div><div class='input'><span class='no'>EE</span></div><div class='output co'>#&gt; [1] 0.3081368</div><div class='input'># }
 
 </div></pre>
   </div>
