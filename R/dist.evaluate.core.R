@@ -27,11 +27,16 @@
 #' \insertCite{odong_quality_2013}{EvaluateCore} to evaluate a core set (CS)
 #' selected from an entire collection (EC).
 #'
-#' This function is a wrapper around the \code{\link[corehunter]{evaluateCore}}
-#' function of the \code{\link[corehunter]{corehunter}} package.
+# #' This function is a wrapper around the
+# #' \code{\link[corehunter]{evaluateCore}}
+# #' function of the \code{\link[corehunter]{corehunter}} package.
 #'
 #' @inheritParams snk.evaluate.core
 #' @inheritParams chisquare.evaluate.core
+#' @param d A distance matrix of class "\code{dist}" with individual names in
+#' the \code{names} column in {data} as labels. If \code{NULL} (default),
+#' then a distance matrix is computed using Gower's metric.
+#' \insertCite{gowerGeneralCoefficientSimilarity1971}{EvaluateCore}.
 #'
 #' @return A data frame with the average values of
 #'   \ifelse{html}{\out{<em>E-NE</em>}}{\eqn{E\textnormal{-}EN}},
@@ -44,9 +49,10 @@
 #'
 #' @seealso \code{\link[corehunter]{evaluateCore}}
 #'
-#' @importFrom corehunter evaluateCore
-#' @importFrom corehunter phenotypes
-#' @importFrom corehunter objective
+# #' @importFrom corehunter evaluateCore
+# #' @importFrom corehunter phenotypes
+# #' @importFrom corehunter objective
+#' @importFrom cluster daisy
 #' @export
 #'
 #' @examples
@@ -80,9 +86,33 @@
 #' dist.evaluate.core(data = ec, names = "genotypes", quantitative = quant,
 #'                    qualitative = qual, selected = core)
 #'
+#' \donttest{
+#' ####################################
+#' # Compare with corehunter
+#' ####################################
+#'
+#' library(corehunter)
+#' # Prepare phenotype dataset
+#' dtype <- c(rep("RD", length(quant)),
+#'            rep("NS", length(qual)))
+#' rownames(ec) <- ec[, "genotypes"]
+#' ecdata <- corehunter::phenotypes(data = ec[, c(quant, qual)],
+#'                                  types = dtype)
+#'
+#' # Compute average distances
+#' EN <- evaluateCore(core = rownames(dactylis_CC), data = ecdata,
+#'                    objective = objective("EN", "GD"))
+#' AN <- evaluateCore(core = rownames(dactylis_CC), data = ecdata,
+#'                    objective = objective("AN", "GD"))
+#' EE <- evaluateCore(core = rownames(dactylis_CC), data = ecdata,
+#'                    objective = objective("EE", "GD"))
+#' EN
+#' AN
+#' EE
+#' }
 #'
 dist.evaluate.core <- function(data, names, quantitative, qualitative,
-                               selected) {
+                               selected, d = NULL) {
   if (missing(quantitative)) {
     quantitative <- NULL
   }
@@ -107,22 +137,58 @@ dist.evaluate.core <- function(data, names, quantitative, qualitative,
   }
 
   traits <- c(quantitative, qualitative)
-  # quantitative (RD); qualitative(NS)
-  dtype <- c(rep("RD", length(quantitative)),
-             rep("NS", length(qualitative)))
+  # # quantitative (RD); qualitative(NS)
+  # dtype <- c(rep("RD", length(quantitative)),
+  #            rep("NS", length(qualitative)))
 
-  dataf <- data[, c(names, traits)]
-  rownames(dataf) <- dataf[, names]
+  # dataf <- data[, c(names, traits)]
+  # rownames(dataf) <- dataf[, names]
 
-  # Prep phenotype
-  dataf <- corehunter::phenotypes(data = dataf[, c(quantitative, qualitative)],
-                                  types = dtype)
-  EN <- evaluateCore(core = selected, data = dataf,
-                     objective = objective("EN", "GD"))
-  AN <- evaluateCore(core = selected, data = dataf,
-                     objective = objective("AN", "GD"))
-  EE <- evaluateCore(core = selected, data = dataf,
-                     objective = objective("EE", "GD"))
+  if (!is.null(d)) {
+    # check if d is a distance matrix
+    if (!("dist" %in% class(d))) {
+        stop('Distance matrix "d" is not an object of class "dist".')
+    }
+    dsize <- as.integer(attr(d, "Size"))
+    if (nrow(data) != dsize){
+      stop('Dimentions of distance matrix "d" and "data" do not match.')
+    }
+
+    if (!(all(labels(d) %in% data[, names]) &
+          all(data[, names] %in% labels(d)))) {
+      stop('Labels of distance matrix "d" and "data" do not match.')
+    }
+  } else {
+    rownames(data) <- data[,names]
+    d <- cluster::daisy(data[,c(quantitative, qualitative)],
+                        metric = "gower")
+  }
+
+  # # Prep phenotype
+  # dataf <- corehunter::phenotypes(data = dataf[, c(quantitative, qualitative)],
+  #                                 types = dtype)
+  # # Compute average distances
+  # EN <- evaluateCore(core = selected, data = dataf,
+  #                    objective = objective("EN", "GD"))
+  # AN <- evaluateCore(core = selected, data = dataf,
+  #                    objective = objective("AN", "GD"))
+  # EE <- evaluateCore(core = selected, data = dataf,
+  #                    objective = objective("EE", "GD"))
+
+  dmat <- as.matrix(d)
+  selind <- which(rownames(dmat) %in% selected)
+  subdist <- dmat[selind, selind]
+
+  #EE
+  EE <- mean(subdist[upper.tri(subdist)])
+
+  #EN
+  EN <- mean(apply(subdist, 1, FUN = function(x) {min(x[x > 0])}))
+
+  #AN
+  subdist2 <- dmat[-selind, selind]
+  dsize <- as.integer(attr(d, "Size"))
+  AN <- sum(apply(subdist2, 1, FUN = function(x) {min(x[x > 0])})) / dsize
 
   outdf <- data.frame(`Average distance` = c("E-NE", "A-NE", "E-E"),
                      `Value` = c(EN, AN, EE))

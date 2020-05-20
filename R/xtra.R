@@ -36,21 +36,32 @@ wlcm <- paste0("\n",
 .onAttach <- function(lib, pkg, ...) {
   packageStartupMessage(wlcm)
 
+
 }
 
-#' @import rJava
-.onLoad <- function(libname, pkgname) {
-  rJava::.jpackage("corehunter")
-  rJava::.jpackage(pkgname, lib.loc = libname)
-
-  # check Java version
-  req.version <- 8
-  version.string <- J("java.lang.System")$getProperty("java.version")
-  version <- as.integer(strsplit(version.string, ".", fixed = TRUE)[[1]][2])
-  if (version < req.version) {
-    stop(sprintf(
-      'Java version %d or later required for "dist.evaluate.core()". Found version %d.',
-      req.version, version
-    ))
-  }
-}
+# #' @import rJava
+# .onLoad <- function(libname, pkgname) {
+#   rJava::.jpackage("corehunter")
+#   rJava::.jpackage(pkgname, lib.loc = libname)
+#
+#   # # check Java version
+#   # req.version <- 8
+#   # version.string <- J("java.lang.System")$getProperty("java.version")
+#   # version <- as.integer(strsplit(version.string, ".", fixed = TRUE)[[1]][2])
+#   # if (version < req.version) {
+#   #   stop(sprintf(
+#   #     'Java version %d or later required for "dist.evaluate.core()". Found version %d.',
+#   #     req.version, version
+#   #   ))
+#   # }
+#
+#   # check Java version
+#   .jinit()
+#   jv <- .jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
+#   if(substr(jv, 1L, 1L) == "1") {
+#     jvn <- as.numeric(paste0(strsplit(jv, "[.]")[[1L]][1:2], collapse = "."))
+#     if(jvn < 1.8) {
+#       stop("Java >= 8 is needed for this package but not available.")
+#     }
+#   }
+# }

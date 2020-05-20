@@ -11,10 +11,12 @@ Authors@R: c(
 		       role = "aut"),
 	person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede", 
            email = "d.wankhede@icar.gov.in",
-		       role = "aut"),
+		       role = "aut",
+		       comment = c(ORCID = "0000-0001-6384-8664")),
 	person(given = "Joghee", family = "Nanjundan", 
            email = "j.nanjundan@icar.gov.in",
-		       role = "aut"),
+		       role = "aut",
+		       comment = c(ORCID = "0000-0001-6254-7341")),
     person("ICAR-NBGPR",
            role = c("cph"),
 		   comment = c(url = "www.nbpgr.ernet.in")))
@@ -29,14 +31,12 @@ URL: https://github.com/aravind-j/EvaluateCore
     https://aravind-j.github.io/EvaluateCore
 BugReports: https://github.com/aravind-j/EvaluateCore/issues
 RdMacros: Rdpack
-SystemRequirements: Java JRE 8 or higher
 Depends:
     R (>= 3.5.0)
 Imports:
     agricolae,
     car,
     cluster,
-    corehunter,
     dplyr,
     entropy,
     ggcorrplot,
@@ -45,9 +45,10 @@ Imports:
     kSamples,
     psych,
     reshape2,
-    rJava (>= 0.9-8),
     Rdpack,
     stats,
     vegan
 Suggests:
-    ccChooser
+    ccChooser,
+    corehunter,
+    rJava (>= 0.9-8)

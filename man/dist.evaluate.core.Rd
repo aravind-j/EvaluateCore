@@ -4,7 +4,7 @@
 \alias{dist.evaluate.core}
 \title{Distance Measures}
 \usage{
-dist.evaluate.core(data, names, quantitative, qualitative, selected)
+dist.evaluate.core(data, names, quantitative, qualitative, selected, d = NULL)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -21,6 +21,11 @@ vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
+
+\item{d}{A distance matrix of class "\code{dist}" with individual names in
+the \code{names} column in {data} as labels. If \code{NULL} (default),
+then a distance matrix is computed using Gower's metric.
+\insertCite{gowerGeneralCoefficientSimilarity1971}{EvaluateCore}.}
 }
 \value{
 A data frame with the average values of
@@ -37,10 +42,6 @@ Entry-to-entry distance
 (\ifelse{html}{\out{<em>E-E</em>}}{\eqn{E\textnormal{-}E}})
 \insertCite{odong_quality_2013}{EvaluateCore} to evaluate a core set (CS)
 selected from an entire collection (EC).
-}
-\details{
-This function is a wrapper around the \code{\link[corehunter]{evaluateCore}}
-function of the \code{\link[corehunter]{corehunter}} package.
 }
 \examples{
 
@@ -73,6 +74,30 @@ qual <- c("X1", "X6", "X7")
 dist.evaluate.core(data = ec, names = "genotypes", quantitative = quant,
                    qualitative = qual, selected = core)
 
+\donttest{
+####################################
+# Compare with corehunter
+####################################
+
+library(corehunter)
+# Prepare phenotype dataset
+dtype <- c(rep("RD", length(quant)),
+           rep("NS", length(qual)))
+rownames(ec) <- ec[, "genotypes"]
+ecdata <- corehunter::phenotypes(data = ec[, c(quant, qual)],
+                                 types = dtype)
+
+# Compute average distances
+EN <- evaluateCore(core = rownames(dactylis_CC), data = ecdata,
+                   objective = objective("EN", "GD"))
+AN <- evaluateCore(core = rownames(dactylis_CC), data = ecdata,
+                   objective = objective("AN", "GD"))
+EE <- evaluateCore(core = rownames(dactylis_CC), data = ecdata,
+                   objective = objective("EE", "GD"))
+EN
+AN
+EE
+}
 
 }
 \references{
