@@ -40,10 +40,10 @@ differences of variance
 \insertCite{hu_methods_2000}{EvaluateCore} \item Average of absolute
 differences between means
 (\ifelse{html}{\out{<em>MD\%<sub>Kim</sub></em>}}{\eqn{MD\%_{Kim}}})
-\insertCite{kim_powercore:_2007}{EvaluateCore} \item Average of absolute
+\insertCite{kim_powercore_2007}{EvaluateCore} \item Average of absolute
 differences between variances
 (\ifelse{html}{\out{<em>VD\%<sub>Kim</sub></em>}}{\eqn{VD\%_{Kim}}})
-\insertCite{kim_powercore:_2007}{EvaluateCore} \item Percentage difference
+\insertCite{kim_powercore_2007}{EvaluateCore} \item Percentage difference
 between the mean squared Euclidean distance among accessions
 (\ifelse{html}{\out{<em><span
 style="text-decoration:overline">d</span>D\%</em>}}{\eqn{\overline{d}D\%}})
