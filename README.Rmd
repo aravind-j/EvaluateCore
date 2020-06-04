@@ -48,11 +48,11 @@ dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("Evalua
 cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/aravind-j/EvaluateCore)", sep = ""))
 ```
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/EvaluateCore/total.svg)] -->
-[![Project Status: WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-<!-- [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master) -->
-[![Rdoc](http://www.rdocumentation.org/badges/version/EvaluateCore)](http://www.rdocumentation.org/packages/EvaluateCore)
-<!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310011.svg)](https://doi.org/10.5281/zenodo.1310011) -->
+[![Project Status: WIP](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
+<!-- [![Rdoc](http://www.rdocumentation.org/badges/version/EvaluateCore)](http://www.rdocumentation.org/packages/EvaluateCore) -->
+[![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3875930.svg)](https://doi.org/10.5281/zenodo.3875930)
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-148941781-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
 ***
@@ -64,9 +64,9 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 The function `dist.evaluate.core` is a wrapper around the `evaluateCore` function of the `corehunter` package which implemented in Java 8. Hence you need to have [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) (JRE) version 8 or higher for the package to work.-->
 
 ## Installation
-<!-- The package can be installed from CRAN as follows: -->
+The package can be installed from CRAN as follows:
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE}
 # Install from CRAN
 install.packages('EvaluateCore', dependencies=TRUE)
 ```
@@ -95,13 +95,13 @@ news(package='EvaluateCore')
 
 ## Links
 
-<!-- [CRAN page](https://cran.r-project.org/package=EvaluateCore) -->
+[CRAN page](https://cran.r-project.org/package=EvaluateCore)
 
 [Github page](https://github.com/aravind-j/EvaluateCore)
 
 [Documentation website](https://aravind-j.github.io/EvaluateCore/)
 
-<!-- [Zenodo DOI](https://doi.org/10.5281/zenodo.1310011) -->
+[Zenodo DOI](https://doi.org/10.5281/zenodo.3875930)
 
 
 ## Citing `EvaluateCore`

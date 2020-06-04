@@ -15,7 +15,7 @@ citEntry(entry  = "Manual",
 							        comment = c(ORCID = "0000-0002-4791-442X")),
 							 person(given = "Vikender", family = "Kaur",
                                     email = "vikender.kaur@icar.gov.in",
-									role = "aut"),		
+									role = "aut"),
                              person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede",
                                     email = "d.wankhede@icar.gov.in",
 									role = "aut"),
@@ -26,9 +26,9 @@ citEntry(entry  = "Manual",
          textVersion = paste(
            "Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (",
            year, ").  EvaluateCore: Quality Evaluation of Core Collections. ",
-           vers, ", ", "https://aravind-j.github.io/EvaluateCore/",
+           vers, ", ", "https://aravind-j.github.io/EvaluateCore/", "https://CRAN.R-project.org/package=EvaluateCore",
            ".", sep=""),
-         note = {c(paste(vers), "https://aravind-j.github.io/EvaluateCore/")})
+         note = {c(paste(vers), "https://aravind-j.github.io/EvaluateCore/", "https://CRAN.R-project.org/package=EvaluateCore")})
 
 citFooter("This free and open-source software implements academic
 research by the authors and co-workers. If you use it, please support
