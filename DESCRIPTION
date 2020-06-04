@@ -1,6 +1,6 @@
 Package: EvaluateCore
 Title: Quality Evaluation of Core Collections
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person(given = "J.", family = "Aravind",
            email = "j.aravind@icar.gov.in",
@@ -21,8 +21,9 @@ Authors@R: c(
            role = c("cph"),
 		   comment = c(url = "www.nbpgr.ernet.in")))
 Description: Implements various quality evaluation statistics to assess the
-    value of plant germplasm core collections using qualitative and quantitative
-    phenotypic trait data <doi:10.1007/s00122-012-1971-y>.
+    value of plant germplasm core collections using qualitative and 
+    quantitative phenotypic trait data according to Odong et al. (2015) 
+    <doi:10.1007/s00122-012-1971-y>.
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -42,6 +43,7 @@ Imports:
     ggcorrplot,
     ggplot2,
     grDevices,
+    gridExtra,
     kSamples,
     psych,
     reshape2,

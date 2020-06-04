@@ -63,4 +63,5 @@ reference:
       contents:
           - '`corr.evaluate.core`'
           - '`dist.evaluate.core`'
+          - '`freqdist.evaluate.core`'
 

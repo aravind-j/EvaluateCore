@@ -21,7 +21,7 @@ if (getRversion() >= "2.15.1")  {
   utils::globalVariables(
     c(
       "..prop..", "PC", "Proportion of Variance", "Trait", "Ty", "quantitative",
-      "value", "x", "y"
+      "value", "x", "y", "lower", "upper"
     )
   )
 }

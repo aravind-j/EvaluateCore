@@ -5,7 +5,7 @@
 
 ## `EvaluateCore`: Quality Evaluation of Core Collections <img src="https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
-<!-- ###### Version : [0.1.0](https://aravind-j.github.io/EvaluateCore/); Copyright (C) 2015-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/) -->
+<!-- ###### Version : [0.1.1](https://aravind-j.github.io/EvaluateCore/); Copyright (C) 2015-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/) -->
 
 ##### *Aravind, J.<sup>1</sup>, Kaur, V.<sup>2</sup>, Wankhede, D. P.<sup>3</sup> and Nanjundan, J.<sup>4</sup>*
 
@@ -33,7 +33,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/EvaluateCore?color=gree
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-<!-- [![Last-changedate](https://img.shields.io/badge/last%20change-2020--05--19-yellowgreen.svg)](/commits/master) -->
+<!-- [![Last-changedate](https://img.shields.io/badge/last%20change-2020--05--27-yellowgreen.svg)](/commits/master) -->
 [![Rdoc](http://www.rdocumentation.org/badges/version/EvaluateCore)](http://www.rdocumentation.org/packages/EvaluateCore)
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1310011.svg)](https://doi.org/10.5281/zenodo.1310011) -->
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-148941781-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
@@ -44,7 +44,7 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 
 Implements various quality evaluation statistics to assess the value of
 plant germplasm core collections using qualitative and quantitative
-phenotypic trait data
+phenotypic trait data according to Odong et al. (2015)
 [doi:10.1007/s00122-012-1971-y](https://doi.org/10.1007/s00122-012-1971-y).
 
 <!-- ## System Requirements
@@ -100,8 +100,8 @@ citation("EvaluateCore")
 
 To cite the R package 'EvaluateCore' in publications use:
 
-  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).  EvaluateCore: Quality Evaluation of
-  Core Collections. R package version 0.1.0, https://aravind-j.github.io/EvaluateCore/.
+  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).  EvaluateCore: Quality Evaluation of Core
+  Collections. R package version 0.1.1, https://aravind-j.github.io/EvaluateCore/.
 
 A BibTeX entry for LaTeX users is
 
@@ -109,10 +109,10 @@ A BibTeX entry for LaTeX users is
     title = {EvaluateCore: Quality Evaluation of Core Collections},
     author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and J. Nanjundan},
     year = {2020},
-    note = {R package version 0.1.0},
+    note = {R package version 0.1.1},
     note = {https://aravind-j.github.io/EvaluateCore/},
   }
 
-This free and open-source software implements academic research by the authors and co-workers. If you use
-it, please support the project by citing the package.
+This free and open-source software implements academic research by the authors and co-workers. If you use it, please
+support the project by citing the package.
 ```
