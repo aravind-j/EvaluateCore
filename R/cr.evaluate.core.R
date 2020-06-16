@@ -22,30 +22,20 @@
 #' (\ifelse{html}{\out{<em>CR</em>}}{\eqn{CR}})
 #' \insertCite{diwan_methods_1995,hu_methods_2000}{EvaluateCore} to compare
 #' quantitative traits of the entire collection (EC) and core set (CS).
+#' \loadmathjax
 #'
-#' The Coincidence Rate of Range (\ifelse{html}{\out{<em>CR</em>}}{\eqn{CR}}) is
-#' computed as follows.
+#' The Coincidence Rate of Range (\mjseqn{CR}) is computed as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>CR = <big>(</big>
-#' <sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub style="line-height:
-#' 1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
-#' <sup>R<sub>CS<sub>i</sub></sup> &frasl; <sub>R<sub>EC<sub>i</sub></sub>
-#' <big>]</big><big>)</big> &times; 100</em></p>}}{\deqn{CR = \left (
-#' \frac{1}{n} \sum_{i=1}^{n} \frac{R_{CS_{i}}}{R_{EC_{i}}} \right ) \times
-#' 100}}
+#' \mjsdeqn{CR = \left ( \frac{1}{n} \sum_{i=1}^{n}
+#' \frac{R_{CS_{i}}}{R_{EC_{i}}} \right ) \times 100}
 #'
-#' Where,
-#' \ifelse{html}{\out{<em>R<sub>CS<sub>i</sub></sub></em>}}{\eqn{R_{CS_{i}}}} is
-#' the range of the
-#' \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait in the CS,
-#' \ifelse{html}{\out{<em>R<sub>EC<sub>i</sub></sub></em>}}{\eqn{R_{EC_{i}}}} is
-#' the range of the
-#' \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait in the EC and
-#' \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of traits.
+#' Where, \mjseqn{R_{CS_{i}}} is the range of the \mjseqn{i}th trait in the CS,
+#' \mjseqn{R_{EC_{i}}} is the range of the \mjseqn{i}th trait in the EC and
+#' \mjseqn{n} is the total number of traits.
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return The \ifelse{html}{\out{<em>CR</em>}}{\eqn{CR}} value.
+#' @return The \mjseqn{CR} value.
 #'
 #' @seealso \code{\link[stats]{wilcox.test}}
 #'

@@ -24,6 +24,7 @@
 #' Anderson-Darling distances
 #' \insertCite{anderson_asymptotic_1952}{EvaluateCore} between the probability
 #' distributions of collection (EC) and core set (CS) for quantitative traits.
+#' \loadmathjax
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -37,13 +38,10 @@
 #'   \insertCite{anderson_asymptotic_1952}{EvaluateCore} between EC and CS.}
 #'   \item{AD_pvalue}{The p value of the Anderson-Darling distance.}
 #'   \item{KS_significance}{The significance of the Kolmogorov-Smirnov distance
-#'   (*: p \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
-#'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
-#'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).} \item{AD_pvalue}{The
-#'   significance of the Anderson-Darling distance (*: p
-#'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
-#'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
-#'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
+#'   (*: p \mjseqn{\leq} 0.01; **: p \mjseqn{\leq} 0.05; ns: p \mjseqn{>}
+#'   0.05).} \item{AD_pvalue}{The significance of the Anderson-Darling distance
+#'   (*: p \mjseqn{\leq} 0.01; **: p \mjseqn{\leq} 0.05; ns: p \mjseqn{>}
+#'   0.05).}
 #'
 #' @seealso \code{\link[entropy]{KL.plugin}}, \code{\link[stats]{ks.test}},
 #'   \code{\link[kSamples]{ad.test}}

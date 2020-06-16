@@ -21,51 +21,34 @@ core collection and present in the \code{names} column.}
 }
 \value{
 A data frame with the following columns. \item{Trait}{The qualitative
-  trait.} \item{EC_H}{The Shannon-Weaver Diversity Index
-  (\ifelse{html}{\out{<i>H'</i>}}{\eqn{H'}}) for EC.} \item{EC_H}{The
-  Shannon-Weaver Diversity Index (\ifelse{html}{\out{<i>H'</i>}}{\eqn{H'}})
-  for CS.} \item{EC_Hmax}{The Maximum diversity value
-  (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) for EC.}
-  \item{CS_Hmax}{The Maximum diversity value
-  (\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) for CS.}
-  \item{EC_EH}{The Shannon Equitability Index
-  (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for EC.}
-  \item{CS_EH}{The Shannon Equitability Index
-  (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) for CS.}
+  trait.} \item{EC_H}{The Shannon-Weaver Diversity Index (\mjseqn{H'}) for
+  EC.} \item{EC_H}{The Shannon-Weaver Diversity Index (\mjseqn{H'}) for CS.}
+  \item{EC_Hmax}{The Maximum diversity value (\mjseqn{H'_{max}}) for EC.}
+  \item{CS_Hmax}{The Maximum diversity value (\mjseqn{H'_{max}}) for CS.}
+  \item{EC_EH}{The Shannon Equitability Index (\mjseqn{E_{H}}) for EC.}
+  \item{CS_EH}{The Shannon Equitability Index (\mjseqn{E_{H}}) for CS.}
 }
 \description{
-Compute the Shannon-Weaver Diversity Index
-(\ifelse{html}{\out{<i>H'</i>}}{\eqn{H'}}), Maximum diversity
-(\ifelse{html}{\out{<i>H'<sub>max</sub></i>}}{\eqn{H'_{max}}}) and Shannon
-Equitability Index (\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}})
+Compute the Shannon-Weaver Diversity Index (\mjseqn{H'}), Maximum diversity
+(\mjseqn{H'_{max}}) and Shannon Equitability Index (\mjseqn{E_{H}})
 \insertCite{shannon_mathematical_1949}{EvaluateCore} to compare the
 phenotypic diversity for qualitative traits between entire collection (EC)
-and core set (CS).
+and core set (CS). \loadmathjax
 }
 \details{
-Shannon-Weaver Diversity Index (\ifelse{html}{\out{<i>H'</i>}}{\eqn{H'}}) is
-computed as follows.
+Shannon-Weaver Diversity Index (\mjseqn{H'}) is computed as follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>H' = &minus;
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-p<sub>i</sub>log(p<sub>i</sub>)</em></p>}}{\deqn{H' =
--\sum_{i=1}^{k}p_{i}log(p_{i})}}
+\mjsdeqn{H' = -\sum_{i=1}^{k}p_{i}log(p_{i})}
 
-Where \ifelse{html}{\out{<em>p<sub>i</sub></em>}}{\eqn{p_{i}}} denotes the
-proportion in the group \ifelse{html}{\out{<em>k</em>}}{\eqn{k}}.
+Where \mjseqn{p_{i}} denotes the proportion in the group \mjseqn{k}.
 
-The maximum value of the index
-(\ifelse{html}{\out{<em>H'<sub>max</sub></em>}}{\eqn{H'_{max}}}) is
-\ifelse{html}{\out{ln(<em>k</em>)}}{\eqn{\ln(k)}}. This value occurs when
-each group has the same frequency.
+The maximum value of the index (\mjseqn{H'_{max}}) is \mjseqn{\ln(k)}. This
+value occurs when each group has the same frequency.
 
-The Shannon equitability index
-(\ifelse{html}{\out{<i>E<sub>H</sub></i>}}{\eqn{E_{H}}}) is the Shannon
-diversity index divided by the maximum diversity.
+The Shannon equitability index (\mjseqn{E_{H}}) is the Shannon diversity
+index divided by the maximum diversity.
 
-\ifelse{html}{\out{<em><p style="text-align: center;"><em>E<sub>H</sub> =
-<sup>H</sup></em> &frasl; <sub>ln(<em>k</em>)</sub></p></em>}}{\deqn{E_{H} =
-\frac{H}{\ln{(k)}}}}
+\mjsdeqn{E_{H} = \frac{H}{\ln{(k)}}}
 }
 \examples{
 

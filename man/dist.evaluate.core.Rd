@@ -29,19 +29,19 @@ then a distance matrix is computed using Gower's metric.
 }
 \value{
 A data frame with the average values of
-  \ifelse{html}{\out{<em>E-NE</em>}}{\eqn{E\textnormal{-}EN}},
-  \ifelse{html}{\out{<em>A-NE</em>}}{\eqn{A\textnormal{-}EN}} and
-  \ifelse{html}{\out{<em>E-E</em>}}{\eqn{E\textnormal{-}E}}.
+\mjteqn{E\textrm{-}EN}{E\text{-}EN}{E-EN},
+\mjteqn{A\textrm{-}EN}{E\text{-}EN}{E-EN} and
+\mjteqn{E\textrm{-}E}{E\text{-}EN}{E-EN}.
 }
 \description{
 Compute average Entry-to-nearest-entry distance
-(\ifelse{html}{\out{<em>E-NE</em>}}{\eqn{E\textnormal{-}EN}}),
+(\mjteqn{E\textrm{-}EN}{E\text{-}EN}{E-EN}),
 Accession-to-nearest-entry distance
-(\ifelse{html}{\out{<em>A-NE</em>}}{\eqn{A\textnormal{-}EN}}) and
-Entry-to-entry distance
-(\ifelse{html}{\out{<em>E-E</em>}}{\eqn{E\textnormal{-}E}})
-\insertCite{odong_quality_2013}{EvaluateCore} to evaluate a core set (CS)
-selected from an entire collection (EC).
+(\mjteqn{A\textrm{-}EN}{E\text{-}EN}{E-EN}) and
+Entry-to-entry distance (\mjteqn{E\textrm{-}E}{E\text{-}EN}{E-EN})
+\insertCite{odong_quality_2013}{EvaluateCore}
+to evaluate a core set (CS) selected from an entire collection (EC).
+\loadmathjax
 }
 \examples{
 

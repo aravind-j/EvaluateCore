@@ -18,34 +18,24 @@
 
 #' Variable Rate of Coefficient of Variation
 #'
-#' Compute the Variable Rate of Coefficient of Variation
-#' (\ifelse{html}{\out{<em>VR</em>}}{\eqn{VR}})
+#' Compute the Variable Rate of Coefficient of Variation (\mjseqn{VR})
 #' \insertCite{hu_methods_2000}{EvaluateCore} to compare quantitative traits of
-#' the entire collection (EC) and core set (CS).
+#' the entire collection (EC) and core set (CS). \loadmathjax
 #'
-#' The Variable Rate of Coefficient of Variation
-#' (\ifelse{html}{\out{<em>VR</em>}}{\eqn{VR}}) is computed as follows.
+#' The Variable Rate of Coefficient of Variation (\mjseqn{VR}) is computed as
+#' follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>VR = <big>(</big>
-#' <sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub style="line-height:
-#' 1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
-#' <sup>CV<sub>CS<sub>i</sub></sup> &frasl; <sub>CV<sub>EC<sub>i</sub></sub>
-#' <big>]</big><big>)</big> &times; 100</em></p>}}{\deqn{VR = \left (
-#' \frac{1}{n} \sum_{i=1}^{n} \frac{CV_{CS_{i}}}{CV_{EC_{i}}} \right ) \times
-#' 100}}
+#' \mjsdeqn{VR = \left ( \frac{1}{n} \sum_{i=1}^{n}
+#' \frac{CV_{CS_{i}}}{CV_{EC_{i}}} \right ) \times 100}
 #'
-#' Where,
-#' \ifelse{html}{\out{<em>CV<sub>CS<sub>i</sub></sub></em>}}{\eqn{CV_{CS_{i}}}}
-#' is the coefficients of variation for the
-#' \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait in the CS,
-#' \ifelse{html}{\out{<em>CV<sub>EC<sub>i</sub></sub></em>}}{\eqn{CV_{EC_{i}}}}
-#' is the coefficients of variation for the
-#' \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait in the EC and
-#' \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of traits
+#' Where, \mjseqn{CV_{CS_{i}}} is the coefficients of variation for the
+#' \mjseqn{i}th trait in the CS, \mjseqn{CV_{EC_{i}}} is the coefficients of
+#' variation for the \mjseqn{i}th trait in the EC and \mjseqn{n} is the total
+#' number of traits
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return The \ifelse{html}{\out{<em>VR</em>}}{\eqn{VR}} value.
+#' @return The \mjseqn{VR} value.
 #'
 #' @export
 #'

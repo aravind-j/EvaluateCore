@@ -26,14 +26,13 @@ A data frame with the following columns \item{Trait}{The quantitative
   \item{CS_CV}{The coefficient of variance of the CS.}
   \item{Levene_Fvalue}{The test statistic.} \item{Levene_pvalue}{The p value
   for the test statistic.} \item{Levene_significance}{The significance of the
-  test statistic (*: p \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
-  \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
-  \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
+  test statistic (*: p \mjseqn{\leq} 0.01; **: p \mjseqn{\leq} 0.05; ns: p
+  \mjseqn{ > } 0.05).}
 }
 \description{
-Test for  of variances of the entire collection (EC) and core set
-(CS) for quantitative traits by Levene's test
-\insertCite{levene_robust_1960}{EvaluateCore}.
+Test for  of variances of the entire collection (EC) and core set (CS) for
+quantitative traits by Levene's test
+\insertCite{levene_robust_1960}{EvaluateCore}. \loadmathjax
 }
 \examples{
 

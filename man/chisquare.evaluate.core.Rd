@@ -25,18 +25,16 @@ A a data frame with the following columns. \item{Trait}{The
   for EC.} \item{EC_Classes}{The frequency of the classes in the trait for
   EC.} \item{CS_No.Classes}{The number of classes in the trait for CS.}
   \item{CS_Classes}{The frequency of the classes in the trait for CS.}
-  \item{chisq_statistic}{The
-  \ifelse{html}{\out{<em>&chi;<sup>2</sup></em>}}{\eqn{\chi^{2}}} test
-  statistic.} \item{chisq_pvalue}{The p value for the test statistic.}
+  \item{chisq_statistic}{The \mjseqn{\chi^{2}} test statistic.}
+  \item{chisq_pvalue}{The p value for the test statistic.}
   \item{chisq_significance}{The significance of the test statistic (*: p
-  \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
-  \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
-  \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
+  \mjseqn{\leq} 0.01; **: p \mjseqn{\leq} 0.05; ns: p \mjseqn{ > } 0.05).}
 }
 \description{
 Compare the distribution frequencies of qualitative traits between entire
 collection (EC) and core set (CS) by Chi-squared test for homogeneity
 \insertCite{pearson_x._1900,snedecor_chi-square_1933}{EvaluateCore}.
+\loadmathjax
 }
 \examples{
 

@@ -22,7 +22,7 @@
 #' between traits, plot correlation matrices as correlograms
 #' \insertCite{friendly_corrgrams_2002}{EvaluateCore} and calculate mantel
 #' correlation \insertCite{legendre_interpretation_2012}{EvaluateCore} between
-#' them to compare entire collection (EC) and core set (CS).
+#' them to compare entire collection (EC) and core set (CS). \loadmathjax
 #'
 #' @inheritParams snk.evaluate.core
 #' @inheritParams chisquare.evaluate.core
@@ -32,11 +32,9 @@
 #'   and CS (above diagonal).} \item{Correologram}{A correlogram of phenotypic
 #'   correlations between traits in EC (below diagonal) and CS (above diagonal)
 #'   as a \code{ggplot} object.} \item{Mantel Correlation}{A data frame with
-#'   Mantel correlation coefficient (\ifelse{html}{\out{<em>r</em>}}{\eqn{r}})
-#'   between EC and CS phenotypic correlation matrices, it's p value and
-#'   significance (*: p \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.01; **: p
-#'   \ifelse{html}{\out{&leq;}}{\eqn{\leq}} 0.05; ns: p
-#'   \ifelse{html}{\out{&gt;}}{\eqn{>}} 0.05).}
+#'   Mantel correlation coefficient (\mjseqn{r}) between EC and CS phenotypic
+#'   correlation matrices, it's p value and significance (*: p \mjseqn{\leq}
+#'   0.01; **: p \mjseqn{\leq} 0.05; ns: p \mjseqn{ > } 0.05).}
 #'
 #' @seealso \code{\link[stats]{cor}},
 #'   \code{\link[ggcorrplot:ggcorrplot]{cor_pmat}}

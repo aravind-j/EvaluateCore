@@ -42,14 +42,12 @@
   
 
 <meta property="og:title" content="Shannon-Weaver Diversity Index — shannon.evaluate.core" />
-<meta property="og:description" content="Compute the Shannon-Weaver Diversity Index
-(H'), Maximum diversity
-(H'max) and Shannon
-Equitability Index (EH)
+<meta property="og:description" content="Compute the Shannon-Weaver Diversity Index (\(H'\)), Maximum diversity
+(\(H'_{max}\)) and Shannon Equitability Index (\(E_{H}\))
 (Shannon and Weaver 1949)
  to compare the
 phenotypic diversity for qualitative traits between entire collection (EC)
-and core set (CS)." />
+and core set (CS). " />
 
 
 
@@ -146,14 +144,12 @@ and core set (CS)." />
     </div>
 
     <div class="ref-description">
-    <p>Compute the Shannon-Weaver Diversity Index
-(<i>H'</i>), Maximum diversity
-(<i>H'<sub>max</sub></i>) and Shannon
-Equitability Index (<i>E<sub>H</sub></i>)
+    <p>Compute the Shannon-Weaver Diversity Index (\(H'\)), Maximum diversity
+(\(H'_{max}\)) and Shannon Equitability Index (\(E_{H}\))
 (Shannon and Weaver 1949)
  to compare the
 phenotypic diversity for qualitative traits between entire collection (EC)
-and core set (CS).</p>
+and core set (CS). <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>shannon.evaluate.core</span>(<span class='no'>data</span>, <span class='no'>names</span>, <span class='no'>qualitative</span>, <span class='no'>selected</span>)</pre>
@@ -187,36 +183,23 @@ core collection and present in the <code>names</code> column.</p></td>
 
     <p>A data frame with the following columns.</p>
 <dt>Trait</dt><dd><p>The qualitative
-  trait.</p></dd> <dt>EC_H</dt><dd><p>The Shannon-Weaver Diversity Index
-  (<i>H'</i>) for EC.</p></dd> <dt>EC_H</dt><dd><p>The
-  Shannon-Weaver Diversity Index (<i>H'</i>)
-  for CS.</p></dd> <dt>EC_Hmax</dt><dd><p>The Maximum diversity value
-  (<i>H'<sub>max</sub></i>) for EC.</p></dd>
-  <dt>CS_Hmax</dt><dd><p>The Maximum diversity value
-  (<i>H'<sub>max</sub></i>) for CS.</p></dd>
-  <dt>EC_EH</dt><dd><p>The Shannon Equitability Index
-  (<i>E<sub>H</sub></i>) for EC.</p></dd>
-  <dt>CS_EH</dt><dd><p>The Shannon Equitability Index
-  (<i>E<sub>H</sub></i>) for CS.</p></dd>
+  trait.</p></dd> <dt>EC_H</dt><dd><p>The Shannon-Weaver Diversity Index (\(H'\)) for
+  EC.</p></dd> <dt>EC_H</dt><dd><p>The Shannon-Weaver Diversity Index (\(H'\)) for CS.</p></dd>
+  <dt>EC_Hmax</dt><dd><p>The Maximum diversity value (\(H'_{max}\)) for EC.</p></dd>
+  <dt>CS_Hmax</dt><dd><p>The Maximum diversity value (\(H'_{max}\)) for CS.</p></dd>
+  <dt>EC_EH</dt><dd><p>The Shannon Equitability Index (\(E_{H}\)) for EC.</p></dd>
+  <dt>CS_EH</dt><dd><p>The Shannon Equitability Index (\(E_{H}\)) for CS.</p></dd>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Shannon-Weaver Diversity Index (<i>H'</i>) is
-computed as follows.</p>
-<p><p style="text-align: center;"><em>H' = &minus;
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-p<sub>i</sub>log(p<sub>i</sub>)</em></p></p>
-<p>Where <em>p<sub>i</sub></em> denotes the
-proportion in the group <em>k</em>.</p>
-<p>The maximum value of the index
-(<em>H'<sub>max</sub></em>) is
-ln(<em>k</em>). This value occurs when
-each group has the same frequency.</p>
-<p>The Shannon equitability index
-(<i>E<sub>H</sub></i>) is the Shannon
-diversity index divided by the maximum diversity.</p>
-<p><em><p style="text-align: center;"><em>E<sub>H</sub> =
-<sup>H</sup></em> &frasl; <sub>ln(<em>k</em>)</sub></p></em></p>
+    <p>Shannon-Weaver Diversity Index (\(H'\)) is computed as follows.</p>
+<p>\[H' = -\sum_{i=1}^{k}p_{i}log(p_{i})\]</p>
+<p>Where \(p_{i}\) denotes the proportion in the group \(k\).</p>
+<p>The maximum value of the index (\(H'_{max}\)) is \(\ln(k)\). This
+value occurs when each group has the same frequency.</p>
+<p>The Shannon equitability index (\(E_{H}\)) is the Shannon diversity
+index divided by the maximum diversity.</p>
+<p>\[E_{H} = \frac{H}{\ln{(k)}}\]</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Shannon C, Weaver W (1949).

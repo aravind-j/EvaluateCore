@@ -43,11 +43,11 @@
 
 <meta property="og:title" content="Sign Test — signtest.evaluate.core" />
 <meta property="og:description" content="Test difference between means and variances of entire collection (EC) and
-core set (CS) for quantitative traits by Sign test
-(&amp;plus; versus
-&amp;minus;)
+core set (CS) for quantitative traits by Sign test (\(+\) versus
+\(-\))
 (Basigalup et al. 1995; Tai and Miller 2001)
-." />
+.
+" />
 
 
 
@@ -145,11 +145,11 @@ core set (CS) for quantitative traits by Sign test
 
     <div class="ref-description">
     <p>Test difference between means and variances of entire collection (EC) and
-core set (CS) for quantitative traits by Sign test
-(&plus; versus
-&minus;)
+core set (CS) for quantitative traits by Sign test (\(+\) versus
+\(-\))
 (Basigalup et al. 1995; Tai and Miller 2001)
-.</p>
+.
+<script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>signtest.evaluate.core</span>(<span class='no'>data</span>, <span class='no'>names</span>, <span class='no'>quantitative</span>, <span class='no'>selected</span>)</pre>
@@ -183,31 +183,21 @@ core collection and present in the <code>names</code> column.</p></td>
 
     <p>A data frame with the following components.</p>
 <dt>Comparison</dt><dd><p>The
-  comparison measure.</p></dd> <dt>ChiSq</dt><dd><p>The test statistic
-  (<em>&chi;<sup>2</sup></em>).</p></dd>
+  comparison measure.</p></dd> <dt>ChiSq</dt><dd><p>The test statistic (\(\chi^{2}\)).</p></dd>
   <dt>p.value</dt><dd><p>The p value for the test statistic.</p></dd> <dt>significance</dt><dd><p>The
-  significance of the test statistic (*: p
-  &leq; 0.01; **: p
-  &leq; 0.05; ns: p
-  &gt; 0.05).</p></dd>
+  significance of the test statistic (*: p \(\leq\) 0.01; **: p
+  \(\leq\) 0.05; ns: p \( > \) 0.05).</p></dd>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The test statistic for Sign test
-(<em>&chi;<sup>2</sup></em>) is computed
-as follows.</p>
-<p><p style="text-align: center;"><em>&chi;<sup>2</sup> =
-<sup>(N<sub>1</sub> &minus; N<sub>2</sub>)<sup>2</sup></sup> &frasl;
-<sub>(N<sub>1</sub> &plus; N<sub>2</sub>)</sub></em></p></p>
-<p>Where, where <em>N<sub>1</sub></em> is the
-number of variables for which the mean or variance of the CS is greater than
-the mean or variance of the EC (number of
-&plus; signs);
-<em>N<sub>2</sub></em> is the number of
-variables for which the mean or variance of the CS is less than the mean or
-variance of the EC (number of &minus; signs).
-The value of <em>&chi;<sup>2</sup></em>
-is compared with a Chi-square distribution with 1 degree of freedom.</p>
+    <p>The test statistic for Sign test (\(\chi^{2}\)) is computed as follows.</p>
+<p>\[\chi^{2} = \frac{(N_{1}-N_{2})^{2}}{N_{1}+N_{2}}\]</p>
+<p>Where, where \(N_{1}\) is the number of variables for which the mean or
+variance of the CS is greater than the mean or variance of the EC (number of
+\(+\) signs); \(N_{2}\) is the number of variables for which the
+mean or variance of the CS is less than the mean or variance of the EC
+(number of \(-\) signs). The value of \(\chi^{2}\) is compared with
+a Chi-square distribution with 1 degree of freedom.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Basigalup DH, Barnes DK, Stucker RE (1995).

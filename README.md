@@ -33,7 +33,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/EvaluateCore?color=gree
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2020--06--04-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2020--06--16-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/EvaluateCore)](http://www.rdocumentation.org/packages/EvaluateCore) -->
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3875930.svg)](https://doi.org/10.5281/zenodo.3875930)
@@ -106,8 +106,9 @@ citation("EvaluateCore")
 
 To cite the R package 'EvaluateCore' in publications use:
 
-  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).  EvaluateCore: Quality Evaluation of Core
-  Collections. R package version 0.1.1.9000,
+  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).
+  EvaluateCore: Quality Evaluation of Core Collections. R package version
+  0.1.1.9000,
   https://aravind-j.github.io/EvaluateCore/https://CRAN.R-project.org/package=EvaluateCore.
 
 A BibTeX entry for LaTeX users is
@@ -121,6 +122,7 @@ A BibTeX entry for LaTeX users is
     note = {https://CRAN.R-project.org/package=EvaluateCore},
   }
 
-This free and open-source software implements academic research by the authors and co-workers. If you use it, please
-support the project by citing the package.
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by citing
+the package.
 ```

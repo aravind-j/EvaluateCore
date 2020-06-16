@@ -20,102 +20,78 @@
 #'
 #' Compute the following differences between the entire collection (EC) and core
 #' set (CS). \itemize{ \item Percentage of significant differences of mean
-#' (\ifelse{html}{\out{<em>MD\%<sub>Hu</sub></em>}}{\eqn{MD\%_{Hu}}})
+#' (\mjteqn{MD\\\%_{Hu}}{MD\\\\\\\%_{Hu}}{MD\%_{Hu}})
 #' \insertCite{hu_methods_2000}{EvaluateCore} \item Percentage of significant
-#' differences of variance
-#' (\ifelse{html}{\out{<em>VD\%<sub>Hu</sub></em>}}{\eqn{VD\%_{Hu}}})
+#' differences of variance (\mjteqn{VD\\\%_{Hu}}{VD\\\\\\\%_{Hu}}{VD\%_{Hu}})
 #' \insertCite{hu_methods_2000}{EvaluateCore} \item Average of absolute
 #' differences between means
-#' (\ifelse{html}{\out{<em>MD\%<sub>Kim</sub></em>}}{\eqn{MD\%_{Kim}}})
+#' (\mjteqn{MD\\\%_{Kim}}{MD\\\\\\\%_{Kim}}{MD\%_{Kim}})
 #' \insertCite{kim_powercore_2007}{EvaluateCore} \item Average of absolute
 #' differences between variances
-#' (\ifelse{html}{\out{<em>VD\%<sub>Kim</sub></em>}}{\eqn{VD\%_{Kim}}})
+#' (\mjteqn{VD\\\%_{Kim}}{VD\\\\\\\%_{Kim}}{VD\%_{Kim}})
 #' \insertCite{kim_powercore_2007}{EvaluateCore} \item Percentage difference
 #' between the mean squared Euclidean distance among accessions
-#' (\ifelse{html}{\out{<em><span
-#' style="text-decoration:overline">d</span>D\%</em>}}{\eqn{\overline{d}D\%}})
-#' \insertCite{studnicki_comparing_2013}{EvaluateCore} }
+#' (\mjteqn{\overline{d}D\\\%}{\overline{d}D\\\\\\\%}{\overline{d}D\%})
+#' \insertCite{studnicki_comparing_2013}{EvaluateCore} } \loadmathjax
 #'
 #' The differences are computed as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>MD\%<sub>Hu</sub></em>
-#' = <big>(</big><sup>S<sub>t</sub></sup> &frasl; <sub>n</sub><big>)</big>
-#' &times; 100</p>}}{\deqn{MD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
-#' 100}}
+#' \mjtdeqn{MD\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
+#' 100}{MD\\\\\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
+#' 100}{MD\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100}
 #'
-#' Where, \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
-#' of traits with a significant difference between the means of the EC and the
-#' CS and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
+#' Where, \mjseqn{S_{t}} is the number of traits with a significant difference
+#' between the means of the EC and the CS and \mjseqn{n} is the total number of
 #' traits.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>VD\%<sub>Hu</sub></em>
-#' = <big>(</big><sup>S<sub>t</sub></sup> &frasl; <sub>n</sub><big>)</big>
-#' &times; 100</p>}}{\deqn{VD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
-#' 100}}
+#' \mjtdeqn{VD\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
+#' 100}{VD\\\\\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
+#' 100}{VD\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100}
 #'
-#' Where, \ifelse{html}{\out{<em>S<sub>t</sub></em>}}{\eqn{S_{t}}} is the number
-#' of traits with a significant difference between the variances of the EC and
-#' the CS and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
-#' traits.
+#' Where, \mjseqn{S_{t}} is the number of traits with a significant difference
+#' between the variances of the EC and the CS and \mjseqn{n} is the total number
+#' of traits.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>MD\%<sub>Kim</sub> =
-#' <sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub style="line-height:
-#' 1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
-#' <sup>|M<sub>EC<sub>i</sub></sub> &minus; M<sub>CS<sub>i</sub></sub>|</sup>
-#' &frasl; <sub>M<sub>CS<sub>i</sub></sub></sub> <big>]</big>  &times;
-#' 100</em></p>}}{\deqn{MD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
-#' M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}}
+#' \mjtdeqn{MD\\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+#' M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}{MD\\\\\\\%_{Kim} =
+#' \frac{1}{n}\sum_{i=1}^{n} \frac{\left | M_{EC_{i}}-M_{CS_{i}} \right
+#' |}{M_{CS_{i}}}}{MD\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+#' M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}
 #'
-#' Where,
-#' \ifelse{html}{\out{<em>M<sub>EC<sub>i</sub></sub></em>}}{\eqn{M_{EC_{i}}}} is
-#' the mean of the EC for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait,
-#' \ifelse{html}{\out{<em>M<sub>CS<sub>i</sub></sub></em>}}{\eqn{M_{CS_{i}}}} is
-#' the mean of the CS for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait
-#' and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of traits.
+#' Where, \mjseqn{M_{EC_{i}}} is the mean of the EC for the \mjseqn{i}th trait,
+#' \mjseqn{M_{CS_{i}}} is the mean of the CS for the \mjseqn{i}th trait and
+#' \mjseqn{n} is the total number of traits.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>VD\%<sub>Kim</sub> =
-#' <sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub style="line-height:
-#' 1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
-#' <sup>|V<sub>EC<sub>i</sub></sub> &minus; V<sub>CS<sub>i</sub></sub>|</sup>
-#' &frasl; <sub>V<sub>CS<sub>i</sub></sub></sub> <big>]</big>  &times;
-#' 100</em></p>}}{\deqn{VD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
-#' V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}}
+#' \mjtdeqn{VD\\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+#' V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}{VD\\\\\\\%_{Kim} =
+#' \frac{1}{n}\sum_{i=1}^{n} \frac{\left | V_{EC_{i}}-V_{CS_{i}} \right
+#' |}{V_{CS_{i}}}}{VD\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+#' V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}
 #'
-#' Where,
-#' \ifelse{html}{\out{<em>V<sub>EC<sub>i</sub></sub></em>}}{\eqn{V_{EC_{i}}}} is
-#' the variance of the EC for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th
-#' trait,
-#' \ifelse{html}{\out{<em>V<sub>CS<sub>i</sub></sub></em>}}{\eqn{V_{CS_{i}}}} is
-#' the variance of the CS for the \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th
-#' trait and \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of
-#' traits.
+#' Where, \mjseqn{V_{EC_{i}}} is the variance of the EC for the \mjseqn{i}th
+#' trait, \mjseqn{V_{CS_{i}}} is the variance of the CS for the \mjseqn{i}th
+#' trait and \mjseqn{n} is the total number of traits.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
-#' style="text-decoration: overline;">d</span>D\% = <big>[ </big><sup><span
-#' style="text-decoration: overline;">d</span>D<sub>CS</sub> &minus; <span
-#' style="text-decoration: overline;">d</span>D<sub>EC</sub></sup> &frasl;
-#' <sub><span style="text-decoration:
-#' overline;">d</span>D<sub>EC</sub></sub><big> ] </big>&times; 100<br
-#' /></em></p>}}{\deqn{\overline{d}D\% =
-#' \frac{\overline{d}_{CS}-\overline{d}_{EC}}{\overline{d}_{EC}} \times 100}}
+#' \mjtdeqn{\overline{d}D\\\% =
+#' \frac{\overline{d}_{CS}-\overline{d}_{EC}}{\overline{d}_{EC}} \times
+#' 100}{\overline{d}D\\\\\\\% =
+#' \frac{\overline{d}_{CS}-\overline{d}_{EC}}{\overline{d}_{EC}} \times
+#' 100}{\overline{d}D\\% =
+#' \frac{\overline{d}_{CS}-\overline{d}_{EC}}{\overline{d}_{EC}} \times 100}
 #'
-#' Where, \ifelse{html}{\out{<em><span style="text-decoration:
-#' overline;">d</span>D<sub>CS</sub></em>}}{\eqn{\overline{d}_{CS}}} is the mean
-#' squared Euclidean distance among accessions in the CS and
-#' \ifelse{html}{\out{<em><span style="text-decoration:
-#' overline;">d</span>D<sub>EC</sub></em>}}{\eqn{\overline{d}_{EC}}} is the mean
-#' squared Euclidean distance among accessions in the EC.
+#' Where, \mjseqn{\overline{d}_{CS}} is the mean squared Euclidean distance
+#' among accessions in the CS and \mjseqn{\overline{d}_{EC}} is the mean squared
+#' Euclidean distance among accessions in the EC.
 #'
 #' @inheritParams snk.evaluate.core
 #' @param alpha Type I error probability (Significance level) of difference.
 #'
 #' @return A data frame with the values of
-#'   \ifelse{html}{\out{<em>MD\%<sub>Hu</sub></em>}}{\eqn{MD\%_{Hu}}},
-#'   \ifelse{html}{\out{<em>VD\%<sub>Hu</sub></em>}}{\eqn{VD\%_{Hu}}},
-#'   \ifelse{html}{\out{<em>MD\%<sub>Kim</sub></em>}}{\eqn{MD\%_{Kim}}},
-#'   \ifelse{html}{\out{<em>VD\%<sub>Kim</sub></em>}}{\eqn{VD\%_{Kim}}} and
-#'   \ifelse{html}{\out{<em><span
-#'   style="text-decoration:overline">d</span>D\%</em>}}{\eqn{\overline{d}D\%}}.
+#'   \mjteqn{MD\\\%_{Hu}}{MD\\\\\\\%_{Hu}}{MD\%_{Hu}},
+#'   \mjteqn{VD\\\%_{Hu}}{VD\\\\\\\%_{Hu}}{VD\%_{Hu}},
+#'   \mjteqn{MD\\\%_{Kim}}{MD\\\\\\\%_{Kim}}{MD\%_{Kim}},
+#'   \mjteqn{VD\\\%_{Kim}}{VD\\\\\\\%_{Kim}}{VD\%_{Kim}} and
+#'   \mjteqn{\overline{d}D\\\%}{\overline{d}D\\\\\\\%}{\overline{d}D\%}.
 #'
 #' @seealso \code{\link[EvaluateCore]{snk.evaluate.core}},
 #'   \code{\link[EvaluateCore]{snk.evaluate.core}}

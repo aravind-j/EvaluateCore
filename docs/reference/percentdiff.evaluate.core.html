@@ -45,25 +45,23 @@
 <meta property="og:description" content="Compute the following differences between the entire collection (EC) and core
 set (CS).
 Percentage of significant differences of mean
-(MD%Hu)
+(\(MD\%_{Hu}\))
 (Hu et al. 2000)
 Percentage of significant
-differences of variance
-(VD%Hu)
+differences of variance (\(VD\%_{Hu}\))
 (Hu et al. 2000)
 Average of absolute
 differences between means
-(MD%Kim)
+(\(MD\%_{Kim}\))
 (Kim et al. 2007)
 Average of absolute
 differences between variances
-(VD%Kim)
+(\(VD\%_{Kim}\))
 (Kim et al. 2007)
 Percentage difference
 between the mean squared Euclidean distance among accessions
-(dD%)
+(\(\overline{d}D\%\))
 (Studnicki et al. 2013)
-
 " />
 
 
@@ -164,27 +162,24 @@ between the mean squared Euclidean distance among accessions
     <p>Compute the following differences between the entire collection (EC) and core
 set (CS).</p><ul>
 <li><p>Percentage of significant differences of mean
-(<em>MD%<sub>Hu</sub></em>)
+(\(MD\%_{Hu}\))
 (Hu et al. 2000)</p></li>
 <li><p>Percentage of significant
-differences of variance
-(<em>VD%<sub>Hu</sub></em>)
+differences of variance (\(VD\%_{Hu}\))
 (Hu et al. 2000)</p></li>
 <li><p>Average of absolute
 differences between means
-(<em>MD%<sub>Kim</sub></em>)
+(\(MD\%_{Kim}\))
 (Kim et al. 2007)</p></li>
 <li><p>Average of absolute
 differences between variances
-(<em>VD%<sub>Kim</sub></em>)
+(\(VD\%_{Kim}\))
 (Kim et al. 2007)</p></li>
 <li><p>Percentage difference
 between the mean squared Euclidean distance among accessions
-(<em><span
-style="text-decoration:overline">d</span>D%</em>)
+(\(\overline{d}D\%\))
 (Studnicki et al. 2013)</p></li>
-</ul>
-
+</ul><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>percentdiff.evaluate.core</span>(<span class='no'>data</span>, <span class='no'>names</span>, <span class='no'>quantitative</span>, <span class='no'>selected</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)</pre>
@@ -221,68 +216,25 @@ core collection and present in the <code>names</code> column.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame with the values of
-  <em>MD%<sub>Hu</sub></em>,
-  <em>VD%<sub>Hu</sub></em>,
-  <em>MD%<sub>Kim</sub></em>,
-  <em>VD%<sub>Kim</sub></em> and
-  <em><span
-  style="text-decoration:overline">d</span>D%</em>.</p>
+  \(MD\%_{Hu}\),
+  \(VD\%_{Hu}\),
+  \(MD\%_{Kim}\),
+  \(VD\%_{Kim}\) and
+  \(\overline{d}D\%\).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The differences are computed as follows.</p>
-<p><p style="text-align: center;"><em>MD%<sub>Hu</sub></em>
-= <big>(</big><sup>S<sub>t</sub></sup> &frasl; <sub>n</sub><big>)</big>
-&times; 100</p></p>
-<p>Where, <em>S<sub>t</sub></em> is the number
-of traits with a significant difference between the means of the EC and the
-CS and <em>n</em> is the total number of
-traits.</p>
-<p><p style="text-align: center;"><em>VD%<sub>Hu</sub></em>
-= <big>(</big><sup>S<sub>t</sub></sup> &frasl; <sub>n</sub><big>)</big>
-&times; 100</p></p>
-<p>Where, <em>S<sub>t</sub></em> is the number
-of traits with a significant difference between the variances of the EC and
-the CS and <em>n</em> is the total number of
-traits.</p>
-<p><p style="text-align: center;"><em>MD%<sub>Kim</sub> =
-<sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub style="line-height:
-1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
-<sup>|M<sub>EC<sub>i</sub></sub> &minus; M<sub>CS<sub>i</sub></sub>|</sup>
-&frasl; <sub>M<sub>CS<sub>i</sub></sub></sub> <big>]</big>  &times;
-100</em></p></p>
-<p>Where,
-<em>M<sub>EC<sub>i</sub></sub></em> is
-the mean of the EC for the <em>i</em>th trait,
-<em>M<sub>CS<sub>i</sub></sub></em> is
-the mean of the CS for the <em>i</em>th trait
-and <em>n</em> is the total number of traits.</p>
-<p><p style="text-align: center;"><em>VD%<sub>Kim</sub> =
-<sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub style="line-height:
-1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
-<sup>|V<sub>EC<sub>i</sub></sub> &minus; V<sub>CS<sub>i</sub></sub>|</sup>
-&frasl; <sub>V<sub>CS<sub>i</sub></sub></sub> <big>]</big>  &times;
-100</em></p></p>
-<p>Where,
-<em>V<sub>EC<sub>i</sub></sub></em> is
-the variance of the EC for the <em>i</em>th
-trait,
-<em>V<sub>CS<sub>i</sub></sub></em> is
-the variance of the CS for the <em>i</em>th
-trait and <em>n</em> is the total number of
-traits.</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">d</span>D% = <big>[ </big><sup><span
-style="text-decoration: overline;">d</span>D<sub>CS</sub> &minus; <span
-style="text-decoration: overline;">d</span>D<sub>EC</sub></sup> &frasl;
-<sub><span style="text-decoration:
-overline;">d</span>D<sub>EC</sub></sub><big> ] </big>&times; 100<br
-/></em></p></p>
-<p>Where, <em><span style="text-decoration:
-overline;">d</span>D<sub>CS</sub></em> is the mean
-squared Euclidean distance among accessions in the CS and
-<em><span style="text-decoration:
-overline;">d</span>D<sub>EC</sub></em> is the mean
-squared Euclidean distance among accessions in the EC.</p>
+<p>\[MD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
+100\]</p>
+<p>Where, \(V_{EC_{i}}\) is the variance of the EC for the \(i\)th
+trait, \(V_{CS_{i}}\) is the variance of the CS for the \(i\)th
+trait and \(n\) is the total number of traits.</p>
+<p>\[\overline{d}D\% =
+\frac{\overline{d}_{CS}-\overline{d}_{EC}}{\overline{d}_{EC}} \times
+100\]</p>
+<p>Where, \(\overline{d}_{CS}\) is the mean squared Euclidean distance
+among accessions in the CS and \(\overline{d}_{EC}\) is the mean squared
+Euclidean distance among accessions in the EC.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Hu J, Zhu J, Xu HM (2000).

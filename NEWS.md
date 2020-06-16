@@ -1,5 +1,7 @@
 # EvaluateCore  0.1.2
 
+## OTHER NOTES: 
+* Converted all equations in Rd files to `MathJax`using `mathjaxr`
 
 # EvaluateCore  0.1.1
 

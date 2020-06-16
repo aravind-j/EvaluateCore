@@ -20,27 +20,17 @@
 #'
 #' Compute the Class Coverage \insertCite{kim_powercore_2007}{EvaluateCore} to
 #' compare the distribution frequencies of qualitative traits between entire
-#' collection (EC) and core set (CS).
+#' collection (EC) and core set (CS). \loadmathjax
 #'
 #' Class Coverage \insertCite{kim_powercore_2007}{EvaluateCore} is computed as
 #' follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>Class Coverage =
-#' <big>(</big> <sup>1</sup>&frasl;<sub>n</sub> &sum;<sup>n</sup><sub
-#' style="line-height: 1.8; margin-left: -1ex;">i=1</sub> <big>[</big>
-#' <sup>A<sub>CS<sub>i</sub></sub></sup> &frasl;
-#' <sub>A<sub>EC<sub></sub></sub></sub> <big>]</big><big>)</big> &times;
-#' 100</em></p>}}{\deqn{Class\, Coverage = \left ( \frac{1}{n} \sum_{i=1}^{n}
-#' \frac{A_{CS_{i}}}{A_{EC_{i}}} \right ) \times 100}}
+#' \mjsdeqn{Class\, Coverage = \left ( \frac{1}{n} \sum_{i=1}^{n}
+#' \frac{A_{CS_{i}}}{A_{EC_{i}}} \right ) \times 100}
 #'
-#' Where,
-#' \ifelse{html}{\out{<em>A<sub>CS<sub>i</sub></sub></em>}}{\eqn{A_{CS_{i}}}} is
-#' the sets of categories in the CS for the
-#' \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait,
-#' \ifelse{html}{\out{<em>A<sub>EC<sub>i</sub></sub></em>}}{\eqn{A_{EC_{i}}}} is
-#' the sets of categories in the EC for the
-#' \ifelse{html}{\out{<em>i</em>}}{\eqn{i}}th trait and
-#' \ifelse{html}{\out{<em>n</em>}}{\eqn{n}} is the total number of traits.
+#' Where, \mjseqn{A_{CS_{i}}} is the sets of categories in the CS for the
+#' \mjseqn{i}th trait, \mjseqn{A_{EC_{i}}} is the sets of categories in the EC
+#' for the \mjseqn{i}th trait and \mjseqn{n} is the total number of traits.
 #'
 #' @inheritParams chisquare.evaluate.core
 #'
