@@ -18,7 +18,7 @@
 4.  ICAR-Indian Agricultural Research Institute, Regional Station,
     Wellington, Tamil Nadu.
 
------
+------------------------------------------------------------------------
 
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.5.0-6666ff.svg)](https://cran.r-project.org/)
@@ -31,15 +31,15 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/EvaluateCore?color=gree
 [![develVersion](https://img.shields.io/badge/devel%20version-0.1.1.9000-orange.svg)](https://github.com/aravind-j/EvaluateCore)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/EvaluateCore/total.svg)] -->
 [![Project Status:
-WIP](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2020--06--16-yellowgreen.svg)](/commits/master)
+WIP](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2021--02--16-yellowgreen.svg)](https://github.com/aravind-j/EvaluateCore/)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/EvaluateCore)](http://www.rdocumentation.org/packages/EvaluateCore) -->
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3875930.svg)](https://doi.org/10.5281/zenodo.3875930)
-[![Analytics](https://pro-pulsar-193905.appspot.com/UA-148941781-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
+[![.](https://pro-pulsar-193905.appspot.com/UA-148941781-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
------
+------------------------------------------------------------------------
 
 ## Description
 
@@ -102,27 +102,23 @@ To cite the methods in the package use:
 citation("EvaluateCore")
 ```
 
-``` 
 
-To cite the R package 'EvaluateCore' in publications use:
+    To cite the R package 'EvaluateCore' in publications use:
 
-  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).
-  EvaluateCore: Quality Evaluation of Core Collections. R package version
-  0.1.1.9000,
-  https://aravind-j.github.io/EvaluateCore/https://CRAN.R-project.org/package=EvaluateCore.
+      Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).
+      EvaluateCore: Quality Evaluation of Core Collections. R package version
+      0.1.1, https://aravind-j.github.io/EvaluateCore/.
 
-A BibTeX entry for LaTeX users is
+    A BibTeX entry for LaTeX users is
 
-  @Manual{,
-    title = {EvaluateCore: Quality Evaluation of Core Collections},
-    author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and J. Nanjundan},
-    year = {2020},
-    note = {R package version 0.1.1.9000},
-    note = {https://aravind-j.github.io/EvaluateCore/},
-    note = {https://CRAN.R-project.org/package=EvaluateCore},
-  }
+      @Manual{,
+        title = {EvaluateCore: Quality Evaluation of Core Collections},
+        author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and J. Nanjundan},
+        year = {2020},
+        note = {R package version 0.1.1},
+        note = {https://aravind-j.github.io/EvaluateCore/},
+      }
 
-This free and open-source software implements academic research by the
-authors and co-workers. If you use it, please support the project by citing
-the package.
-```
+    This free and open-source software implements academic research by the
+    authors and co-workers. If you use it, please support the project by
+    citing the package.
