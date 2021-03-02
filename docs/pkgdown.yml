@@ -1,8 +1,8 @@
-pandoc: 2.11.2
+pandoc: 2.2.1
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-02-16T13:36Z
+last_built: 2021-03-02T18:24Z
 urls:
   reference: https://aravind-j.github.io/EvaluateCore//reference
   article: https://aravind-j.github.io/EvaluateCore//articles
