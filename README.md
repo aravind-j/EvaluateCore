@@ -35,7 +35,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/EvaluateCore.s
 [![Project Status:
 WIP](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2021--03--06-yellowgreen.svg)](https://github.com/aravind-j/EvaluateCore/)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2021--04--15-yellowgreen.svg)](https://github.com/aravind-j/EvaluateCore/)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3875930.svg)](https://doi.org/10.5281/zenodo.3875930)
 [![Website -
@@ -256,9 +256,8 @@ citation("EvaluateCore")
 
     To cite the R package 'EvaluateCore' in publications use:
 
-      Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).  EvaluateCore:
-      Quality Evaluation of Core Collections. R package version 0.1.1,
-      https://aravind-j.github.io/EvaluateCore/.
+      Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2020).  EvaluateCore: Quality Evaluation of Core Collections. R
+      package version 0.1.1, https://aravind-j.github.io/EvaluateCore/.
 
     A BibTeX entry for LaTeX users is
 
@@ -270,5 +269,5 @@ citation("EvaluateCore")
         note = {https://aravind-j.github.io/EvaluateCore/},
       }
 
-    This free and open-source software implements academic research by the authors and
-    co-workers. If you use it, please support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use it, please
+    support the project by citing the package.
