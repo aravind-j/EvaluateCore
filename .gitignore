@@ -4,3 +4,5 @@
 .Ruserdata
 Release.R
 vignettes
+.DS_Store
+.httr-oauth

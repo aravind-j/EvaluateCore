@@ -1,6 +1,6 @@
 Package: EvaluateCore
 Title: Quality Evaluation of Core Collections
-Version: 0.1.1.9000
+Version: 0.1.2
 Authors@R: c(
     person(given = "J.", family = "Aravind",
            email = "j.aravind@icar.gov.in",
@@ -10,17 +10,17 @@ Authors@R: c(
            email = "vikender.kaur@icar.gov.in",
 		       role = "aut",
 		       comment = c(ORCID = "0000-0001-9698-7329")),
-	person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede", 
+	  person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede", 
            email = "d.wankhede@icar.gov.in",
 		       role = "aut",
 		       comment = c(ORCID = "0000-0001-6384-8664")),
-	person(given = "Joghee", family = "Nanjundan", 
+	  person(given = "Joghee", family = "Nanjundan", 
            email = "j.nanjundan@icar.gov.in",
 		       role = "aut",
 		       comment = c(ORCID = "0000-0001-6254-7341")),
     person("ICAR-NBGPR",
            role = c("cph"),
-		   comment = c(url = "www.nbpgr.ernet.in")))
+		       comment = c(url = "www.nbpgr.ernet.in")))
 Description: Implements various quality evaluation statistics to assess the
     value of plant germplasm core collections using qualitative and 
     quantitative phenotypic trait data according to Odong et al. (2015) 
