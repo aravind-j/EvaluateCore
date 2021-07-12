@@ -96,7 +96,7 @@ bar.evaluate.core <- function(data, names, qualitative, selected) {
     outlist[[i]] <- ggplot(dataf, aes_string(qualitative2[i])) +
       geom_bar(aes(y = ..prop.., group = 1),
                fill = "gray80", colour = "black") +
-      ylab("Relative frequncy") +
+      ylab("Relative frequency") +
       xlab(qualitative[i]) +
       facet_grid(~`[Type]`) +
       theme_bw() +

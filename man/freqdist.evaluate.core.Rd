@@ -38,11 +38,11 @@ core collection and present in the \code{names} column.}
 included in the frequency distribution histogram. Default is \code{TRUE}.}
 
 \item{highlight.se}{Optional data frame of standard errors for the
-individuals specified in \code{highlight}. It shoudl have the same column
+individuals specified in \code{highlight}. It should have the same column
 names as in \code{data}.}
 
 \item{highlight.col}{The colour(s) to be used to highlighting individuals in
-the plot as a character vector of the same length as \code{higlight}. Must
+the plot as a character vector of the same length as \code{highlight}. Must
 be valid colour values in R (named colours, hexadecimal representation,
 index of colours [\code{1:8}] in default R \code{palette()} etc.).}
 }

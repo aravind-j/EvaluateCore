@@ -28,10 +28,10 @@
 #' @param include.highlight If \code{TRUE}, the highlighted individuals are
 #'   included in the frequency distribution histogram. Default is \code{TRUE}.
 #' @param highlight.se Optional data frame of standard errors for the
-#'   individuals specified in \code{highlight}. It shoudl have the same column
+#'   individuals specified in \code{highlight}. It should have the same column
 #'   names as in \code{data}.
 #' @param highlight.col The colour(s) to be used to highlighting individuals in
-#'   the plot as a character vector of the same length as \code{higlight}. Must
+#'   the plot as a character vector of the same length as \code{highlight}. Must
 #'   be valid colour values in R (named colours, hexadecimal representation,
 #'   index of colours [\code{1:8}] in default R \code{palette()} etc.).
 #'
@@ -161,7 +161,7 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
     }
 
     if (dim(highlight.se)[1] != length(highlight)) {
-      stop('"highlight.se" is of incorrect dimentions')
+      stop('"highlight.se" is of incorrect dimensions')
     }
 
     # check if 'names' column is present in 'data'

@@ -150,7 +150,7 @@ dist.evaluate.core <- function(data, names, quantitative, qualitative,
     }
     dsize <- as.integer(attr(d, "Size"))
     if (nrow(data) != dsize){
-      stop('Dimentions of distance matrix "d" and "data" do not match.')
+      stop('Dimensions of distance matrix "d" and "data" do not match.')
     }
 
     if (!(all(labels(d) %in% data[, names]) &
