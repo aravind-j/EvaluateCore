@@ -101,7 +101,7 @@ box.evaluate.core <- function(data, names, quantitative, selected) {
     outlist[[i]] <- ggplot(dataf, aes_string(y = quantitative2[i],
                                              x = "`[Type]`")) +
       geom_boxplot(fill = "lemonchiffon") +
-      stat_summary(fun.y = mean, geom = "point",
+      stat_summary(fun = mean, geom = "point",
                    shape = 18, size = 3, color = "red") +
       xlab("Collection") +
       ylab(quantitative[i]) +
