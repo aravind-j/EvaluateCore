@@ -1,3 +1,11 @@
+# EvaluateCore  0.1.3
+
+## UPDATED FUNCTIONS:
+* `box.evaluate.core` - Replace depreciated arg from ggplot2::stat_summary
+
+## OTHER NOTES: 
+* Fixed minor typos in `bar.evaluate.core`, `dit.evaluate.core` and `freqdist.evaluate.core`.
+
 # EvaluateCore  0.1.2
 
 ## OTHER NOTES: 
@@ -9,7 +17,7 @@
 * First release
 
 ## NEW FUNCTIONS:
-* `freadist.evaluate.core` - Plots frequency distribution histograms.
+* `freqdist.evaluate.core` - Plots frequency distribution histograms.
 
 # EvaluateCore  0.1.0
 
