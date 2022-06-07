@@ -36,6 +36,7 @@
 #'
 #' @return The Class Coverage value.
 #'
+#' @import mathjaxr
 #' @export
 #'
 #' @references

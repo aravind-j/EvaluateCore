@@ -5,6 +5,7 @@
 
 ## OTHER NOTES: 
 * Fixed minor typos in `bar.evaluate.core`, `dit.evaluate.core` and `freqdist.evaluate.core`.
+* Fixed missing `mathjaxr` in Namespace.
 
 # EvaluateCore  0.1.2
 
