@@ -127,7 +127,7 @@ dist.evaluate.core <- function(data, names, quantitative, qualitative,
     data <- as.data.frame(data)
   }
 
-  traits <- c(quantitative, qualitative)
+  # traits <- c(quantitative, qualitative)
   # # quantitative (RD); qualitative(NS)
   # dtype <- c(rep("RD", length(quantitative)),
   #            rep("NS", length(qualitative)))
@@ -141,7 +141,7 @@ dist.evaluate.core <- function(data, names, quantitative, qualitative,
         stop('Distance matrix "d" is not an object of class "dist".')
     }
     dsize <- as.integer(attr(d, "Size"))
-    if (nrow(data) != dsize){
+    if (nrow(data) != dsize) {
       stop('Dimensions of distance matrix "d" and "data" do not match.')
     }
 
@@ -150,13 +150,14 @@ dist.evaluate.core <- function(data, names, quantitative, qualitative,
       stop('Labels of distance matrix "d" and "data" do not match.')
     }
   } else {
-    rownames(data) <- data[,names]
-    d <- cluster::daisy(data[,c(quantitative, qualitative)],
+    rownames(data) <- data[, names]
+    d <- cluster::daisy(data[, c(quantitative, qualitative)],
                         metric = "gower")
   }
 
   # # Prep phenotype
-  # dataf <- corehunter::phenotypes(data = dataf[, c(quantitative, qualitative)],
+  # dataf <- corehunter::phenotypes(data = dataf[, c(quantitative,
+  #                                                  qualitative)],
   #                                 types = dtype)
   # # Compute average distances
   # EN <- evaluateCore(core = selected, data = dataf,

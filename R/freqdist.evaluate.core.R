@@ -127,7 +127,7 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
   }
 
   if (!is.null(highlight)) {
-    if (!is.character(highlight)){
+    if (!is.character(highlight)) {
       stop('"highlight" should be a character vector')
     }
     # highlight are present in treatment levels
@@ -192,7 +192,7 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
     }
 
     # check if names to be highlighted are present in highlight.se
-    if (!all(highlight %in% highlight.se[, names])){
+    if (!all(highlight %in% highlight.se[, names])) {
       miss <- paste(highlight[!(highlight %in% highlight.se[, names])], collapse = ", ")
       stop(paste('Following individual(s) specified in "highlight"',
                  'are not present in', names, 'column of "highlight.se":\n',
@@ -220,11 +220,11 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
   traits2 <- paste("`", traits, "`", sep = "")
 
   dataf$`[Type]` <- factor(dataf$`[Type]`)
-  dataf$`[Type]` <- factor(dataf$`[Type]`, levels(dataf$`[Type]`)[c(2,1)])
+  dataf$`[Type]` <- factor(dataf$`[Type]`, levels(dataf$`[Type]`)[c(2, 1)])
 
   # Fetch highlights
   if (!is.null(highlight)) {
-    datah <- unique( dataf[dataf[, names] %in% highlight, c(names,traits)])
+    datah <- unique(dataf[dataf[, names] %in% highlight, c(names, traits)])
     datah[, names] <- as.factor(datah[, names])
   }
 
@@ -251,7 +251,7 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
     # plot normal distribution curve if quantitative
     if (traits[i] %in% quantitative) {
       G1 <- G1 +
-        stat_function(geom = "line", fun = function(x, mean, sd, n, bw){
+        stat_function(geom = "line", fun = function(x, mean, sd, n, bw) {
           dnorm(x = x, mean = mean, sd = sd) * n * bw},
           args = list(mean = mean(data[, traits[i]], na.rm = TRUE),
                       sd = sd(data[, traits[i]], na.rm = TRUE),
@@ -289,7 +289,7 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
 
       }
 
-      G2 <- ggplot(sedf, aes_string(y= names, x = traits2[i])) +
+      G2 <- ggplot(sedf, aes_string(y = names, x = traits2[i])) +
         geom_point(colour = highlight.col) +
         labs(x = NULL, y = NULL) +
         theme_bw() +
@@ -325,7 +325,7 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
 
       legind <- grep("guide-box", ggplotGrob(G1)$grobs)
       leg <- ggplotGrob(G1)$grobs[[legind]]
-      G1 <- G1 + theme(legend.position="none")
+      G1 <- G1 + theme(legend.position = "none")
 
       G <- rbind(ggplotGrob(G2), ggplotGrob(G1), size = "max")
       G <- resize_heights(G, c(1, 3))
@@ -370,8 +370,8 @@ binw <- function(x, method = c("fd", "scott", "sturges")) {
 }
 
 if (getRversion() >= "4.0.0")  {
-  resize_heights <- function(g, heights = rep(1, length(idpanels))){
-    idpanels <- unique(g$layout[grepl("panel",g$layout$name), "t"])
+  resize_heights <- function(g, heights = rep(1, length(idpanels))) {
+    idpanels <- unique(g$layout[grepl("panel", g$layout$name), "t"])
     g$heights <- grid::unit(g$heights, "null")
     g$heights[idpanels] <- grid::unit(do.call(grid::unit,
                                               list(heights, 'null')), "null")
@@ -380,7 +380,7 @@ if (getRversion() >= "4.0.0")  {
 } else {
   unit.list <- getFromNamespace("unit.list", "grid")
 
-  resize_heights <- function(g, heights = rep(1, length(idpanels))){
+  resize_heights <- function(g, heights = rep(1, length(idpanels))) {
     idpanels <- unique(g$layout[grepl("panel", g$layout$name), "t"])
     g$heights <- unit.list(g$heights)
     hunits <- lapply(heights, unit, "null")
