@@ -104,6 +104,11 @@ news(package='EvaluateCore')
 
     Warning: package 'RCurl' was built under R version 4.1.2
 
+    Attaching package: 'RCurl'
+    The following object is masked from 'package:rJava':
+
+        clone
+
 <table class="table table-striped table-hover" style="width: auto !important; ">
 <thead>
 <tr>
@@ -118,7 +123,7 @@ CRAN check
 <tbody>
 <tr grouplength="6">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_EvaluateCore.html)</strong>
+<strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
 </td>
 </tr>
 <tr>
@@ -177,7 +182,7 @@ r-release-linux-x86\_64](https://cranchecks.info/badges/flavor/r-release-linux-x
 </tr>
 <tr grouplength="1">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)](https://cran.r-project.org/web/checks/check_results_EvaluateCore.html)</strong>
+<strong>[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
 </td>
 </tr>
 <tr>
@@ -191,7 +196,7 @@ r-patched-solaris-x86](https://cranchecks.info/badges/flavor/r-patched-solaris-x
 </tr>
 <tr grouplength="3">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_EvaluateCore.html)</strong>
+<strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
 </td>
 </tr>
 <tr>
@@ -223,7 +228,7 @@ r-oldrel-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-oldrel-wi
 </tr>
 <tr grouplength="2">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_EvaluateCore.html)</strong>
+<strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
 </td>
 </tr>
 <tr>
