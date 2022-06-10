@@ -131,12 +131,19 @@ data.frame(OS = "macOS",
            Flavour = c("r-release-macos-x86_64", 
                        "r-oldrel-macos-x86_64")))
 
+chkurl <- paste("https://cran.r-project.org/web/checks/check_results_",
+                pkgname, ".html", sep = "")
+if (RCurl::url.exists(chkurl)) {
+  chklink <- paste("(", chkurl,  ")", sep = "")
+} else {
+  chklink <- "(https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)"
+}
+
 osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
-                    "(https://cranchecks.info/badges/flavor/",
-                    osdf$Flavour, "/", pkgname, ")]",
-                    "(https://cran.r-project.org/web/checks/check_results_",
-                    pkgname, ".html)",
-                    sep = "")
+                           "(https://cranchecks.info/badges/flavor/",
+                           osdf$Flavour, "/", pkgname, ")]",
+                           chklink,
+                           sep = "")
 ```
 
 ```{r, echo = FALSE, results='asis'}
