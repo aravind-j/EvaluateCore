@@ -133,7 +133,9 @@ data.frame(OS = "macOS",
 
 chkurl <- paste("https://cran.r-project.org/web/checks/check_results_",
                 pkgname, ".html", sep = "")
-if (RCurl::url.exists(chkurl)) {
+library(RCurl)
+
+if (url.exists(chkurl)) {
   chklink <- paste("(", chkurl,  ")", sep = "")
 } else {
   chklink <- "(https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)"

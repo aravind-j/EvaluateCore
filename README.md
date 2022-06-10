@@ -102,6 +102,8 @@ news(package='EvaluateCore')
 
 ## CRAN checks
 
+    Warning: package 'RCurl' was built under R version 4.1.2
+
 <table class="table table-striped table-hover" style="width: auto !important; ">
 <thead>
 <tr>
@@ -256,8 +258,8 @@ citation("EvaluateCore")
 
     To cite the R package 'EvaluateCore' in publications use:
 
-      Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2022).  EvaluateCore: Quality Evaluation of Core
-      Collections. R package version 0.1.2.9000,
+      Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2022).  EvaluateCore:
+      Quality Evaluation of Core Collections. R package version 0.1.2.9000,
       https://aravind-j.github.io/EvaluateCore/https://CRAN.R-project.org/package=EvaluateCore.
 
     A BibTeX entry for LaTeX users is
@@ -271,5 +273,5 @@ citation("EvaluateCore")
         note = {https://CRAN.R-project.org/package=EvaluateCore},
       }
 
-    This free and open-source software implements academic research by the authors and co-workers. If you use it,
-    please support the project by citing the package.
+    This free and open-source software implements academic research by the authors and
+    co-workers. If you use it, please support the project by citing the package.
