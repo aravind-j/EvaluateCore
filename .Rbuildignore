@@ -20,5 +20,7 @@
 ^vignettes$
 ^CRAN-RELEASE$
 ^\.github$
-
 ^RoughWork$
+^vignettes/additional$
+^cassava_EC\.csv$
+^cassava_CC\.csv$

@@ -52,47 +52,47 @@
 #'
 #' @examples
 #'
-#' ####################################
-#' # Use data from R package ccChooser
-#' ####################################
+#' data("cassava_CC")
+#' data("cassava_EC")
 #'
-#' library(ccChooser)
-#' data("dactylis_CC")
-#' data("dactylis_EC")
-#'
-#' ec <- cbind(genotypes = rownames(dactylis_EC), dactylis_EC[, -1])
+#' ec <- cbind(genotypes = rownames(cassava_EC), cassava_EC)
 #' ec$genotypes <- as.character(ec$genotypes)
 #' rownames(ec) <- NULL
-#' ec[, c("X1", "X6", "X7")] <- lapply(ec[, c("X1", "X6", "X7")],
-#'                                     function(x) cut(x, breaks = 4))
-#' ec[, c("X1", "X6", "X7")] <- lapply(ec[, c("X1", "X6", "X7")],
-#'                                     function(x) factor(as.numeric(x)))
-#' head(ec)
 #'
-#' core <- rownames(dactylis_CC)
+#' core <- rownames(cassava_CC)
 #'
-#' quant <- c("X2", "X3", "X4", "X5", "X8")
-#' qual <- c("X1", "X6", "X7")
+#' quant <- c("NMSR", "TTRN", "TFWSR", "TTRW", "TFWSS", "TTSW", "TTPW", "AVPW",
+#'            "ARSR", "SRDM")
+#' qual <- c("CUAL", "LNGS", "PTLC", "DSTA", "LFRT", "LBTEF", "CBTR", "NMLB",
+#'           "ANGB", "CUAL9M", "LVC9M", "TNPR9M", "PL9M", "STRP", "STRC",
+#'           "PSTR")
 #'
-#' ####################################
-#' # EvaluateCore
-#' ####################################
+#' ec[, qual] <- lapply(ec[, qual],
+#'                      function(x) factor(as.factor(x)))
 #'
 #' \donttest{
 #' freqdist.evaluate.core(data = ec, names = "genotypes",
 #'                        quantitative = quant, qualitative = qual,
 #'                        selected = core)
 #'
-#' checks <- c("D120559", "D120773")
+#' checks <- c("TMe-1199", "TMe-1957", "TMe-3596", "TMe-3392")
 #'
 #' freqdist.evaluate.core(data = ec, names = "genotypes",
 #'                        quantitative = quant, qualitative = qual,
 #'                        selected = core,
 #'                        highlight = checks, highlight.col = "red")
 #'
-#' quant.se <- data.frame(genotypes = checks, X2 = c(0.275, 0.25),
-#'                        X3 = c(0.1, 0.081), X4 = c(0.002, 0.002),
-#'                        X5 = c(0.093, 0.087), X8 = c(0.125, 0.074))
+#' quant.se <- data.frame(genotypes = checks,
+#'                        NMSR = c(0.107, 0.099, 0.106, 0.062),
+#'                        TTRN = c(0.081, 0.072, 0.057, 0.049),
+#'                        TFWSR = c(0.089, 0.031, 0.092, 0.097),
+#'                        TTRW = c(0.064, 0.031, 0.071, 0.071),
+#'                        TFWSS = c(0.106, 0.071, 0.121, 0.066),
+#'                        TTSW = c(0.084, 0.045, 0.066, 0.054),
+#'                        TTPW = c(0.098, 0.052, 0.111, 0.082),
+#'                        AVPW = c(0.074, 0.038, 0.054, 0.061),
+#'                        ARSR = c(0.104, 0.019, 0.204, 0.044),
+#'                        SRDM = c(0.078, 0.138, 0.076, 0.079))
 #'
 #' freqdist.evaluate.core(data = ec, names = "genotypes",
 #'                        quantitative = quant,

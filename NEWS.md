@@ -6,6 +6,7 @@
 ## OTHER NOTES: 
 * Fixed minor typos in `bar.evaluate.core`, `dit.evaluate.core` and `freqdist.evaluate.core`.
 * Fixed missing `mathjaxr` in Namespace.
+* Remove dependency on `ccChooser` as it is depreciated. Add `cassava_EC` and `cassava_CC` datasets and use it in all the examples instead of `ccChooser::dactylis_EC` and `ccChooser::dactylis_CC`.
 
 # EvaluateCore  0.1.2
 

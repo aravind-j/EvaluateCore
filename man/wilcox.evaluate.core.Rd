@@ -34,35 +34,26 @@ Mann-Whitney U test
 }
 \examples{
 
-####################################
-# Use data from R package ccChooser
-####################################
+data("cassava_CC")
+data("cassava_EC")
 
-library(ccChooser)
-data("dactylis_CC")
-data("dactylis_EC")
-
-ec <- cbind(genotypes = rownames(dactylis_EC), dactylis_EC[, -1])
+ec <- cbind(genotypes = rownames(cassava_EC), cassava_EC)
 ec$genotypes <- as.character(ec$genotypes)
 rownames(ec) <- NULL
-ec[, c("X1", "X6", "X7")] <- lapply(ec[, c("X1", "X6", "X7")],
-                                    function(x) cut(x, breaks = 4))
-ec[, c("X1", "X6", "X7")] <- lapply(ec[, c("X1", "X6", "X7")],
-                                    function(x) factor(as.numeric(x)))
-head(ec)
 
-core <- rownames(dactylis_CC)
+core <- rownames(cassava_CC)
 
-quant <- c("X2", "X3", "X4", "X5", "X8")
-qual <- c("X1", "X6", "X7")
+quant <- c("NMSR", "TTRN", "TFWSR", "TTRW", "TFWSS", "TTSW", "TTPW", "AVPW",
+           "ARSR", "SRDM")
+qual <- c("CUAL", "LNGS", "PTLC", "DSTA", "LFRT", "LBTEF", "CBTR", "NMLB",
+          "ANGB", "CUAL9M", "LVC9M", "TNPR9M", "PL9M", "STRP", "STRC",
+          "PSTR")
 
-####################################
-# EvaluateCore
-####################################
+ec[, qual] <- lapply(ec[, qual],
+                     function(x) factor(as.factor(x)))
 
 wilcox.evaluate.core(data = ec, names = "genotypes",
                      quantitative = quant, selected = core)
-
 
 }
 \references{

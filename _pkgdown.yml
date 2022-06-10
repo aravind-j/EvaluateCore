@@ -18,9 +18,20 @@ navbar:
     - icon: fa-code
       text: Reference
       href: reference/index.html
+    - icon: far fa-file
+      text: Articles
+      menu:
+        - text: PlaceHolder
+          href: 404.html
+          menu:
+        - text: Additional
+          menu:
+            - text: Example Core Data
+              href: articles/additional/Example Core Data.html
     - icon: far fa-newspaper
       text: News
       href: news/index.html
+
   right:
     - icon: fab fa-github-alt
       text: Github
@@ -64,4 +75,10 @@ reference:
           - '`corr.evaluate.core`'
           - '`dist.evaluate.core`'
           - '`freqdist.evaluate.core`'
+
+    - title: Datasets
+      contents:
+          - '`cassava_EC`'
+          - '`cassava_CC`'
+
 

@@ -56,6 +56,6 @@ Imports:
     stats,
     vegan
 Suggests:
-    ccChooser,
     corehunter,
     rJava (>= 0.9-8)
+LazyData: true
