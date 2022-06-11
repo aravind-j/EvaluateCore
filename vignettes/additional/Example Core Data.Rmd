@@ -1,0 +1,303 @@
+---
+title: "Example Core Data"
+author: "J. Aravind"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: united
+    highlight: textmate
+    toc: TRUE
+link-citations: yes
+csl: frontiers.csl
+bibliography: REFERENCES.bib
+vignette: |
+  %\VignetteIndexEntry{Introduction}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+```{r, echo=FALSE}
+# out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+out_type <- "html"
+```
+
+```{r, results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p> ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>")},
+    latex = cat("\\begin{center}
+ ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+
+\\end{center}" )
+)
+```
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+\tableofcontents
+
+# Introduction
+
+The example datasets `cassava_EC` and `cassava_CC` in `EvaluateCore` for demonstrating various functions were generated using the following steps from the source data [@benjamin_cassava_2019]. 
+
+# Setup the environment
+
+```{r, eval=FALSE}
+# Increase rJava memory allocation
+options(java.parameters = "-Xmx8G")
+rJava::J("java.lang.Runtime")$getRuntime()$maxMemory() / (1024^3)
+```
+
+```{r}
+# Load required packages
+library(readxl)
+library(corehunter)
+```
+
+# Load and prepare data
+
+```{r, R.options = list(width = 500), cache=FALSE}
+# Load the raw data
+# Source : https://www.genesys-pgr.org/datasets/929a273d-7882-43eb-8b1a-86032cbeb892
+cassava_EC <- read_excel("IITA-Cassava collection-Cassava characterization dataset.xls")
+
+sel <- c("Accession name",
+         "Colour of unexpanded apical leaves",
+         "Length of stipules", 
+         "Petiole colour", "Distribution of anthocyanin",
+         "Leaf retention", 
+         "Level of branching at the end of flowering",
+         "Colour of boiled tuberous root",
+         "Number of levels of branching",
+         "Angle of branching",
+         "Colours of unexpanded apical leaves at 9 months", 
+         "Leaf vein colour at 9 months",
+         "Total number of plants remaining per accession at 9 months", 
+         "Petiole length at 9 months",
+         "Storage root peduncle",
+         "Storage root constrictions",
+         "Position of root", "Number of storage root per plant",
+         "Total root number per plant",
+         "Total fresh weight of storage root per plant",
+         "Total root weight per plant",
+         "Total fresh weight of storage shoot per plant",
+         "Total shoot weight per plant",
+         "Total plant weight",
+         "Average plant weight",
+         "Amount of rotted storage root per plant", 
+         "Storage root dry matter")
+
+cassava_EC <- cassava_EC[, sel]
+
+str(cassava_EC)
+
+# Convert tibble to data.frame
+cassava_EC <- as.data.frame(cassava_EC)
+
+```
+
+```{r}
+# Find NAs in each field
+na_status <- lapply(cassava_EC, function(x) table(is.na(x)))
+na_status <- dplyr::bind_rows(na_status,.id = "Descriptor")
+
+DT::datatable(na_status,
+              options = list(scrollX = TRUE, paging=TRUE))
+
+# Remove non informative fields
+cassava_EC$ID <- NULL
+cassava_EC$`Ploidy level` <- NULL
+cassava_EC$`Severity of CAD` <- NULL
+cassava_EC$Status <- NULL
+cassava_EC$`Height of the first apical branch` <- NULL
+
+# Filter accessions with all the trait data present
+cassava_EC <- na.omit(cassava_EC)
+```
+
+# Prepare the descriptors
+
+```{r}
+# Descriptors
+descriptors <- data.frame(Descriptors = colnames(cassava_EC)[-1])
+descriptors$Abbr <- gsub("of|at|per plant|per accession", "", descriptors$Descriptors)
+descriptors$Abbr <- gsub("\\s+", " ", descriptors$Abbr)
+descriptors$Abbr <- abbreviate(descriptors$Abbr)
+descriptors$Abbr <- gsub("\\(", "", descriptors$Abbr)
+descriptors$Abbr <- toupper(descriptors$Abbr)
+descriptors$Type <- ""
+
+descriptors[c(1:16),]$Type <- "Qualitative"
+descriptors[c(17:26),]$Type <- "Quantitative"
+
+DT::datatable(descriptors,
+              options = list(scrollX = TRUE, paging=TRUE))
+```
+
+```{r}
+colnames(cassava_EC) <- c("Accession name", descriptors$Abbr)
+
+qual <- descriptors[descriptors$Type == "Qualitative", ]$Abbr
+quant <- descriptors[descriptors$Type == "Quantitative", ]$Abbr
+
+# Convert qualitative traits to factor
+cassava_EC[, qual] <- data.frame(apply(cassava_EC[qual], 2, as.factor))
+```
+
+# Plot qualitative traits
+
+```{r qual, fig.show="hold", out.width="30%"}
+qual_plots <- lapply(seq_along(cassava_EC[, qual]),
+       function(i) barplot(table(cassava_EC[, qual][, i]),
+                           xlab = names(cassava_EC[, qual])[i]))
+```
+
+# Plot quantitative traits
+
+```{r quant, figures-side, fig.show="hold", out.width="30%"}
+quant_plots <- lapply(seq_along(cassava_EC[, quant]),
+       function(i) hist(table(cassava_EC[, quant][, i]),
+                        xlab = names(cassava_EC[, quant])[i],
+                        main = ""))
+```
+
+# Standardize quantitative data
+
+```{r}
+# Standardize quantitative data as Z score
+cassava_EC[, quant] <- apply(cassava_EC[, quant], 2,
+                             function(x) scale(x, center = TRUE, scale = TRUE))
+
+# Check standardization
+lapply(cassava_EC[, quant], function(x) sd(x))
+lapply(cassava_EC[, quant], function(x) round(mean(x)))
+```
+
+# Create CoreHunter phenotype data
+
+```{r}
+# Row names as accession names
+rownames(cassava_EC) <- cassava_EC$`Accession name`
+
+# Convert data to corehunter phenotypes format
+# RD - for quantitative; NS - for qualitative
+pheno <- phenotypes(data = cassava_EC[, -1],
+                    types = ifelse(descriptors$Type == "Qualitative",
+                                   "NS", "RD"))
+
+pheno
+
+```
+
+
+# Setup CoreHunter parameters
+
+```{r}
+
+# Set seed for reproducible results
+set.seed(123)
+
+# Desired size
+csize <- 0.1 # 10%
+
+# Max search steps without improvement
+impr_steps <- 100
+
+# CoreHunter objectives
+# Equal weightage for Average entry-to-nearest-entry distance (EN) and 
+# Average accession-to-nearest-entry distance (AN)
+obj <- list(
+  objective(type = c("EN"), measure = c("GD")),
+  objective(type = c("AN"), measure = c("GD")))
+
+obj
+
+```
+
+# Generate the core
+
+```{r, eval=FALSE}
+core <- sampleCore(data = pheno, obj = obj, size = csize,
+                   impr.steps = impr_steps, verbose = TRUE)
+```
+
+
+```{r, eval=FALSE, echo=FALSE}
+
+save(core, file = "vignettes/additional/cassava_core.RData")
+
+```
+
+```{r, eval=TRUE, echo=FALSE}
+load("cassava_core.RData")
+
+pb_out <- c("Normalizing objectives.",
+            "Average entry to nearest entry (Gower): [0.167, 0.293]",
+            "Average accession to nearest entry (Gower): [0.140, 0.188]",
+            "Finished normalization.",
+            "Search : ParallelTempering started",
+            "Current value: -0.368442",
+            "Current value: -0.358982",
+            "Current value: -0.330855",
+            "Current value: -0.294309",
+            "Current value: -0.294106",
+            "Current value: -0.276086",
+            "Current value: -0.271618",
+            "Current value: -0.260871",
+            "Current value: -0.257898",
+            "Current value: -0.250268",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "Current value: 0.437049",
+            "Current value: 0.437233",
+            "Current value: 0.437836",
+            "Current value: 0.438005",
+            "Current value: 0.439092",
+            "Current value: 0.440315",
+            "Current value: 0.440388",
+            "Current value: 0.441378",
+            "Current value: 0.441550",
+            "Search : ParallelTempering stopped after 908.0 seconds and 1493 steps",
+            "Best solution with evaluation : 0.441550",
+            "Best solution with evaluation : Subset solution: {44, 417, 585, 609, 990, 1064, 1085, 1155, 1347, 1353, 1362, 1408, 1422, 1462, 1515, 1616, 1640, 1670, 1530, 1517, 772, 204, 1481, 571, 533, 833, 1138, 826, 9, 75, 481, 605, 1203, 568, 1411, 579, 781, 428, 588, 1133, 1524, 1073, 842, 379, 1536, 1676, 710, 1378, 272, 87, 1156, 25, 767, 1661, 756, 822, 1201, 893, 1382, 1369, 1578, 1163, 1134, 1611, 1618, 1667, 476, 1019, 1421, 678, 1602, 802, 467, 559, 1641, 1087, 228, 1541, 508, 1500, 1014, 1233, 1529, 793, 932, 619, 942, 1673, 1683, 1537, 1380, 829, 1146, 1649, 168, 1383, 242, 1399, 864, 434, 224, 1273, 1680, 582, 1470, 1333, 1566, 1127, 1015, 690, 1128, 927, 1672, 1581, 213, 718, 31, 1337, 1227, 661, 1151, 171, 606, 563, 347, 186, 925, 763, 465, 969, 124, 1437, 1594, 459, 305, 817, 818, 681, 876, 1270, 551, 93, 263, 1453, 246, 1331, 1181, 873, 1302, 1290, 1596, 697, 1164, 1660, 130, 1538, 1044, 635, 386, 192, 1469, 600, 1017, 894, 682, 594, 453, 1174}")
+
+message(paste(pb_out, collapse = "\n"))
+
+core
+```
+
+
+# Export the datasets
+
+```{r}
+
+cassava_CC <- cassava_EC[rownames(cassava_EC) %in% core$sel, ]
+
+write.csv(cassava_EC, "cassava_EC.csv", row.names = TRUE)
+write.csv(cassava_CC, "cassava_CC.csv", row.names = TRUE)
+
+```
+
+
+# Session Info
+
+```{r}
+sessionInfo()
+```
+
+# References
+
+
+
+
+
