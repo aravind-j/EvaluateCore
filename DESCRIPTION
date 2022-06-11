@@ -25,7 +25,7 @@ Description: Implements various quality evaluation statistics to assess the
     value of plant germplasm core collections using qualitative and 
     quantitative phenotypic trait data according to Odong et al. (2015) 
     <doi:10.1007/s00122-012-1971-y>.
-Copyright: 2018-2021, ICAR-NBPGR
+Copyright: 2018-2022, ICAR-NBPGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.2.0
