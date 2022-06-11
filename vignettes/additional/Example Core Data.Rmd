@@ -1,5 +1,5 @@
 ---
-title: "Example Core Data"
+title: "Example Datasets in `EvaluateCore`"
 author: "J. Aravind"
 date: "`r Sys.Date()`"
 output:
