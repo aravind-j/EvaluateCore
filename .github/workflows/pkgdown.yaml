@@ -34,10 +34,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          remotes::install_deps(dependencies = TRUE)
+          remotes::install_deps(dependencies = TRUE)          
           install.packages("pkgdown", type = "binary")
+          install.packages("dplyr", type = "binary")
           install.packages("readxl", type = "binary")
           install.packages("corehunter", type = "binary")
+          install.packages("DT", type = "binary")
         shell: Rscript {0}
 
       - name: Install package
