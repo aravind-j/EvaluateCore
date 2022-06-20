@@ -1,12 +1,13 @@
 # EvaluateCore  0.1.3
 
 ## UPDATED FUNCTIONS:
-* `box.evaluate.core` - Replace depreciated arg from ggplot2::stat_summary
+* `box.evaluate.core` - Replace depreciated arg from `ggplot2::stat_summary`.
 
 ## OTHER NOTES: 
 * Fixed minor typos in `bar.evaluate.core`, `dit.evaluate.core` and `freqdist.evaluate.core`.
 * Fixed missing `mathjaxr` in Namespace.
 * Remove dependency on `ccChooser` as it is depreciated. Add `cassava_EC` and `cassava_CC` datasets and use it in all the examples instead of `ccChooser::dactylis_EC` and `ccChooser::dactylis_CC`.
+* Added vignette - "Evaluation of Core Collections with `EvaluateCore`".
 
 # EvaluateCore  0.1.2
 

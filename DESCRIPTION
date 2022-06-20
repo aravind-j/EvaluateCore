@@ -57,5 +57,6 @@ Imports:
     vegan
 Suggests:
     corehunter,
+    pander,
     rJava (>= 0.9-8)
 LazyData: true

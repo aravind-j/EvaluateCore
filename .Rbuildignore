@@ -24,3 +24,4 @@
 ^vignettes/additional$
 ^cassava_EC\.csv$
 ^cassava_CC\.csv$
+^vignettes/Methods\.xlsx$

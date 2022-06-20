@@ -1,0 +1,216 @@
+---
+title: "Evaluation of Core Collections with `EvaluateCore`"
+author: "Aravind, J.^1^, Kaur, V.^2^, Wankhede, D. P.^3^, and Nanjundan, J.^4^"
+date: "`r Sys.Date()`"
+classoption: table, twoside
+header-includes:
+- \usepackage{fancyhdr}
+- \usepackage{wrapfig}
+- \pagestyle{fancy}
+- \fancyhead[LE,RO]{\slshape \rightmark}
+- \fancyfoot[C]{\thepage}
+- \usepackage{xcolor}
+- \usepackage{hyperref}
+- \hypersetup{colorlinks=true}
+- \hypersetup{linktoc=all}
+- \hypersetup{linkcolor=blue}
+- \usepackage{pdflscape}
+- \usepackage{booktabs}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \fancyhead[LO,RE]{The \texttt{EvaluateCore} Package{:} A Brief Introduction}
+output:
+  pdf_document:
+    fig_caption: no
+    toc: no
+    keep_tex:  no
+  html_document:
+    df_print: paged
+    toc: yes
+csl: frontiers.csl
+bibliography: REFERENCES.bib
+link-citations: yes
+vignette: |
+  %\VignetteIndexEntry{Introduction}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+```{r, echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
+
+# Workaround for missing pandoc in CRAN OSX build machines
+out_type <- ifelse(out_type == "", "latex", out_type)
+
+# Workaround for missing pandoc in Solaris build machines
+out_type <- ifelse(identical (out_type, vector(mode = "logical", length = 0)),
+                   "latex", out_type)
+```
+
+```{r, results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p>1. Division of Germplasm Conservation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>
+<p>2. Division of Germplasm Evaluation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>
+<p>3. Division of Genomic Resources, ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>
+<p>4. ICAR-Indian Agricultural Research Institute, Regional Station, Wellington, Tamil Nadu.</p>")},
+    latex = cat("\\begin{center}
+1. Division of Germplasm Conservation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+2. Division of Germplasm Evaluation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+3. Division of Genomic Resources, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+4. ICAR-Indian Agricultural Research Institute, Regional Station, Wellington, Tamil Nadu.
+\\end{center}" )
+)
+```
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  comment = "",
+  fig.cap = ""
+)
+
+```
+
+\tableofcontents
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.33\textwidth]{`r system.file("extdata", "EvaluateCore.png", package = "EvaluateCore")`}
+  \end{center}
+    \vspace{-20pt}
+\end{wrapfigure}
+
+<img src="https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+
+## Overview
+
+A core collection is a *"limited set of accessions representing, with minimum repetitiveness, the genetic diversity of a crop species and its wild relatives"*[@frankel_genetic_1984].
+
+In case of several large and unwieldy germplasm collections conserved in genebanks, development of several such core collections has facilitated increasing the efficiency of their characterisation and in turn the utilisation.
+
+There are different criteria available for evaluating the core collections by comparing with the original collections from which they have been sampled. The choice of the suitable evaluation criteria should be dictated by the objectives of the core collection. Several such criteria including the distance based metrics described in @odong_quality_2013 have been implemented in `EvaluateCore` and this document shows how to use them. This document assumes a basic knowledge of `R` programming language.
+
+## Installation
+The package can be installed using the following functions:
+
+```{r, eval=FALSE}
+# Install from CRAN
+install.packages('EvaluateCore', dependencies=TRUE)
+
+# Install development version from Github
+devtools::install_github("aravind-j/EvaluateCore")
+
+```
+
+Then the package can be loaded using the function
+```{r}
+library(EvaluateCore)
+```
+
+\clearpage
+
+## Version History
+```{r, results='asis', echo=FALSE}
+
+# Fetch release version
+rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("EvaluateCore")) == "",
+               yes = getNamespaceVersion("EvaluateCore"),
+               no = ifelse("EvaluateCore" %in% available.packages()[, 1],
+                           as.vector(available.packages()["EvaluateCore",]["Version"]),
+                           getNamespaceVersion("EvaluateCore")))
+
+```
+
+The current version of the package is `r rver`. The previous versions are as follows.
+
+**Table 1.** Version history of `EvaluateCore` `R` package.
+
+```{r, echo=FALSE, message=FALSE}
+if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
+pkg <- "EvaluateCore"
+link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
+
+if (RCurl::url.exists(link)) {
+  # cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
+# page <- httr::GET(link, httr::config(cainfo = cafile))
+page <- httr::GET(link)
+page <- httr::content(page, as = 'text')
+# page <- RCurl::getURL(link)
+
+VerHistory <- XML::readHTMLTable(page)[[1]][,2:3]
+colnames(VerHistory) <- c("Version", "Date")
+VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
+VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
+VerHistory$Date <- as.Date(VerHistory$Date)
+VerHistory$Version <- gsub("EvaluateCore_", "", VerHistory$Version)
+VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
+
+VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
+rownames(VerHistory) <- NULL
+
+knitr::kable(VerHistory)
+
+} else {
+  print("Access to CRAN page for 'EvaluateCore' is required to generate this table.'")
+}
+
+} else {
+print("Packages 'RCurl', 'httr' and 'XML' are required to generate this table.")
+}
+
+```
+
+To know detailed history of changes use `news(package='EvaluateCore')`.
+
+\newpage
+\blandscape
+
+\rowcolors{2}{gray!25}{white}
+\renewcommand{\arraystretch}{1.3}
+
+**Table 2 :** Core evaluation methods implemented in `EvaluateCore`.
+
+\footnotesize
+
+```{r, echo = FALSE, eval = TRUE}
+load("ecmethods.rda")
+
+ecmethods$`Function` <- paste("`", ecmethods$`Function`, "`", sep = "")
+
+ecmethods$Reference <- gsub("\\[|\\]", "", ecmethods$Reference)
+
+
+```
+
+
+```{r, echo = FALSE, eval = TRUE}
+# if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
+if (requireNamespace("pander", quietly = TRUE) ){
+  pander::pander(ecmethods, style='grid',
+               split.cell = c(15, 30, 15, 10, 10, 10, 10),
+               justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
+               use.hyphening = FALSE, missing = "")
+} else {
+  print("Package 'pander' and pandoc are required to generate this table")
+}
+
+```
+
+
+\elandscape
+
+\newpage
+
+
+## References
