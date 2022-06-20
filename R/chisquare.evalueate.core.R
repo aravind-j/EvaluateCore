@@ -133,7 +133,7 @@ chisquare.evaluate.core <- function(data, names, qualitative, selected) {
                                       ifelse(outdf$chisq_pvalue <= 0.05, "*",
                                              "ns"))
 
-
+  rownames(outdf) <- NULL
 
   return(outdf)
 
