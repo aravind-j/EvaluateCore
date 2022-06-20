@@ -20,8 +20,8 @@
 #' Compute average Entry-to-nearest-entry distance
 #' (\mjteqn{E\textrm{-}EN}{E\text{-}EN}{E-EN}),
 #' Accession-to-nearest-entry distance
-#' (\mjteqn{A\textrm{-}EN}{E\text{-}EN}{E-EN}) and
-#' Entry-to-entry distance (\mjteqn{E\textrm{-}E}{E\text{-}EN}{E-EN})
+#' (\mjteqn{A\textrm{-}EN}{E\text{-}EN}{A-EN}) and
+#' Entry-to-entry distance (\mjteqn{E\textrm{-}E}{E\text{-}EN}{E-E})
 #' \insertCite{odong_quality_2013}{EvaluateCore}
 #' to evaluate a core set (CS) selected from an entire collection (EC).
 #' \loadmathjax
@@ -39,8 +39,8 @@
 #'
 #' @return A data frame with the average values of
 #' \mjteqn{E\textrm{-}EN}{E\text{-}EN}{E-EN},
-#' \mjteqn{A\textrm{-}EN}{E\text{-}EN}{E-EN} and
-#' \mjteqn{E\textrm{-}E}{E\text{-}EN}{E-EN}.
+#' \mjteqn{A\textrm{-}EN}{E\text{-}EN}{A-EN} and
+#' \mjteqn{E\textrm{-}E}{E\text{-}EN}{E-E}.
 #'
 #' @references
 #'

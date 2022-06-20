@@ -38,7 +38,7 @@ and core set (CS). \loadmathjax
 \details{
 Shannon-Weaver Diversity Index (\mjseqn{H'}) is computed as follows.
 
-\mjsdeqn{H' = -\sum_{i=1}^{k}p_{i}log(p_{i})}
+\mjsdeqn{H' = -\sum_{i=1}^{k}p_{i} \ln(p_{i})}
 
 Where \mjseqn{p_{i}} denotes the proportion in the group \mjseqn{k}.
 
@@ -48,7 +48,7 @@ value occurs when each group has the same frequency.
 The Shannon equitability index (\mjseqn{E_{H}}) is the Shannon diversity
 index divided by the maximum diversity.
 
-\mjsdeqn{E_{H} = \frac{H}{\ln{(k)}}}
+\mjsdeqn{E_{H} = \frac{H'}{\ln{(k)}}}
 }
 \examples{
 

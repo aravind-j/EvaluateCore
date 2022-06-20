@@ -25,7 +25,8 @@ The \mjseqn{CR} value.
 \description{
 Compute the Coincidence Rate of Range
 (\ifelse{html}{\out{<em>CR</em>}}{\eqn{CR}})
-\insertCite{diwan_methods_1995,hu_methods_2000}{EvaluateCore} to compare
+\insertCite{hu_methods_2000}{EvaluateCore} (originally described by
+\insertCite{diwan_methods_1995}{EvaluateCore} as Mean range ratio) to compare
 quantitative traits of the entire collection (EC) and core set (CS).
 \loadmathjax
 }
@@ -38,6 +39,10 @@ The Coincidence Rate of Range (\mjseqn{CR}) is computed as follows.
 Where, \mjseqn{R_{CS_{i}}} is the range of the \mjseqn{i}th trait in the CS,
 \mjseqn{R_{EC_{i}}} is the range of the \mjseqn{i}th trait in the EC and
 \mjseqn{n} is the total number of traits.
+
+A representative CS should have a \mjseqn{CR} value no less than 70\%
+\insertCite{diwan_methods_1995}{EvaluateCore} or 80\%
+\insertCite{hu_methods_2000}{EvaluateCore}.
 }
 \examples{
 
