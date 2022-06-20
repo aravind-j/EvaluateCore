@@ -37,25 +37,28 @@
 #' The differences are computed as follows.
 #'
 #' \mjtdeqn{MD\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
-#' 100}{MD\\\\\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
-#' 100}{MD\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100}
+#' 100}{MD\\\\\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100}{MD\%_{Hu}
+#' = \left ( \frac{S_{t}}{n} \right ) \times 100}
 #'
 #' Where, \mjseqn{S_{t}} is the number of traits with a significant difference
 #' between the means of the EC and the CS and \mjseqn{n} is the total number of
-#' traits.
+#' traits. A representative core should have
+#' \mjteqn{MD\\\%_{Hu}}{MD\\\\\\\%_{Hu}}{MD\%_{Hu}} < 20 \% and \mjseqn{CR} > 80
+#' \% \insertCite{hu_methods_2000}{EvaluateCore}.
 #'
 #' \mjtdeqn{VD\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
-#' 100}{VD\\\\\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
-#' 100}{VD\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100}
+#' 100}{VD\\\\\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100}{VD\%_{Hu}
+#' = \left ( \frac{S_{t}}{n} \right ) \times 100}
 #'
 #' Where, \mjseqn{S_{t}} is the number of traits with a significant difference
 #' between the variances of the EC and the CS and \mjseqn{n} is the total number
-#' of traits.
+#' of traits. Larger \mjteqn{VD\\\%_{Hu}}{VD\\\\\\\%_{Hu}}{VD\%_{Hu}} value
+#' indicates a more diverse core set.
 #'
 #' \mjtdeqn{MD\\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
 #' M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}{MD\\\\\\\%_{Kim} =
 #' \frac{1}{n}\sum_{i=1}^{n} \frac{\left | M_{EC_{i}}-M_{CS_{i}} \right
-#' |}{M_{CS_{i}}}}{MD\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+#' |}{M_{CS_{i}}}}{MD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
 #' M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}
 #'
 #' Where, \mjseqn{M_{EC_{i}}} is the mean of the EC for the \mjseqn{i}th trait,
@@ -65,7 +68,7 @@
 #' \mjtdeqn{VD\\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
 #' V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}{VD\\\\\\\%_{Kim} =
 #' \frac{1}{n}\sum_{i=1}^{n} \frac{\left | V_{EC_{i}}-V_{CS_{i}} \right
-#' |}{V_{CS_{i}}}}{VD\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+#' |}{V_{CS_{i}}}}{VD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
 #' V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}
 #'
 #' Where, \mjseqn{V_{EC_{i}}} is the variance of the EC for the \mjseqn{i}th

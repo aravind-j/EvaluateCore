@@ -23,8 +23,7 @@ core collection and present in the \code{names} column.}
 The \mjseqn{CR} value.
 }
 \description{
-Compute the Coincidence Rate of Range
-(\ifelse{html}{\out{<em>CR</em>}}{\eqn{CR}})
+Compute the Coincidence Rate of Range (\mjseqn{CR})
 \insertCite{hu_methods_2000}{EvaluateCore} (originally described by
 \insertCite{diwan_methods_1995}{EvaluateCore} as Mean range ratio) to compare
 quantitative traits of the entire collection (EC) and core set (CS).
