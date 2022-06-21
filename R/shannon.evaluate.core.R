@@ -38,7 +38,6 @@
 #'
 #' \mjsdeqn{E_{H} = \frac{H'}{\ln{(k)}}}
 #'
-#' @inheritParams chisquare.evaluate.core
 #'
 #' @return A data frame with the following columns. \item{Trait}{The qualitative
 #'   trait.} \item{EC_H}{The Shannon-Weaver Diversity Index (\mjseqn{H'}) for
@@ -52,7 +51,6 @@
 #'
 #' @importFrom psych shannon
 #' @importFrom dplyr bind_rows
-#' @export
 #'
 #' @references
 #'
@@ -81,7 +79,23 @@
 #' shannon.evaluate.core(data = ec, names = "genotypes",
 #'                       qualitative = qual, selected = core)
 #'
+#' @name shannon.evaluate.core-deprecated
+#' @usage shannon.evaluate.core(data, names, qualitative, selected)
+#' @seealso \code{\link{EvaluateCore-deprecated}}
+#' @keywords internal
+NULL
+
+#' @rdname EvaluateCore-deprecated
+#' @section \code{shannon.evaluate.core}:
+#' For \code{shannon.evaluate.core}, use \code{\link{diversity.evaluate.core}}.
+#'
+#' @export
 shannon.evaluate.core <- function(data, names, qualitative, selected) {
+
+  .Deprecated("diversity.evaluate.core",
+              msg = c("`shannon.evaluate.core()` was deprecated in EvaluateCore 0.1.3.\n",
+                      "Please use `diversity.evaluate.core()` instead."))
+
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
