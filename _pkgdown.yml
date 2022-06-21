@@ -21,8 +21,8 @@ navbar:
     - icon: far fa-file
       text: Articles
       menu:
-        - text: PlaceHolder
-          href: 404.html
+        - text: Tutorial
+          href: articles/EvaluationofCoreCollections.html
           menu:
         - text: Additional
           menu:
@@ -68,7 +68,7 @@ reference:
           - '`bar.evaluate.core`'
           - '`chisquare.evaluate.core`'
           - '`coverage.evaluate.core`'
-          - '`shannon.evaluate.core`'
+          - '`diversity.evaluate.core`'
 
     - title: Compare both qualitative and quantitative traits
       contents:
@@ -80,5 +80,10 @@ reference:
       contents:
           - '`cassava_EC`'
           - '`cassava_CC`'
+
+    - title: Deprecated
+      contents:
+          - '`EvaluateCore-deprecated`'
+
 
 

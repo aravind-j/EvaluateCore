@@ -239,10 +239,10 @@ if (is.factor(x)) {
   H <- 1 - D  # Nei's variation /Simpson's index of diversity/Gini's diversity
   H.max <- 1 - (1 / k) # Max Simpson's index of diversity
   D.inv <- 1 / D # Reciprocal D
-  H.rel <- H / H_max # Relative H
+  H.rel <- H / H.max # Relative H
   I <- - sum(prob * log(prob, base=base)) # SHannon Weaver diversity index
   I.max <- log(k) # Max I
-  I.rel <- I / I_max # Shannon equitability index
+  I.rel <- I / I.max # Shannon equitability index
   D.Mc <- (total.count - sqrt(sum(count ^ 2))) / # McIntosh Index
     (total.count - sqrt(total.count))
 

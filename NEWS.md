@@ -1,10 +1,10 @@
 # EvaluateCore  0.1.3
 
 ## NEW FUNCTIONS:
-* `diversity.evaluate.core` - Upgraded `shannon.evaluate.core` (now depreciated) with even more diversity indices.
+* `diversity.evaluate.core` - Upgraded `shannon.evaluate.core` (now deprecated) with even more diversity indices.
 
 ## UPDATED FUNCTIONS:
-* `box.evaluate.core` - Replace depreciated arg from `ggplot2::stat_summary`.
+* `box.evaluate.core` - Replace deprecated arg from `ggplot2::stat_summary`.
 
 ## OTHER NOTES: 
 * Fixed minor typos in `bar.evaluate.core`, `dit.evaluate.core` and `freqdist.evaluate.core`.
