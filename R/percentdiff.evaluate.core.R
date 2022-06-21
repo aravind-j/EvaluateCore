@@ -46,11 +46,11 @@
 #' \mjteqn{MD\\\%_{Hu}}{MD\\\\\\\%_{Hu}}{MD\%_{Hu}} < 20 \% and \mjseqn{CR} > 80
 #' \% \insertCite{hu_methods_2000}{EvaluateCore}.
 #'
-#' \mjtdeqn{VD\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
-#' 100}{VD\\\\\\\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100}{VD\%_{Hu}
-#' = \left ( \frac{S_{t}}{n} \right ) \times 100}
+#' \mjtdeqn{VD\\\%_{Hu} = \left ( \frac{S_{F}}{n} \right ) \times
+#' 100}{VD\\\\\\\%_{Hu} = \left ( \frac{S_{F}}{n} \right ) \times 100}{VD\%_{Hu}
+#' = \left ( \frac{S_{F}}{n} \right ) \times 100}
 #'
-#' Where, \mjseqn{S_{t}} is the number of traits with a significant difference
+#' Where, \mjseqn{S_{F}} is the number of traits with a significant difference
 #' between the variances of the EC and the CS and \mjseqn{n} is the total number
 #' of traits. Larger \mjteqn{VD\\\%_{Hu}}{VD\\\\\\\%_{Hu}}{VD\%_{Hu}} value
 #' indicates a more diverse core set.
