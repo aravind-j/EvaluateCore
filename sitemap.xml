@@ -4,6 +4,9 @@
     <loc>https://aravind-j.github.io/EvaluateCore/404.html</loc>
   </url>
   <url>
+    <loc>https://aravind-j.github.io/EvaluateCore/articles/EvaluationofCoreCollections.html</loc>
+  </url>
+  <url>
     <loc>https://aravind-j.github.io/EvaluateCore/articles/additional/Example Core Data.html</loc>
   </url>
   <url>
@@ -17,6 +20,9 @@
   </url>
   <url>
     <loc>https://aravind-j.github.io/EvaluateCore/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/EvaluateCore/reference/EvaluateCore-deprecated.html</loc>
   </url>
   <url>
     <loc>https://aravind-j.github.io/EvaluateCore/reference/bar.evaluate.core.html</loc>
@@ -49,6 +55,9 @@
     <loc>https://aravind-j.github.io/EvaluateCore/reference/dist.evaluate.core.html</loc>
   </url>
   <url>
+    <loc>https://aravind-j.github.io/EvaluateCore/reference/diversity.evaluate.core.html</loc>
+  </url>
+  <url>
     <loc>https://aravind-j.github.io/EvaluateCore/reference/freqdist.evaluate.core.html</loc>
   </url>
   <url>
@@ -73,7 +82,7 @@
     <loc>https://aravind-j.github.io/EvaluateCore/reference/qq.evaluate.core.html</loc>
   </url>
   <url>
-    <loc>https://aravind-j.github.io/EvaluateCore/reference/shannon.evaluate.core.html</loc>
+    <loc>https://aravind-j.github.io/EvaluateCore/reference/shannon.evaluate.core-deprecated.html</loc>
   </url>
   <url>
     <loc>https://aravind-j.github.io/EvaluateCore/reference/signtest.evaluate.core.html</loc>

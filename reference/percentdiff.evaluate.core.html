@@ -71,7 +71,7 @@ between the mean squared Euclidean distance among accessions
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
-      <a href="../404.html">PlaceHolder</a>
+      <a href="../articles/EvaluationofCoreCollections.html">Tutorial</a>
     </li>
     <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Additional</a>
@@ -180,8 +180,27 @@ core collection and present in the <code>names</code> column.</p></dd>
     <div id="details">
     <h2>Details</h2>
     <p>The differences are computed as follows.</p>
-<p>\[MD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times
-100\]</p>
+<p>\[MD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100\]</p>
+<p>Where, <em></em>\(S_{t}\) is the number of traits with a significant difference
+between the means of the EC and the CS and <em></em>\(n\) is the total number of
+traits. A representative core should have
+<em></em>\(MD\%_{Hu}\) &lt; 20 % and <em></em>\(CR\) &gt; 80
+% (Hu et al. 2000)
+.</p>
+<p>\[VD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100\]</p>
+<p>Where, <em></em>\(S_{t}\) is the number of traits with a significant difference
+between the variances of the EC and the CS and <em></em>\(n\) is the total number
+of traits. Larger <em></em>\(VD\%_{Hu}\) value
+indicates a more diverse core set.</p>
+<p>\[MD\%_{Kim} =
+\frac{1}{n}\sum_{i=1}^{n} \frac{\left | M_{EC_{i}}-M_{CS_{i}} \right
+|}{M_{CS_{i}}}\]</p>
+<p>Where, <em></em>\(M_{EC_{i}}\) is the mean of the EC for the <em></em>\(i\)th trait,
+<em></em>\(M_{CS_{i}}\) is the mean of the CS for the <em></em>\(i\)th trait and
+<em></em>\(n\) is the total number of traits.</p>
+<p>\[VD\%_{Kim} =
+\frac{1}{n}\sum_{i=1}^{n} \frac{\left | V_{EC_{i}}-V_{CS_{i}} \right
+|}{V_{CS_{i}}}\]</p>
 <p>Where, <em></em>\(V_{EC_{i}}\) is the variance of the EC for the <em></em>\(i\)th
 trait, <em></em>\(V_{CS_{i}}\) is the variance of the CS for the <em></em>\(i\)th
 trait and <em></em>\(n\) is the total number of traits.</p>
