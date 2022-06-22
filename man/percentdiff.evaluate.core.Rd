@@ -68,21 +68,23 @@ between the variances of the EC and the CS and \mjseqn{n} is the total number
 of traits. Larger \mjteqn{VD\\\%_{Hu}}{VD\\\\\\\%_{Hu}}{VD\%_{Hu}} value
 indicates a more diverse core set.
 
-\mjtdeqn{MD\\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
-M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}{MD\\\\\\\%_{Kim} =
-\frac{1}{n}\sum_{i=1}^{n} \frac{\left | M_{EC_{i}}-M_{CS_{i}} \right
-|}{M_{CS_{i}}}}{MD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
-M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}}}
+\mjtdeqn{MD\\\%_{Kim} = \left ( \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}} \right ) \times
+100}{MD\\\\\\\%_{Kim} = \left ( \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}} \right ) \times 100}{MD\%_{Kim} =
+\left ( \frac{1}{n}\sum_{i=1}^{n} \frac{\left | M_{EC_{i}}-M_{CS_{i}} \right
+|}{M_{CS_{i}}} \right ) \times 100}
 
 Where, \mjseqn{M_{EC_{i}}} is the mean of the EC for the \mjseqn{i}th trait,
 \mjseqn{M_{CS_{i}}} is the mean of the CS for the \mjseqn{i}th trait and
 \mjseqn{n} is the total number of traits.
 
-\mjtdeqn{VD\\\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
-V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}{VD\\\\\\\%_{Kim} =
-\frac{1}{n}\sum_{i=1}^{n} \frac{\left | V_{EC_{i}}-V_{CS_{i}} \right
-|}{V_{CS_{i}}}}{VD\%_{Kim} = \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
-V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}}}
+\mjtdeqn{VD\\\%_{Kim} = \left ( \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}} \right ) \times
+100}{VD\\\\\\\%_{Kim} = \left ( \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}} \right ) \times 100}{VD\%_{Kim} =
+\left ( \frac{1}{n}\sum_{i=1}^{n} \frac{\left | V_{EC_{i}}-V_{CS_{i}} \right
+|}{V_{CS_{i}}} \right ) \times 100}
 
 Where, \mjseqn{V_{EC_{i}}} is the variance of the EC for the \mjseqn{i}th
 trait, \mjseqn{V_{CS_{i}}} is the variance of the CS for the \mjseqn{i}th
