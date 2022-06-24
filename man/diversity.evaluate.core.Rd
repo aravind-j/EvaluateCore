@@ -4,7 +4,7 @@
 \alias{diversity.evaluate.core}
 \title{Diversity Indices}
 \usage{
-diversity.evaluate.core(data, names, qualitative, selected)
+diversity.evaluate.core(data, names, qualitative, selected, base = 2)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -18,6 +18,9 @@ vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
+
+\item{base}{The logarithm base to be used for computation of Shannon-Weaver
+Diversity Index (\mjseqn{I}). Default is 2.}
 }
 \value{
 A data frame with the following columns. \item{Trait}{The qualitative
@@ -54,12 +57,13 @@ Diversity Index or Gini-Simpson Index (\mjseqn{H})
 Diversity (\mjseqn{H_{max}})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Simpson's
 Reciprocal Index (\mjseqn{D_{R}})
-\insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Relative Nei's
-Diversity/Variation Index or Relative Simpson's Index of Diversity
-(\mjseqn{H'}) \insertCite{hennink_interpretation_1990}{EvaluateCore}}
-\item{Shannon or Shannon-Weaver or Shannon-Weiner Diversity Index
-(\mjseqn{I}) \insertCite{shannon_mathematical_1949}{EvaluateCore}}
-\item{Maximum Shannon-Weaver Diversity Index (\mjseqn{I_{max}})
+\insertCite{hill_diversity_1973,hennink_interpretation_1990}{EvaluateCore}}
+\item{Relative Nei's Diversity/Variation Index or Relative Simpson's Index of
+Diversity (\mjseqn{H'})
+\insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Shannon or
+Shannon-Weaver or Shannon-Weiner Diversity Index (\mjseqn{I})
+\insertCite{shannon_mathematical_1949}{EvaluateCore}} \item{Maximum
+Shannon-Weaver Diversity Index (\mjseqn{I_{max}})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Relative
 Shannon-Weaver Diversity Index or Shannon Equitability Index (\mjseqn{I'})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{McIntosh
@@ -98,7 +102,8 @@ follows \insertCite{hennink_interpretation_1990}{EvaluateCore}.
 
 Reciprocal of \mjseqn{D} gives the Simpson's reciprocal index
 (\mjseqn{D_{R}}) \insertCite{hennink_interpretation_1990}{EvaluateCore} and
-can range from 1 to \mjseqn{k}.
+can range from 1 to \mjseqn{k}. This was also described in
+\insertCite{hill_diversity_1973;textual}{EvaluateCore} as (\mjseqn{N_{2}}).
 
 \mjsdeqn{D_{R} = \frac{1}{D}}
 

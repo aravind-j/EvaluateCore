@@ -29,12 +29,13 @@
 #' Diversity (\mjseqn{H_{max}})
 #' \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Simpson's
 #' Reciprocal Index (\mjseqn{D_{R}})
-#' \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Relative Nei's
-#' Diversity/Variation Index or Relative Simpson's Index of Diversity
-#' (\mjseqn{H'}) \insertCite{hennink_interpretation_1990}{EvaluateCore}}
-#' \item{Shannon or Shannon-Weaver or Shannon-Weiner Diversity Index
-#' (\mjseqn{I}) \insertCite{shannon_mathematical_1949}{EvaluateCore}}
-#' \item{Maximum Shannon-Weaver Diversity Index (\mjseqn{I_{max}})
+#' \insertCite{hill_diversity_1973,hennink_interpretation_1990}{EvaluateCore}}
+#' \item{Relative Nei's Diversity/Variation Index or Relative Simpson's Index of
+#' Diversity (\mjseqn{H'})
+#' \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Shannon or
+#' Shannon-Weaver or Shannon-Weiner Diversity Index (\mjseqn{I})
+#' \insertCite{shannon_mathematical_1949}{EvaluateCore}} \item{Maximum
+#' Shannon-Weaver Diversity Index (\mjseqn{I_{max}})
 #' \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Relative
 #' Shannon-Weaver Diversity Index or Shannon Equitability Index (\mjseqn{I'})
 #' \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{McIntosh
@@ -72,7 +73,8 @@
 #'
 #' Reciprocal of \mjseqn{D} gives the Simpson's reciprocal index
 #' (\mjseqn{D_{R}}) \insertCite{hennink_interpretation_1990}{EvaluateCore} and
-#' can range from 1 to \mjseqn{k}.
+#' can range from 1 to \mjseqn{k}. This was also described in
+#' \insertCite{hill_diversity_1973;textual}{EvaluateCore} as (\mjseqn{N_{2}}).
 #'
 #' \mjsdeqn{D_{R} = \frac{1}{D}}
 #'
@@ -118,6 +120,8 @@
 #' so that \mjseqn{p_{i} = {n_{i}}/{N}}.
 #'
 #' @inheritParams chisquare.evaluate.core
+#' @param base The logarithm base to be used for computation of Shannon-Weaver
+#'   Diversity Index (\mjseqn{I}). Default is 2.
 #'
 #' @return A data frame with the following columns. \item{Trait}{The qualitative
 #'   trait.} \item{EC_No.Classes}{The number of classes in the trait for EC.}
@@ -173,7 +177,8 @@
 #' diversity.evaluate.core(data = ec, names = "genotypes",
 #'                         qualitative = qual, selected = core)
 #'
-diversity.evaluate.core <- function(data, names, qualitative, selected) {
+diversity.evaluate.core <- function(data, names, qualitative, selected,
+                                    base = 2) {
 
   # Checks
   checks.evaluate.core(data = data, names = names,
@@ -199,13 +204,13 @@ diversity.evaluate.core <- function(data, names, qualitative, selected) {
 
   EC.indices <- lapply(dataf[dataf$`[Type]` == "EC",
                              !colnames(dataf) %in% c(names, "[Type]")],
-                       diversity.indices)
+                       diversity.indices, base = base)
   EC.indices <- do.call(rbind, EC.indices)
   colnames(EC.indices) <- paste("EC_", colnames(EC.indices), sep = "")
 
   CS.indices <- lapply(dataf[dataf$`[Type]` == "CS",
                              !colnames(dataf) %in% c(names, "[Type]")],
-                       diversity.indices)
+                       diversity.indices, base = base)
   CS.indices <- do.call(rbind, CS.indices)
   colnames(CS.indices) <- paste("CS_", colnames(CS.indices), sep = "")
 
@@ -227,6 +232,8 @@ diversity.evaluate.core <- function(data, names, qualitative, selected) {
 
 diversity.indices <- function(x, base = 2) {
 if (is.factor(x)) {
+
+  x <- droplevels(x)
 
   count <- as.vector(table(x))
   total.count <- sum(count, na.rm = TRUE)
