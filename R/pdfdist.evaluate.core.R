@@ -145,6 +145,8 @@ pdfdist.evaluate.core <- function(data, names, quantitative, selected) {
   outdf$AD_significance <- ifelse(outdf$AD_pvalue <= 0.01, "**",
                                   ifelse(outdf$AD_pvalue <= 0.05, "*", "ns"))
 
+  rownames(outdf) <- NULL
+
   return(outdf)
 
 }
