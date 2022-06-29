@@ -4,7 +4,7 @@
 \alias{diversity.evaluate.core}
 \title{Diversity Indices}
 \usage{
-diversity.evaluate.core(data, names, qualitative, selected, base = 2)
+diversity.evaluate.core(data, names, qualitative, selected, base = 2, R = 1000)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -21,6 +21,8 @@ core collection and present in the \code{names} column.}
 
 \item{base}{The logarithm base to be used for computation of Shannon-Weaver
 Diversity Index (\mjseqn{I}). Default is 2.}
+
+\item{R}{The number of bootstrap replicates.}
 }
 \value{
 A data frame with the following columns. \item{Trait}{The qualitative
@@ -46,108 +48,136 @@ A data frame with the following columns. \item{Trait}{The qualitative
   \item{CS_D.Mc}{McIntosh Diversity Index (\mjseqn{D_{Mc}}) for CS.}.
 }
 \description{
-Compute the following diversity indices to compare the phenotypic diversity
-for qualitative traits between entire collection (EC) and core set (CS).
-\itemize{ \item{Simpson's Index (\mjseqn{D})
-\insertCite{simpson_measurement_1949}{EvaluateCore}} \item{Nei's Diversity
-Index or Nei's Variation Index or Simpson's Index of Diversity or Gini's
-Diversity Index or Gini-Simpson Index (\mjseqn{H})
-\insertCite{gini_variabilita_1912,gini_variabilita_1912-2,nei_analysis_1973}{EvaluateCore}}
-\item{Maximum Nei's Diversity/Variation Index or Maximum Simpson's Index of
-Diversity (\mjseqn{H_{max}})
+Compute the following diversity indices and perform corresponding statistical
+tests to compare the phenotypic diversity for qualitative traits between
+entire collection (EC) and core set (CS). \itemize{ \item{Simpson's and
+related indices} \itemize{ \item{Simpson's Index (\mjseqn{d})
+\insertCite{simpson_measurement_1949,peet_measurement_1974}{EvaluateCore}}
+\item{Simpson's Index of Diversity or Gini's Diversity Index or Gini-Simpson
+Index or Nei's Diversity Index or Nei's Variation Index (\mjseqn{D})
+\insertCite{gini_variabilita_1912,gini_variabilita_1912-2,greenberg_measurement_1956,berger_diversity_1970,nei_analysis_1973,peet_measurement_1974}{EvaluateCore}}
+\item{Maximum Simpson's Index of Diversity or Maximum Nei's
+Diversity/Variation Index (\mjseqn{D_{max}})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Simpson's
-Reciprocal Index (\mjseqn{D_{R}})
-\insertCite{hill_diversity_1973,hennink_interpretation_1990}{EvaluateCore}}
-\item{Relative Nei's Diversity/Variation Index or Relative Simpson's Index of
-Diversity (\mjseqn{H'})
-\insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Shannon or
-Shannon-Weaver or Shannon-Weiner Diversity Index (\mjseqn{I})
-\insertCite{shannon_mathematical_1949}{EvaluateCore}} \item{Maximum
-Shannon-Weaver Diversity Index (\mjseqn{I_{max}})
+Reciprocal Index or Hill's \mjseqn{N_{2}} (\mjseqn{D_{R}})
+\insertCite{williams_patterns_1964,hill_diversity_1973}{EvaluateCore}}
+\item{Relative Simpson's Index of Diversity or Relative Nei's
+Diversity/Variation Index (\mjseqn{D'})
+\insertCite{hennink_interpretation_1990}{EvaluateCore}} }
+\item{Shannon-Weaver and related indices} \itemize{ \item{Shannon or
+Shannon-Weaver or Shannon-Weiner Diversity Index (\mjseqn{H})
+\insertCite{shannon_mathematical_1949,peet_measurement_1974}{EvaluateCore}}
+\item{Maximum Shannon-Weaver Diversity Index (\mjseqn{H_{max}})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Relative
-Shannon-Weaver Diversity Index or Shannon Equitability Index (\mjseqn{I'})
-\insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{McIntosh
-Diversity Index (\mjseqn{D_{Mc}})
-\insertCite{mcintosh_index_1967}{EvaluateCore}} } \loadmathjax
+Shannon-Weaver Diversity Index or Shannon Equitability Index (\mjseqn{H'})
+\insertCite{hennink_interpretation_1990}{EvaluateCore}} } \item{McIntosh
+Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
+\insertCite{mcintosh_index_1967,peet_measurement_1974}{EvaluateCore}} } }
+\loadmathjax
 }
-\details{
-Simpson's index (\mjseqn{D}) which estimates the probability that two
-accessions randomly selected will belong to the same phenotypic class of a
-trait, is computed as follows
-\insertCite{simpson_measurement_1949}{EvaluateCore}.
+\section{Details}{
+ The diversity indices and the corresponding statistical
+  tests implemented in \code{diversity.evaluate.core} are as follows.
 
-\mjsdeqn{D = \sum_{i = 1}^{k}p_{i}^{2}}
+  \subsection{Simpson's and related indices}{Simpson's index (\mjseqn{d})
+  which estimates the probability that two accessions randomly selected will
+  belong to the same phenotypic class of a trait, is computed as follows
+  \insertCite{simpson_measurement_1949,peet_measurement_1974}{EvaluateCore}.
 
-Where, \mjseqn{p_{i}} denotes the proportion/fraction/frequency of accessions
-in the \mjseqn{i}th phenotypic class for a trait and \mjseqn{k} is the number
-of phenotypic classes for the trait.
+  \mjsdeqn{d = \sum_{i = 1}^{k}p_{i}^{2}}
 
-The value of \mjseqn{D} can range from 0 to 1 with 0 representing maximum
-diversity and 1, no diversity.
+  Where, \mjseqn{p_{i}} denotes the proportion/fraction/frequency of
+  accessions in the \mjseqn{i}th phenotypic class for a trait and \mjseqn{k}
+  is the number of phenotypic classes for the trait.
 
-\mjseqn{D} is subtracted from 1 to give Nei's diversity index or Nei's
-variation index or Simpson's index of diversity or Gini's diversity index or
-Gini-Simpson index \mjseqn{H}. Greater the value of \mjseqn{H}, greater the
-diversity
-\insertCite{gini_variabilita_1912,gini_variabilita_1912-2,nei_analysis_1973}{EvaluateCore}
-with a range from 0 to 1.
+  The value of \mjseqn{d} can range from 0 to 1 with 0 representing maximum
+  diversity and 1, no diversity.
 
-\mjsdeqn{H = 1 - D}
+  \mjseqn{d} is subtracted from 1 to give Simpson's index of diversity
+  (\mjseqn{D})
+  \insertCite{greenberg_measurement_1956,berger_diversity_1970,peet_measurement_1974,hennink_interpretation_1990}{EvaluateCore}
+   originally suggested by
+  \insertCite{gini_variabilita_1912,gini_variabilita_1912-2;textual}{EvaluateCore}
+   and described in literature as Gini's diversity index or Gini-Simpson
+  index. It is the same as Nei's diversity index or Nei's variation index
+  \insertCite{nei_analysis_1973,hennink_interpretation_1990}{EvaluateCore}.
+  Greater the value of \mjseqn{D}, greater the diversity with a range from 0
+  to 1.
 
-The maximum value of \mjseqn{H}, \mjseqn{H_{max}} occurs when accessions are
-uniformly distributed across the phenotypic classes and is computed as
-follows \insertCite{hennink_interpretation_1990}{EvaluateCore}.
+  \mjsdeqn{D = 1 - d}
 
-\mjsdeqn{H_{max} = 1 - \frac{1}{k}}
+  The maximum value of \mjseqn{D}, \mjseqn{D_{max}} occurs when accessions
+  are uniformly distributed across the phenotypic classes and is computed as
+  follows \insertCite{hennink_interpretation_1990}{EvaluateCore}.
 
-Reciprocal of \mjseqn{D} gives the Simpson's reciprocal index
-(\mjseqn{D_{R}}) \insertCite{hennink_interpretation_1990}{EvaluateCore} and
-can range from 1 to \mjseqn{k}. This was also described in
-\insertCite{hill_diversity_1973;textual}{EvaluateCore} as (\mjseqn{N_{2}}).
+  \mjsdeqn{D_{max} = 1 - \frac{1}{k}}
 
-\mjsdeqn{D_{R} = \frac{1}{D}}
+  Reciprocal of \mjseqn{d} gives the Simpson's reciprocal index
+  (\mjseqn{D_{R}})
+  \insertCite{williams_patterns_1964,hennink_interpretation_1990}{EvaluateCore}
+   and can range from 1 to \mjseqn{k}. This was also described in
+  \insertCite{hill_diversity_1973;textual}{EvaluateCore} as (\mjseqn{N_{2}}).
 
-Relative Nei's diversity/variation index or Relative Simpson's index of
-diversity (\mjseqn{H'})
-\insertCite{hennink_interpretation_1990}{EvaluateCore} is defined as follows.
+  \mjsdeqn{D_{R} = \frac{1}{d}}
 
-\mjsdeqn{H' = \frac{H}{H_{max}}}
+  Relative Simpson's index of diversity or Relative Nei's diversity/variation
+  index (\mjseqn{H'}) \insertCite{hennink_interpretation_1990}{EvaluateCore}
+  is defined as follows \insertCite{peet_measurement_1974}{EvaluateCore}.
 
-An index of information \mjseqn{I}, was described by
-\insertCite{shannon_mathematical_1949;textual}{EvaluateCore} as follows.
+  \mjsdeqn{D' = \frac{D}{D_{max}}}
 
-\mjsdeqn{I = -\sum_{i=1}^{k}p_{i} \log_{2}(p_{i})}
+  Differences in Simpson's diversity index for qualitative traits of EC and
+  CS can be tested by Hutcheson t-test
+  \insertCite{hutcheson_test_1970}{EvaluateCore}.
 
-\mjseqn{I} is described as Shannon or Shannon-Weaver or Shannon-Weiner
-diversity index in literature.
+  The t statistic is computed as follows.
 
-Alternatively, \mjseqn{I} is also computed using natural logarithm instead of
-logarithm to base 2.
+  \mjsdeqn{t = \frac{H_{EC} - H_{CS}}{\sqrt{V_{H_{EC}} + V_{H_{CS}}}}}
 
-\mjsdeqn{I = -\sum_{i=1}^{k}p_{i} \ln(p_{i})}
+  Where, the variance of \mjseqn{H} (\mjseqn{V_{H}}) is,
 
-The maximum value of \mjseqn{I} (\mjseqn{I_{max}}) is \mjseqn{\ln(k)}. This
-value occurs when each phenotypic class for a trait has the same proportion
-of accessions.
+  \mjsdeqn{V_{H} = \frac{\sum_{i=1}^{k}n_{i}(\log{n_{i}})^{2} -
+  \frac{(\sum_{i=1}^{k}\log{n_{i}})^2}{N}}{N^{2}}}
 
-\mjsdeqn{I_{max} = \log_{2}(k)} OR \mjsdeqn{I_{max} = \ln(k)}
+  }
 
-The relative Shannon-Weaver diversity index or Shannon equitability index
-(\mjseqn{I'}) is the Shannon diversity index (\mjseqn{I}) divided by the
-maximum diversity (\mjseqn{I_{max}}).
+  \subsection{Shannon-Weaver and related indices}{An index of information
+  \mjseqn{H}, was described by
+  \insertCite{shannon_mathematical_1949;textual}{EvaluateCore} as follows.
 
-\mjsdeqn{I' = \frac{I}{I_{max}}}
+  \mjsdeqn{H = -\sum_{i=1}^{k}p_{i} \log_{2}(p_{i})}
 
-A similar index of diversity was described by
-\insertCite{mcintosh_index_1967;textual}{EvaluateCore} as follows
-(\mjseqn{D_{Mc}}).
+  \mjseqn{H} is described as Shannon or Shannon-Weaver or Shannon-Weiner
+  diversity index in literature.
 
-\mjsdeqn{D_{Mc} = \frac{N - \sqrt{\sum_{i=1}^{k}n_{i}^2}}{N - \sqrt{N}}}
+  Alternatively, \mjseqn{H} is also computed using natural logarithm instead
+  of logarithm to base 2.
 
-Where, \mjseqn{n_{i}} denotes the number of accessions in the \mjseqn{i}th
-phenotypic class for a trait and \mjseqn{N} is the total number of accessions
-so that \mjseqn{p_{i} = {n_{i}}/{N}}.
+  \mjsdeqn{H = -\sum_{i=1}^{k}p_{i} \ln(p_{i})}
+
+  The maximum value of \mjseqn{H} (\mjseqn{H_{max}}) is \mjseqn{\ln(k)}. This
+  value occurs when each phenotypic class for a trait has the same proportion
+  of accessions.
+
+  \mjsdeqn{H_{max} = \log_{2}(k)} OR \mjsdeqn{H_{max} = \ln(k)}
+
+  The relative Shannon-Weaver diversity index or Shannon equitability index
+  (\mjseqn{H'}) is the Shannon diversity index (\mjseqn{I}) divided by the
+  maximum diversity (\mjseqn{H_{max}}).
+
+  \mjsdeqn{H' = \frac{H}{H_{max}}}}
+
+  \subsection{McIntosh Diversity Index}{A similar index of diversity was
+  described by \insertCite{mcintosh_index_1967;textual}{EvaluateCore} as
+  follows (\mjseqn{D_{Mc}}) \insertCite{peet_measurement_1974}{EvaluateCore}.
+
+  \mjsdeqn{D_{Mc} = \frac{N - \sqrt{\sum_{i=1}^{k}n_{i}^2}}{N - \sqrt{N}}}
+
+  Where, \mjseqn{n_{i}} denotes the number of accessions in the \mjseqn{i}th
+  phenotypic class for a trait and \mjseqn{N} is the total number of
+  accessions so that \mjseqn{p_{i} = {n_{i}}/{N}}.}
 }
+
 \examples{
 
 data("cassava_CC")
@@ -176,5 +206,6 @@ diversity.evaluate.core(data = ec, names = "genotypes",
 \insertAllCited{}
 }
 \seealso{
-\code{\link[psych:misc]{shannon}}, \code{\link[vegan]{diversity}}
+\code{\link[psych:misc]{shannon}}, \code{\link[vegan]{diversity}},
+  \code{\link[boot]{boot}}
 }
