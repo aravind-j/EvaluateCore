@@ -167,11 +167,15 @@ quant_plots <- lapply(seq_along(cassava_EC[, quant]),
 
 ```{r}
 # Standardize quantitative data as Z score
+cassava_EC_org <- cassava_EC
 cassava_EC[, quant] <- apply(cassava_EC[, quant], 2,
                              function(x) scale(x, center = TRUE, scale = TRUE))
 
 # Check standardization
+lapply(cassava_EC_org[, quant], function(x) sd(x))
 lapply(cassava_EC[, quant], function(x) sd(x))
+
+lapply(cassava_EC_org[, quant], function(x) round(mean(x)))
 lapply(cassava_EC[, quant], function(x) round(mean(x)))
 ```
 
@@ -180,6 +184,7 @@ lapply(cassava_EC[, quant], function(x) round(mean(x)))
 ```{r}
 # Row names as accession names
 rownames(cassava_EC) <- cassava_EC$`Accession name`
+rownames(cassava_EC_org) <- cassava_EC_org$`Accession name`
 
 # Convert data to corehunter phenotypes format
 # RD - for quantitative; NS - for qualitative
@@ -279,11 +284,20 @@ core
 
 # Export the datasets
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 
 cassava_CC <- cassava_EC[rownames(cassava_EC) %in% core$sel, ]
 
 write.csv(cassava_EC, "cassava_EC.csv", row.names = TRUE)
+write.csv(cassava_CC, "cassava_CC.csv", row.names = TRUE)
+
+```
+
+```{r}
+
+cassava_CC <- cassava_EC_org[rownames(cassava_EC) %in% core$sel, ]
+
+write.csv(cassava_EC_org, "cassava_EC.csv", row.names = TRUE)
 write.csv(cassava_CC, "cassava_CC.csv", row.names = TRUE)
 
 ```

@@ -29,9 +29,8 @@ cassava_EC
 \description{
 An example germplasm characterisation data of a subset of IITA Cassava
 collection \insertCite{benjamin_cassava_2019}{EvaluateCore}. Includes data on
-26 (out of 62) descriptors for 1684 (out of 2170) accessions. The data for
-quantitative traits is standardized. It is used to demonstrate the various
-functions of \code{EvaluateCore} package.
+26 (out of 62) descriptors for 1684 (out of 2170) accessions. It is used to
+demonstrate the various functions of \code{EvaluateCore} package.
 }
 \details{
 Further details on how the example dataset was built from the original data

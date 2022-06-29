@@ -25,9 +25,8 @@
 #' distance based measures giving equal weightage to Average
 #' entry-to-nearest-entry distance (EN) and Average accession-to-nearest-entry
 #' distance (AN). Includes data on 26 descriptors for 168 (10 \% of
-#' \code{\link[EvaluateCore]{cassava_EC}}) accessions. The data for quantitative
-#' traits is standardized. It is used to demonstrate the various functions of
-#' \code{EvaluateCore} package.
+#' \code{\link[EvaluateCore]{cassava_EC}}) accessions. It is used to demonstrate
+#' the various functions of \code{EvaluateCore} package.
 #'
 #' Further details on how the example dataset was built from the original data
 #' is available

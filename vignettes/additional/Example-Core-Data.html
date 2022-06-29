@@ -11,7 +11,7 @@
 
 <meta name="author" content="J. Aravind" />
 
-<meta name="date" content="2022-06-11" />
+<meta name="date" content="2022-06-30" />
 
 <title>Example Datasets in EvaluateCore</title>
 
@@ -3026,7 +3026,7 @@ pre code {
 <h1 class="title toc-ignore">Example Datasets in
 <code>EvaluateCore</code></h1>
 <h4 class="author">J. Aravind</h4>
-<h4 class="date">2022-06-11</h4>
+<h4 class="date">2022-06-30</h4>
 
 </div>
 
@@ -3071,6 +3071,7 @@ rJava::J(&quot;java.lang.Runtime&quot;)$getRuntime()$maxMemory() / (1024^3)</cod
 <pre class="r"><code># Load required packages
 library(readxl)
 library(corehunter)</code></pre>
+<pre><code>## Loading required package: rJava</code></pre>
 </div>
 <div id="load-and-prepare-data" class="section level1">
 <h1>Load and prepare data</h1>
@@ -3143,8 +3144,8 @@ na_status &lt;- dplyr::bind_rows(na_status,.id = &quot;Descriptor&quot;)
 
 DT::datatable(na_status,
               options = list(scrollX = TRUE, paging=TRUE))</code></pre>
-<div id="htmlwidget-e447d2445ed2bb19eaaa" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e447d2445ed2bb19eaaa">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"],["Accession name","Colour of unexpanded apical leaves","Length of stipules","Petiole colour","Distribution of anthocyanin","Leaf retention","Level of branching at the end of flowering","Colour of boiled tuberous root","Number of levels of branching","Angle of branching","Colours of unexpanded apical leaves at 9 months","Leaf vein colour at 9 months","Total number of plants remaining per accession at 9 months","Petiole length at 9 months","Storage root peduncle","Storage root constrictions","Position of root","Number of storage root per plant","Total root number per plant","Total fresh weight of storage root per plant","Total root weight per plant","Total fresh weight of storage shoot per plant","Total shoot weight per plant","Total plant weight","Average plant weight","Amount of rotted storage root per plant","Storage root dry matter"],[2170,1958,1958,1958,1958,1925,1925,1788,1907,1907,1907,1907,1907,1907,1767,1767,1767,1773,1772,1767,1767,1824,1823,1826,1826,1771,1759],[null,212,212,212,212,245,245,382,263,263,263,263,263,263,403,403,403,397,398,403,403,346,347,344,344,399,411]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Descriptor<\/th>\n      <th>FALSE<\/th>\n      <th>TRUE<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"paging":true,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d138976a3875534c72ce" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d138976a3875534c72ce">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"],["Accession name","Colour of unexpanded apical leaves","Length of stipules","Petiole colour","Distribution of anthocyanin","Leaf retention","Level of branching at the end of flowering","Colour of boiled tuberous root","Number of levels of branching","Angle of branching","Colours of unexpanded apical leaves at 9 months","Leaf vein colour at 9 months","Total number of plants remaining per accession at 9 months","Petiole length at 9 months","Storage root peduncle","Storage root constrictions","Position of root","Number of storage root per plant","Total root number per plant","Total fresh weight of storage root per plant","Total root weight per plant","Total fresh weight of storage shoot per plant","Total shoot weight per plant","Total plant weight","Average plant weight","Amount of rotted storage root per plant","Storage root dry matter"],[2170,1958,1958,1958,1958,1925,1925,1788,1907,1907,1907,1907,1907,1907,1767,1767,1767,1773,1772,1767,1767,1824,1823,1826,1826,1771,1759],[null,212,212,212,212,245,245,382,263,263,263,263,263,263,403,403,403,397,398,403,403,346,347,344,344,399,411]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Descriptor<\/th>\n      <th>FALSE<\/th>\n      <th>TRUE<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"paging":true,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># Remove non informative fields
 cassava_EC$ID &lt;- NULL
 cassava_EC$`Ploidy level` &lt;- NULL
@@ -3171,8 +3172,8 @@ descriptors[c(17:26),]$Type &lt;- &quot;Quantitative&quot;
 
 DT::datatable(descriptors,
               options = list(scrollX = TRUE, paging=TRUE))</code></pre>
-<div id="htmlwidget-bb32b29ae6e50a23d6e3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bb32b29ae6e50a23d6e3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26"],["Colour of unexpanded apical leaves","Length of stipules","Petiole colour","Distribution of anthocyanin","Leaf retention","Level of branching at the end of flowering","Colour of boiled tuberous root","Number of levels of branching","Angle of branching","Colours of unexpanded apical leaves at 9 months","Leaf vein colour at 9 months","Total number of plants remaining per accession at 9 months","Petiole length at 9 months","Storage root peduncle","Storage root constrictions","Position of root","Number of storage root per plant","Total root number per plant","Total fresh weight of storage root per plant","Total root weight per plant","Total fresh weight of storage shoot per plant","Total shoot weight per plant","Total plant weight","Average plant weight","Amount of rotted storage root per plant","Storage root dry matter"],["CUAL","LNGS","PTLC","DSTA","LFRT","LBTEF","CBTR","NMLB","ANGB","CUAL9M","LVC9M","TNPR9M","PL9M","STRP","STRC","PSTR","NMSR","TTRN","TFWSR","TTRW","TFWSS","TTSW","TTPW","AVPW","ARSR","SRDM"],["Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Descriptors<\/th>\n      <th>Abbr<\/th>\n      <th>Type<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"paging":true,"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-556a9395049ee4a190cb" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-556a9395049ee4a190cb">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26"],["Colour of unexpanded apical leaves","Length of stipules","Petiole colour","Distribution of anthocyanin","Leaf retention","Level of branching at the end of flowering","Colour of boiled tuberous root","Number of levels of branching","Angle of branching","Colours of unexpanded apical leaves at 9 months","Leaf vein colour at 9 months","Total number of plants remaining per accession at 9 months","Petiole length at 9 months","Storage root peduncle","Storage root constrictions","Position of root","Number of storage root per plant","Total root number per plant","Total fresh weight of storage root per plant","Total root weight per plant","Total fresh weight of storage shoot per plant","Total shoot weight per plant","Total plant weight","Average plant weight","Amount of rotted storage root per plant","Storage root dry matter"],["CUAL","LNGS","PTLC","DSTA","LFRT","LBTEF","CBTR","NMLB","ANGB","CUAL9M","LVC9M","TNPR9M","PL9M","STRP","STRC","PSTR","NMSR","TTRN","TFWSR","TTRW","TFWSS","TTSW","TTPW","AVPW","ARSR","SRDM"],["Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Qualitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative","Quantitative"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Descriptors<\/th>\n      <th>Abbr<\/th>\n      <th>Type<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"paging":true,"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>colnames(cassava_EC) &lt;- c(&quot;Accession name&quot;, descriptors$Abbr)
 
 qual &lt;- descriptors[descriptors$Type == &quot;Qualitative&quot;, ]$Abbr
@@ -3199,11 +3200,42 @@ cassava_EC[, qual] &lt;- data.frame(apply(cassava_EC[qual], 2, as.factor))</code
 <div id="standardize-quantitative-data" class="section level1">
 <h1>Standardize quantitative data</h1>
 <pre class="r"><code># Standardize quantitative data as Z score
+cassava_EC_org &lt;- cassava_EC
 cassava_EC[, quant] &lt;- apply(cassava_EC[, quant], 2,
                              function(x) scale(x, center = TRUE, scale = TRUE))
 
 # Check standardization
-lapply(cassava_EC[, quant], function(x) sd(x))</code></pre>
+lapply(cassava_EC_org[, quant], function(x) sd(x))</code></pre>
+<pre><code>## $NMSR
+## [1] 7.686827
+## 
+## $TTRN
+## [1] 1.910758
+## 
+## $TFWSR
+## [1] 4.532722
+## 
+## $TTRW
+## [1] 1.656973
+## 
+## $TFWSS
+## [1] 5.892645
+## 
+## $TTSW
+## [1] 2.00211
+## 
+## $TTPW
+## [1] 9.787778
+## 
+## $AVPW
+## [1] 3.363355
+## 
+## $ARSR
+## [1] 2.254339
+## 
+## $SRDM
+## [1] 5.032887</code></pre>
+<pre class="r"><code>lapply(cassava_EC[, quant], function(x) sd(x))</code></pre>
 <pre><code>## $NMSR
 ## [1] 1
 ## 
@@ -3233,6 +3265,36 @@ lapply(cassava_EC[, quant], function(x) sd(x))</code></pre>
 ## 
 ## $SRDM
 ## [1] 1</code></pre>
+<pre class="r"><code>lapply(cassava_EC_org[, quant], function(x) round(mean(x)))</code></pre>
+<pre><code>## $NMSR
+## [1] 12
+## 
+## $TTRN
+## [1] 4
+## 
+## $TFWSR
+## [1] 5
+## 
+## $TTRW
+## [1] 2
+## 
+## $TFWSS
+## [1] 7
+## 
+## $TTSW
+## [1] 2
+## 
+## $TTPW
+## [1] 12
+## 
+## $AVPW
+## [1] 4
+## 
+## $ARSR
+## [1] 2
+## 
+## $SRDM
+## [1] 38</code></pre>
 <pre class="r"><code>lapply(cassava_EC[, quant], function(x) round(mean(x)))</code></pre>
 <pre><code>## $NMSR
 ## [1] 0
@@ -3268,6 +3330,7 @@ lapply(cassava_EC[, quant], function(x) sd(x))</code></pre>
 <h1>Create CoreHunter phenotype data</h1>
 <pre class="r"><code># Row names as accession names
 rownames(cassava_EC) &lt;- cassava_EC$`Accession name`
+rownames(cassava_EC_org) &lt;- cassava_EC_org$`Accession name`
 
 # Convert data to corehunter phenotypes format
 # RD - for quantitative; NS - for qualitative
@@ -3279,7 +3342,7 @@ pheno</code></pre>
 <pre><code>## # Phenotypes
 ## 
 ## Number of accessions = 1684
-## Ids: chr [1:1684] &quot;TMe-1915&quot; &quot;TMe-2&quot; &quot;TMe-4&quot; &quot;TMe-6&quot; &quot;TMe-11&quot; &quot;TMe-12&quot; &quot;TMe-13&quot; &quot;TMe-14&quot; &quot;TMe-39&quot; &quot;TMe-41&quot; &quot;TMe-44&quot; &quot;TMe-48&quot; ...
+## Ids: chr [1:1684] &quot;TMe-1915&quot; &quot;TMe-2&quot; &quot;TMe-4&quot; &quot;TMe-6&quot; &quot;TMe-11&quot; &quot;TMe-12&quot; &quot;TMe-13&quot; &quot;TMe-14&quot; &quot;TMe-39&quot; &quot;TMe-41&quot; &quot;TMe-44&quot; &quot;TMe-48&quot; &quot;TMe-57&quot; ...
 ## 
 ## Number of traits = 26
 ## Traits: &quot;CUAL&quot; &quot;LNGS&quot; &quot;PTLC&quot; &quot;DSTA&quot; &quot;LFRT&quot; &quot;LBTEF&quot; &quot;CBTR&quot; &quot;NMLB&quot; &quot;ANGB&quot; &quot;CUAL9M&quot; &quot;LVC9M&quot; &quot;TNPR9M&quot; &quot;PL9M&quot; &quot;STRP&quot; &quot;STRC&quot; &quot;PSTR&quot; &quot;NMSR&quot; &quot;TTRN&quot; &quot;TFWSR&quot; &quot;TTRW&quot; &quot;TFWSS&quot; &quot;TTSW&quot; &quot;TTPW&quot; &quot;AVPW&quot; &quot;ARSR&quot; &quot;SRDM&quot;
@@ -3352,22 +3415,20 @@ obj</code></pre>
 ## Best solution with evaluation : 0.441550
 ## Best solution with evaluation : Subset solution: {44, 417, 585, 609, 990, 1064, 1085, 1155, 1347, 1353, 1362, 1408, 1422, 1462, 1515, 1616, 1640, 1670, 1530, 1517, 772, 204, 1481, 571, 533, 833, 1138, 826, 9, 75, 481, 605, 1203, 568, 1411, 579, 781, 428, 588, 1133, 1524, 1073, 842, 379, 1536, 1676, 710, 1378, 272, 87, 1156, 25, 767, 1661, 756, 822, 1201, 893, 1382, 1369, 1578, 1163, 1134, 1611, 1618, 1667, 476, 1019, 1421, 678, 1602, 802, 467, 559, 1641, 1087, 228, 1541, 508, 1500, 1014, 1233, 1529, 793, 932, 619, 942, 1673, 1683, 1537, 1380, 829, 1146, 1649, 168, 1383, 242, 1399, 864, 434, 224, 1273, 1680, 582, 1470, 1333, 1566, 1127, 1015, 690, 1128, 927, 1672, 1581, 213, 718, 31, 1337, 1227, 661, 1151, 171, 606, 563, 347, 186, 925, 763, 465, 969, 124, 1437, 1594, 459, 305, 817, 818, 681, 876, 1270, 551, 93, 263, 1453, 246, 1331, 1181, 873, 1302, 1290, 1596, 697, 1164, 1660, 130, 1538, 1044, 635, 386, 192, 1469, 600, 1017, 894, 682, 594, 453, 1174}</code></pre>
 <pre><code>## $sel
-##   [1] &quot;TMe-38&quot;   &quot;TMe-41&quot;   &quot;TMe-66&quot;   &quot;TMe-72&quot;   &quot;TMe-123&quot;  &quot;TMe-150&quot;  &quot;TMe-180&quot;  &quot;TMe-181&quot;  &quot;TMe-206&quot;  &quot;TMe-241&quot;  &quot;TMe-247&quot; 
-##  [12] &quot;TMe-264&quot;  &quot;TMe-287&quot;  &quot;TMe-353&quot;  &quot;TMe-378&quot;  &quot;TMe-386&quot;  &quot;TMe-436&quot;  &quot;TMe-447&quot;  &quot;TMe-486&quot;  &quot;TMe-540&quot;  &quot;TMe-550&quot;  &quot;TMe-589&quot; 
-##  [23] &quot;TMe-603&quot;  &quot;TMe-634&quot;  &quot;TMe-667&quot;  &quot;TMe-696&quot;  &quot;TMe-698&quot;  &quot;TMe-700&quot;  &quot;TMe-706&quot;  &quot;TMe-725&quot;  &quot;TMe-764&quot;  &quot;TMe-766&quot;  &quot;TMe-778&quot; 
-##  [34] &quot;TMe-815&quot;  &quot;TMe-828&quot;  &quot;TMe-835&quot;  &quot;TMe-858&quot;  &quot;TMe-886&quot;  &quot;TMe-888&quot;  &quot;TMe-919&quot;  &quot;TMe-945&quot;  &quot;TMe-1086&quot; &quot;TMe-1091&quot; &quot;TMe-1117&quot;
-##  [45] &quot;TMe-1124&quot; &quot;TMe-1137&quot; &quot;TMe-1139&quot; &quot;TMe-1174&quot; &quot;TMe-1188&quot; &quot;TMe-1211&quot; &quot;TMe-1216&quot; &quot;TMe-1232&quot; &quot;TMe-1234&quot; &quot;TMe-1271&quot; &quot;TMe-1290&quot;
-##  [56] &quot;TMe-1297&quot; &quot;TMe-1336&quot; &quot;TMe-1377&quot; &quot;TMe-1390&quot; &quot;TMe-1404&quot; &quot;TMe-1484&quot; &quot;TMe-1512&quot; &quot;TMe-1526&quot; &quot;TMe-1541&quot; &quot;TMe-1564&quot; &quot;TMe-1730&quot;
-##  [67] &quot;TMe-1733&quot; &quot;TMe-1744&quot; &quot;TMe-1775&quot; &quot;TMe-1795&quot; &quot;TMe-1804&quot; &quot;TMe-1823&quot; &quot;TMe-1836&quot; &quot;TMe-1901&quot; &quot;TMe-1960&quot; &quot;TMe-2003&quot; &quot;TMe-2010&quot;
-##  [78] &quot;TMe-2027&quot; &quot;TMe-2033&quot; &quot;TMe-2043&quot; &quot;TMe-2050&quot; &quot;TMe-2064&quot; &quot;TMe-2069&quot; &quot;TMe-2084&quot; &quot;TMe-2103&quot; &quot;TMe-2128&quot; &quot;TMe-2158&quot; &quot;TMe-2172&quot;
-##  [89] &quot;TMe-2191&quot; &quot;TMe-2196&quot; &quot;TMe-2240&quot; &quot;TMe-2326&quot; &quot;TMe-2372&quot; &quot;TMe-2543&quot; &quot;TMe-2551&quot; &quot;TMe-2568&quot; &quot;TMe-2643&quot; &quot;TMe-2775&quot; &quot;TMe-2785&quot;
-## [100] &quot;TMe-2791&quot; &quot;TMe-2797&quot; &quot;TMe-2820&quot; &quot;TMe-2853&quot; &quot;TMe-2904&quot; &quot;TMe-2913&quot; &quot;TMe-2934&quot; &quot;TMe-2935&quot; &quot;TMe-2940&quot; &quot;TMe-2952&quot; &quot;TMe-2967&quot;
-## [111] &quot;TMe-2975&quot; &quot;TMe-2980&quot; &quot;TMe-2984&quot; &quot;TMe-2989&quot; &quot;TMe-2993&quot; &quot;TMe-3044&quot; &quot;TMe-3076&quot; &quot;TMe-3109&quot; &quot;TMe-3110&quot; &quot;TMe-3115&quot; &quot;TMe-3141&quot;
-## [122] &quot;TMe-3151&quot; &quot;TMe-3163&quot; &quot;TMe-3164&quot; &quot;TMe-3185&quot; &quot;TMe-3210&quot; &quot;TMe-3233&quot; &quot;TMe-3252&quot; &quot;TMe-3262&quot; &quot;TMe-3276&quot; &quot;TMe-3292&quot; &quot;TMe-3296&quot;
-## [133] &quot;TMe-3302&quot; &quot;TMe-3324&quot; &quot;TMe-3329&quot; &quot;TMe-3378&quot; &quot;TMe-3396&quot; &quot;TMe-3411&quot; &quot;TMe-3415&quot; &quot;TMe-3424&quot; &quot;TMe-3434&quot; &quot;TMe-3437&quot; &quot;TMe-3452&quot;
-## [144] &quot;TMe-3454&quot; &quot;TMe-3455&quot; &quot;TMe-3457&quot; &quot;TMe-3460&quot; &quot;TMe-3466&quot; &quot;TMe-3475&quot; &quot;TMe-3481&quot; &quot;TMe-3493&quot; &quot;TMe-3545&quot; &quot;TMe-3548&quot; &quot;TMe-3549&quot;
-## [155] &quot;TMe-3573&quot; &quot;TMe-3577&quot; &quot;TMe-3581&quot; &quot;TMe-3591&quot; &quot;TMe-3601&quot; &quot;TMe-3605&quot; &quot;TMe-3628&quot; &quot;TMe-3638&quot; &quot;TMe-3667&quot; &quot;TMe-3690&quot; &quot;TMe-3721&quot;
-## [166] &quot;TMe-3730&quot; &quot;TMe-3731&quot; &quot;TMe-3736&quot;
+##   [1] &quot;TMe-38&quot;   &quot;TMe-41&quot;   &quot;TMe-66&quot;   &quot;TMe-72&quot;   &quot;TMe-123&quot;  &quot;TMe-150&quot;  &quot;TMe-180&quot;  &quot;TMe-181&quot;  &quot;TMe-206&quot;  &quot;TMe-241&quot;  &quot;TMe-247&quot;  &quot;TMe-264&quot; 
+##  [13] &quot;TMe-287&quot;  &quot;TMe-353&quot;  &quot;TMe-378&quot;  &quot;TMe-386&quot;  &quot;TMe-436&quot;  &quot;TMe-447&quot;  &quot;TMe-486&quot;  &quot;TMe-540&quot;  &quot;TMe-550&quot;  &quot;TMe-589&quot;  &quot;TMe-603&quot;  &quot;TMe-634&quot; 
+##  [25] &quot;TMe-667&quot;  &quot;TMe-696&quot;  &quot;TMe-698&quot;  &quot;TMe-700&quot;  &quot;TMe-706&quot;  &quot;TMe-725&quot;  &quot;TMe-764&quot;  &quot;TMe-766&quot;  &quot;TMe-778&quot;  &quot;TMe-815&quot;  &quot;TMe-828&quot;  &quot;TMe-835&quot; 
+##  [37] &quot;TMe-858&quot;  &quot;TMe-886&quot;  &quot;TMe-888&quot;  &quot;TMe-919&quot;  &quot;TMe-945&quot;  &quot;TMe-1086&quot; &quot;TMe-1091&quot; &quot;TMe-1117&quot; &quot;TMe-1124&quot; &quot;TMe-1137&quot; &quot;TMe-1139&quot; &quot;TMe-1174&quot;
+##  [49] &quot;TMe-1188&quot; &quot;TMe-1211&quot; &quot;TMe-1216&quot; &quot;TMe-1232&quot; &quot;TMe-1234&quot; &quot;TMe-1271&quot; &quot;TMe-1290&quot; &quot;TMe-1297&quot; &quot;TMe-1336&quot; &quot;TMe-1377&quot; &quot;TMe-1390&quot; &quot;TMe-1404&quot;
+##  [61] &quot;TMe-1484&quot; &quot;TMe-1512&quot; &quot;TMe-1526&quot; &quot;TMe-1541&quot; &quot;TMe-1564&quot; &quot;TMe-1730&quot; &quot;TMe-1733&quot; &quot;TMe-1744&quot; &quot;TMe-1775&quot; &quot;TMe-1795&quot; &quot;TMe-1804&quot; &quot;TMe-1823&quot;
+##  [73] &quot;TMe-1836&quot; &quot;TMe-1901&quot; &quot;TMe-1960&quot; &quot;TMe-2003&quot; &quot;TMe-2010&quot; &quot;TMe-2027&quot; &quot;TMe-2033&quot; &quot;TMe-2043&quot; &quot;TMe-2050&quot; &quot;TMe-2064&quot; &quot;TMe-2069&quot; &quot;TMe-2084&quot;
+##  [85] &quot;TMe-2103&quot; &quot;TMe-2128&quot; &quot;TMe-2158&quot; &quot;TMe-2172&quot; &quot;TMe-2191&quot; &quot;TMe-2196&quot; &quot;TMe-2240&quot; &quot;TMe-2326&quot; &quot;TMe-2372&quot; &quot;TMe-2543&quot; &quot;TMe-2551&quot; &quot;TMe-2568&quot;
+##  [97] &quot;TMe-2643&quot; &quot;TMe-2775&quot; &quot;TMe-2785&quot; &quot;TMe-2791&quot; &quot;TMe-2797&quot; &quot;TMe-2820&quot; &quot;TMe-2853&quot; &quot;TMe-2904&quot; &quot;TMe-2913&quot; &quot;TMe-2934&quot; &quot;TMe-2935&quot; &quot;TMe-2940&quot;
+## [109] &quot;TMe-2952&quot; &quot;TMe-2967&quot; &quot;TMe-2975&quot; &quot;TMe-2980&quot; &quot;TMe-2984&quot; &quot;TMe-2989&quot; &quot;TMe-2993&quot; &quot;TMe-3044&quot; &quot;TMe-3076&quot; &quot;TMe-3109&quot; &quot;TMe-3110&quot; &quot;TMe-3115&quot;
+## [121] &quot;TMe-3141&quot; &quot;TMe-3151&quot; &quot;TMe-3163&quot; &quot;TMe-3164&quot; &quot;TMe-3185&quot; &quot;TMe-3210&quot; &quot;TMe-3233&quot; &quot;TMe-3252&quot; &quot;TMe-3262&quot; &quot;TMe-3276&quot; &quot;TMe-3292&quot; &quot;TMe-3296&quot;
+## [133] &quot;TMe-3302&quot; &quot;TMe-3324&quot; &quot;TMe-3329&quot; &quot;TMe-3378&quot; &quot;TMe-3396&quot; &quot;TMe-3411&quot; &quot;TMe-3415&quot; &quot;TMe-3424&quot; &quot;TMe-3434&quot; &quot;TMe-3437&quot; &quot;TMe-3452&quot; &quot;TMe-3454&quot;
+## [145] &quot;TMe-3455&quot; &quot;TMe-3457&quot; &quot;TMe-3460&quot; &quot;TMe-3466&quot; &quot;TMe-3475&quot; &quot;TMe-3481&quot; &quot;TMe-3493&quot; &quot;TMe-3545&quot; &quot;TMe-3548&quot; &quot;TMe-3549&quot; &quot;TMe-3573&quot; &quot;TMe-3577&quot;
+## [157] &quot;TMe-3581&quot; &quot;TMe-3591&quot; &quot;TMe-3601&quot; &quot;TMe-3605&quot; &quot;TMe-3628&quot; &quot;TMe-3638&quot; &quot;TMe-3667&quot; &quot;TMe-3690&quot; &quot;TMe-3721&quot; &quot;TMe-3730&quot; &quot;TMe-3731&quot; &quot;TMe-3736&quot;
 ## 
 ## $EN
 ## $EN$GD
@@ -3384,9 +3445,9 @@ obj</code></pre>
 </div>
 <div id="export-the-datasets" class="section level1">
 <h1>Export the datasets</h1>
-<pre class="r"><code>cassava_CC &lt;- cassava_EC[rownames(cassava_EC) %in% core$sel, ]
+<pre class="r"><code>cassava_CC &lt;- cassava_EC_org[rownames(cassava_EC) %in% core$sel, ]
 
-write.csv(cassava_EC, &quot;cassava_EC.csv&quot;, row.names = TRUE)
+write.csv(cassava_EC_org, &quot;cassava_EC.csv&quot;, row.names = TRUE)
 write.csv(cassava_CC, &quot;cassava_CC.csv&quot;, row.names = TRUE)</code></pre>
 </div>
 <div id="session-info" class="section level1">
@@ -3409,21 +3470,22 @@ write.csv(cassava_CC, &quot;cassava_CC.csv&quot;, row.names = TRUE)</code></pre>
 ## [1] corehunter_3.2.1 rJava_1.0-6      readxl_1.4.0    
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_1.1.2   dplyr_1.0.9        fastmap_1.1.0      lazyeval_0.2.2     xopen_1.0.0        rex_1.2.1         
-##  [7] digest_0.6.29      lifecycle_1.0.1    cluster_2.1.3      ellipsis_0.3.2     processx_3.5.3     magrittr_2.0.3    
-## [13] compiler_4.3.0     sass_0.4.1         rlang_1.0.2        tools_4.3.0        utf8_1.2.2         yaml_2.3.5        
-## [19] data.table_1.14.2  knitr_1.39         prettyunits_1.1.1  htmlwidgets_1.5.4  pkgbuild_1.3.1     curl_4.3.2        
-## [25] xmlparsedata_1.0.5 xml2_1.3.3         pkgload_1.2.4      covr_3.5.1         withr_2.5.0        purrr_0.3.4       
-## [31] rhub_1.1.1         desc_1.4.1         hunspell_3.0.1     goodpractice_1.0.2 fansi_1.0.3        whoami_1.3.0      
-## [37] cli_3.3.0          rmarkdown_2.14     crayon_1.5.1       generics_0.1.2     remotes_2.4.2      rstudioapi_0.13   
-## [43] parsedate_1.3.0    httr_1.4.3         sessioninfo_1.2.2  naturalsort_0.1.3  DBI_1.1.2          cachem_1.0.6      
-## [49] stringr_1.4.0      assertthat_0.2.1   cellranger_1.1.0   vctrs_0.4.1        devtools_2.4.3     jsonlite_1.8.0    
-## [55] callr_3.7.0        rcmdcheck_1.4.0    crosstalk_1.2.0    testthat_3.1.4     cyclocomp_1.1.0    jquerylib_0.1.4   
-## [61] rematch_1.0.1      glue_1.6.2         pkgdown_2.0.3      ps_1.7.0           DT_0.23            stringi_1.7.6     
-## [67] tibble_3.1.7       pillar_1.7.0       clisymbols_1.2.0   rappdirs_0.3.3     htmltools_0.5.2    brio_1.1.3        
-## [73] praise_1.0.0       R6_2.5.1           lintr_2.0.1        Rdpack_2.3         rprojroot_2.0.3    evaluate_0.15     
-## [79] highr_0.9          rbibutils_2.2.8    memoise_2.0.1      bslib_0.3.1        Rcpp_1.0.8.3       uuid_1.1-0        
-## [85] xfun_0.31          fs_1.5.2           usethis_2.1.6      pkgconfig_2.0.3</code></pre>
+##   [1] Rdpack_2.3.1       DBI_1.1.3          mnormt_2.1.0       bitops_1.0-7       remotes_2.4.2      permute_0.9-7      testthat_3.1.4    
+##   [8] rlang_1.0.2        magrittr_2.0.3     hunspell_3.0.1     compiler_4.3.0     mgcv_1.8-40        callr_3.7.0        vctrs_0.4.1       
+##  [15] stringr_1.4.0      pkgconfig_2.0.3    crayon_1.5.1       fastmap_1.1.0      ellipsis_0.3.2     pander_0.6.5       utf8_1.2.2        
+##  [22] rmarkdown_2.14     sessioninfo_1.2.2  ps_1.7.1           purrr_0.3.4        xfun_0.31          cachem_1.0.6       covr_3.5.1        
+##  [29] jsonlite_1.8.0     highr_0.9          uuid_1.1-0         psych_2.2.5        parallel_4.3.0     prettyunits_1.1.1  cluster_2.1.3     
+##  [36] R6_2.5.1           rhub_1.1.1         bslib_0.3.1        stringi_1.7.6      boot_1.3-28        pkgload_1.2.4      jquerylib_0.1.4   
+##  [43] brio_1.1.3         cellranger_1.1.0   Rcpp_1.0.8.3       assertthat_0.2.1   ecolTest_0.0.1     knitr_1.39         usethis_2.1.6     
+##  [50] clisymbols_1.2.0   parsedate_1.3.0    Matrix_1.4-1       splines_4.3.0      tidyselect_1.1.2   rstudioapi_0.13    yaml_2.3.5        
+##  [57] vegan_2.6-2        curl_4.3.2         processx_3.6.1     pkgbuild_1.3.1     lattice_0.20-45    tibble_3.1.7       withr_2.5.0       
+##  [64] evaluate_0.15      desc_1.4.1         whoami_1.3.0       xml2_1.3.3         pillar_1.7.0       DT_0.23            rex_1.2.1         
+##  [71] generics_0.1.2     rprojroot_2.0.3    xopen_1.0.0        RCurl_1.98-1.7     glue_1.6.2         lazyeval_0.2.2     tools_4.3.0       
+##  [78] data.table_1.14.2  goodpractice_1.0.2 fs_1.5.2           XML_3.99-0.10      grid_4.3.0         cyclocomp_1.1.0    crosstalk_1.2.0   
+##  [85] rbibutils_2.2.8    lintr_3.0.0        devtools_2.4.3     naturalsort_0.1.3  nlme_3.1-158       cli_3.3.0          rappdirs_0.3.3    
+##  [92] rcmdcheck_1.4.0    fansi_1.0.3        rematch_1.0.1      dplyr_1.0.9        praise_1.0.0       sass_0.4.1         digest_0.6.29     
+##  [99] xmlparsedata_1.0.5 htmlwidgets_1.5.4  memoise_2.0.1      htmltools_0.5.2    pkgdown_2.0.5      lifecycle_1.0.1    httr_1.4.3        
+## [106] MASS_7.3-57.1</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="unnumbered">References</h1>
