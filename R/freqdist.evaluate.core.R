@@ -259,21 +259,21 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
     }
 
 
-    if (traits[i] %in% quantitative) {
-      G1 <- G1 +
-        scale_x_continuous(limits = c((min(dataf[, traits[i]],
-                                           na.rm = TRUE)),
-                                      (max(dataf[, traits[i]],
-                                           na.rm = TRUE))))
-    }
-
-    if (traits[i] %in% qualitative) {
-      G1 <- G1 +
-        scale_x_continuous(limits = c((min(dataf[, traits[i]],
-                                           na.rm = TRUE)) - 1,
-                                      (max(dataf[, traits[i]],
-                                           na.rm = TRUE)) + 1))
-    }
+    # if (traits[i] %in% quantitative) {
+    #   G1 <- G1 +
+    #     scale_x_continuous(limits = c((min(dataf[, traits[i]],
+    #                                        na.rm = TRUE)),
+    #                                   (max(dataf[, traits[i]],
+    #                                        na.rm = TRUE))))
+    # }
+    #
+    # if (traits[i] %in% qualitative) {
+    #   G1 <- G1 +
+    #     scale_x_continuous(limits = c((min(dataf[, traits[i]],
+    #                                        na.rm = TRUE)) - 1,
+    #                                   (max(dataf[, traits[i]],
+    #                                        na.rm = TRUE)) + 1))
+    # }
 
     if (!is.null(highlight)) {
 
@@ -299,21 +299,21 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
         theme(plot.margin = unit(c(0.25, 0.1, 0, 0.25), "cm"),
               axis.text = element_text(colour = "black"))
 
-      if (traits[i] %in% quantitative) {
-        G2 <- G2 +
-          scale_x_continuous(limits = c((min(dataf[, traits[i]],
-                                             na.rm = TRUE)),
-                                        (max(dataf[, traits[i]],
-                                             na.rm = TRUE))))
-      }
-
-      if (traits[i] %in% qualitative) {
-        G2 <- G2 +
-          scale_x_continuous(limits = c((min(dataf[, traits[i]],
-                                             na.rm = TRUE)) - 1,
-                                        (max(dataf[, traits[i]],
-                                             na.rm = TRUE)) + 1))
-      }
+      # if (traits[i] %in% quantitative) {
+      #   G2 <- G2 +
+      #     scale_x_continuous(limits = c((min(dataf[, traits[i]],
+      #                                        na.rm = TRUE)),
+      #                                   (max(dataf[, traits[i]],
+      #                                        na.rm = TRUE))))
+      # }
+      #
+      # if (traits[i] %in% qualitative) {
+      #   G2 <- G2 +
+      #     scale_x_continuous(limits = c((min(dataf[, traits[i]],
+      #                                        na.rm = TRUE)) - 1,
+      #                                   (max(dataf[, traits[i]],
+      #                                        na.rm = TRUE)) + 1))
+      # }
 
       if (!is.null(highlight) & !is.null(highlight.se)) {
 
