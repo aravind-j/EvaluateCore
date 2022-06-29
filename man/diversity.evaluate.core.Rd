@@ -22,30 +22,70 @@ core collection and present in the \code{names} column.}
 \item{base}{The logarithm base to be used for computation of Shannon-Weaver
 Diversity Index (\mjseqn{I}). Default is 2.}
 
-\item{R}{The number of bootstrap replicates.}
+\item{R}{The number of bootstrap replicates. Default is 1000.}
 }
 \value{
-A data frame with the following columns. \item{Trait}{The qualitative
-  trait.} \item{EC_No.Classes}{The number of classes in the trait for EC.}
-  \item{EC_D}{The Simpson's Index (\mjseqn{D}) for EC.} \item{EC_H}{Nei's
-  Diversity Index (\mjseqn{H}) for EC.} \item{EC_H.max}{Maximum Nei's
-  Diversity Index (\mjseqn{H_{max}}) for EC.} \item{EC_D.inv}{Simpson's
-  Reciprocal Index (\mjseqn{D_{R}}) for EC.} \item{EC_H.rel}{Relative Nei's
-  Diversity Index (\mjseqn{H'}) for EC.} \item{EC_I}{Shannon-Weaver Diversity
-  Index (\mjseqn{I}) for EC.} \item{EC_I.max}{Maximum Shannon-Weaver
-  Diversity Index (\mjseqn{I_{max}}) for EC.} \item{EC_I.rel}{Relative
+A list with three data frames as follows. \item{\code{simpson}}{
+  \describe{\item{\code{Trait}}{The qualitative trait.}
+  \item{\code{EC_No.Classes}}{The number of classes in the trait for EC.}
+  \item{\code{CS_No.Classes}}{The number of classes in the trait for CS.}
+  \item{\code{EC_d}}{The Simpson's Index (\mjseqn{d}) for EC.}
+  \item{\code{EC_D}}{The Simpson's Index of Diversity (\mjseqn{D}) for EC.}
+  \item{\code{EC_D.max}}{The Maximum Simpson's Index of Diversity
+  (\mjseqn{D_{max}}) for EC.} \item{\code{EC_D.inv}}{The Simpson's Reciprocal
+  Index (\mjseqn{D_{R}}) for EC.} \item{\code{EC_D.rel}}{The Relative
+  Reciprocal Index (\mjseqn{D'}) for EC.} \item{\code{EC_d.V}}{The variance
+  of \mjseqn{d} for EC according to
+  \insertCite{simpson_measurement_1949}{EvaluateCore}.}
+  \item{\code{EC_d.boot.V}}{The bootstrap variance of \mjseqn{d} for EC.}
+  \item{\code{CS_d}}{The Simpson's Index (\mjseqn{d}) for CS.}
+  \item{\code{CS_D}}{The Simpson's Index of Diversity (\mjseqn{D}) for CS.}
+  \item{\code{CS_D.max}}{The Maximum Simpson's Index of Diversity
+  (\mjseqn{D_{max}}) for CS.} \item{\code{CS_D.inv}}{The Simpson's Reciprocal
+  Index (\mjseqn{D_{R}}) for CS.} \item{\code{CS_D.rel}}{The Relative
+  Reciprocal Index (\mjseqn{D'}) for CS.} \item{\code{CS_d.V}}{The variance
+  of \mjseqn{d} for CS according to
+  \insertCite{simpson_measurement_1949}{EvaluateCore}.}
+  \item{\code{CS_d.boot.V}}{The bootstrap variance of \mjseqn{d} for CS.}
+  \item{\code{d.t.df}}{The degrees of freedom for t test.}
+  \item{\code{d.t.stat}}{The t statistic.} \item{\code{d.t.pvalue}}{The p
+  value for t test.} \item{\code{d.t.significance}}{The  significance of t
+  test for t-test} \item{\code{d.boot.z.df}}{The degrees of freedom for
+  bootstrap z score.} \item{\code{d.boot.z.stat}}{The bootstrap z score.}
+  \item{\code{d.boot.z.pvalue}}{The p value of z score.}
+  \item{\code{d.boot.z.significance}}{The significance of z score.}} }
+  \item{\code{shannon}}{ \describe{\item{\code{Trait}}{The qualitative
+  trait.} \item{\code{EC_No.Classes}}{The number of classes in the trait for
+  EC.} \item{\code{CS_No.Classes}}{The number of classes in the trait for
+  CS.} \item{\code{EC_I}}{The Shannon-Weaver Diversity Index (\mjseqn{I}) for
+  EC.} \item{\code{EC_I.max}}{The Maximum Shannon-Weaver Diversity Index
+  (\mjseqn{I_{max}}) for EC.} \item{\code{EC_I.rel}}{The Relative
   Shannon-Weaver Diversity Index (\mjseqn{I'}) for EC.}
-  \item{EC_D.Mc}{McIntosh Diversity Index (\mjseqn{D_{Mc}}) for EC.}
-  \item{CS_No.Classes}{The number of classes in the trait for CS.}
-  \item{CS_D}{The Simpson's Index (\mjseqn{D}) for CS.} \item{CS_H}{Nei's
-  Diversity Index (\mjseqn{H}) for CS.} \item{CS_H.max}{Maximum Nei's
-  Diversity Index (\mjseqn{H_{max}}) for CS.} \item{CS_D.inv}{Simpson's
-  Reciprocal Index (\mjseqn{D_{R}}) for CS.} \item{CS_H.rel}{Relative Nei's
-  Diversity Index (\mjseqn{H'}) for CS.} \item{CS_I}{Shannon-Weaver Diversity
-  Index (\mjseqn{I}) for CS.} \item{CS_I.max}{Maximum Shannon-Weaver
-  Diversity Index (\mjseqn{I_{max}}) for CS.} \item{CS_I.rel}{Relative
+  \item{\code{EC_I.V}}{The variance of \mjseqn{I} for EC according to
+  \insertCite{hutcheson_test_1970}{EvaluateCore}.}
+  \item{\code{EC_I.boot.V}}{The bootstrap variance of \mjseqn{I} for EC.}
+  \item{\code{CS_I}}{The Shannon-Weaver Diversity Index (\mjseqn{I}) for CS.}
+  \item{\code{CS_I.max}}{The Maximum Shannon-Weaver Diversity Index
+  (\mjseqn{I_{max}}) for CS.} \item{\code{CS_I.rel}}{The Relative
   Shannon-Weaver Diversity Index (\mjseqn{I'}) for CS.}
-  \item{CS_D.Mc}{McIntosh Diversity Index (\mjseqn{D_{Mc}}) for CS.}.
+  \item{\code{CS_I.V}}{The variance of \mjseqn{I} for CS according to
+  \insertCite{hutcheson_test_1970}{EvaluateCore}.}
+  \item{\code{CS_I.boot.V}}{The bootstrap variance of \mjseqn{I} for CS.}
+  \item{\code{I.t.stat}}{The t statistic.} \item{\code{I.t.df}}{The degrees
+  of freedom for t test.} \item{\code{I.t.pvalue}}{The p value for t test.}
+  \item{\code{I.t.significance}}{The  significance of t test for t-test}
+  \item{\code{I.boot.z.df}}{The degrees of freedom for bootstrap z score.}
+  \item{\code{I.boot.z.stat}}{The bootstrap z score.}
+  \item{\code{I.boot.z.pvalue}}{The p value of z score.}
+  \item{\code{I.boot.z.significance}}{The significance of z score.}} }
+  \item{\code{mcintosh}}{ \describe{\item{\code{EC_No.Classes}}{The number of
+  classes in the trait for EC.} \item{\code{CS_No.Classes}}{The number of
+  classes in the trait for CS.} \item{\code{EC_D.Mc}}{The McIntosh Index
+  (\mjseqn{D_{Mc}}) for EC.} \item{\code{CS_D.Mc}}{The McIntosh Index
+  (\mjseqn{D_{Mc}}) for CS.} \item{\code{M.boot.z.stat}}{The bootstrap z
+  score.} \item{\code{M.boot.z.df}}{The degrees of freedom for bootstrap z
+  score.} \item{\code{M.boot.z.pvalue}}{The p value of z score.}
+  \item{\code{M.boot.z.significance}}{The significance of z score.}} }
 }
 \description{
 Compute the following diversity indices and perform corresponding statistical
@@ -127,17 +167,26 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
   \mjsdeqn{D' = \frac{D}{D_{max}}}
 
   Differences in Simpson's diversity index for qualitative traits of EC and
-  CS can be tested by Hutcheson t-test
-  \insertCite{hutcheson_test_1970}{EvaluateCore}.
+  CS can be tested by a t-test using the associated variance estimate
+  described in \insertCite{simpson_measurement_1949;textual}{EvaluateCore}
+  \insertCite{lyons_c20_1978}{EvaluateCore}.
 
   The t statistic is computed as follows.
 
-  \mjsdeqn{t = \frac{H_{EC} - H_{CS}}{\sqrt{V_{H_{EC}} + V_{H_{CS}}}}}
+  \mjsdeqn{t = \frac{d_{EC} - d_{CS}}{\sqrt{V_{d_{EC}} + V_{d_{CS}}}}}
 
-  Where, the variance of \mjseqn{H} (\mjseqn{V_{H}}) is,
+  Where, the variance of \mjseqn{d} (\mjseqn{V_{d}}) is,
 
-  \mjsdeqn{V_{H} = \frac{\sum_{i=1}^{k}n_{i}(\log{n_{i}})^{2} -
-  \frac{(\sum_{i=1}^{k}\log{n_{i}})^2}{N}}{N^{2}}}
+  \mjsdeqn{V_{d} = \frac{4N(N-1)(N-2)\sum_{i=1}^{k}(p_{i})^{3} +
+  2N(N-1)\sum_{i=1}^{k}(p_{i})^{2} - 2N(N-1)(2N-3) \left(
+  \sum_{i=1}^{k}(p_{i})^{2} \right)^{2}}{[N(N-1)]^{2}}}
+
+  The associated degrees of freedom is computed as follows.
+
+  \mjsdeqn{df = (k_{EC} - 1) + (k_{CS} - 1)}
+
+  Where, \mjseqn{k_{EC}} and \mjseqn{k_{CS}} are the number of phenotypic
+  classes in the trait for EC and CS respectively.
 
   }
 
@@ -159,13 +208,39 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
   value occurs when each phenotypic class for a trait has the same proportion
   of accessions.
 
-  \mjsdeqn{H_{max} = \log_{2}(k)} OR \mjsdeqn{H_{max} = \ln(k)}
+  \mjsdeqn{H_{max} = \log_{2}(k)\;\; \textrm{OR} \;\; H_{max} = \ln(k)}
 
   The relative Shannon-Weaver diversity index or Shannon equitability index
   (\mjseqn{H'}) is the Shannon diversity index (\mjseqn{I}) divided by the
   maximum diversity (\mjseqn{H_{max}}).
 
-  \mjsdeqn{H' = \frac{H}{H_{max}}}}
+  \mjsdeqn{H' = \frac{H}{H_{max}}}
+
+  Differences in Shannon-Weaver diversity index for qualitative traits of EC
+  and CS can be tested by Hutcheson t-test
+  \insertCite{hutcheson_test_1970}{EvaluateCore}.
+
+  The Hutcheson t statistic is computed as follows.
+
+  \mjsdeqn{t = \frac{H_{EC} - H_{CS}}{\sqrt{V_{H_{EC}} + V_{H_{CS}}}}}
+
+  Where, the variance of \mjseqn{H} (\mjseqn{V_{H}}) is,
+
+  \mjsdeqn{V_{H} = \frac{\sum_{i=1}^{k}n_{i}(\log_{2}{n_{i}})^{2}
+  \frac{(\sum_{i=1}^{k}\log_{2}{n_{i}})^2}{N}}{N^{2}}}
+
+  \mjsdeqn{\textrm{OR}}
+
+  \mjsdeqn{V_{H} = \frac{\sum_{i=1}^{k}n_{i}(\ln{n_{i}})^{2}
+  \frac{(\sum_{i=1}^{k}\ln{n_{i}})^2}{N}}{N^{2}}}
+
+  The associated degrees of freedom is approximated as follows.
+
+  \mjsdeqn{df = \frac{(V_{H_{EC}} +
+  V_{H_{CS}})^{2}}{\frac{V_{H_{EC}}^{2}}{N_{EC}} +
+  \frac{V_{H_{CS}}^{2}}{N_{CS}}}}
+
+  }
 
   \subsection{McIntosh Diversity Index}{A similar index of diversity was
   described by \insertCite{mcintosh_index_1967;textual}{EvaluateCore} as
@@ -176,6 +251,46 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
   Where, \mjseqn{n_{i}} denotes the number of accessions in the \mjseqn{i}th
   phenotypic class for a trait and \mjseqn{N} is the total number of
   accessions so that \mjseqn{p_{i} = {n_{i}}/{N}}.}
+
+  \subsection{Testing for difference with bootstrapping}{Bootstrap statistics
+  are employed to test the difference between the Simpson, Shannon-Weaver and
+  McIntosh indices for  qualitative traits of EC and CS
+  \insertCite{solow_simple_1993}{EvaluateCore}.
+
+  If \mjseqn{I_{EC}} and \mjseqn{I_{CS}} are the diversity indices with the
+  original number of accessions, then random samples of the same size as the
+  original are repeatedly generated (with replacement) \mjseqn{R} times and
+  the corresponding diversity index is computed for each sample.
+
+  \mjsdeqn{I_{EC}^{*} = \lbrace H_{EC_{1}}, H_{EC_{}}, \cdots, H_{EC_{R}}
+  \rbrace}
+
+  \mjsdeqn{I_{CS}^{*} = \lbrace H_{CS_{1}}, H_{CS_{}}, \cdots, H_{CS_{R}}
+  \rbrace}
+
+  Then the bootstrap null sample {\mjseqn{I_{0}}} is computed as follows.
+
+  \mjsdeqn{\Delta^{*} = I_{EC}^{*} - I_{CS}^{*}}
+
+  \mjsdeqn{I_{0} = \Delta^{*} - \overline{\Delta^{*}}}
+
+  Where, \mjseqn{\overline{\Delta^{*}}} is the mean of \mjseqn{\Delta^{*}}.
+
+  Now the original difference in diversity indices (\mjseqn{\Delta_{0} =
+  I_{EC} - I_{CS}}) is tested against mean of bootstrap null sample
+  (\mjseqn{I_{0}}) by a z test. The z score test statistic is computed as
+  follows.
+
+  \mjsdeqn{z = \frac{\Delta_{0} - \overline{H_{0}}}{\sqrt{V_{H_{0}}}}}
+
+  Where,  \mjseqn{\overline{H_{0}}} and \mjseqn{V_{H_{0}}} are the mean and
+  variance of the bootstrap null sample \mjseqn{H_{0}}.
+
+  The corresponding degrees of freedom is estimated as follows.
+
+  \mjsdeqn{df = (k_{EC} - 1) + (k_{CS} - 1)}
+
+  }
 }
 
 \examples{
