@@ -5,7 +5,7 @@
 
 ## `EvaluateCore`: Quality Evaluation of Core Collections <img src="https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
-###### Version : [0.1.3](https://aravind-j.github.io/EvaluateCore/); Copyright (C) 2018-2022: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.3](https://aravind-j.github.io/EvaluateCore/); Copyright (C) 2018-2022: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J.<sup>1</sup>, Kaur, V.<sup>2</sup>, Wankhede, D. P.<sup>3</sup> and Nanjundan, J.<sup>4</sup>*
 
@@ -18,7 +18,7 @@
 4.  ICAR-Indian Agricultural Research Institute, Regional Station,
     Wellington, Tamil Nadu.
 
-------------------------------------------------------------------------
+-----
 
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.5.0-6666ff.svg?logo=R)](https://cran.r-project.org/)
@@ -45,7 +45,7 @@ pkgdown](https://img.shields.io/website-up-down-green-red/https/aravind-j.github
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/EvaluateCore/total.svg)] -->
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/EvaluateCore)](http://www.rdocumentation.org/packages/EvaluateCore) -->
 
-------------------------------------------------------------------------
+-----
 
 ## Description
 
@@ -102,149 +102,276 @@ news(package='EvaluateCore')
 
 ## CRAN checks
 
-    Warning: package 'RCurl' was built under R version 4.1.3
-
 <table class="table table-striped table-hover" style="width: auto !important; ">
+
 <thead>
+
 <tr>
+
 <th style="text-align:left;">
+
 Flavour
+
 </th>
+
 <th style="text-align:left;">
+
 CRAN check
+
 </th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr grouplength="6">
+
 <td colspan="2" style="border-bottom: 1px solid;">
+
 <strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-devel-linux-x86\_64-debian-clang
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-devel-linux-x86\_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-devel-linux-x86\_64-debian-gcc
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-devel-linux-x86\_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-devel-linux-x86\_64-fedora-clang
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-devel-linux-x86\_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-devel-linux-x86\_64-fedora-gcc
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-devel-linux-x86\_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-patched-linux-x86\_64
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-patched-linux-x86\_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-release-linux-x86\_64
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-release-linux-x86\_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr grouplength="1">
+
 <td colspan="2" style="border-bottom: 1px solid;">
+
 <strong>[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-patched-solaris-x86
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-patched-solaris-x86](https://cranchecks.info/badges/flavor/r-patched-solaris-x86/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr grouplength="3">
+
 <td colspan="2" style="border-bottom: 1px solid;">
+
 <strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-devel-windows-ix86+x86\_64
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-devel-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-devel-windows-ix86+x86_64/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-release-windows-ix86+x86\_64
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-release-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-release-windows-ix86+x86_64/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-oldrel-windows-ix86+x86\_64
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-oldrel-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-ix86+x86_64/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr grouplength="2">
+
 <td colspan="2" style="border-bottom: 1px solid;">
+
 <strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-release-macos-x86\_64
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-release-macos-x86\_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
+
 r-oldrel-macos-x86\_64
+
 </td>
+
 <td style="text-align:left;">
+
 [![CRAN check -
 r-oldrel-macos-x86\_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/EvaluateCore)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+
 </td>
+
 </tr>
+
 </tbody>
+
 </table>
 
 ## Citing `EvaluateCore`
@@ -255,23 +382,27 @@ To cite the methods in the package use:
 citation("EvaluateCore")
 ```
 
+``` 
 
-    To cite the R package 'EvaluateCore' in publications use:
+To cite the R package 'EvaluateCore' in publications use:
 
-      Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2022).  EvaluateCore:
-      Quality Evaluation of Core Collections. R package version 0.1.3,
-      https://aravind-j.github.io/EvaluateCore/https://CRAN.R-project.org/package=EvaluateCore.
+  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2022).
+  EvaluateCore: Quality Evaluation of Core Collections. R package
+  version 0.1.3,
+  https://aravind-j.github.io/EvaluateCore/https://CRAN.R-project.org/package=EvaluateCore.
 
-    A BibTeX entry for LaTeX users is
+A BibTeX entry for LaTeX users is
 
-      @Manual{,
-        title = {EvaluateCore: Quality Evaluation of Core Collections},
-        author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and J. Nanjundan},
-        year = {2022},
-        note = {R package version 0.1.3},
-        note = {https://aravind-j.github.io/EvaluateCore/},
-        note = {https://CRAN.R-project.org/package=EvaluateCore},
-      }
+  @Manual{,
+    title = {EvaluateCore: Quality Evaluation of Core Collections},
+    author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and J. Nanjundan},
+    year = {2022},
+    note = {R package version 0.1.3},
+    note = {https://aravind-j.github.io/EvaluateCore/},
+    note = {https://CRAN.R-project.org/package=EvaluateCore},
+  }
 
-    This free and open-source software implements academic research by the authors and
-    co-workers. If you use it, please support the project by citing the package.
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by
+citing the package.
+```
