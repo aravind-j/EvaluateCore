@@ -9,7 +9,7 @@
 * rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.2.0).
 
 ### R CMD check results
-* There were no ERRORs, NOTES or WARNINGs.
+Misspelled words in DESCRIPTION are false positives - Odong; et; al; germplasm.
 
 # Version 0.1.2 - First submission
 
