@@ -25,67 +25,67 @@ Diversity Index (\mjseqn{I}). Default is 2.}
 \item{R}{The number of bootstrap replicates. Default is 1000.}
 }
 \value{
-A list with three data frames as follows. \item{\code{simpson}}{
-  \describe{\item{\code{Trait}}{The qualitative trait.}
-  \item{\code{EC_No.Classes}}{The number of classes in the trait for EC.}
-  \item{\code{CS_No.Classes}}{The number of classes in the trait for CS.}
-  \item{\code{EC_d}}{The Simpson's Index (\mjseqn{d}) for EC.}
-  \item{\code{EC_D}}{The Simpson's Index of Diversity (\mjseqn{D}) for EC.}
-  \item{\code{EC_D.max}}{The Maximum Simpson's Index of Diversity
-  (\mjseqn{D_{max}}) for EC.} \item{\code{EC_D.inv}}{The Simpson's Reciprocal
-  Index (\mjseqn{D_{R}}) for EC.} \item{\code{EC_D.rel}}{The Relative
-  Reciprocal Index (\mjseqn{D'}) for EC.} \item{\code{EC_d.V}}{The variance
+A list with three data frames as follows. \item{simpson}{
+  \describe{\item{Trait}{The qualitative trait.}
+  \item{EC_No.Classes}{The number of classes in the trait for EC.}
+  \item{CS_No.Classes}{The number of classes in the trait for CS.}
+  \item{EC_d}{The Simpson's Index (\mjseqn{d}) for EC.}
+  \item{EC_D}{The Simpson's Index of Diversity (\mjseqn{D}) for EC.}
+  \item{EC_D.max}{The Maximum Simpson's Index of Diversity
+  (\mjseqn{D_{max}}) for EC.} \item{EC_D.inv}{The Simpson's Reciprocal
+  Index (\mjseqn{D_{R}}) for EC.} \item{EC_D.rel}{The Relative
+  Reciprocal Index (\mjseqn{D'}) for EC.} \item{EC_d.V}{The variance
   of \mjseqn{d} for EC according to
   \insertCite{simpson_measurement_1949}{EvaluateCore}.}
-  \item{\code{EC_d.boot.V}}{The bootstrap variance of \mjseqn{d} for EC.}
-  \item{\code{CS_d}}{The Simpson's Index (\mjseqn{d}) for CS.}
-  \item{\code{CS_D}}{The Simpson's Index of Diversity (\mjseqn{D}) for CS.}
-  \item{\code{CS_D.max}}{The Maximum Simpson's Index of Diversity
-  (\mjseqn{D_{max}}) for CS.} \item{\code{CS_D.inv}}{The Simpson's Reciprocal
-  Index (\mjseqn{D_{R}}) for CS.} \item{\code{CS_D.rel}}{The Relative
-  Reciprocal Index (\mjseqn{D'}) for CS.} \item{\code{CS_d.V}}{The variance
+  \item{EC_d.boot.V}{The bootstrap variance of \mjseqn{d} for EC.}
+  \item{CS_d}{The Simpson's Index (\mjseqn{d}) for CS.}
+  \item{CS_D}{The Simpson's Index of Diversity (\mjseqn{D}) for CS.}
+  \item{CS_D.max}{The Maximum Simpson's Index of Diversity
+  (\mjseqn{D_{max}}) for CS.} \item{CS_D.inv}{The Simpson's Reciprocal
+  Index (\mjseqn{D_{R}}) for CS.} \item{CS_D.rel}{The Relative
+  Reciprocal Index (\mjseqn{D'}) for CS.} \item{CS_d.V}{The variance
   of \mjseqn{d} for CS according to
   \insertCite{simpson_measurement_1949}{EvaluateCore}.}
-  \item{\code{CS_d.boot.V}}{The bootstrap variance of \mjseqn{d} for CS.}
-  \item{\code{d.t.df}}{The degrees of freedom for t test.}
-  \item{\code{d.t.stat}}{The t statistic.} \item{\code{d.t.pvalue}}{The p
-  value for t test.} \item{\code{d.t.significance}}{The  significance of t
-  test for t-test} \item{\code{d.boot.z.df}}{The degrees of freedom for
-  bootstrap z score.} \item{\code{d.boot.z.stat}}{The bootstrap z score.}
-  \item{\code{d.boot.z.pvalue}}{The p value of z score.}
-  \item{\code{d.boot.z.significance}}{The significance of z score.}} }
-  \item{\code{shannon}}{ \describe{\item{\code{Trait}}{The qualitative
-  trait.} \item{\code{EC_No.Classes}}{The number of classes in the trait for
-  EC.} \item{\code{CS_No.Classes}}{The number of classes in the trait for
-  CS.} \item{\code{EC_I}}{The Shannon-Weaver Diversity Index (\mjseqn{I}) for
-  EC.} \item{\code{EC_I.max}}{The Maximum Shannon-Weaver Diversity Index
-  (\mjseqn{I_{max}}) for EC.} \item{\code{EC_I.rel}}{The Relative
+  \item{CS_d.boot.V}{The bootstrap variance of \mjseqn{d} for CS.}
+  \item{d.t.df}{The degrees of freedom for t test.}
+  \item{d.t.stat}{The t statistic.} \item{d.t.pvalue}{The p
+  value for t test.} \item{d.t.significance}{The  significance of t
+  test for t-test} \item{d.boot.z.df}{The degrees of freedom for
+  bootstrap z score.} \item{d.boot.z.stat}{The bootstrap z score.}
+  \item{d.boot.z.pvalue}{The p value of z score.}
+  \item{d.boot.z.significance}{The significance of z score.}} }
+  \item{shannon}{ \describe{\item{Trait}{The qualitative
+  trait.} \item{EC_No.Classes}{The number of classes in the trait for
+  EC.} \item{CS_No.Classes}{The number of classes in the trait for
+  CS.} \item{EC_I}{The Shannon-Weaver Diversity Index (\mjseqn{I}) for
+  EC.} \item{EC_I.max}{The Maximum Shannon-Weaver Diversity Index
+  (\mjseqn{I_{max}}) for EC.} \item{EC_I.rel}{The Relative
   Shannon-Weaver Diversity Index (\mjseqn{I'}) for EC.}
-  \item{\code{EC_I.V}}{The variance of \mjseqn{I} for EC according to
+  \item{EC_I.V}{The variance of \mjseqn{I} for EC according to
   \insertCite{hutcheson_test_1970}{EvaluateCore}.}
-  \item{\code{EC_I.boot.V}}{The bootstrap variance of \mjseqn{I} for EC.}
-  \item{\code{CS_I}}{The Shannon-Weaver Diversity Index (\mjseqn{I}) for CS.}
-  \item{\code{CS_I.max}}{The Maximum Shannon-Weaver Diversity Index
-  (\mjseqn{I_{max}}) for CS.} \item{\code{CS_I.rel}}{The Relative
+  \item{EC_I.boot.V}{The bootstrap variance of \mjseqn{I} for EC.}
+  \item{CS_I}{The Shannon-Weaver Diversity Index (\mjseqn{I}) for CS.}
+  \item{CS_I.max}{The Maximum Shannon-Weaver Diversity Index
+  (\mjseqn{I_{max}}) for CS.} \item{CS_I.rel}{The Relative
   Shannon-Weaver Diversity Index (\mjseqn{I'}) for CS.}
-  \item{\code{CS_I.V}}{The variance of \mjseqn{I} for CS according to
+  \item{CS_I.V}{The variance of \mjseqn{I} for CS according to
   \insertCite{hutcheson_test_1970}{EvaluateCore}.}
-  \item{\code{CS_I.boot.V}}{The bootstrap variance of \mjseqn{I} for CS.}
-  \item{\code{I.t.stat}}{The t statistic.} \item{\code{I.t.df}}{The degrees
-  of freedom for t test.} \item{\code{I.t.pvalue}}{The p value for t test.}
-  \item{\code{I.t.significance}}{The  significance of t test for t-test}
-  \item{\code{I.boot.z.df}}{The degrees of freedom for bootstrap z score.}
-  \item{\code{I.boot.z.stat}}{The bootstrap z score.}
-  \item{\code{I.boot.z.pvalue}}{The p value of z score.}
-  \item{\code{I.boot.z.significance}}{The significance of z score.}} }
-  \item{\code{mcintosh}}{ \describe{\item{\code{EC_No.Classes}}{The number of
-  classes in the trait for EC.} \item{\code{CS_No.Classes}}{The number of
-  classes in the trait for CS.} \item{\code{EC_D.Mc}}{The McIntosh Index
-  (\mjseqn{D_{Mc}}) for EC.} \item{\code{CS_D.Mc}}{The McIntosh Index
-  (\mjseqn{D_{Mc}}) for CS.} \item{\code{M.boot.z.stat}}{The bootstrap z
-  score.} \item{\code{M.boot.z.df}}{The degrees of freedom for bootstrap z
-  score.} \item{\code{M.boot.z.pvalue}}{The p value of z score.}
-  \item{\code{M.boot.z.significance}}{The significance of z score.}} }
+  \item{CS_I.boot.V}{The bootstrap variance of \mjseqn{I} for CS.}
+  \item{I.t.stat}{The t statistic.} \item{I.t.df}{The degrees
+  of freedom for t test.} \item{I.t.pvalue}{The p value for t test.}
+  \item{I.t.significance}{The  significance of t test for t-test}
+  \item{I.boot.z.df}{The degrees of freedom for bootstrap z score.}
+  \item{I.boot.z.stat}{The bootstrap z score.}
+  \item{I.boot.z.pvalue}{The p value of z score.}
+  \item{I.boot.z.significance}{The significance of z score.}} }
+  \item{mcintosh}{ \describe{\item{EC_No.Classes}{The number of
+  classes in the trait for EC.} \item{CS_No.Classes}{The number of
+  classes in the trait for CS.} \item{EC_D.Mc}{The McIntosh Index
+  (\mjseqn{D_{Mc}}) for EC.} \item{CS_D.Mc}{The McIntosh Index
+  (\mjseqn{D_{Mc}}) for CS.} \item{M.boot.z.stat}{The bootstrap z
+  score.} \item{M.boot.z.df}{The degrees of freedom for bootstrap z
+  score.} \item{M.boot.z.pvalue}{The p value of z score.}
+  \item{M.boot.z.significance}{The significance of z score.}} }
 }
 \description{
 Compute the following diversity indices and perform corresponding statistical
