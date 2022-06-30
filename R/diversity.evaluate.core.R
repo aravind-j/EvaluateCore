@@ -291,8 +291,8 @@
 #' @seealso \code{\link[psych:misc]{shannon}}, \code{\link[vegan]{diversity}},
 #'   \code{\link[boot]{boot}}
 #'
-#' @importFrom dplyr bind_rows
 #' @importFrom boot boot
+#' @importFrom stats pt
 #' @export
 #'
 #' @references
