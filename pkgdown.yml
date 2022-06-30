@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   EvaluationofCoreCollections: EvaluationofCoreCollections.html
   Example Core Data: additional/Example Core Data.html
-last_built: 2022-06-30T09:12Z
+last_built: 2022-06-30T10:50Z
 urls:
   reference: https://aravind-j.github.io/EvaluateCore/reference
   article: https://aravind-j.github.io/EvaluateCore/articles
