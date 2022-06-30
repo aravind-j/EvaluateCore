@@ -319,8 +319,10 @@
 #' ec[, qual] <- lapply(ec[, qual],
 #'                      function(x) factor(as.factor(x)))
 #'
+#' \donttest{
 #' diversity.evaluate.core(data = ec, names = "genotypes",
 #'                         qualitative = qual, selected = core)
+#' }
 #'
 diversity.evaluate.core <- function(data, names, qualitative, selected,
                                     base = 2, R = 1000) {

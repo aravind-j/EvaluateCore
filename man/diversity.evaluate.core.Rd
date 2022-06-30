@@ -313,8 +313,10 @@ qual <- c("CUAL", "LNGS", "PTLC", "DSTA", "LFRT", "LBTEF", "CBTR", "NMLB",
 ec[, qual] <- lapply(ec[, qual],
                      function(x) factor(as.factor(x)))
 
+\donttest{
 diversity.evaluate.core(data = ec, names = "genotypes",
                         qualitative = qual, selected = core)
+}
 
 }
 \references{
