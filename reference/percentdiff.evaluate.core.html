@@ -43,7 +43,7 @@ between the mean squared Euclidean distance among accessions
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">EvaluateCore</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.2.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.3</span>
       </span>
     </div>
 
@@ -187,20 +187,18 @@ traits. A representative core should have
 <em></em>\(MD\%_{Hu}\) &lt; 20 % and <em></em>\(CR\) &gt; 80
 % (Hu et al. 2000)
 .</p>
-<p>\[VD\%_{Hu} = \left ( \frac{S_{t}}{n} \right ) \times 100\]</p>
-<p>Where, <em></em>\(S_{t}\) is the number of traits with a significant difference
+<p>\[VD\%_{Hu} = \left ( \frac{S_{F}}{n} \right ) \times 100\]</p>
+<p>Where, <em></em>\(S_{F}\) is the number of traits with a significant difference
 between the variances of the EC and the CS and <em></em>\(n\) is the total number
 of traits. Larger <em></em>\(VD\%_{Hu}\) value
 indicates a more diverse core set.</p>
-<p>\[MD\%_{Kim} =
-\frac{1}{n}\sum_{i=1}^{n} \frac{\left | M_{EC_{i}}-M_{CS_{i}} \right
-|}{M_{CS_{i}}}\]</p>
+<p>\[MD\%_{Kim} = \left ( \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+M_{EC_{i}}-M_{CS_{i}} \right |}{M_{CS_{i}}} \right ) \times 100\]</p>
 <p>Where, <em></em>\(M_{EC_{i}}\) is the mean of the EC for the <em></em>\(i\)th trait,
 <em></em>\(M_{CS_{i}}\) is the mean of the CS for the <em></em>\(i\)th trait and
 <em></em>\(n\) is the total number of traits.</p>
-<p>\[VD\%_{Kim} =
-\frac{1}{n}\sum_{i=1}^{n} \frac{\left | V_{EC_{i}}-V_{CS_{i}} \right
-|}{V_{CS_{i}}}\]</p>
+<p>\[VD\%_{Kim} = \left ( \frac{1}{n}\sum_{i=1}^{n} \frac{\left |
+V_{EC_{i}}-V_{CS_{i}} \right |}{V_{CS_{i}}} \right ) \times 100\]</p>
 <p>Where, <em></em>\(V_{EC_{i}}\) is the variance of the EC for the <em></em>\(i\)th
 trait, <em></em>\(V_{CS_{i}}\) is the variance of the CS for the <em></em>\(i\)th
 trait and <em></em>\(n\) is the total number of traits.</p>
@@ -251,7 +249,7 @@ Euclidean distance among accessions in the EC.</p>
 <span class="r-in"><span class="fu">percentdiff.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span>
 <span class="r-in">                          quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   MDPercent_Hu VDPercent_Hu MDPercent_Kim VDPercent_Kim DDPercent</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           50           80            40      41.64331  24.81699</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1           50           80      13.02737      41.64331   18.2052</span>
 <span class="r-in"></span>
 </code></pre></div>
     </div>
@@ -267,7 +265,7 @@ Euclidean distance among accessions in the EC.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>
