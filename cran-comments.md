@@ -1,3 +1,7 @@
+# Version 0.1.3 - Second submission
+
+Resubmission with missing manual included.
+
 # Version 0.1.3 - First submission
 
 * Removed dependency on deprecated package `ccChooser`, because of which `EvaluateCore` was also deprecated.
