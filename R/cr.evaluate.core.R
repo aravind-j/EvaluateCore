@@ -18,11 +18,15 @@
 
 #' Coincidence Rate of Range
 #'
-#' Compute the Coincidence Rate of Range (\mjseqn{CR})
-#' \insertCite{hu_methods_2000}{EvaluateCore} (originally described by
-#' \insertCite{diwan_methods_1995}{EvaluateCore} as Mean range ratio) to compare
-#' quantitative traits of the entire collection (EC) and core set (CS).
-#' \loadmathjax
+#' Compute the following metrics to compare quantitative traits of the entire
+#' collection (EC) and core set (CS). \itemize{\item{Coincidence Rate of Range
+#' (\mjseqn{CR}) \insertCite{hu_methods_2000}{EvaluateCore} (originally
+#' described by \insertCite{diwan_methods_1995}{EvaluateCore} as Mean range
+#' ratio)} \item{Changeable Rate of Maximum (\mjseqn{CR_{\max}})
+#' \insertCite{wang_assessment_2007}{EvaluateCore}} \item{Changeable Rate of
+#' Minimum (\mjseqn{CR_{\min}}) \insertCite{wang_assessment_2007}{EvaluateCore}}
+#' \item{Changeable Rate of Mean (\mjseqn{CR_{\mu}})
+#' \insertCite{wang_assessment_2007}{EvaluateCore}} } \loadmathjax
 #'
 #' The Coincidence Rate of Range (\mjseqn{CR}) is computed as follows.
 #'
@@ -36,6 +40,36 @@
 #' A representative CS should have a \mjseqn{CR} value no less than 70\%
 #' \insertCite{diwan_methods_1995}{EvaluateCore} or 80\%
 #' \insertCite{hu_methods_2000}{EvaluateCore}.
+#'
+#' The Changeable Rate of Maximum (\mjseqn{CR_{\max}}) is computed as follows.
+#'
+#' \mjsdeqn{CR_{\max} = \left ( \frac{1}{n} \sum_{i=1}^{n}
+#' \frac{\max_{CS_{i}}}{\max_{EC_{i}}} \right ) \times 100}
+#'
+#' Where, \mjseqn{\max_{CS_{i}}} is the maximum value of the \mjseqn{i}th trait
+#' in the CS, \mjseqn{\max_{EC_{i}}} is the maximum value of the \mjseqn{i}th
+#' trait in the EC and \mjseqn{n} is the total number of traits.
+#'
+#' The Changeable Rate of Minimum (\mjseqn{CR_{\min}}) is computed as follows.
+#'
+#' \mjsdeqn{CR_{\min} = \left ( \frac{1}{n} \sum_{i=1}^{n}
+#' \frac{\min_{CS_{i}}}{\min_{EC_{i}}} \right ) \times 100}
+#'
+#' Where, \mjseqn{\min_{CS_{i}}} is the minimum value of the \mjseqn{i}th trait
+#' in the CS, \mjseqn{\min_{EC_{i}}} is the minimum value of the \mjseqn{i}th
+#' trait in the EC and \mjseqn{n} is the total number of traits.
+#'
+#' The Changeable Rate of Mean (\mjseqn{CR_{\mu}}) is computed as follows.
+#'
+#' \mjsdeqn{CR_{\mu} = \left ( \frac{1}{n} \sum_{i=1}^{n}
+#' \frac{\mu_{CS_{i}}}{\mu_{EC_{i}}} \right ) \times 100}
+#'
+#' Where, \mjseqn{\mu_{CS_{i}}} is the mean value of the \mjseqn{i}th trait in
+#' the CS, \mjseqn{\mu_{EC_{i}}} is the mean value of the \mjseqn{i}th trait in
+#' the EC and \mjseqn{n} is the total number of traits.
+#'
+#' @note \code{NaN} or \code{Inf} values for \mjsdeqn{CR_{\min}} occurs when the
+#'   minimum values for some of the traits are zero.
 #'
 #' @inheritParams snk.evaluate.core
 #'
@@ -89,6 +123,14 @@ cr.evaluate.core <- function(data, names, quantitative, selected) {
   CR <- (sum((mdiff$CS_Max - mdiff$CS_Min) / (mdiff$EC_Max - mdiff$EC_Min)) /
            length(quantitative)) * 100
 
-  return(CR)
+  CR_Max <- (sum(mdiff$CS_Max / mdiff$EC_Max) / length(quantitative)) * 100
+
+  CR_Min <- (sum(mdiff$CS_Min / mdiff$EC_Min) / length(quantitative)) * 100
+
+  CR_Mean <- (sum(mdiff$CS_Mean / mdiff$EC_Mean) / length(quantitative)) * 100
+
+  out <- c(CR = CR, CR_Max = CR_Max, CR_Min = CR_Min, CR_Mean = CR_Mean)
+
+  return(out)
 
 }

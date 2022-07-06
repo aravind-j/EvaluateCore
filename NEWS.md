@@ -1,5 +1,8 @@
 # EvaluateCore  0.1.4
 
+## UPDATED FUNCTIONS:
+* `cr.evaluate.core` - Added computation of Changeable Rate of Maximum, Minimum and Mean (Wang et al. 2007).
+
 # EvaluateCore  0.1.3
 
 ## NEW FUNCTIONS:
