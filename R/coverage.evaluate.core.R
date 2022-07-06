@@ -26,11 +26,12 @@
 #' follows.
 #'
 #' \mjsdeqn{Class\, Coverage = \left ( \frac{1}{n} \sum_{i=1}^{n}
-#' \frac{A_{CS_{i}}}{A_{EC_{i}}} \right ) \times 100}
+#' \frac{k_{CS_{i}}}{k_{EC_{i}}} \right ) \times 100}
 #'
-#' Where, \mjseqn{A_{CS_{i}}} is the sets of categories in the CS for the
-#' \mjseqn{i}th trait, \mjseqn{A_{EC_{i}}} is the sets of categories in the EC
-#' for the \mjseqn{i}th trait and \mjseqn{n} is the total number of traits.
+#' Where, \mjseqn{k_{CS_{i}}} is the number of phenotypic classes in CS for the
+#' \mjseqn{i}th trait, \mjseqn{k_{EC_{i}}} is the number of phenotypic classes
+#' in EC for the \mjseqn{i}th trait and \mjseqn{n} is the total number of
+#' traits.
 #'
 #' @inheritParams chisquare.evaluate.core
 #'
