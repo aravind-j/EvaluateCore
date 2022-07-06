@@ -1,7 +1,9 @@
 # EvaluateCore  0.1.4
 
 ## NEW FUNCTIONS:
-* `rpr.evaluate.core` - Added Ratio of Phenotype Retained (Li et al., 2002)
+* `rpr.evaluate.core` - Added Ratio of Phenotype Retained (Li et al., 2002).
+* `vpf.evaluate.core` - Added Variance of Phenotypic Frequency (Li et al., 2002).
+* `scv.evaluate.core` - Added Synthetic Variation Coefficient (Dong, 1998; Dong et al., 2001).
 
 ## UPDATED FUNCTIONS:
 * `cr.evaluate.core` - Added computation of Changeable Rate of Maximum, Minimum and Mean (Wang et al. 2007).
