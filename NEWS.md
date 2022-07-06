@@ -2,6 +2,7 @@
 
 ## UPDATED FUNCTIONS:
 * `cr.evaluate.core` - Added computation of Changeable Rate of Maximum, Minimum and Mean (Wang et al. 2007).
+* `percentdiff.evaluate.core` - Added Percentage of range ratios smaller than 0.70 (Diwan et al. 1998).
 
 # EvaluateCore  0.1.3
 

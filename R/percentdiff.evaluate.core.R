@@ -32,7 +32,9 @@
 #' \insertCite{kim_powercore_2007}{EvaluateCore} \item Percentage difference
 #' between the mean squared Euclidean distance among accessions
 #' (\mjteqn{\overline{d}D\\\%}{\overline{d}D\\\\\\\%}{\overline{d}D\%})
-#' \insertCite{studnicki_comparing_2013}{EvaluateCore} } \loadmathjax
+#' \insertCite{studnicki_comparing_2013}{EvaluateCore} \item Percentage of range
+#' ratios smaller than 0.70 \insertCite{diwan_methods_1995}{EvaluateCore} }
+#' \loadmathjax
 #'
 #' The differences are computed as follows.
 #'
@@ -88,8 +90,23 @@
 #' among accessions in the CS and \mjseqn{\overline{d}_{EC}} is the mean squared
 #' Euclidean distance among accessions in the EC.
 #'
+#' Percentage of range ratios smaller than 0.70
+#' \insertCite{diwan_methods_1995}{EvaluateCore} is computed as follows.
+#'
+#' \mjtdeqn{RR\\\%_{0.7} = \left ( \frac{S_{RR_{0.7}}}{n} \right ) \times
+#' 100}{RR\\\\\\\%_{0.7} = \left ( \frac{S_{RR_{0.7}}}{n} \right ) \times
+#' 100}{RR\%_{0.7} = \left ( \frac{S_{RR_{0.7}}}{n} \right ) \times 100}
+#'
+#' Where, \mjseqn{S_{RR_{0.7}}} is the number of traits with a range ratio
+#' smaller than 0.7 (\mjseqn{\frac{R_{CS_{i}}}{R_{EC_{i}}} < 0.7})
+#' \mjseqn{R_{CS_{i}}} is the range of the \mjseqn{i}th trait in the CS,
+#' \mjseqn{R_{EC_{i}}} is the range of the \mjseqn{i}th trait in the EC and
+#' \mjseqn{n} is the total number of traits.
+#'
 #' @inheritParams snk.evaluate.core
 #' @param alpha Type I error probability (Significance level) of difference.
+#' @param rr.crit The critical value of range ratio considered to be acceptable
+#'   for a representative CS. The default value is 0.7.
 #'
 #' @return A data frame with the values of
 #'   \mjteqn{MD\\\%_{Hu}}{MD\\\\\\\%_{Hu}}{MD\%_{Hu}},
@@ -132,7 +149,7 @@
 #'                           quantitative = quant, selected = core)
 #'
 percentdiff.evaluate.core <- function(data, names, quantitative,
-                              selected, alpha = 0.05) {
+                              selected, alpha = 0.05, rr.crit = 0.7) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,
@@ -146,6 +163,11 @@ percentdiff.evaluate.core <- function(data, names, quantitative,
   # Check alpha value
   if (!(0 < alpha && alpha < 1)) {
     stop('"alpha" should be between 0 and 1 (0 < alpha < 1)')
+  }
+
+  # Check rr.crit value
+  if (!(0 < rr.crit && rr.crit < 1)) {
+    stop('"rr.crit" should be between 0 and 1 (0 < rr.crit < 1)')
   }
 
   dataf <- data[, c(names, quantitative)]
@@ -168,6 +190,9 @@ percentdiff.evaluate.core <- function(data, names, quantitative,
   mdiff <- snk.evaluate.core(data, names, quantitative, selected)
   vdiff <- levene.evaluate.core(data, names, quantitative, selected)
 
+  RR_crit <- length(which(((mdiff$CS_Max - mdiff$CS_Min) /
+                             (mdiff$EC_Max - mdiff$EC_Min) < rr.crit) == TRUE))
+
   outdf <- data.frame(MDPercent_Hu =
                         (sum(mdiff$SNK_pvalue <= alpha) /
                            length(quantitative)) * 100,
@@ -180,7 +205,8 @@ percentdiff.evaluate.core <- function(data, names, quantitative,
                       VDPercent_Kim =
                         (sum(abs(vdiff$EC_V - vdiff$CS_V) /
                                vdiff$CS_V) / length(quantitative)) * 100,
-                      DDPercent = ((d_CS - d_EC) / d_EC) * 100)
+                      DDPercent = ((d_CS - d_EC) / d_EC) * 100,
+                      RR = (RR_crit / length(quantitative)) * 100)
 
   return(outdf)
 

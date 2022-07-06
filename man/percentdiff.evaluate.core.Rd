@@ -4,7 +4,14 @@
 \alias{percentdiff.evaluate.core}
 \title{Percentage Difference of Means and Variances}
 \usage{
-percentdiff.evaluate.core(data, names, quantitative, selected, alpha = 0.05)
+percentdiff.evaluate.core(
+  data,
+  names,
+  quantitative,
+  selected,
+  alpha = 0.05,
+  rr.crit = 0.7
+)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -20,6 +27,9 @@ character vector.}
 core collection and present in the \code{names} column.}
 
 \item{alpha}{Type I error probability (Significance level) of difference.}
+
+\item{rr.crit}{The critical value of range ratio considered to be acceptable
+for a representative CS. The default value is 0.7.}
 }
 \value{
 A data frame with the values of
@@ -44,7 +54,9 @@ differences between variances
 \insertCite{kim_powercore_2007}{EvaluateCore} \item Percentage difference
 between the mean squared Euclidean distance among accessions
 (\mjteqn{\overline{d}D\\\%}{\overline{d}D\\\\\\\%}{\overline{d}D\%})
-\insertCite{studnicki_comparing_2013}{EvaluateCore} } \loadmathjax
+\insertCite{studnicki_comparing_2013}{EvaluateCore} \item Percentage of range
+ratios smaller than 0.70 \insertCite{diwan_methods_1995}{EvaluateCore} }
+\loadmathjax
 }
 \details{
 The differences are computed as follows.
@@ -100,6 +112,19 @@ trait and \mjseqn{n} is the total number of traits.
 Where, \mjseqn{\overline{d}_{CS}} is the mean squared Euclidean distance
 among accessions in the CS and \mjseqn{\overline{d}_{EC}} is the mean squared
 Euclidean distance among accessions in the EC.
+
+Percentage of range ratios smaller than 0.70
+\insertCite{diwan_methods_1995}{EvaluateCore} is computed as follows.
+
+\mjtdeqn{RR\\\%_{0.7} = \left ( \frac{S_{RR_{0.7}}}{n} \right ) \times
+100}{RR\\\\\\\%_{0.7} = \left ( \frac{S_{RR_{0.7}}}{n} \right ) \times
+100}{RR\%_{0.7} = \left ( \frac{S_{RR_{0.7}}}{n} \right ) \times 100}
+
+Where, \mjseqn{S_{RR_{0.7}}} is the number of traits with a range ratio
+smaller than 0.7 (\mjseqn{\frac{R_{CS_{i}}}{R_{EC_{i}}} < 0.7})
+\mjseqn{R_{CS_{i}}} is the range of the \mjseqn{i}th trait in the CS,
+\mjseqn{R_{EC_{i}}} is the range of the \mjseqn{i}th trait in the EC and
+\mjseqn{n} is the total number of traits.
 }
 \examples{
 
