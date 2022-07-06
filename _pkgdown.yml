@@ -69,6 +69,7 @@ reference:
           - '`chisquare.evaluate.core`'
           - '`coverage.evaluate.core`'
           - '`diversity.evaluate.core`'
+          - '`rpr.evaluate.core`'
 
     - title: Compare both qualitative and quantitative traits
       contents:
