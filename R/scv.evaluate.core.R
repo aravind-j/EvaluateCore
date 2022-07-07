@@ -39,7 +39,7 @@
 #'
 #' @inheritParams chisquare.evaluate.core
 #'
-#' @return The Variance of Phenotypic Frequency value.
+#' @return The Variance of Phenotypic Frequency values for EC and CS
 #'
 #' @import mathjaxr
 #' @export
@@ -65,7 +65,7 @@
 #'           "ANGB", "CUAL9M", "LVC9M", "TNPR9M", "PL9M", "STRP", "STRC",
 #'           "PSTR")
 #'
-#' ec[, quant] <- lapply(ec[, quant],
+#' ec[, qual] <- lapply(ec[, qual],
 #'                       function(x) factor(as.factor(x)))
 #'
 #' scv.evaluate.core(data = ec, names = "genotypes",
@@ -94,10 +94,15 @@ scv.evaluate.core <- function(data, names, quantitative, selected) {
 
   dataf$`[Type]` <- as.factor(dataf$`[Type]`)
 
-  scv <- lapply(dataf[dataf$`[Type]` == "CS", quantitative],
+  scv_ec <- lapply(dataf[dataf$`[Type]` == "EC", quantitative],
                 function(x) sd(x) / sqrt(length(x)))
-  scv <- unlist(scv)
-  scv <- mean(scv) * 100
+  scv_ec <- unlist(scv_ec)
+  scv_ec <- mean(scv_ec) * 100
 
-  return(scv)
+  scv_cs <- lapply(dataf[dataf$`[Type]` == "CS", quantitative],
+                function(x) sd(x) / sqrt(length(x)))
+  scv_cs <- unlist(scv_cs)
+  scv_cs <- mean(scv_cs) * 100
+
+  return(c(EC_SCV = scv_ec, CS_SCV = scv_cs))
 }

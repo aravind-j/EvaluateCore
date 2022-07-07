@@ -17,7 +17,7 @@ trait/character data.}
 core collection and present in the \code{names} column.}
 }
 \value{
-The Variance of Phenotypic Frequency value.
+The Variance of Phenotypic Frequency values for EC and CS
 }
 \description{
 Compute the Synthetic Variation Coefficient
@@ -57,7 +57,7 @@ qual <- c("CUAL", "LNGS", "PTLC", "DSTA", "LFRT", "LBTEF", "CBTR", "NMLB",
           "ANGB", "CUAL9M", "LVC9M", "TNPR9M", "PL9M", "STRP", "STRC",
           "PSTR")
 
-ec[, quant] <- lapply(ec[, quant],
+ec[, qual] <- lapply(ec[, qual],
                       function(x) factor(as.factor(x)))
 
 scv.evaluate.core(data = ec, names = "genotypes",

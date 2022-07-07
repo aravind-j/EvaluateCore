@@ -22,9 +22,8 @@
 #' \insertCite{li_studies_2002}{EvaluateCore} to compare qualitative traits
 #' between entire collection (EC) and core set (CS). \loadmathjax
 #'
-#' Ratio of Phenotype Retained (\mjseqn{VPF})
-#' \insertCite{li_studies_2002}{EvaluateCore} is computed as follows for the
-#' core set (CS).
+#' Variance of Phenotypic Frequency (\mjseqn{VPF})
+#' \insertCite{li_studies_2002}{EvaluateCore} is computed as follows.
 #'
 #' \mjsdeqn{VPF = \frac{1}{n} \sum_{i=1}^{n}\left ( \frac{\sum_{j=1}^{k} (p_{ij}
 #' - \overline{p_{i}})^{2}}{k - 1} \right )}
@@ -37,7 +36,7 @@
 #'
 #' @inheritParams chisquare.evaluate.core
 #'
-#' @return The Variance of Phenotypic Frequency value.
+#' @return The Variance of Phenotypic Frequency values for EC and CS.
 #'
 #' @import mathjaxr
 #' @export
@@ -92,12 +91,19 @@ vpf.evaluate.core <- function(data, names, qualitative, selected) {
 
   dataf$`[Type]` <- as.factor(dataf$`[Type]`)
 
-  vpf <- lapply(dataf[dataf$`[Type]` == "CS", qualitative],
+  vpf_ec <- lapply(dataf[dataf$`[Type]` == "EC", qualitative],
                 pf_deviance)
-  vpf <- unlist(vpf)
-  vpf <- sum(vpf) / length(qualitative)
+  vpf_ec <- unlist(vpf_ec)
+  vpf_ec <- sum(vpf_ec) / length(qualitative)
 
-  return(vpf)
+  vpf_cs <- lapply(dataf[dataf$`[Type]` == "CS", qualitative],
+                   pf_deviance)
+  vpf_cs <- unlist(vpf_cs)
+  vpf_cs <- sum(vpf_cs) / length(qualitative)
+
+  out <- c(EC_VPF = vpf_ec, CS_VPF = vpf_cs)
+
+  return(out)
 
 }
 

@@ -20,7 +20,7 @@ vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-The Variance of Phenotypic Frequency value.
+The Variance of Phenotypic Frequency values for EC and CS.
 }
 \description{
 Compute the Variance of Phenotypic Frequency (\mjseqn{VPF})
@@ -28,9 +28,8 @@ Compute the Variance of Phenotypic Frequency (\mjseqn{VPF})
 between entire collection (EC) and core set (CS). \loadmathjax
 }
 \details{
-Ratio of Phenotype Retained (\mjseqn{VPF})
-\insertCite{li_studies_2002}{EvaluateCore} is computed as follows for the
-core set (CS).
+Variance of Phenotypic Frequency (\mjseqn{VPF})
+\insertCite{li_studies_2002}{EvaluateCore} is computed as follows.
 
 \mjsdeqn{VPF = \frac{1}{n} \sum_{i=1}^{n}\left ( \frac{\sum_{j=1}^{k} (p_{ij}
 - \overline{p_{i}})^{2}}{k - 1} \right )}
