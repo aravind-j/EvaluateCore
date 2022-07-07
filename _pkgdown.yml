@@ -51,6 +51,7 @@ reference:
          - '`iqr.evaluate.core`'
          - '`cr.evaluate.core`'
          - '`vr.evaluate.core`'
+         - '`scv.evaluate.core`'
 
     - title: Quantitative traits - Compare Measures of Distribution
       contents:
@@ -70,6 +71,7 @@ reference:
           - '`coverage.evaluate.core`'
           - '`diversity.evaluate.core`'
           - '`rpr.evaluate.core`'
+          - '`vpf.evaluate.core`'
 
     - title: Compare both qualitative and quantitative traits
       contents:
