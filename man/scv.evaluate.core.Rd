@@ -31,7 +31,7 @@ Synthetic Variation Coefficient (\mjteqn{VR\\\%}{VR\\\\\\\%}{VR\%})
 \insertCite{dong_exploration_1998,dong_genetic_2001}{EvaluateCore} is
 computed as follows for the core set (CS).
 
-\mjtdeqn{CV(\\\%) = \left ( \frac{1}{n} \sum_{i=1}^{n} \frac{SE_{j}}{\mu_{i}}
+\mjtdeqn{CV(\\\%) = \left ( \frac{1}{n} \sum_{i=1}^{n} \frac{SE_{i}}{\mu_{i}}
 \right ) \times 100}{CV(\\\\\\\%) = \left ( \frac{1}{n} \sum_{i=1}^{n}
 \frac{SE_{j}}{\mu_{i}}  \right ) \times 100}{CV(\%) = \left ( \frac{1}{n}
 \sum_{i=1}^{n} \frac{SE_{j}}{\mu_{i}}  \right ) \times 100}
