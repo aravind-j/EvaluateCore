@@ -4,7 +4,13 @@
 \alias{qq.evaluate.core}
 \title{Quantile-Quantile Plots}
 \usage{
-qq.evaluate.core(data, names, quantitative, selected)
+qq.evaluate.core(
+  data,
+  names,
+  quantitative,
+  selected,
+  annotate = c("none", "kl", "ks", "ad")
+)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -18,6 +24,12 @@ character vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
+
+\item{annotate}{Adds the divergence/distance value between probability
+distributions of CS and EC as an annotation to the QQ plot. Either
+\code{"none"} (no annotation (Default)) or \code{"kl"} (Kullback-Leibler
+divergence) or  \code{"ks"} (Kolmogorov-Smirnov distance) or  \code{"ad"}
+(Anderson-Darling distance).}
 }
 \value{
 A list with the \code{ggplot} objects of QQ plots of CS vs EC for
@@ -52,11 +64,21 @@ ec[, qual] <- lapply(ec[, qual],
 qq.evaluate.core(data = ec, names = "genotypes",
                  quantitative = quant, selected = core)
 
+qq.evaluate.core(data = ec, names = "genotypes",
+                 quantitative = quant, selected = core, annotate = "kl")
+
+qq.evaluate.core(data = ec, names = "genotypes",
+                 quantitative = quant, selected = core, annotate = "ks")
+
+qq.evaluate.core(data = ec, names = "genotypes",
+                 quantitative = quant, selected = core, annotate = "ad")
 
 }
 \references{
 \insertAllCited{}
 }
 \seealso{
-\code{\link[stats:qqnorm]{qqplot}}
+\code{\link[stats:qqnorm]{qqplot}} \code{\link[entropy]{KL.plugin}},
+  \code{\link[stats]{ks.test}}, \code{\link[kSamples]{ad.test}},
+  \code{\link[EvaluateCore]{pdfdist.evaluate.core}}
 }
