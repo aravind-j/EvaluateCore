@@ -13,6 +13,9 @@ trait/character data.}
 
 \item{names}{Name of column with the individual names as a character string}
 
+\item{quantitative}{Name of columns with the quantitative traits as a
+character vector.}
+
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
 }

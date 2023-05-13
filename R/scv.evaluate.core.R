@@ -37,7 +37,7 @@
 #' \mjseqn{\mu_{i}} is the mean of the \mjseqn{i}th trait and \mjseqn{n} is the
 #' total number of traits.
 #'
-#' @inheritParams chisquare.evaluate.core
+#' @inheritParams snk.evaluate.core
 #'
 #' @return The Variance of Phenotypic Frequency values for EC and CS
 #'
