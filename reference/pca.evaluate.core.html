@@ -101,15 +101,15 @@ probability distributions of quantitative traits between entire collection
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">pca.evaluate.core</span><span class="op">(</span>
-  <span class="va">data</span>,
-  <span class="va">names</span>,
-  <span class="va">quantitative</span>,
-  <span class="va">selected</span>,
-  center <span class="op">=</span> <span class="cn">TRUE</span>,
-  scale <span class="op">=</span> <span class="cn">TRUE</span>,
-  npc.plot <span class="op">=</span> <span class="fl">6</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">pca.evaluate.core</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">names</span>,</span>
+<span>  <span class="va">quantitative</span>,</span>
+<span>  <span class="va">selected</span>,</span>
+<span>  center <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  scale <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  npc.plot <span class="op">=</span> <span class="fl">6</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -192,61 +192,61 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"cassava_CC"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"cassava_EC"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">ec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>genotypes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">)</span>, <span class="va">cassava_EC</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">ec</span><span class="op">$</span><span class="va">genotypes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">ec</span><span class="op">$</span><span class="va">genotypes</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">ec</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">core</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">cassava_CC</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">quant</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NMSR"</span>, <span class="st">"TTRN"</span>, <span class="st">"TFWSR"</span>, <span class="st">"TTRW"</span>, <span class="st">"TFWSS"</span>, <span class="st">"TTSW"</span>, <span class="st">"TTPW"</span>, <span class="st">"AVPW"</span>,</span>
-<span class="r-in">           <span class="st">"ARSR"</span>, <span class="st">"SRDM"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">qual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CUAL"</span>, <span class="st">"LNGS"</span>, <span class="st">"PTLC"</span>, <span class="st">"DSTA"</span>, <span class="st">"LFRT"</span>, <span class="st">"LBTEF"</span>, <span class="st">"CBTR"</span>, <span class="st">"NMLB"</span>,</span>
-<span class="r-in">          <span class="st">"ANGB"</span>, <span class="st">"CUAL9M"</span>, <span class="st">"LVC9M"</span>, <span class="st">"TNPR9M"</span>, <span class="st">"PL9M"</span>, <span class="st">"STRP"</span>, <span class="st">"STRC"</span>,</span>
-<span class="r-in">          <span class="st">"PSTR"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">ec</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">ec</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span>,</span>
-<span class="r-in">                     <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">pca.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span>
-<span class="r-in">                  quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>,</span>
-<span class="r-in">                  center <span class="op">=</span> <span class="cn">TRUE</span>, scale <span class="op">=</span> <span class="cn">TRUE</span>, npc.plot <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"cassava_CC"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"cassava_EC"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">ec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>genotypes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">)</span>, <span class="va">cassava_EC</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">ec</span><span class="op">$</span><span class="va">genotypes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">ec</span><span class="op">$</span><span class="va">genotypes</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">ec</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">core</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">cassava_CC</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">quant</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NMSR"</span>, <span class="st">"TTRN"</span>, <span class="st">"TFWSR"</span>, <span class="st">"TTRW"</span>, <span class="st">"TFWSS"</span>, <span class="st">"TTSW"</span>, <span class="st">"TTPW"</span>, <span class="st">"AVPW"</span>,</span></span>
+<span class="r-in"><span>           <span class="st">"ARSR"</span>, <span class="st">"SRDM"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">qual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CUAL"</span>, <span class="st">"LNGS"</span>, <span class="st">"PTLC"</span>, <span class="st">"DSTA"</span>, <span class="st">"LFRT"</span>, <span class="st">"LBTEF"</span>, <span class="st">"CBTR"</span>, <span class="st">"NMLB"</span>,</span></span>
+<span class="r-in"><span>          <span class="st">"ANGB"</span>, <span class="st">"CUAL9M"</span>, <span class="st">"LVC9M"</span>, <span class="st">"TNPR9M"</span>, <span class="st">"PL9M"</span>, <span class="st">"STRP"</span>, <span class="st">"STRC"</span>,</span></span>
+<span class="r-in"><span>          <span class="st">"PSTR"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">ec</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">ec</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span>                     <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">pca.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
+<span class="r-in"><span>                  quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>,</span></span>
+<span class="r-in"><span>                  center <span class="op">=</span> <span class="cn">TRUE</span>, scale <span class="op">=</span> <span class="cn">TRUE</span>, npc.plot <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`EC PC Importance`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                             PC1      PC2      PC3       PC4       PC5       PC6</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     2.303455 1.237223 0.996322 0.9455592 0.8817511 0.6251589</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.530590 0.153070 0.099270 0.0894100 0.0777500 0.0390800</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.530590 0.683660 0.782930 0.8723400 0.9500900 0.9891700</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             PC7       PC8          PC9         PC10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     0.271212 0.1864651 1.465756e-15 8.961157e-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.007360 0.0034800 0.000000e+00 0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.996520 1.0000000 1.000000e+00 1.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                             PC7       PC8          PC9        PC10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     0.271212 0.1864651 1.549134e-15 1.20846e-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.007360 0.0034800 0.000000e+00 0.00000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.996520 1.0000000 1.000000e+00 1.00000e+00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`EC PC Loadings`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                PC1         PC2         PC3        PC4          PC5         PC6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.276022186  0.55062492  0.01668655 -0.1871023  0.248244608  0.21686806</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN   0.293942565  0.20622412  0.17262243  0.3680853  0.581178024  0.33878178</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR  0.371192088  0.06599302 -0.07379106 -0.1852754 -0.463167012  0.33058227</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.334894681 -0.33211659  0.03783194  0.3153475 -0.297171591  0.40373685</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS  0.385024604  0.13341651 -0.08631304 -0.3426523  0.050559491 -0.39246657</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.362255093 -0.27969168  0.02022637  0.1585548  0.250560331 -0.51748203</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW   0.403699747  0.11088360 -0.08613665 -0.2920918 -0.184053823 -0.08318831</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.380627616 -0.33011132  0.03067827  0.2497406  0.002748448 -0.10913947</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR   0.011265368  0.52673026  0.37858111  0.5081543 -0.444763915 -0.34913640</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.004586239  0.21186429 -0.89638345  0.3837654 -0.027148446 -0.05797814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.276022186  0.55062492  0.01668655 -0.1871023  0.248244608 -0.21686806</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN   0.293942565  0.20622412  0.17262243  0.3680853  0.581178024 -0.33878178</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR  0.371192088  0.06599302 -0.07379106 -0.1852754 -0.463167012 -0.33058227</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.334894681 -0.33211659  0.03783194  0.3153475 -0.297171591 -0.40373685</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS  0.385024604  0.13341651 -0.08631304 -0.3426523  0.050559491  0.39246657</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.362255093 -0.27969168  0.02022637  0.1585548  0.250560331  0.51748203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW   0.403699747  0.11088360 -0.08613665 -0.2920918 -0.184053823  0.08318831</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.380627616 -0.33011132  0.03067827  0.2497406  0.002748448  0.10913947</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR   0.011265368  0.52673026  0.37858111  0.5081543 -0.444763915  0.34913640</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.004586239  0.21186429 -0.89638345  0.3837654 -0.027148446  0.05797814</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               PC7          PC8           PC9          PC10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.66616815  0.181386616 -4.938769e-16  1.020992e-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN  -0.49417918 -0.095026370 -8.102114e-16 -8.348633e-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR -0.32960316  0.499641762 -2.954785e-01  2.206656e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.31608453 -0.416500300  2.332632e-01  3.123472e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS -0.10285083 -0.558642359 -3.841290e-01  2.868704e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.07640644  0.454657280  2.818505e-01  3.774071e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW  -0.21455970 -0.104941479  6.380444e-01 -4.764964e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.20120313  0.065453705 -4.734821e-01 -6.340082e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR  -0.01979215 -0.027945977 -1.975631e-16  6.770248e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.01152032 -0.009060183 -1.951296e-16 -2.808596e-17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR  -0.66616815  0.181386616  2.716790e-16  2.045788e-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN   0.49417918 -0.095026370 -1.567310e-15 -1.169297e-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR  0.32960316  0.499641762 -2.002707e-01  3.096651e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW  -0.31608453 -0.416500300  3.273437e-01  2.117040e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS  0.10285083 -0.558642359 -2.603566e-01  4.025719e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW  -0.07640644  0.454657280  3.955273e-01  2.558006e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW   0.21455970 -0.104941479  4.324565e-01 -6.686784e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW  -0.20120313  0.065453705 -6.644485e-01 -4.297208e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR   0.01979215 -0.027945977 -5.836779e-18  7.484100e-17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM   0.01152032 -0.009060183 -7.744396e-17 -8.136954e-17</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`CS PC Importance`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                             PC1      PC2      PC3       PC4       PC5       PC6</span>
@@ -254,7 +254,7 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.520270 0.172200 0.100090 0.0802700 0.0714300 0.0427500</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.520270 0.692480 0.792570 0.8728400 0.9442600 0.9870100</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                              PC7       PC8          PC9         PC10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     0.3207286 0.1643265 8.161442e-16 3.682004e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     0.3207286 0.1643265 8.218513e-16 3.899579e-16</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.0102900 0.0027000 0.000000e+00 0.000000e+00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.9973000 1.0000000 1.000000e+00 1.000000e+00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -271,16 +271,16 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ARSR   0.02642625  0.53641424  0.049592980 -0.54225171 -0.54787309  0.334180984</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.06233279  0.14455341  0.931570561 -0.04658879  0.31551819  0.073690249</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               PC7          PC8           PC9          PC10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.69455927 -0.089542525 -3.145765e-16 -7.608432e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN  -0.49373454  0.026538022  4.204241e-16 -2.110213e-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR -0.24125034 -0.553541017 -1.564810e-02  3.860010e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.26321979  0.434887362 -4.147803e-01 -1.681479e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS -0.17717813  0.557775840 -1.862096e-02  4.593342e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.13648832 -0.424831173 -4.474839e-01 -1.814056e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW  -0.21841109  0.053240284  3.239001e-02 -7.989835e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.21517212 -0.012287406  7.912489e-01  3.207646e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR  -0.04644065  0.032656495 -2.969494e-17 -9.527775e-19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.01212024  0.009789162  1.142495e-16  3.912290e-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.69455927 -0.089542525 -5.321232e-16  1.466265e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN  -0.49373454  0.026538022  5.590506e-16 -3.306053e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR -0.24125034 -0.553541017  8.413770e-03  3.862264e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.26321979  0.434887362 -4.150225e-01  9.041080e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS -0.17717813  0.557775840  1.001223e-02  4.596024e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.13648832 -0.424831173 -4.477452e-01  9.753929e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW  -0.21841109  0.053240284 -1.741566e-02 -7.994501e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.21517212 -0.012287406  7.917109e-01 -1.724707e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR  -0.04644065  0.032656495 -9.717546e-17 -1.548356e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.01212024  0.009789162  5.912017e-17  1.088709e-16</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`Scree Plot`</span>
 <span class="r-plt img"><img src="pca.evaluate.core-1.png" alt="" width="700" height="433"></span>
@@ -288,7 +288,7 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`PC Loadings Plot`</span>
 <span class="r-plt img"><img src="pca.evaluate.core-2.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -303,7 +303,7 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

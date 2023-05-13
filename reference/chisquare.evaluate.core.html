@@ -101,7 +101,7 @@ collection (EC) and core set (CS) by Chi-squared test for homogeneity
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">chisquare.evaluate.core</span><span class="op">(</span><span class="va">data</span>, <span class="va">names</span>, <span class="va">qualitative</span>, <span class="va">selected</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">chisquare.evaluate.core</span><span class="op">(</span><span class="va">data</span>, <span class="va">names</span>, <span class="va">qualitative</span>, <span class="va">selected</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -172,27 +172,27 @@ core collection and present in the <code>names</code> column.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"cassava_CC"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"cassava_EC"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">ec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>genotypes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">)</span>, <span class="va">cassava_EC</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">ec</span><span class="op">$</span><span class="va">genotypes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">ec</span><span class="op">$</span><span class="va">genotypes</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">ec</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">core</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">cassava_CC</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">quant</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NMSR"</span>, <span class="st">"TTRN"</span>, <span class="st">"TFWSR"</span>, <span class="st">"TTRW"</span>, <span class="st">"TFWSS"</span>, <span class="st">"TTSW"</span>, <span class="st">"TTPW"</span>, <span class="st">"AVPW"</span>,</span>
-<span class="r-in">           <span class="st">"ARSR"</span>, <span class="st">"SRDM"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">qual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CUAL"</span>, <span class="st">"LNGS"</span>, <span class="st">"PTLC"</span>, <span class="st">"DSTA"</span>, <span class="st">"LFRT"</span>, <span class="st">"LBTEF"</span>, <span class="st">"CBTR"</span>, <span class="st">"NMLB"</span>,</span>
-<span class="r-in">          <span class="st">"ANGB"</span>, <span class="st">"CUAL9M"</span>, <span class="st">"LVC9M"</span>, <span class="st">"TNPR9M"</span>, <span class="st">"PL9M"</span>, <span class="st">"STRP"</span>, <span class="st">"STRC"</span>,</span>
-<span class="r-in">          <span class="st">"PSTR"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">ec</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">ec</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span>,</span>
-<span class="r-in">                     <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">chisquare.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span>
-<span class="r-in">                        qualitative <span class="op">=</span> <span class="va">qual</span>, selected <span class="op">=</span> <span class="va">core</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"cassava_CC"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"cassava_EC"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">ec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>genotypes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">)</span>, <span class="va">cassava_EC</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">ec</span><span class="op">$</span><span class="va">genotypes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">ec</span><span class="op">$</span><span class="va">genotypes</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">ec</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">core</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">cassava_CC</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">quant</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NMSR"</span>, <span class="st">"TTRN"</span>, <span class="st">"TFWSR"</span>, <span class="st">"TTRW"</span>, <span class="st">"TFWSS"</span>, <span class="st">"TTSW"</span>, <span class="st">"TTPW"</span>, <span class="st">"AVPW"</span>,</span></span>
+<span class="r-in"><span>           <span class="st">"ARSR"</span>, <span class="st">"SRDM"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">qual</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CUAL"</span>, <span class="st">"LNGS"</span>, <span class="st">"PTLC"</span>, <span class="st">"DSTA"</span>, <span class="st">"LFRT"</span>, <span class="st">"LBTEF"</span>, <span class="st">"CBTR"</span>, <span class="st">"NMLB"</span>,</span></span>
+<span class="r-in"><span>          <span class="st">"ANGB"</span>, <span class="st">"CUAL9M"</span>, <span class="st">"LVC9M"</span>, <span class="st">"TNPR9M"</span>, <span class="st">"PL9M"</span>, <span class="st">"STRP"</span>, <span class="st">"STRC"</span>,</span></span>
+<span class="r-in"><span>          <span class="st">"PSTR"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">ec</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">ec</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span>                     <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">chisquare.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
+<span class="r-in"><span>                        qualitative <span class="op">=</span> <span class="va">qual</span>, selected <span class="op">=</span> <span class="va">core</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     Trait EC_No.Classes</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    CUAL             5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    LNGS             3</span>
@@ -262,23 +262,23 @@ core collection and present in the <code>names</code> column.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15                                                                                                       Absent(68); Present(100)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16                                                      Irregular(56); Tending toward horizontal(112); Tending toward vertical(0)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    chisq_statistic chisq_pvalue chisq_significance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        0.5046947   0.96680332                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2        5.0473183   0.07899210                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        0.5046947   0.96940306                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        5.0473183   0.07969203                 ns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3       25.8082829   0.00019998                 **</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4       24.1043807   0.00019998                 **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        3.7515039   0.35696430                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       15.8517808   0.00899910                 **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7        2.8705932   0.24097590                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8        9.0091683   0.38896110                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9        8.3226194   0.03819618                  *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10       3.9554501   0.41535846                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11       7.2401831   0.12028797                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12       5.0840571   0.27767223                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13       0.6650546   0.80611939                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14       1.6140159   0.66653335                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15       0.3416413   0.56324368                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        3.7515039   0.36496350                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6       15.8517808   0.00949905                 **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        2.8705932   0.25037496                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8        9.0091683   0.38506149                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9        8.3226194   0.04189581                  *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       3.9554501   0.42465753                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11       7.2401831   0.11478852                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       5.0840571   0.28717128                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13       0.6650546   0.80891911                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14       1.6140159   0.66843316                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15       0.3416413   0.56514349                 ns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16       0.3043632   1.00000000                 ns</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -293,7 +293,7 @@ core collection and present in the <code>names</code> column.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

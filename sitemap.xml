@@ -82,6 +82,12 @@
     <loc>https://aravind-j.github.io/EvaluateCore/reference/qq.evaluate.core.html</loc>
   </url>
   <url>
+    <loc>https://aravind-j.github.io/EvaluateCore/reference/rpr.evaluate.core.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/EvaluateCore/reference/scv.evaluate.core.html</loc>
+  </url>
+  <url>
     <loc>https://aravind-j.github.io/EvaluateCore/reference/shannon.evaluate.core-deprecated.html</loc>
   </url>
   <url>
@@ -92,6 +98,9 @@
   </url>
   <url>
     <loc>https://aravind-j.github.io/EvaluateCore/reference/ttest.evaluate.core.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/EvaluateCore/reference/vpf.evaluate.core.html</loc>
   </url>
   <url>
     <loc>https://aravind-j.github.io/EvaluateCore/reference/vr.evaluate.core.html</loc>

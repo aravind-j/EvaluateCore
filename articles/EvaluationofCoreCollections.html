@@ -114,15 +114,18 @@
 
       
 
-      </header><script src="EvaluationofCoreCollections_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Evaluation of Core Collections with <code>EvaluateCore</code>
+      <h1 data-toc-skip>Evaluation of Core Collections with
+<code>EvaluateCore</code>
 </h1>
-                        <h4 data-toc-skip class="author">Aravind, J.<sup>1</sup>, Kaur, V.<sup>2</sup>, Wankhede, D. P.<sup>3</sup>, and Nanjundan, J.<sup>4</sup>
+                        <h4 data-toc-skip class="author">Aravind,
+J.<sup>1</sup>, Kaur, V.<sup>2</sup>, Wankhede, D. P.<sup>3</sup>, and
+Nanjundan, J.<sup>4</sup>
 </h4>
             
-            <h4 data-toc-skip class="date">2022-07-03</h4>
+            <h4 data-toc-skip class="date">2023-05-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/EvaluateCore/blob/HEAD/vignettes/EvaluationofCoreCollections.Rmd" class="external-link"><code>vignettes/EvaluationofCoreCollections.Rmd</code></a></small>
       <div class="hidden name"><code>EvaluationofCoreCollections.Rmd</code></div>
@@ -134,22 +137,26 @@
 <p>
 </p>
 <ol style="list-style-type: decimal">
-<li>Division of Germplasm Conservation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+<li>Division of Germplasm Conservation, ICAR-National Bureau of Plant
+Genetic Resources, New Delhi.
 
 <p>
 </p>
 <ol start="2" style="list-style-type: decimal">
-<li>Division of Germplasm Evaluation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+<li>Division of Germplasm Evaluation, ICAR-National Bureau of Plant
+Genetic Resources, New Delhi.
 
 <p>
 </p>
 <ol start="3" style="list-style-type: decimal">
-<li>Division of Genomic Resources, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+<li>Division of Genomic Resources, ICAR-National Bureau of Plant Genetic
+Resources, New Delhi.
 
 <p>
 </p>
 <ol start="4" style="list-style-type: decimal">
-<li>ICAR-Indian Agricultural Research Institute, Regional Station, Wellington, Tamil Nadu.
+<li>ICAR-Indian Agricultural Research Institute, Regional Station,
+Wellington, Tamil Nadu.
 </li>
 </ol>
 </li>
@@ -162,23 +169,36 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>A core collection is a <em>“limited set of accessions representing, with minimum repetitiveness, the genetic diversity of a crop species and its wild relatives”</em><span class="citation">(Frankel, <a href="#ref-frankel_genetic_1984" role="doc-biblioref">1984</a>)</span>.</p>
-<p>In case of several large and unwieldy germplasm collections conserved in genebanks, development of several such core collections has facilitated increasing the efficiency of their characterisation and in turn the utilisation.</p>
-<p>There are different criteria available for evaluating the core collections by comparing with the original collections from which they have been sampled. The choice of the suitable evaluation criteria should be dictated by the objectives of the core collection. Several such criteria including the distance based metrics described in <span class="citation">Odong et al. (<a href="#ref-odong_quality_2013" role="doc-biblioref">2013</a>)</span> have been implemented in <code>EvaluateCore</code> and this document shows how to use them. This document assumes a basic knowledge of <code>R</code> programming language.</p>
+<p>A core collection is a <em>“limited set of accessions representing,
+with minimum repetitiveness, the genetic diversity of a crop species and
+its wild relatives”</em><span class="citation">(<a href="#ref-frankel_genetic_1984" role="doc-biblioref">Frankel,
+1984</a>)</span>.</p>
+<p>In case of several large and unwieldy germplasm collections conserved
+in genebanks, development of several such core collections has
+facilitated increasing the efficiency of their characterisation and in
+turn the utilisation.</p>
+<p>There are different criteria available for evaluating the core
+collections by comparing with the original collections from which they
+have been sampled. The choice of the suitable evaluation criteria should
+be dictated by the objectives of the core collection. Several such
+criteria including the distance based metrics described in <span class="citation">Odong et al. (<a href="#ref-odong_quality_2013" role="doc-biblioref">2013</a>)</span> have been implemented in
+<code>EvaluateCore</code> and this document shows how to use them. This
+document assumes a basic knowledge of <code>R</code> programming
+language.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>The package can be installed using the following functions:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Install from CRAN</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'EvaluateCore'</span>, dependencies<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="co"># Install development version from Github</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"aravind-j/EvaluateCore"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Install from CRAN</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'EvaluateCore'</span>, dependencies<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Install development version from Github</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"aravind-j/EvaluateCore"</span><span class="op">)</span></span></code></pre></div>
 <p>Then the package can be loaded using the function</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/aravind-j/EvaluateCore" class="external-link">EvaluateCore</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/aravind-j/EvaluateCore" class="external-link">EvaluateCore</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code>Registered S3 methods overwritten by 'vegan':
   method      from
   plot.rda    klaR
@@ -199,27 +219,27 @@ Welcome to EvaluateCore version 0.1.3.9000
 # To suppress this message use:
   suppressPackageStartupMessages(library(EvaluateCore))
 --------------------------------------------------------------------------------</code></pre>
-
 </div>
 <div class="section level2">
 <h2 id="version-history">Version History<a class="anchor" aria-label="anchor" href="#version-history"></a>
 </h2>
-<p>The current version of the package is 0.1.3. The previous versions are as follows.</p>
-<p><strong>Table 1.</strong> Version history of <code>EvaluateCore</code> <code>R</code> package.</p>
+<p>The current version of the package is 0.1.3. The previous versions
+are as follows.</p>
+<p><strong>Table 1.</strong> Version history of
+<code>EvaluateCore</code> <code>R</code> package.</p>
 <pre><code>[1] "Packages 'RCurl', 'httr' and 'XML' are required to generate this table."</code></pre>
-<p>To know detailed history of changes use <code>news(package='EvaluateCore')</code>.</p>
-
-
-<p><strong>Table 2 :</strong> Core evaluation methods implemented in <code>EvaluateCore</code>.</p>
-
-<table class="table">
+<p>To know detailed history of changes use
+<code>news(package='EvaluateCore')</code>.</p>
+<p><strong>Table 2 :</strong> Core evaluation methods implemented in
+<code>EvaluateCore</code>.</p>
+<table style="width:97%;" class="table">
 <colgroup>
-<col width="10%">
-<col width="22%">
-<col width="20%">
-<col width="10%">
+<col width="9%">
+<col width="21%">
+<col width="19%">
+<col width="9%">
 <col width="6%">
-<col width="10%">
+<col width="9%">
 <col width="19%">
 </colgroup>
 <thead><tr class="header">
@@ -272,7 +292,8 @@ Welcome to EvaluateCore version 0.1.3.9000
 </tr>
 <tr class="odd">
 <td>Median</td>
-<td>Wilcoxon rank sum test or Mann-Whitney-Wilcoxon test or Mann-Whitney U test</td>
+<td>Wilcoxon rank sum test or Mann-Whitney-Wilcoxon test or Mann-Whitney
+U test</td>
 <td><code>wilcox.evaluate.core</code></td>
 <td>Quantitative</td>
 <td>CC–D</td>
@@ -416,7 +437,8 @@ Welcome to EvaluateCore version 0.1.3.9000
 </tr>
 <tr class="odd">
 <td>Euclidean distance</td>
-<td>Percentage difference between the mean squared Euclidean distance</td>
+<td>Percentage difference between the mean squared Euclidean
+distance</td>
 <td><code>percentdiff.evaluate.core</code></td>
 <td>Quantitative</td>
 <td>CC–D</td>
@@ -518,20 +540,30 @@ Welcome to EvaluateCore version 0.1.3.9000
 <div style="page-break-after: always;"></div>
 </div>
 <div class="section level2 unnumbered">
-<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
-<div id="refs" class="references">
-<div id="ref-frankel_genetic_1984">
-<p>Frankel, O. H. (1984). “Genetic perspective of germplasm conservation,” in <em>Genetic Manipulations: Impact on Man and Society</em>, eds. W. Arber, K. Limensee, W. J. Peacock, and P. Stralinger (Cambridge University Press: Cambridge, UK), 161–170.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-frankel_genetic_1984" class="csl-entry">
+Frankel, O. H. (1984). <span>“Genetic perspective of germplasm
+conservation,”</span> in <em>Genetic <span>Manipulations</span>:
+<span>Impact</span> on <span>Man</span> and <span>Society</span></em>,
+eds. W. Arber, K. Limensee, W. J. Peacock, and P. Stralinger (Cambridge
+University Press: Cambridge, UK), 161–170.
 </div>
-<div id="ref-keuls_use_1952">
-<p>Keuls, M. (1952). The use of the „studentized range” in connection with an analysis of variance. <em>Euphytica</em> 1, 112–122. doi:<a href="https://doi.org/10.1007/BF01908269" class="external-link">10.1007/BF01908269</a>.</p>
+<div id="ref-keuls_use_1952" class="csl-entry">
+Keuls, M. (1952). The use of the „studentized range” in connection with
+an analysis of variance. <em>Euphytica</em> 1, 112–122. doi:<a href="https://doi.org/10.1007/BF01908269" class="external-link">10.1007/BF01908269</a>.
 </div>
-<div id="ref-newman_distribution_1939">
-<p>Newman, D. (1939). The distribution of range in samples from a normal population, expressed in terms of an independent estimate of standard deviation. <em>Biometrika</em> 31, 20–30. doi:<a href="https://doi.org/10.1093/biomet/31.1-2.20" class="external-link">10.1093/biomet/31.1-2.20</a>.</p>
+<div id="ref-newman_distribution_1939" class="csl-entry">
+Newman, D. (1939). The distribution of range in samples from a normal
+population, expressed in terms of an independent estimate of standard
+deviation. <em>Biometrika</em> 31, 20–30. doi:<a href="https://doi.org/10.1093/biomet/31.1-2.20" class="external-link">10.1093/biomet/31.1-2.20</a>.
 </div>
-<div id="ref-odong_quality_2013">
-<p>Odong, T. L., Jansen, J., Eeuwijk, F. A. van, and Hintum, T. J. L. van (2013). Quality of core collections for effective utilisation of genetic resources review, discussion and interpretation. <em>Theoretical and Applied Genetics</em> 126, 289–305. doi:<a href="https://doi.org/10.1007/s00122-012-1971-y" class="external-link">10.1007/s00122-012-1971-y</a>.</p>
+<div id="ref-odong_quality_2013" class="csl-entry">
+Odong, T. L., Jansen, J., Eeuwijk, F. A. van, and Hintum, T. J. L. van
+(2013). Quality of core collections for effective utilisation of genetic
+resources review, discussion and interpretation. <em>Theoretical and
+Applied Genetics</em> 126, 289–305. doi:<a href="https://doi.org/10.1007/s00122-012-1971-y" class="external-link">10.1007/s00122-012-1971-y</a>.
 </div>
 </div>
 </div>
@@ -554,7 +586,7 @@ Welcome to EvaluateCore version 0.1.3.9000
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
