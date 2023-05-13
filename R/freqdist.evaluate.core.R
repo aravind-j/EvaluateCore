@@ -48,7 +48,7 @@
 #' @importFrom grDevices nclass.scott
 #' @importFrom stats dnorm
 #' @importFrom stats na.omit
-#' @importFrom tibble as_tibble
+#' @importFrom tibble as_tibble deframe
 #' @export
 #'
 #' @examples
@@ -227,8 +227,9 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
 
   # Fetch highlights
   if (!is.null(highlight)) {
-    datah <- unique(dataf[dataf[, names] %in% highlight, c(names, traits)])
-    datah[, names] <- as.factor(datah[, names])
+    datah <- unique(dataf[tibble::deframe(dataf[, names]) %in% highlight,
+                          c(names, traits)])
+    datah[, names] <- as.factor(tibble::deframe(datah[, names]))
   }
 
   # Remove highlights
@@ -255,8 +256,10 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
         theme(axis.text = element_text(colour = "black"))
     } else {
       G1 <- ggplot(dataf, aes_string(x = traits2[i], fill = "`[Type]`")) +
-        geom_histogram(position = "stack", alpha = 0.5,
-                       colour = "black", stat = "count") +
+        # geom_histogram(position = "stack", alpha = 0.5,
+        #                colour = "black", stat = "count") +
+        stat_count(position = "stack", alpha = 0.5,
+                   colour = "black") +
         scale_fill_manual(values = c("lemonchiffon", "grey20")) +
         ylab("Frequency") +
         xlab(traits[i]) +
