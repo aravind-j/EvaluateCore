@@ -20,24 +20,23 @@ character vector.}
 core collection and present in the \code{names} column.}
 }
 \value{
-The Variance of Phenotypic Frequency values for EC and CS
+The Synthetic Variation Coefficient values for EC and CS
 }
 \description{
 Compute the Synthetic Variation Coefficient
-(\mjteqn{VR\\\%}{VR\\\\\\\%}{VR\%})
+(\mjteqn{CV\\\%}{CV\\\\\\\%}{CV\%})
 \insertCite{dong_exploration_1998,dong_genetic_2001}{EvaluateCore} to compare
 quantitative traits of the entire collection (EC) and core set (CS).
 \loadmathjax
 }
 \details{
-Synthetic Variation Coefficient (\mjteqn{VR\\\%}{VR\\\\\\\%}{VR\%})
+Synthetic Variation Coefficient (\mjteqn{CV\\\%}{CV\\\\\\\%}{CV\%})
 \insertCite{dong_exploration_1998,dong_genetic_2001}{EvaluateCore} is
 computed as follows for the core set (CS).
 
 \mjtdeqn{CV(\\\%) = \left ( \frac{1}{n} \sum_{i=1}^{n} \frac{SE_{i}}{\mu_{i}}
 \right ) \times 100}{CV(\\\\\\\%) = \left ( \frac{1}{n} \sum_{i=1}^{n}
-\frac{SE_{j}}{\mu_{i}}  \right ) \times 100}{CV(\%) = \left ( \frac{1}{n}
-\sum_{i=1}^{n} \frac{SE_{j}}{\mu_{i}}  \right ) \times 100}
+\frac{SE_{j}}{\mu_{i}}  \right ) \times 100}{CV(\%) = \left ( \frac{1}{n} \sum_{i=1}^{n} \frac{SE_{j}}{\mu_{i}}  \right ) \times 100}
 
 Where, \mjseqn{SE_{i}} is the standard error of the \mjseqn{i}th trait,
 \mjseqn{\mu_{i}} is the mean of the \mjseqn{i}th trait and \mjseqn{n} is the
