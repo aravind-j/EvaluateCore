@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018-2022, ICAR-NBPGR.
+### Copyright (C) 2018-2023, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -348,6 +348,8 @@ diversity.evaluate.core <- function(data, names, qualitative, selected,
   rm(datafcore)
 
   dataf$`[Type]` <- as.factor(dataf$`[Type]`)
+
+  dataf <- tibble::as_tibble(dataf)
 
   div.indices <- lapply(dataf[, !colnames(dataf) %in% c(names, "[Type]")],
                         function(x) {

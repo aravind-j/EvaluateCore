@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018-2022, ICAR-NBPGR.
+### Copyright (C) 2018-2023, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -24,14 +24,27 @@
 #' (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
+#' @param annotate Adds the divergence/distance value between probability
+#'   distributions of CS and EC as an annotation to the QQ plot. Either
+#'   \code{"none"} (no annotation (Default)) or \code{"kl"} (Kullback-Leibler
+#'   divergence) or  \code{"ks"} (Kolmogorov-Smirnov distance) or  \code{"ad"}
+#'   (Anderson-Darling distance).
 #'
 #' @return A list with the \code{ggplot} objects of QQ plots of CS vs EC for
 #'   each trait specified as \code{quantitative}.
 #'
-#' @seealso \code{\link[stats:qqnorm]{qqplot}}
+#' @seealso \code{\link[stats:qqnorm]{qqplot}} \code{\link[entropy]{KL.plugin}},
+#'   \code{\link[stats]{ks.test}}, \code{\link[kSamples]{ad.test}},
+#'   \code{\link[EvaluateCore]{pdfdist.evaluate.core}}
 #'
 #' @import ggplot2
+#' @import ggtext
 #' @importFrom stats qqplot
+#' @importFrom entropy KL.plugin
+#' @importFrom entropy discretize
+#' @importFrom stats ks.test
+#' @importFrom kSamples ad.test
+#' @importFrom grDevices nclass.FD
 #' @export
 #'
 #' @references
@@ -61,8 +74,17 @@
 #' qq.evaluate.core(data = ec, names = "genotypes",
 #'                  quantitative = quant, selected = core)
 #'
+#' qq.evaluate.core(data = ec, names = "genotypes",
+#'                  quantitative = quant, selected = core, annotate = "kl")
 #'
-qq.evaluate.core <- function(data, names, quantitative, selected) {
+#' qq.evaluate.core(data = ec, names = "genotypes",
+#'                  quantitative = quant, selected = core, annotate = "ks")
+#'
+#' qq.evaluate.core(data = ec, names = "genotypes",
+#'                  quantitative = quant, selected = core, annotate = "ad")
+#'
+qq.evaluate.core <- function(data, names, quantitative, selected,
+                             annotate = c("none", "kl", "ks", "ad")) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,
@@ -73,6 +95,8 @@ qq.evaluate.core <- function(data, names, quantitative, selected) {
     data <- as.data.frame(data)
   }
 
+  annotate <- match.arg(annotate)
+
   dataf <- data[, c(names, quantitative)]
 
   datafcore <- dataf[dataf[, names] %in% selected, ]
@@ -82,6 +106,69 @@ qq.evaluate.core <- function(data, names, quantitative, selected) {
 
   dataf <- rbind(dataf, datafcore)
   rm(datafcore)
+
+  avec <- vector(mode = "list", length = length(quantitative))
+  names(avec) <- quantitative
+
+  if (annotate != "none") {
+
+    for (i in seq_along(quantitative)) {
+
+      if (annotate == "kl") {
+        # Kullback–Leibler distance
+        nbinscs <- grDevices::nclass.FD(dataf[dataf$`[Type]` == "CS",
+                                              quantitative[i]])
+        rangeec <- range(dataf[dataf$`[Type]` == "EC", quantitative[i]])
+
+        g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC",
+                                        quantitative[i]],
+                                  nbinscs, rangeec)
+        g1[g1 == 0] <- 0.000000001 #Smoothing
+        g2 <- entropy::discretize(dataf[dataf$`[Type]` == "CS",
+                                        quantitative[i]],
+                                  nbinscs, rangeec)
+        g2[g2 == 0] <- 0.000000001 #Smoothing
+
+        kl <- entropy::KL.plugin(g1, g2)
+
+        avec[[i]] <- paste("<i>D<sub>KL</sub></i> = ",
+                           round(kl, 3), sep = "")
+        rm(nbinscs, g1, g2, kl)
+      }
+
+      if (annotate == "ks") {
+        # Kolmogorov-Smirnov distance
+        ks <- ks.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                      dataf[dataf$`[Type]` == "CS", quantitative[i]],
+                      exact = FALSE)
+
+        avec[[i]] <- paste("<i>D<sub>KS</sub></i> = ",
+                           round(ks$statistic, 3), "<sup>",
+                           ifelse(ks$p.value <= 0.01, "**",
+                                  ifelse(ks$p.value <= 0.05, "*", "ns")),
+                           "</sup>", sep = "")
+
+      }
+
+      if (annotate == "ad") {
+        # Anderson-Darling distance
+        ad <- kSamples::ad.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                                dataf[dataf$`[Type]` == "CS", quantitative[i]],
+                                dist = TRUE)
+
+        avec[[i]] <- paste("<i><i>D<sub>AD</sub></i> = ",
+                           round(ad$ad["version 1:", "AD"], 3), "<sup>",
+                           ifelse(ad$ad["version 1:",
+                                        " asympt. P-value"] <= 0.01, "**",
+                                  ifelse(ad$ad["version 1:",
+                                               " asympt. P-value"] <= 0.05,
+                                         "*",
+                                         "ns")),
+                           "</sup>", sep = "")
+      }
+    }
+  }
+
 
   outlist <- vector(mode = "list", length = length(quantitative))
   names(outlist) <- quantitative
@@ -106,6 +193,16 @@ qq.evaluate.core <- function(data, names, quantitative, selected) {
       ggtitle(quantitative[i]) +
       theme_bw() +
       theme(axis.text = element_text(colour = "black"))
+
+    if (annotate != "none") {
+      outlist[[i]] <- outlist[[i]] +
+        geom_richtext(x = (.05 * diff(xylim)) + xylim[1],
+                      y = (.85 * diff(xylim)) + xylim[1],
+                      hjust = 0, size = 3,
+                      label = avec[[quantitative[i]]], fill = NA,
+                      label.color = NA,
+                      label.padding = grid::unit(rep(0, 4), "pt"))
+    }
 
     rm(xylim, qqdf)
   }

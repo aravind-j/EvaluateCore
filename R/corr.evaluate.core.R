@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018-2022, ICAR-NBPGR.
+### Copyright (C) 2018-2023, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -44,6 +44,7 @@
 #' @import ggplot2
 #' @importFrom stats cor
 #' @importFrom vegan mantel
+#' @importFrom tibble as_tibble
 #' @export
 #'
 #' @references
@@ -108,6 +109,8 @@ corr.evaluate.core <- function(data, names, quantitative, qualitative,
 
   dataf <- rbind(dataf, datafcore)
   rm(datafcore)
+
+  dataf <- tibble::as_tibble(dataf)
 
   dataf[, qualitative] <- lapply(dataf[, qualitative],
                                  function(x) as.numeric(as.factor(x)))

@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018-2022, ICAR-NBPGR.
+### Copyright (C) 2018-2023, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -103,45 +103,45 @@ pdfdist.evaluate.core <- function(data, names, quantitative, selected) {
 
   for (i in seq_along(quantitative)) {
 
-  # Kullback–Leibler distance
-  nbinscs <- grDevices::nclass.FD(dataf[dataf$`[Type]` == "CS",
-                                        quantitative[i]])
-  rangeec <- range(dataf[dataf$`[Type]` == "EC", quantitative[i]])
+    # Kullback–Leibler distance
+    nbinscs <- grDevices::nclass.FD(dataf[dataf$`[Type]` == "CS",
+                                          quantitative[i]])
+    rangeec <- range(dataf[dataf$`[Type]` == "EC", quantitative[i]])
 
-  g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC", quantitative[i]],
-                            nbinscs, rangeec)
-  g1[g1 == 0] <- 0.000000001 #Smoothing
-  g2 <- entropy::discretize(dataf[dataf$`[Type]` == "CS", quantitative[i]],
-                            nbinscs, rangeec)
-  g2[g2 == 0] <- 0.000000001 #Smoothing
+    g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                              nbinscs, rangeec)
+    g1[g1 == 0] <- 0.000000001 #Smoothing
+    g2 <- entropy::discretize(dataf[dataf$`[Type]` == "CS", quantitative[i]],
+                              nbinscs, rangeec)
+    g2[g2 == 0] <- 0.000000001 #Smoothing
 
-  kl <- entropy::KL.plugin(g1, g2)
+    kl <- entropy::KL.plugin(g1, g2)
 
-  # Kolmogorov-Smirnov distance
-  ks <- ks.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
-                dataf[dataf$`[Type]` == "CS", quantitative[i]],
-                exact = FALSE)
+    # Kolmogorov-Smirnov distance
+    ks <- ks.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                  dataf[dataf$`[Type]` == "CS", quantitative[i]],
+                  exact = FALSE)
 
-  # Anderson-Darling distance
-  ad <- kSamples::ad.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
-                          dataf[dataf$`[Type]` == "CS", quantitative[i]],
-                          dist = TRUE)
+    # Anderson-Darling distance
+    ad <- kSamples::ad.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                            dataf[dataf$`[Type]` == "CS", quantitative[i]],
+                            dist = TRUE)
 
-  outdf[[i]] <- data.frame(Trait = quantitative[i],
-                   `KL_Distance` = kl,
-                   `KS_Distance` = ks$statistic,
-                   `KS_pvalue` = ks$p.value,
-                   `AD_Distance` = ad$ad["version 1:", "AD"],
-                   `AD_pvalue` = ad$ad["version 1:", " asympt. P-value"],
-                    stringsAsFactors = FALSE)
+    outdf[[i]] <- data.frame(Trait = quantitative[i],
+                             `KL_Distance` = kl,
+                             `KS_Distance` = ks$statistic,
+                             `KS_pvalue` = ks$p.value,
+                             `AD_Distance` = ad$ad["version 1:", "AD"],
+                             `AD_pvalue` = ad$ad["version 1:", " asympt. P-value"],
+                             stringsAsFactors = FALSE)
 
-  rm(nbinscs, g1, g2, kl)
+    rm(nbinscs, g1, g2, kl)
   }
 
   outdf <- dplyr::bind_rows(outdf)
 
   outdf$KS_significance <- ifelse(outdf$KS_pvalue <= 0.01, "**",
-                                   ifelse(outdf$KS_pvalue <= 0.05, "*", "ns"))
+                                  ifelse(outdf$KS_pvalue <= 0.05, "*", "ns"))
   outdf$AD_significance <- ifelse(outdf$AD_pvalue <= 0.01, "**",
                                   ifelse(outdf$AD_pvalue <= 0.05, "*", "ns"))
 

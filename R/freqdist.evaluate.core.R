@@ -1,6 +1,6 @@
 ### This file is part of 'EvaluateCore' package for R.
 
-### Copyright (C) 2018-2022, ICAR-NBPGR.
+### Copyright (C) 2018-2023, ICAR-NBPGR.
 #
 # EvaluateCore is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -48,6 +48,7 @@
 #' @importFrom grDevices nclass.scott
 #' @importFrom stats dnorm
 #' @importFrom stats na.omit
+#' @importFrom tibble as_tibble
 #' @export
 #'
 #' @examples
@@ -210,8 +211,10 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
   dataf <- rbind(dataf, datafcore)
   rm(datafcore)
 
-  dataf[, qualitative] <- lapply(dataf[, qualitative],
-                                 function(x) as.numeric(as.factor(x)))
+  dataf <- tibble::as_tibble(dataf)
+
+  # dataf[, qualitative] <- lapply(dataf[, qualitative],
+  #                                function(x) as.numeric(as.factor(x)))
   traits <- c(quantitative, qualitative)
 
   outlist <- vector(mode = "list", length = length(traits))
@@ -233,20 +236,33 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
     dataf <- dataf[!(dataf[, names] %in% highlight), ]
   }
 
+  dataf <- as.data.frame(dataf)
+
   for (i in seq_along(traits)) {
 
     # Generate the freq dist histogram
-    bw <- binw(dataf[, traits[i]], "sturges")
+    bw <- binw(as.numeric(dataf[, traits[i]]), "sturges")
     NN <- length(dataf[, traits[i]])
 
-    G1 <- ggplot(dataf, aes_string(x = traits2[i], fill = "`[Type]`")) +
-      geom_histogram(position = "stack", alpha = 0.5,
-                     colour = "black", binwidth = bw) +
-      scale_fill_manual(values = c("lemonchiffon", "grey20")) +
-      ylab("Frequency") +
-      xlab(traits[i]) +
-      theme_bw() +
-      theme(axis.text = element_text(colour = "black"))
+    if (traits[i] %in% quantitative) {
+      G1 <- ggplot(dataf, aes_string(x = traits2[i], fill = "`[Type]`")) +
+        geom_histogram(position = "stack", alpha = 0.5,
+                       colour = "black", binwidth = bw) +
+        scale_fill_manual(values = c("lemonchiffon", "grey20")) +
+        ylab("Frequency") +
+        xlab(traits[i]) +
+        theme_bw() +
+        theme(axis.text = element_text(colour = "black"))
+    } else {
+      G1 <- ggplot(dataf, aes_string(x = traits2[i], fill = "`[Type]`")) +
+        geom_histogram(position = "stack", alpha = 0.5,
+                       colour = "black", stat = "count") +
+        scale_fill_manual(values = c("lemonchiffon", "grey20")) +
+        ylab("Frequency") +
+        xlab(traits[i]) +
+        theme_bw() +
+        theme(axis.text = element_text(colour = "black"))
+    }
 
     # plot normal distribution curve if quantitative
     if (traits[i] %in% quantitative) {
@@ -338,6 +354,7 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
       outlist[[i]] <- G1
 
     }
+    rm(bw, NN)
   }
 
   return(outlist)
