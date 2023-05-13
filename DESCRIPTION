@@ -28,7 +28,7 @@ Description: Implements various quality evaluation statistics to assess the
 Copyright: 2018-2023, ICAR-NBPGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 URL: https://github.com/aravind-j/EvaluateCore
      https://CRAN.R-project.org/package=EvaluateCore
      https://aravind-j.github.io/EvaluateCore/
@@ -47,6 +47,7 @@ Imports:
     entropy,
     ggcorrplot,
     ggplot2,
+    ggtext,
     grDevices,
     gridExtra,
     kSamples,
@@ -55,6 +56,7 @@ Imports:
     reshape2,
     Rdpack,
     stats,
+    tibble,
     vegan
 Suggests:
     corehunter,
