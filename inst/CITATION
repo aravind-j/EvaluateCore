@@ -7,7 +7,7 @@ if (!length(year)) {
 }
 vers <- paste("R package version", meta$Version)
 
-bibentry(entry  = "Manual",
+bibentry(bibtype  = "Manual",
          title  = "EvaluateCore: Quality Evaluation of Core Collections",
          author = c(person(given = "J.", family = "Aravind",
                            email = "aravindj@nbpgr.ernet.in",
