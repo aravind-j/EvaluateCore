@@ -25,3 +25,5 @@
 ^cassava_EC\.csv$
 ^cassava_CC\.csv$
 ^vignettes/Methods\.xlsx$
+^CITATION\.cff$
+^codemeta\.json$
