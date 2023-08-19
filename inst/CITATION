@@ -16,7 +16,8 @@ bibentry(bibtype  = "Manual",
                     person(given = "Vikender", family = "Kaur",
                            email = "vikender.kaur@icar.gov.in",
                            role = "aut"),
-                    person(given = c("Dhammaprakash", "Pandhari"), family = "Wankhede",
+                    person(given = c("Dhammaprakash", "Pandhari"), 
+					       family = "Wankhede",
                            email = "d.wankhede@icar.gov.in",
                            role = "aut"),
                     person(given = "J.", family = "Nanjundan",
@@ -26,9 +27,11 @@ bibentry(bibtype  = "Manual",
          textVersion = paste(
            "Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (",
            year, ").  EvaluateCore: Quality Evaluation of Core Collections. ",
-           vers, ", ", "https://aravind-j.github.io/EvaluateCore/", "https://CRAN.R-project.org/package=EvaluateCore",
+           vers, ", ", "https://aravind-j.github.io/EvaluateCore/", 
+		   "https://CRAN.R-project.org/package=EvaluateCore",
            ".", sep=""),
-         note = {c(paste(vers), "https://aravind-j.github.io/EvaluateCore/", "https://CRAN.R-project.org/package=EvaluateCore")})
+         note = paste(vers, "https://aravind-j.github.io/EvaluateCore/", 
+				      "https://CRAN.R-project.org/package=EvaluateCore"))
 
 citFooter("This free and open-source software implements academic
 research by the authors and co-workers. If you use it, please support
