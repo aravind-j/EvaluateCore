@@ -60,9 +60,9 @@ Imports:
     vegan
 Suggests:
     corehunter,
-	httr,
+	  httr,
     pander,
-	RCurl,
+	  RCurl,
     rJava (>= 0.9-8),
-	XML
+	  XML
 LazyData: true
