@@ -90,5 +90,6 @@ iqr.evaluate.core <- function(data, names, quantitative, selected) {
                       `CS_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "CS",
                                                      quantitative],
                                                stats::IQR)))
+  rownames(outdf) <- NULL
   return(outdf)
 }
