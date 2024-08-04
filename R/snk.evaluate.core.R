@@ -25,7 +25,7 @@
 #' @param data The data as a data frame object. The data frame should possess
 #'   one row per individual and columns with the individual names and multiple
 #'   trait/character data.
-#' @param names Name of column with the individual names as a character string
+#' @param names Name of column with the individual names as a character string.
 #' @param quantitative Name of columns with the quantitative traits as a
 #'   character vector.
 #' @param selected Character vector with the names of individuals selected in
