@@ -27,3 +27,4 @@
 ^vignettes/Methods\.xlsx$
 ^CITATION\.cff$
 ^codemeta\.json$
+^vignettes/.*\.log$
