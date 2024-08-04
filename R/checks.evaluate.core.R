@@ -26,40 +26,40 @@
 #' @inheritParams chisquare.evaluate.core
 #
 checks.evaluate.core <- function(data, names, quantitative = NULL,
-                                qualitative = NULL, selected) {
+                                 qualitative = NULL, selected) {
   # check if 'data' is a data frame object
   if (!is.data.frame(data)) {
-    stop('"data" should be a data frame object')
+    stop('"data" should be a data frame object.')
   }
 
   if (any(c("tbl_dataf", "tbl") %in% class(data))) {
-    warning('"data" is of type tibble\nCoercing to data frame')
+    warning('"data" is of type tibble\nCoercing to data frame.')
     data <- as.data.frame(data)
   }
 
   # check if 'names' argument is character vector of unit length
   if (!(is.character(names) && length(names) == 1)) {
-    stop('"names" should be a character vector of unit length')
+    stop('"names" should be a character vector of unit length.')
   }
 
   # check if 'quantitative' argument is a character vector
   if (!is.null(quantitative)) {
     if (!is.character(quantitative)) {
-      stop('"quantitative" should be a character vector')
+      stop('"quantitative" should be a character vector.')
     }
   }
 
   # check if 'qualitative' argument is a character vector
   if (!is.null(qualitative)) {
     if (!is.character(qualitative)) {
-      stop('"qualitative" should be a character vector')
+      stop('"qualitative" should be a character vector.')
     }
   }
 
   # check if 'names' column is present in 'data'
   if (!(names %in% colnames(data))) {
     stop(paste('Column ', names,
-               ' specified as the "names" column is not present in "data"',
+               ' specified as the "names" column is not present in "data".',
                sep = ""))
   }
 
@@ -95,9 +95,8 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
 
   # check if 'names' column is of type character
   if (!is.character(data[, names])) {
-    stop('"names" column in "data" should be of type character')
+    stop('"names" column in "data" should be of type character.')
   }
-
 
   # check if 'quantitative' columns are of type numeric/integer
   if (!is.null(quantitative)) {
@@ -121,17 +120,17 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
 
   # check if 'selected' is a vector of type character
   if (!is.vector(selected, mode = "character")) {
-    stop('"selected" should be a character vector')
+    stop('"selected" should be a character vector.')
   }
 
   # check if selected > entire collection
   if (length(selected) > nrow(data)) {
-    stop('"selected" is more than the number of records in "data"')
+    stop('"selected" is more than the number of records in "data".')
   }
 
   # check if 'selected' present in 'names' column
   if (!all(selected %in% data[, names])) {
-    stop('All "selected" not present in "names" column of "data"')
+    stop('All "selected" not present in "names" column of "data".')
   }
 
   # check for missing values
@@ -144,6 +143,6 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
 
   # check for duplication in names
   if (any(duplicated(data[, names]))) {
-    warning('Duplicated entries exist in "names" column')
+    warning('Duplicated entries exist in "names" column.')
   }
 }
