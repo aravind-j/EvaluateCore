@@ -86,7 +86,7 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
   # check if overlap exists between 'quantitative' and 'qualitative'
   if ((!is.null(quantitative)) & (!is.null(qualitative))) {
     if (length(intersect(quantitative, qualitative)) != 0) {
-      stop(paste('The following column(s) is/are specified in "quantitative" and "qualitative":\n',
+      stop(paste('The following column(s) is/are specified in both "quantitative" and "qualitative":\n',
                  paste(intersect(quantitative, qualitative),
                        collapse = ", "),
                  sep = ""))
