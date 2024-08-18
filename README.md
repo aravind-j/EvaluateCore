@@ -25,7 +25,7 @@ version](https://img.shields.io/badge/R%3E%3D-3.5.0-6666ff.svg?logo=R)](https://
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/EvaluateCore)](https://cran.r-project.org/package=EvaluateCore)
-[![Dependencies](https://tinyverse.netlify.com/badge/EvaluateCore)](https://cran.r-project.org/package=EvaluateCore)
+[![Dependencies](https://tinyverse.netlify.app/status/EvaluateCore)](https://cran.r-project.org/package=EvaluateCore)
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/EvaluateCore?color=green)](https://CRAN.R-project.org/package=EvaluateCore)
 [![develVersion](https://img.shields.io/badge/devel%20version-0.1.3.9000-orange.svg)](https://github.com/aravind-j/EvaluateCore)
