@@ -33,7 +33,7 @@
 #' @inheritParams snk.evaluate.core
 #' @inheritParams chisquare.evaluate.core
 #' @param d A distance matrix of class "\code{dist}" with individual names in
-#' the \code{names} column in {data} as labels. If \code{NULL} (default),
+#' the \code{names} column in \code{data} as labels. If \code{NULL} (default),
 #' then a distance matrix is computed using Gower's metric.
 #' \insertCite{gowerGeneralCoefficientSimilarity1971}{EvaluateCore}.
 #'
