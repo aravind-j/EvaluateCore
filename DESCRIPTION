@@ -28,7 +28,7 @@ Description: Implements various quality evaluation statistics to assess the
 Copyright: 2018-2023, ICAR-NBPGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 URL: https://github.com/aravind-j/EvaluateCore
      https://CRAN.R-project.org/package=EvaluateCore
      https://aravind-j.github.io/EvaluateCore/
