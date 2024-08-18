@@ -11,7 +11,7 @@ pdfdist.evaluate.core(data, names, quantitative, selected)
 one row per individual and columns with the individual names and multiple
 trait/character data.}
 
-\item{names}{Name of column with the individual names as a character string}
+\item{names}{Name of column with the individual names as a character string.}
 
 \item{quantitative}{Name of columns with the quantitative traits as a
 character vector.}
