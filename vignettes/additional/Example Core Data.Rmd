@@ -40,7 +40,7 @@ switch(out_type,
 
 # Introduction
 
-The example datasets `cassava_EC` and `cassava_CC` in `EvaluateCore` for demonstrating various functions were generated using the following steps from the source data [@internationalinstituteoftropicalagriculture_CassavaMorphologicalCharacterization_2019]. 
+The example datasets `cassava_EC` and `cassava_CC` in `EvaluateCore` for demonstrating various functions were generated using the following steps from the source data [@international_institute_of_tropical_agriculture_cassava_2019]. 
 
 # Setup the environment
 

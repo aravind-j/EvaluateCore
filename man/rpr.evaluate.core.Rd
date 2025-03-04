@@ -29,7 +29,7 @@ between entire collection (EC) and core set (CS). \loadmathjax
 }
 \details{
 Ratio of Phenotype Retained (\mjseqn{RPR})
-\insertCite{kim_powercore_2007}{EvaluateCore} is computed as follows.
+\insertCite{kim_PowerCore_2007}{EvaluateCore} is computed as follows.
 
 \mjsdeqn{RPR = \frac{\sum_{i=1}^{n} k_{CS_{i}}}{\sum_{i=1}^{n} k_{EC_{i}}}}
 

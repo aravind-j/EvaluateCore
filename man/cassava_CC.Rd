@@ -29,8 +29,8 @@ cassava_CC
 \description{
 An example germplasm characterisation data of a core collection generated
 from 1591 accessions of IITA Cassava collection
-\insertCite{benjamin_cassava_2019}{EvaluateCore} using 10 quantitative and 48
-qualitative trait data with CoreHunter3
+\insertCite{international_institute_of_tropical_agriculture_cassava_2019}{EvaluateCore}
+using 10 quantitative and 48 qualitative trait data with CoreHunter3
 (\code{\link[corehunter]{corehunter}}). The core set was generated using
 distance based measures giving equal weightage to Average
 entry-to-nearest-entry distance (EN) and Average accession-to-nearest-entry

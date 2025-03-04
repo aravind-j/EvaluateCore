@@ -18,9 +18,11 @@
 #' IITA Cassava Germplasm Data - Entire Collection
 #'
 #' An example germplasm characterisation data of a subset of IITA Cassava
-#' collection \insertCite{benjamin_cassava_2019}{EvaluateCore}. Includes data on
-#' 26 (out of 62) descriptors for 1684 (out of 2170) accessions. It is used to
-#' demonstrate the various functions of \code{EvaluateCore} package.
+#' collection
+#' \insertCite{international_institute_of_tropical_agriculture_cassava_2019}{EvaluateCore}.
+#' Includes data on 26 (out of 62) descriptors for 1684 (out of 2170)
+#' accessions. It is used to demonstrate the various functions of
+#' \code{EvaluateCore} package.
 #'
 #' Further details on how the example dataset was built from the original data
 #' is available

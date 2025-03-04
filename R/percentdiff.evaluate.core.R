@@ -26,10 +26,10 @@
 #' \insertCite{hu_methods_2000}{EvaluateCore} \item Average of absolute
 #' differences between means
 #' (\mjteqn{MD\\\%_{Kim}}{MD\\\\\\\%_{Kim}}{MD\%_{Kim}})
-#' \insertCite{kim_powercore_2007}{EvaluateCore} \item Average of absolute
+#' \insertCite{kim_PowerCore_2007}{EvaluateCore} \item Average of absolute
 #' differences between variances
 #' (\mjteqn{VD\\\%_{Kim}}{VD\\\\\\\%_{Kim}}{VD\%_{Kim}})
-#' \insertCite{kim_powercore_2007}{EvaluateCore} \item Percentage difference
+#' \insertCite{kim_PowerCore_2007}{EvaluateCore} \item Percentage difference
 #' between the mean squared Euclidean distance among accessions
 #' (\mjteqn{\overline{d}D\\\%}{\overline{d}D\\\\\\\%}{\overline{d}D\%})
 #' \insertCite{studnicki_comparing_2013}{EvaluateCore} \item Percentage of range

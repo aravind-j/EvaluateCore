@@ -18,11 +18,11 @@
 
 #' Class Coverage
 #'
-#' Compute the Class Coverage \insertCite{kim_powercore_2007}{EvaluateCore} to
+#' Compute the Class Coverage \insertCite{kim_PowerCore_2007}{EvaluateCore} to
 #' compare the distribution frequencies of qualitative traits between entire
 #' collection (EC) and core set (CS). \loadmathjax
 #'
-#' Class Coverage \insertCite{kim_powercore_2007}{EvaluateCore} is computed as
+#' Class Coverage \insertCite{kim_PowerCore_2007}{EvaluateCore} is computed as
 #' follows.
 #'
 #' \mjsdeqn{Class\, Coverage = \left ( \frac{1}{n} \sum_{i=1}^{n}
