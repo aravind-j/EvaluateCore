@@ -23,10 +23,10 @@ jobs:
         with:
           extra-packages: |
             local::.
-            any::pkgdown
             any::readxl
             any::DT
             any::corehunter
+            github::r-lib/pkgdown?reinstall
 
       - name: Deploy package
         run: |
