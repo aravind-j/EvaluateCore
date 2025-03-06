@@ -3,6 +3,7 @@ title: "Evaluation of Core Collections with `EvaluateCore`"
 author: "Aravind, J.^1^, Kaur, V.^2^, Wankhede, D. P.^3^, and Nanjundan, J.^4^"
 date: "`r Sys.Date()`"
 classoption: table, twoside
+documentclass: article
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
@@ -22,10 +23,13 @@ header-includes:
 output:
   pdf_document:
     fig_caption: no
+    number_sections: no
     toc: no
     keep_tex:  no
+    latex_engine: xelatex
   html_document:
     df_print: paged
+    number_sections: yes
     toc: yes
 csl: frontiers.csl
 bibliography: REFERENCES.bib
@@ -33,6 +37,7 @@ link-citations: yes
 vignette: |
   %\VignetteIndexEntry{Introduction}
   %\usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown_notangle}
 ---
 
@@ -56,13 +61,19 @@ out_type <- ifelse(identical (out_type, vector(mode = "logical", length = 0)),
 ```{r, results='asis', echo=FALSE}
 switch(out_type,
     html = {cat("<p>1. Division of Germplasm Conservation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>
+
 <p>2. Division of Germplasm Evaluation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>
+
 <p>3. Division of Genomic Resources, ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>
+
 <p>4. ICAR-Indian Agricultural Research Institute, Regional Station, Wellington, Tamil Nadu.</p>")},
     latex = cat("\\begin{center}
 1. Division of Germplasm Conservation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+
 2. Division of Germplasm Evaluation, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+
 3. Division of Genomic Resources, ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+
 4. ICAR-Indian Agricultural Research Institute, Regional Station, Wellington, Tamil Nadu.
 \\end{center}" )
 )

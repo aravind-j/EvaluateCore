@@ -1,39 +1,53 @@
 template:
-  params:
+  bootstrap: 5
+  math-rendering: mathjax
+  light-switch: true
+  bslib:
     bootswatch: united
+    primary: "#490d43ff" # (translucent) hover colour in the navbar and sidebar
+    pkgdown-navbar-bg: "#7c1671" # Background colur of navbar
+    navbar-light-color: "#f7f8f8" # Navbar text colour of items
+    navbar-light-hover-color: "#231F20" # Navbar text colour of items on hover
+    navbar-light-brand-color: "#f7f8f8" # Navbar package name text colour
+    navbar-light-brand-hover-color: "#f7f8f8" # Navbar package name text colour on hover
+    link-color: "#7c1671" # Colour of links
+  params:
     ganalytics: UA-148941781-2
 
-development:
-  mode: unreleased
-
+deploy:
+  install_metadata: yes
 url: https://aravind-j.github.io/EvaluateCore/
 
 navbar:
-  title: EvaluateCore
-  type: default
-  left:
-    - icon: fa-home fa-lg
+  structure:
+    left:  [home, reference, articles, news]
+    right: [search, github, lightswitch]
+  components:
+    home:
+      icon: fa-home fa-lg
       text: Home
       href: index.html
-    - icon: fa-code
+    reference:
+      icon: fa-code
       text: Reference
       href: reference/index.html
-    - icon: far fa-file
+    articles:
+      icon: far fa-file
       text: Articles
       menu:
         - text: Tutorial
           href: articles/EvaluationofCoreCollections.html
-          menu:
+        - text: ——–
         - text: Additional
-          menu:
-            - text: Example Core Data
-              href: articles/additional/Example Core Data.html
-    - icon: far fa-newspaper
+        - text: ——–
+        - text: Example Core Data
+          href: articles/additional/Example_Core_Data.html
+    news:
+      icon: far fa-newspaper
       text: News
       href: news/index.html
-
-  right:
-    - icon: fab fa-github-alt
+    github:
+      icon: fab fa-github-alt
       text: Github
       href: https://github.com/aravind-j/EvaluateCore
 
@@ -87,6 +101,3 @@ reference:
     - title: Deprecated
       contents:
           - '`EvaluateCore-deprecated`'
-
-
-
