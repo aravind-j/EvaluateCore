@@ -1,10 +1,10 @@
 pandoc: 3.1.11
-pkgdown: 2.1.1
-pkgdown_sha: ~
+pkgdown: 2.1.1.9000
+pkgdown_sha: 7cf401f44a970ea13744fcdd883248552c68ff9d
 articles:
   EvaluationofCoreCollections: EvaluationofCoreCollections.html
-  additional/Example Core Data: additional/Example Core Data.html
-last_built: 2025-03-04T08:30Z
+  additional/Example_Core_Data: additional/Example_Core_Data.html
+last_built: 2025-03-06T18:40Z
 urls:
   reference: https://aravind-j.github.io/EvaluateCore/reference
   article: https://aravind-j.github.io/EvaluateCore/articles
