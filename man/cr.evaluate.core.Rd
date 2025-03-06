@@ -75,7 +75,7 @@ the CS, \mjseqn{\mu_{EC_{i}}} is the mean value of the \mjseqn{i}th trait in
 the EC and \mjseqn{n} is the total number of traits.
 }
 \note{
-\code{NaN} or \code{Inf} values for \mjsdeqn{CR_{\min}} occurs when the
+\code{NaN} or \code{Inf} values for \mjseqn{CR_{\min}} occurs when the
   minimum values for some of the traits are zero.
 }
 \examples{
