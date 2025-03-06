@@ -18,6 +18,7 @@ vignette: |
 
 ```{r, echo=FALSE}
 # out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+knitr::opts_chunk$set(dev.args=list(bg = "white"))
 out_type <- "html"
 ```
 
@@ -150,8 +151,10 @@ cassava_EC[, qual] <- data.frame(apply(cassava_EC[qual], 2, as.factor))
 
 ```{r qual, fig.show="hold", out.width="30%"}
 qual_plots <- lapply(seq_along(cassava_EC[, qual]),
-       function(i) barplot(table(cassava_EC[, qual][, i]),
-                           xlab = names(cassava_EC[, qual])[i]))
+       function(i) {
+         barplot(table(cassava_EC[, qual][, i]),
+                           xlab = names(cassava_EC[, qual])[i])
+         })
 ```
 
 # Plot quantitative traits
