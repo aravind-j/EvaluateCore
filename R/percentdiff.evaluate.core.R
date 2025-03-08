@@ -98,7 +98,7 @@
 #' 100}{RR\%_{0.7} = \left ( \frac{S_{RR_{0.7}}}{n} \right ) \times 100}
 #'
 #' Where, \mjseqn{S_{RR_{0.7}}} is the number of traits with a range ratio
-#' smaller than 0.7 (\mjseqn{\frac{R_{CS_{i}}}{R_{EC_{i}}} < 0.7})
+#' smaller than 0.7 (\mjseqn{\frac{R_{CS_{i}}}{R_{EC_{i}}} < 0.7}).
 #' \mjseqn{R_{CS_{i}}} is the range of the \mjseqn{i}th trait in the CS,
 #' \mjseqn{R_{EC_{i}}} is the range of the \mjseqn{i}th trait in the EC and
 #' \mjseqn{n} is the total number of traits.
