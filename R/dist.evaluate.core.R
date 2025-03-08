@@ -35,7 +35,7 @@
 #' @param d A distance matrix of class "\code{dist}" with individual names in
 #' the \code{names} column in \code{data} as labels. If \code{NULL} (default),
 #' then a distance matrix is computed using Gower's metric.
-#' \insertCite{gowerGeneralCoefficientSimilarity1971}{EvaluateCore}.
+#' \insertCite{gower_general_1971}{EvaluateCore}.
 #'
 #' @return A data frame with the average values of
 #' \mjteqn{E\textrm{-}EN}{E\text{-}EN}{E-EN},
