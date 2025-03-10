@@ -94,7 +94,7 @@
       <h1>Example Datasets in `EvaluateCore`</h1>
                         <h4 data-toc-skip class="author">J. Aravind</h4>
             
-            <h4 data-toc-skip class="date">2025-03-06</h4>
+            <h4 data-toc-skip class="date">2025-03-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/EvaluateCore/blob/master/vignettes/additional/Example_Core_Data.Rmd" class="external-link"><code>vignettes/additional/Example_Core_Data.Rmd</code></a></small>
       <div class="d-none name"><code>Example_Core_Data.Rmd</code></div>
@@ -247,8 +247,10 @@ Institute of Tropical Agriculture et al., 2019</a>)</span>.</p>
 </h2>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">qual_plots</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_along</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span><span class="op">)</span>,</span>
-<span>       <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html" class="external-link">barplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span><span class="op">[</span>, <span class="va">i</span><span class="op">]</span><span class="op">)</span>,</span>
-<span>                           xlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span><span class="op">)</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>       <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="op">{</span></span>
+<span>         <span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html" class="external-link">barplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span><span class="op">[</span>, <span class="va">i</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>                           xlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">cassava_EC</span><span class="op">[</span>, <span class="va">qual</span><span class="op">]</span><span class="op">)</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span>         <span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p><img src="Example_Core_Data_files/figure-html/qual-1.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-2.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-3.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-4.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-5.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-6.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-7.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-8.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-9.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-10.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-11.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-12.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-13.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-14.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-15.png" width="30%"><img src="Example_Core_Data_files/figure-html/qual-16.png" width="30%"></p>
 </div>
 <div class="section level2">
@@ -564,7 +566,7 @@ Institute of Tropical Agriculture et al., 2019</a>)</span>.</p>
 <span><span class="co">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## other attached packages:</span></span>
-<span><span class="co">## [1] corehunter_3.2.3 rJava_1.0-11     readxl_1.4.4    </span></span>
+<span><span class="co">## [1] corehunter_3.2.3 rJava_1.0-11     readxl_1.4.5    </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## loaded via a namespace (and not attached):</span></span>
 <span><span class="co">##  [1] vctrs_0.6.5        cli_3.6.4          knitr_1.49         rlang_1.1.5       </span></span>
