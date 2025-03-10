@@ -37,7 +37,7 @@ accessions. It is used to demonstrate the various functions of
 \details{
 Further details on how the example dataset was built from the original data
 is available
-\href{https://aravind-j.github.io/EvaluateCore/articles/additional/Example\%20Core\%20Data.html}{online}.
+\href{https://aravind-j.github.io/EvaluateCore/articles/additional/Example_Core_Data.html}{online}.
 }
 \examples{
 
