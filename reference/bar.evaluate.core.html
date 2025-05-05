@@ -69,7 +69,14 @@ qualitative traits between entire collection (EC) and core set (CS).</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bar.evaluate.core</span><span class="op">(</span><span class="va">data</span>, <span class="va">names</span>, <span class="va">qualitative</span>, <span class="va">selected</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bar.evaluate.core</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">names</span>,</span>
+<span>  <span class="va">qualitative</span>,</span>
+<span>  <span class="va">selected</span>,</span>
+<span>  na.omit <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  show.count <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -94,6 +101,17 @@ vector.</p></dd>
 <dt id="arg-selected">selected<a class="anchor" aria-label="anchor" href="#arg-selected"></a></dt>
 <dd><p>Character vector with the names of individuals selected in
 core collection and present in the <code>names</code> column.</p></dd>
+
+
+<dt id="arg-na-omit">na.omit<a class="anchor" aria-label="anchor" href="#arg-na-omit"></a></dt>
+<dd><p>logical. If <code>TRUE</code>, missing values (<code>NA</code>) are
+ignored and not included in the plot as a distinct factor level. Default is
+<code>TRUE</code>.</p></dd>
+
+
+<dt id="arg-show-count">show.count<a class="anchor" aria-label="anchor" href="#arg-show-count"></a></dt>
+<dd><p>logical. If <code>TRUE</code>, the accession count excluding
+missing values will also be displayed. Default is <code>FALSE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -182,6 +200,57 @@ core collection and present in the <code>names</code> column.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $PSTR</span>
 <span class="r-plt img"><img src="bar.evaluate.core-16.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span><span class="fu">bar.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
+<span class="r-in"><span>                  qualitative <span class="op">=</span> <span class="va">qual</span>, selected <span class="op">=</span> <span class="va">core</span>,</span></span>
+<span class="r-in"><span>                  show.count <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $CUAL</span>
+<span class="r-plt img"><img src="bar.evaluate.core-17.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $LNGS</span>
+<span class="r-plt img"><img src="bar.evaluate.core-18.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $PTLC</span>
+<span class="r-plt img"><img src="bar.evaluate.core-19.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $DSTA</span>
+<span class="r-plt img"><img src="bar.evaluate.core-20.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $LFRT</span>
+<span class="r-plt img"><img src="bar.evaluate.core-21.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $LBTEF</span>
+<span class="r-plt img"><img src="bar.evaluate.core-22.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $CBTR</span>
+<span class="r-plt img"><img src="bar.evaluate.core-23.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $NMLB</span>
+<span class="r-plt img"><img src="bar.evaluate.core-24.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ANGB</span>
+<span class="r-plt img"><img src="bar.evaluate.core-25.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $CUAL9M</span>
+<span class="r-plt img"><img src="bar.evaluate.core-26.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $LVC9M</span>
+<span class="r-plt img"><img src="bar.evaluate.core-27.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TNPR9M</span>
+<span class="r-plt img"><img src="bar.evaluate.core-28.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $PL9M</span>
+<span class="r-plt img"><img src="bar.evaluate.core-29.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $STRP</span>
+<span class="r-plt img"><img src="bar.evaluate.core-30.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $STRC</span>
+<span class="r-plt img"><img src="bar.evaluate.core-31.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $PSTR</span>
+<span class="r-plt img"><img src="bar.evaluate.core-32.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -194,7 +263,7 @@ core collection and present in the <code>names</code> column.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.9000.</p>
 </div>
 
     </footer></div>

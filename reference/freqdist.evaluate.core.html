@@ -81,7 +81,8 @@ set (CS).</p>
 <span>  highlight <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  include.highlight <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  highlight.se <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  highlight.col <span class="op">=</span> <span class="st">"red"</span></span>
+<span>  highlight.col <span class="op">=</span> <span class="st">"red"</span>,</span>
+<span>  show.count <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -134,6 +135,11 @@ names as in <code>data</code>.</p></dd>
 the plot as a character vector of the same length as <code>highlight</code>. Must
 be valid colour values in R (named colours, hexadecimal representation,
 index of colours [<code>1:8</code>] in default R <code><a href="https://rdrr.io/r/grDevices/palette.html" class="external-link">palette()</a></code> etc.).</p></dd>
+
+
+<dt id="arg-show-count">show.count<a class="anchor" aria-label="anchor" href="#arg-show-count"></a></dt>
+<dd><p>logical. If <code>TRUE</code>, the accession count excluding
+missing values will also be displayed. Default is <code>FALSE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -527,6 +533,194 @@ index of colours [<code>1:8</code>] in default R <code><a href="https://rdrr.io/
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">freqdist.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
+<span class="r-in"><span>                       quantitative <span class="op">=</span> <span class="va">quant</span>, qualitative <span class="op">=</span> <span class="va">qual</span>,</span></span>
+<span class="r-in"><span>                       selected <span class="op">=</span> <span class="va">core</span>,</span></span>
+<span class="r-in"><span>                       highlight <span class="op">=</span> <span class="va">checks</span>, highlight.col <span class="op">=</span> <span class="st">"red"</span>,</span></span>
+<span class="r-in"><span>                       show.count <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-63.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-64.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-65.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-66.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-67.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-68.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-69.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-70.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-71.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-72.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-73.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-74.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-75.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-76.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-77.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-78.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-79.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-80.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-81.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-82.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-83.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-84.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-85.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-86.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-87.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="freqdist.evaluate.core-88.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $NMSR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TTRN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TFWSR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TTRW</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TFWSS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TTSW</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TTPW</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $AVPW</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ARSR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $SRDM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $CUAL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $LNGS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $PTLC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $DSTA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $LFRT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $LBTEF</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $CBTR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $NMLB</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ANGB</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $CUAL9M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $LVC9M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TNPR9M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $PL9M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $STRP</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $STRC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $PSTR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TableGrob (1 x 2) "arrange": 2 grobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z     cells    name              grob</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1 (1-1,1-1) arrange    gtable[layout]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2 (1-1,2-2) arrange gtable[guide-box]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
@@ -540,7 +734,7 @@ index of colours [<code>1:8</code>] in default R <code><a href="https://rdrr.io/
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.9000.</p>
 </div>
 
     </footer></div>

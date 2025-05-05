@@ -108,26 +108,31 @@ core collection and present in the <code>names</code> column.</p></dd>
 <dl><dt>Trait</dt>
 <dd><p>The quantitative
   trait.</p></dd>
+ <dt>Count</dt>
+<dd><p>The accession count (excluding missing data).</p></dd>
+
+  <dt>Df</dt>
+<dd><p>The degrees of freedom for the test.</p></dd>
  <dt>EC_V</dt>
-<dd><p>The variance of the EC.</p></dd>
- <dt>CS_V</dt>
 <dd><p>The variance of
-  the CS.</p></dd>
+  the EC.</p></dd>
+ <dt>CS_V</dt>
+<dd><p>The variance of the CS.</p></dd>
  <dt>EC_CV</dt>
-<dd><p>The coefficient of variance of the EC.</p></dd>
-
-  <dt>CS_CV</dt>
-<dd><p>The coefficient of variance of the CS.</p></dd>
-
-  <dt>Levene_Fvalue</dt>
+<dd><p>The coefficient
+  of variance of the EC.</p></dd>
+ <dt>CS_CV</dt>
+<dd><p>The coefficient of variance of the
+  CS.</p></dd>
+ <dt>Levene_Fvalue</dt>
 <dd><p>The test statistic.</p></dd>
  <dt>Levene_pvalue</dt>
-<dd><p>The p value
-  for the test statistic.</p></dd>
+<dd><p>The p
+  value for the test statistic.</p></dd>
  <dt>Levene_significance</dt>
-<dd><p>The significance of the
-  test statistic (*: p <em></em>\(\leq\) 0.01; **: p <em></em>\(\leq\) 0.05; ns: p
-  <em></em>\( &gt; \) 0.05).</p></dd>
+<dd><p>The significance
+  of the test statistic (*: p <em></em>\(\leq\) 0.01; **: p <em></em>\(\leq\) 0.05;
+  ns: p <em></em>\( &gt; \) 0.05).</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -165,28 +170,28 @@ Stanford University Press, Palo Alto, CA.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">levene.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
 <span class="r-in"><span>                     quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    Trait      EC_V       CS_V     EC_CV     CS_CV Levene_Fvalue Levene_pvalue</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   NMSR 59.087307  66.982464 0.6557556 0.7513439    0.08138887  7.754559e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   TTRN  3.650995   5.168937 0.4957973 0.5784099    4.48085067  3.440983e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  TFWSR 20.545565  37.050176 0.8349124 0.9588343    9.73620667  1.834623e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   TTRW  2.745559   8.185938 0.8730338 1.0929363   32.17078669  1.635197e-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  TFWSS 34.723261  52.465146 0.8487110 0.9348325    5.47834742  1.935920e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   TTSW  4.008444   9.527677 0.8385793 1.0057366   20.99595381  4.910026e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   TTPW 95.800602 158.740945 0.7911214 0.8937898    8.23203952  4.162436e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   AVPW 11.312159  29.789173 0.7848312 0.9597393   32.84901670  1.160456e-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   ARSR  5.082044   3.862988 1.2132652 1.1545293    0.37336766  5.412494e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  SRDM 25.329950  18.184402 0.1332473 0.1130209    5.02652477  2.508002e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    Levene_significance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                   ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                   **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                   **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                    *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                   **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                   **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                   ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                   *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    Trait Count Df      EC_V       CS_V     EC_CV     CS_CV Levene_Fvalue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   NMSR  1684  1 59.087307  66.982464 0.6557556 0.7513439    0.08138887</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   TTRN  1684  1  3.650995   5.168937 0.4957973 0.5784099    4.48085067</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  TFWSR  1684  1 20.545565  37.050176 0.8349124 0.9588343    9.73620667</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   TTRW  1684  1  2.745559   8.185938 0.8730338 1.0929363   32.17078669</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  TFWSS  1684  1 34.723261  52.465146 0.8487110 0.9348325    5.47834742</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   TTSW  1684  1  4.008444   9.527677 0.8385793 1.0057366   20.99595381</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   TTPW  1684  1 95.800602 158.740945 0.7911214 0.8937898    8.23203952</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   AVPW  1684  1 11.312159  29.789173 0.7848312 0.9597393   32.84901670</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   ARSR  1684  1  5.082044   3.862988 1.2132652 1.1545293    0.37336766</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  SRDM  1684  1 25.329950  18.184402 0.1332473 0.1130209    5.02652477</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    Levene_pvalue Levene_significance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   7.754559e-01                  ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   3.440983e-02                   *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   1.834623e-03                  **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   1.635197e-08                  **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   1.935920e-02                   *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   4.910026e-06                  **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   4.162436e-03                  **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   1.160456e-08                  **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   5.412494e-01                  ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  2.508002e-02                   *</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -199,7 +204,7 @@ Stanford University Press, Palo Alto, CA.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.9000.</p>
 </div>
 
     </footer></div>

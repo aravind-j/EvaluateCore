@@ -156,6 +156,12 @@ to be plotted. The default value is 6.</p></dd>
 
 </dl></div>
     <div class="section level2">
+    <h2 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h2>
+    <p>If there are missing values in the quantitative data, then they will be
+  imputed using the <code><a href="https://rdrr.io/pkg/missMDA/man/imputePCA.html" class="external-link">imputePCA</a></code> function from
+  <code><a href="https://rdrr.io/pkg/missMDA/man/missMDA-package.html" class="external-link">missMDA</a></code>.</p>
+    </div>
+    <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
     <p>Mardia KV, Kent JT, Bibby JM (1979).
 <em>Multivariate analysis</em>.
@@ -196,10 +202,10 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     2.303455 1.237223 0.996322 0.9455592 0.8817511 0.6251589</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.530590 0.153070 0.099270 0.0894100 0.0777500 0.0390800</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.530590 0.683660 0.782930 0.8723400 0.9500900 0.9891700</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             PC7       PC8          PC9         PC10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     0.271212 0.1864651 4.033635e-15 1.338255e-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.007360 0.0034800 0.000000e+00 0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.996520 1.0000000 1.000000e+00 1.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                             PC7       PC8          PC9        PC10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     0.271212 0.1864651 4.069089e-15 1.25873e-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.007360 0.0034800 0.000000e+00 0.00000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.996520 1.0000000 1.000000e+00 1.00000e+00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`EC PC Loadings`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                PC1         PC2         PC3        PC4          PC5         PC6</span>
@@ -214,26 +220,26 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ARSR   0.011265368  0.52673026  0.37858111  0.5081543 -0.444763915  0.34913640</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.004586239  0.21186429 -0.89638345  0.3837654 -0.027148446  0.05797814</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               PC7          PC8           PC9          PC10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.66616815  0.181386616 -1.645650e-15  7.445343e-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN  -0.49417918 -0.095026370  3.536674e-16 -1.428385e-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR -0.32960316  0.499641762 -3.419350e-01 -1.381350e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.31608453 -0.416500300 -1.460210e-01  3.614559e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS -0.10285083 -0.558642359 -4.445235e-01 -1.795787e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.07640644  0.454657280 -1.764363e-01  4.367448e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW  -0.21455970 -0.104941479  7.383608e-01  2.982832e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.20120313  0.065453705  2.963963e-01 -7.336900e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR  -0.01979215 -0.027945977 -1.084265e-16  5.583470e-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.01152032 -0.009060183 -1.189926e-16 -1.143250e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.66616815  0.181386616 -2.047178e-15  6.302053e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN  -0.49417918 -0.095026370  2.932212e-16 -1.103914e-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR -0.32960316  0.499641762 -3.441471e-01 -1.325278e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.31608453 -0.416500300 -1.400937e-01  3.637942e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS -0.10285083 -0.558642359 -4.473993e-01 -1.722892e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.07640644  0.454657280 -1.692743e-01  4.395702e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW  -0.21455970 -0.104941479  7.431375e-01  2.861751e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.20120313  0.065453705  2.843648e-01 -7.384364e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR  -0.01979215 -0.027945977 -8.793620e-17 -7.182589e-19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.01152032 -0.009060183 -2.600874e-17 -1.406723e-16</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`CS PC Importance`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                             PC1      PC2      PC3       PC4       PC5       PC6</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     2.280951 1.312257 1.000457 0.8959377 0.8451336 0.6538375</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.520270 0.172200 0.100090 0.0802700 0.0714300 0.0427500</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.520270 0.692480 0.792570 0.8728400 0.9442600 0.9870100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                              PC7       PC8          PC9         PC10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     0.3207286 0.1643265 1.032366e-15 3.669511e-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.0102900 0.0027000 0.000000e+00 0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.9973000 1.0000000 1.000000e+00 1.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                              PC7       PC8          PC9        PC10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Standard deviation     0.3207286 0.1643265 9.677131e-16 3.35724e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Proportion of Variance 0.0102900 0.0027000 0.000000e+00 0.00000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Cumulative Proportion  0.9973000 1.0000000 1.000000e+00 1.00000e+00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`CS PC Loadings`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               PC1         PC2          PC3         PC4         PC5          PC6</span>
@@ -248,16 +254,16 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ARSR   0.02642625  0.53641424  0.049592980 -0.54225171 -0.54787309  0.334180984</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.06233279  0.14455341  0.931570561 -0.04658879  0.31551819  0.073690249</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               PC7          PC8           PC9          PC10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.69455927  0.089542525 -5.893990e-16  2.361951e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN  -0.49373454 -0.026538022  7.853091e-16 -3.234060e-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR -0.24125034  0.553541017  3.409506e-02  3.848106e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.26321979 -0.434887362 -4.135011e-01  3.663710e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS -0.17717813 -0.557775840  4.057250e-02  4.579176e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.13648832  0.424831173 -4.461038e-01  3.952578e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW  -0.21841109 -0.053240284 -7.057336e-02 -7.965194e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.21517212  0.012287406  7.888086e-01 -6.989017e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR  -0.04644065 -0.032656495  2.874973e-17 -6.847934e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.01212024 -0.009789162  5.367396e-17  1.281538e-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NMSR   0.69455927  0.089542525  0.000000e+00  0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRN  -0.49373454 -0.026538022  1.001046e-16 -5.141033e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSR -0.24125034  0.553541017  3.606514e-02  3.846309e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTRW   0.26321979 -0.434887362 -4.133080e-01  3.875407e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TFWSS -0.17717813 -0.557775840  4.291686e-02  4.577038e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTSW   0.13648832  0.424831173 -4.458956e-01  4.180966e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TTPW  -0.21841109 -0.053240284 -7.465124e-02 -7.961475e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> AVPW   0.21517212  0.012287406  7.884404e-01 -7.392857e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ARSR  -0.04644065 -0.032656495 -9.861976e-18 -2.916604e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> SRDM  -0.01212024 -0.009789162  9.941045e-17 -1.409610e-16</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`Scree Plot`</span>
 <span class="r-plt img"><img src="pca.evaluate.core-1.png" alt="" width="700" height="433"></span>
@@ -277,7 +283,7 @@ ISBN 0-12-471250-9 978-0-12-471250-8 0-12-471252-5 978-0-12-471252-2.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.9000.</p>
 </div>
 
     </footer></div>

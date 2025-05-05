@@ -83,7 +83,8 @@ probability distributions of quantitative traits between entire collection
 <span>  <span class="va">names</span>,</span>
 <span>  <span class="va">quantitative</span>,</span>
 <span>  <span class="va">selected</span>,</span>
-<span>  annotate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"none"</span>, <span class="st">"kl"</span>, <span class="st">"ks"</span>, <span class="st">"ad"</span><span class="op">)</span></span>
+<span>  annotate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"none"</span>, <span class="st">"kl"</span>, <span class="st">"ks"</span>, <span class="st">"ad"</span><span class="op">)</span>,</span>
+<span>  show.count <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -117,6 +118,11 @@ distributions of CS and EC as an annotation to the QQ plot. Either
 <code>"none"</code> (no annotation (Default)) or <code>"kl"</code> (Kullback-Leibler
 divergence) or  <code>"ks"</code> (Kolmogorov-Smirnov distance) or  <code>"ad"</code>
 (Anderson-Darling distance).</p></dd>
+
+
+<dt id="arg-show-count">show.count<a class="anchor" aria-label="anchor" href="#arg-show-count"></a></dt>
+<dd><p>logical. If <code>TRUE</code>, the accession count excluding
+missing values will also be displayed. Default is <code>FALSE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -192,7 +198,7 @@ divergence) or  <code>"ks"</code> (Kolmogorov-Smirnov distance) or  <code>"ad"</
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">qq.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
-<span class="r-in"><span>                 quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>, annotate <span class="op">=</span> <span class="st">"kl"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>                 quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>, show.count <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $NMSR</span>
 <span class="r-plt img"><img src="qq.evaluate.core-11.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -225,17 +231,7 @@ divergence) or  <code>"ks"</code> (Kolmogorov-Smirnov distance) or  <code>"ad"</
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">qq.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
-<span class="r-in"><span>                 quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>, annotate <span class="op">=</span> <span class="st">"ks"</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-in"><span>                 quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>, annotate <span class="op">=</span> <span class="st">"kl"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $NMSR</span>
 <span class="r-plt img"><img src="qq.evaluate.core-21.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -268,7 +264,17 @@ divergence) or  <code>"ks"</code> (Kolmogorov-Smirnov distance) or  <code>"ad"</
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">qq.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
-<span class="r-in"><span>                 quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>, annotate <span class="op">=</span> <span class="st">"ad"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>                 quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>, annotate <span class="op">=</span> <span class="st">"ks"</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>p-value will be approximate in the presence of ties</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $NMSR</span>
 <span class="r-plt img"><img src="qq.evaluate.core-31.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -300,6 +306,39 @@ divergence) or  <code>"ks"</code> (Kolmogorov-Smirnov distance) or  <code>"ad"</
 <span class="r-plt img"><img src="qq.evaluate.core-40.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">qq.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
+<span class="r-in"><span>                 quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span>, annotate <span class="op">=</span> <span class="st">"ad"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $NMSR</span>
+<span class="r-plt img"><img src="qq.evaluate.core-41.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TTRN</span>
+<span class="r-plt img"><img src="qq.evaluate.core-42.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TFWSR</span>
+<span class="r-plt img"><img src="qq.evaluate.core-43.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TTRW</span>
+<span class="r-plt img"><img src="qq.evaluate.core-44.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TFWSS</span>
+<span class="r-plt img"><img src="qq.evaluate.core-45.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TTSW</span>
+<span class="r-plt img"><img src="qq.evaluate.core-46.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $TTPW</span>
+<span class="r-plt img"><img src="qq.evaluate.core-47.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $AVPW</span>
+<span class="r-plt img"><img src="qq.evaluate.core-48.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ARSR</span>
+<span class="r-plt img"><img src="qq.evaluate.core-49.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $SRDM</span>
+<span class="r-plt img"><img src="qq.evaluate.core-50.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
@@ -311,7 +350,7 @@ divergence) or  <code>"ks"</code> (Kolmogorov-Smirnov distance) or  <code>"ad"</
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.9000.</p>
 </div>
 
     </footer></div>

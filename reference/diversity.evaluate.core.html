@@ -167,7 +167,15 @@ Diversity Index</p><ul><li><p>McIntosh Diversity Index (<em></em>\(D_{Mc}\))
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">diversity.evaluate.core</span><span class="op">(</span><span class="va">data</span>, <span class="va">names</span>, <span class="va">qualitative</span>, <span class="va">selected</span>, base <span class="op">=</span> <span class="fl">2</span>, R <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">diversity.evaluate.core</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">names</span>,</span>
+<span>  <span class="va">qualitative</span>,</span>
+<span>  <span class="va">selected</span>,</span>
+<span>  base <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  R <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>  na.omit <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -201,6 +209,12 @@ Diversity Index (<em></em>\(I\)). Default is 2.</p></dd>
 
 <dt id="arg-r">R<a class="anchor" aria-label="anchor" href="#arg-r"></a></dt>
 <dd><p>The number of bootstrap replicates. Default is 1000.</p></dd>
+
+
+<dt id="arg-na-omit">na.omit<a class="anchor" aria-label="anchor" href="#arg-na-omit"></a></dt>
+<dd><p>logical. If <code>TRUE</code>, missing values (<code>NA</code>) are
+ignored and not included as a distinct factor level for computation.
+Default is <code>TRUE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -854,7 +868,7 @@ Academic Press.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.9000.</p>
 </div>
 
     </footer></div>

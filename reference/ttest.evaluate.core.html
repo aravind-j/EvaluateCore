@@ -6,11 +6,15 @@
     }
   };
 </script><script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Student's t Test — ttest.evaluate.core"><meta name="description" content="Test difference between means of entire collection (EC) and core set (CS) for
-quantitative traits by Student's t test
-(Student 1908)
+quantitative traits by Student's t test (in particular it's adaptation for
+comparison of groups with unequal variances known as Welch's two sample
+t-test)
+(Student 1908; Welch 1947)
 ."><meta property="og:description" content="Test difference between means of entire collection (EC) and core set (CS) for
-quantitative traits by Student's t test
-(Student 1908)
+quantitative traits by Student's t test (in particular it's adaptation for
+comparison of groups with unequal variances known as Welch's two sample
+t-test)
+(Student 1908; Welch 1947)
 ."><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-148941781-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -68,8 +72,10 @@ quantitative traits by Student's t test
 
     <div class="ref-description section level2">
     <p>Test difference between means of entire collection (EC) and core set (CS) for
-quantitative traits by Student's t test
-(Student 1908)
+quantitative traits by Student's t test (in particular it's adaptation for
+comparison of groups with unequal variances known as Welch's two sample
+t-test)
+(Student 1908; Welch 1947)
 .</p>
     </div>
 
@@ -107,44 +113,51 @@ core collection and present in the <code>names</code> column.</p></dd>
 
 
 <dl><dt>Trait</dt>
-<dd><p>The
-  quantitative trait.</p></dd>
+<dd><p>The quantitative trait.</p></dd>
+ <dt>Count</dt>
+<dd><p>The accession
+  count (excluding missing data).</p></dd>
+ <dt>Df</dt>
+<dd><p>The degrees of freedom for the
+  test.</p></dd>
  <dt>EC_Min</dt>
 <dd><p>The minimum value of the trait in EC.</p></dd>
 
   <dt>EC_Max</dt>
 <dd><p>The maximum value of the trait in EC.</p></dd>
- <dt>EC_Mean</dt>
-<dd><p>The
-  mean value of the trait in EC.</p></dd>
- <dt>EC_SE</dt>
-<dd><p>The standard error of the
-  trait in EC.</p></dd>
- <dt>CS_Min</dt>
-<dd><p>The minimum value of the trait in CS.</p></dd>
 
-  <dt>CS_Max</dt>
-<dd><p>The maximum value of the trait in CS.</p></dd>
- <dt>CS_Mean</dt>
+  <dt>EC_Mean</dt>
+<dd><p>The mean value of the trait in EC.</p></dd>
+ <dt>EC_SE</dt>
 <dd><p>The
-  mean value of the trait in CS.</p></dd>
- <dt>CS_SE</dt>
-<dd><p>The standard error of the
+  standard error of the trait in EC.</p></dd>
+ <dt>CS_Min</dt>
+<dd><p>The minimum value of the
   trait in CS.</p></dd>
- <dt>ttest_pvalue</dt>
-<dd><p>The p value of the Student's t
-  test for equality of means of EC and CS.</p></dd>
- <dt>ttest_significance</dt>
+ <dt>CS_Max</dt>
+<dd><p>The maximum value of the trait in CS.</p></dd>
+
+  <dt>CS_Mean</dt>
+<dd><p>The mean value of the trait in CS.</p></dd>
+ <dt>CS_SE</dt>
 <dd><p>The
-  significance of the Student's t test for equality of means of EC
-  and CS.</p></dd>
+  standard error of the trait in CS.</p></dd>
+ <dt>ttest_pvalue</dt>
+<dd><p>The p value of the
+  Student's t test for equality of means of EC and CS.</p></dd>
+
+  <dt>ttest_significance</dt>
+<dd><p>The significance of the Student's t test for
+  equality of means of EC and CS.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
     <p>Student (1908).
 “The probable error of a mean.”
-<em>Biometrika</em>, <b>6</b>(1), 1–25.</p>
+<em>Biometrika</em>, <b>6</b>(1), 1–25.<br><br> Welch BL (1947).
+“The generalization of 'student's' problem when several different population varlances are involved.”
+<em>Biometrika</em>, <b>34</b>(1-2), 28–35.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -174,28 +187,28 @@ core collection and present in the <code>names</code> column.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">ttest.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
 <span class="r-in"><span>                    quantitative <span class="op">=</span> <span class="va">quant</span>, selected <span class="op">=</span> <span class="va">core</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    Trait EC_Min EC_Max   EC_Mean      EC_SE CS_Min CS_Max   CS_Mean     CS_SE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   NMSR   1.00  55.00 11.722090 0.18731651   1.00  55.00 10.892857 0.6314310</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   TTRN   0.25  13.75  3.853909 0.04656232   0.25  13.75  3.930655 0.1754066</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  TFWSR   0.00  40.00  5.428979 0.11045567   0.20  38.00  6.348214 0.4696134</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   TTRW   0.00  20.20  1.897948 0.04037796   0.10  20.20  2.617817 0.2207393</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  TFWSS   0.20  42.00  6.943052 0.14359496   0.20  42.00  7.748214 0.5588314</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   TTSW   0.04  22.00  2.387502 0.04878843   0.10  22.00  3.069087 0.2381436</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   TTPW   0.40  80.00 12.372031 0.23851356   0.40  80.00 14.096429 0.9720528</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   AVPW   0.20  33.00  4.285450 0.08195995   0.20  33.00  5.686905 0.4210897</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   ARSR   0.00  18.00  1.858076 0.05493488   0.00   8.00  1.702381 0.1516377</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  SRDM   0.50  48.90 37.771021 0.12264395  21.90  48.10 37.730357 0.3289992</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ttest_pvalue ttest_significance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   0.209505833                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   0.672855738                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   0.058266745                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   0.001585008                 **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   0.164507433                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   0.005599998                 **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   0.086559633                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   0.001302429                 **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   0.335457319                 ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  0.907907091                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Trait Count       Df EC_Min EC_Max   EC_Mean      EC_SE CS_Min CS_Max</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...1   NMSR  1684 197.5347   1.00  55.00 11.722090 0.18731651   1.00  55.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...2   TTRN  1684 191.2705   0.25  13.75  3.853909 0.04656232   0.25  13.75</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...3  TFWSR  1684 185.9321   0.00  40.00  5.428979 0.11045567   0.20  38.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...4   TTRW  1684 178.3429   0.00  20.20  1.897948 0.04037796   0.10  20.20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...5  TFWSS  1684 189.6987   0.20  42.00  6.943052 0.14359496   0.20  42.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...6   TTSW  1684 181.2810   0.04  22.00  2.387502 0.04878843   0.10  22.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...7   TTPW  1684 187.6470   0.40  80.00 12.372031 0.23851356   0.40  80.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...8   AVPW  1684 179.8673   0.20  33.00  4.285450 0.08195995   0.20  33.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...9   ARSR  1684 213.3477   0.00  18.00  1.858076 0.05493488   0.00   8.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...10  SRDM  1684 216.2246   0.50  48.90 37.771021 0.12264395  21.90  48.10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           CS_Mean     CS_SE ttest_pvalue ttest_significance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...1  10.892857 0.6314310  0.209505833                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...2   3.930655 0.1754066  0.672855738                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...3   6.348214 0.4696134  0.058266745                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...4   2.617817 0.2207393  0.001585008                 **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...5   7.748214 0.5588314  0.164507433                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...6   3.069087 0.2381436  0.005599998                 **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...7  14.096429 0.9720528  0.086559633                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...8   5.686905 0.4210897  0.001302429                 **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...9   1.702381 0.1516377  0.335457319                 ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> df...10 37.730357 0.3289992  0.907907091                 ns</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -208,7 +221,7 @@ core collection and present in the <code>names</code> column.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.9000.</p>
 </div>
 
     </footer></div>

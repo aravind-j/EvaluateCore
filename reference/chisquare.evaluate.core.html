@@ -78,7 +78,7 @@ collection (EC) and core set (CS) by Chi-squared test for homogeneity
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">chisquare.evaluate.core</span><span class="op">(</span><span class="va">data</span>, <span class="va">names</span>, <span class="va">qualitative</span>, <span class="va">selected</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">chisquare.evaluate.core</span><span class="op">(</span><span class="va">data</span>, <span class="va">names</span>, <span class="va">qualitative</span>, <span class="va">selected</span>, na.omit <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -103,6 +103,12 @@ vector.</p></dd>
 <dt id="arg-selected">selected<a class="anchor" aria-label="anchor" href="#arg-selected"></a></dt>
 <dd><p>Character vector with the names of individuals selected in
 core collection and present in the <code>names</code> column.</p></dd>
+
+
+<dt id="arg-na-omit">na.omit<a class="anchor" aria-label="anchor" href="#arg-na-omit"></a></dt>
+<dd><p>logical. If <code>TRUE</code>, missing values (<code>NA</code>) are
+ignored and not included as a distinct factor level for analysis. Default
+is <code>TRUE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -170,23 +176,23 @@ core collection and present in the <code>names</code> column.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">chisquare.evaluate.core</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ec</span>, names <span class="op">=</span> <span class="st">"genotypes"</span>,</span></span>
 <span class="r-in"><span>                        qualitative <span class="op">=</span> <span class="va">qual</span>, selected <span class="op">=</span> <span class="va">core</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     Trait EC_No.Classes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    CUAL             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    LNGS             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    PTLC             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    DSTA             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    LFRT             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   LBTEF             6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    CBTR             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    NMLB            10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    ANGB             4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 CUAL9M             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  LVC9M             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 TNPR9M             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   PL9M             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   STRP             4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   STRC             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   PSTR             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Trait Count EC_No.Classes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    CUAL  1684             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    LNGS  1684             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    PTLC  1684             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    DSTA  1684             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    LFRT  1684             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   LBTEF  1684             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    CBTR  1684             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    NMLB  1684            10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    ANGB  1684             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 CUAL9M  1684             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  LVC9M  1684             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 TNPR9M  1684             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13   PL9M  1684             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   STRP  1684             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15   STRC  1684             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16   PSTR  1684             3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                           EC_Classes</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                         Dark green(321); Green(2); Green purple(889); Light green(48); Purple(424)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                                 Long(741); Medium(791); Short(152)</span>
@@ -267,7 +273,7 @@ core collection and present in the <code>names</code> column.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.9000.</p>
 </div>
 
     </footer></div>
