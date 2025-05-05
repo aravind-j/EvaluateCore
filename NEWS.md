@@ -1,3 +1,4 @@
+
 # EvaluateCore  0.1.4
 
 ## NEW FUNCTIONS:
@@ -6,6 +7,7 @@
 * `scv.evaluate.core` - Added Synthetic Variation Coefficient (Dong, 1998; Dong et al., 2001).
 
 ## UPDATED FUNCTIONS:
+* `snk.evaluate.core`, `wilcox.evaluate.core`, `ttest.evaluate.core`, `signtest.evaluate.core`, `levene.evaluate.core`, `iqr.evaluate.core`, `cr.evaluate.core`, `vr.evaluate.core`, `scv.evaluate.core`, `box.evaluate.core`, `pdfdist.evaluate.core`, `qq.evaluate.core`, `percentdiff.evaluate.core`, `pca.evaluate.core`, `bar.evaluate.core`, `chisquare.evaluate.core`, `coverage.evaluate.core`, `diversity.evaluate.core`, `rpr.evaluate.core`, `vpf.evaluate.core`, `corr.evaluate.core`, `dist.evaluate.core` & `freqdist.evaluate.core` - Updated to handle missing date (ignore or impute missing data and also display of counts).
 * `cr.evaluate.core` - Added computation of Changeable Rate of Maximum, Minimum and Mean (Wang et al. 2007).
 * `percentdiff.evaluate.core` - Added Percentage of range ratios smaller than 0.70 (Diwan et al. 1998).
 

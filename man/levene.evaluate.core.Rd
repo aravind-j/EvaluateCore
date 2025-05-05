@@ -21,13 +21,14 @@ core collection and present in the \code{names} column.}
 }
 \value{
 A data frame with the following columns \item{Trait}{The quantitative
-  trait.} \item{EC_V}{The variance of the EC.} \item{CS_V}{The variance of
-  the CS.} \item{EC_CV}{The coefficient of variance of the EC.}
-  \item{CS_CV}{The coefficient of variance of the CS.}
-  \item{Levene_Fvalue}{The test statistic.} \item{Levene_pvalue}{The p value
-  for the test statistic.} \item{Levene_significance}{The significance of the
-  test statistic (*: p \mjseqn{\leq} 0.01; **: p \mjseqn{\leq} 0.05; ns: p
-  \mjseqn{ > } 0.05).}
+  trait.} \item{Count}{The accession count (excluding missing data).}
+  \item{Df}{The degrees of freedom for the test.} \item{EC_V}{The variance of
+  the EC.} \item{CS_V}{The variance of the CS.} \item{EC_CV}{The coefficient
+  of variance of the EC.} \item{CS_CV}{The coefficient of variance of the
+  CS.} \item{Levene_Fvalue}{The test statistic.} \item{Levene_pvalue}{The p
+  value for the test statistic.} \item{Levene_significance}{The significance
+  of the test statistic (*: p \mjseqn{\leq} 0.01; **: p \mjseqn{\leq} 0.05;
+  ns: p \mjseqn{ > } 0.05).}
 }
 \description{
 Test for  of variances of the entire collection (EC) and core set (CS) for

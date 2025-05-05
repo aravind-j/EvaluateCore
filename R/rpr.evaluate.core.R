@@ -66,7 +66,8 @@
 #' rpr.evaluate.core(data = ec, names = "genotypes",
 #'                   qualitative = qual, selected = core)
 #'
-rpr.evaluate.core <- function(data, names, qualitative, selected) {
+rpr.evaluate.core <- function(data, names, qualitative, selected,
+                              na.omit = TRUE) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
@@ -78,7 +79,7 @@ rpr.evaluate.core <- function(data, names, qualitative, selected) {
   }
 
   cdiff <- chisquare.evaluate.core(data, names, qualitative,
-                                   selected)
+                                   selected, na.omit = na.omit)
 
   rpr <- sum(cdiff$CS_No.Classes) / sum(cdiff$EC_No.Classes)
 

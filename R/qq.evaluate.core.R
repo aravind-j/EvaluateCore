@@ -24,6 +24,8 @@
 #' (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
+#' @param show.count logical. If \code{TRUE}, the accession count excluding
+#'   missing values will also be displayed. Default is \code{FALSE}.
 #' @param annotate Adds the divergence/distance value between probability
 #'   distributions of CS and EC as an annotation to the QQ plot. Either
 #'   \code{"none"} (no annotation (Default)) or \code{"kl"} (Kullback-Leibler
@@ -75,6 +77,9 @@
 #'                  quantitative = quant, selected = core)
 #'
 #' qq.evaluate.core(data = ec, names = "genotypes",
+#'                  quantitative = quant, selected = core, show.count = TRUE)
+#'
+#' qq.evaluate.core(data = ec, names = "genotypes",
 #'                  quantitative = quant, selected = core, annotate = "kl")
 #'
 #' qq.evaluate.core(data = ec, names = "genotypes",
@@ -84,7 +89,8 @@
 #'                  quantitative = quant, selected = core, annotate = "ad")
 #'
 qq.evaluate.core <- function(data, names, quantitative, selected,
-                             annotate = c("none", "kl", "ks", "ad")) {
+                             annotate = c("none", "kl", "ks", "ad"),
+                             show.count = FALSE) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,
@@ -116,15 +122,20 @@ qq.evaluate.core <- function(data, names, quantitative, selected,
 
       if (annotate == "kl") {
         # Kullback–Leibler distance
-        nbinscs <- grDevices::nclass.FD(dataf[dataf$`[Type]` == "CS",
-                                              quantitative[i]])
-        rangeec <- range(dataf[dataf$`[Type]` == "EC", quantitative[i]])
+        nbinscs <-
+          grDevices::nclass.FD(dataf[dataf$`[Type]` == "CS" &
+                                       !is.na(dataf[, quantitative[i]]),
+                                     quantitative[i]])
+        rangeec <- range(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                         na.rm = TRUE)
 
-        g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC",
+        g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC" &
+                                          !is.na(dataf[, quantitative[i]]),
                                         quantitative[i]],
                                   nbinscs, rangeec)
         g1[g1 == 0] <- 0.000000001 #Smoothing
-        g2 <- entropy::discretize(dataf[dataf$`[Type]` == "CS",
+        g2 <- entropy::discretize(dataf[dataf$`[Type]` == "CS" &
+                                          !is.na(dataf[, quantitative[i]]),
                                         quantitative[i]],
                                   nbinscs, rangeec)
         g2[g2 == 0] <- 0.000000001 #Smoothing
@@ -138,8 +149,12 @@ qq.evaluate.core <- function(data, names, quantitative, selected,
 
       if (annotate == "ks") {
         # Kolmogorov-Smirnov distance
-        ks <- ks.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
-                      dataf[dataf$`[Type]` == "CS", quantitative[i]],
+        ks <- ks.test(dataf[dataf$`[Type]` == "EC" &
+                              !is.na(dataf[, quantitative[i]]),
+                            quantitative[i]],
+                      dataf[dataf$`[Type]` == "CS" &
+                              !is.na(dataf[, quantitative[i]]),
+                            quantitative[i]],
                       exact = FALSE)
 
         avec[[i]] <- paste("<i>D<sub>KS</sub></i> = ",
@@ -152,8 +167,12 @@ qq.evaluate.core <- function(data, names, quantitative, selected,
 
       if (annotate == "ad") {
         # Anderson-Darling distance
-        ad <- kSamples::ad.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
-                                dataf[dataf$`[Type]` == "CS", quantitative[i]],
+        ad <- kSamples::ad.test(dataf[dataf$`[Type]` == "EC" &
+                                        !is.na(dataf[, quantitative[i]]),
+                                      quantitative[i]],
+                                dataf[dataf$`[Type]` == "CS" &
+                                        !is.na(dataf[, quantitative[i]]),
+                                      quantitative[i]],
                                 dist = TRUE)
 
         avec[[i]] <- paste("<i><i>D<sub>AD</sub></i> = ",
@@ -175,24 +194,49 @@ qq.evaluate.core <- function(data, names, quantitative, selected,
 
   for (i in seq_along(quantitative)) {
     # Create the quantile-quantile data table
-    qqdf <- qqplot(x = dataf[dataf$`[Type]` == "CS", quantitative[i]],
-                   y = dataf[dataf$`[Type]` == "EC", quantitative[i]],
+    qqdf <- qqplot(x = dataf[dataf$`[Type]` == "EC" &
+                               !is.na(dataf[, quantitative[i]]),
+                             quantitative[i]],
+                   y = dataf[dataf$`[Type]` == "CS" &
+                               !is.na(dataf[, quantitative[i]]),
+                             quantitative[i]],
                    plot.it = FALSE)
     qqdf <- as.data.frame(qqdf)
 
     # Set the x and y limits
     xylim <- range(c(qqdf$x, qqdf$y))
 
+    xlab_val <- "Core Set"
+    ylab_val <- "Entire Collection"
+
+    if (show.count) {
+      dataf_count <-
+        dplyr::summarise(.data = dataf[!is.na(dataf[, quantitative[i]]),],
+                         .by = c("[Type]"),
+                         Count = dplyr::n(),
+                         Mean = mean(get(quantitative[i]), na.rm = TRUE))
+      dataf_count[order(dataf_count$`[Type]`), ]
+
+      xlab_val <- paste(xlab_val, "\n(n = ",
+                        dataf_count[dataf_count$`[Type]` == "CS", ]$Count, ")",
+                        sep = "")
+      ylab_val <- paste(ylab_val, "\n(n = ",
+                        dataf_count[dataf_count$`[Type]` == "EC", ]$Count, ")",
+                        sep = "")
+
+    }
+
     # Generate the QQ plot
     outlist[[i]] <- ggplot(qqdf, aes(x = x, y = y)) +
       geom_point() +
       geom_abline(intercept = 0, slope = 1) +
       coord_fixed(ratio = 1, xlim = xylim, ylim = xylim) +
-      xlab("Core Set") +
-      ylab("Entire Collection") +
+      xlab(xlab_val) +
+      ylab(ylab_val) +
       ggtitle(quantitative[i]) +
       theme_bw() +
       theme(axis.text = element_text(colour = "black"))
+
 
     if (annotate != "none") {
       outlist[[i]] <- outlist[[i]] +

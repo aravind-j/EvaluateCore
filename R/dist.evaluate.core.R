@@ -153,6 +153,13 @@ dist.evaluate.core <- function(data, names, quantitative, qualitative,
     rownames(data) <- data[, names]
     d <- cluster::daisy(data[, c(quantitative, qualitative)],
                         metric = "gower")
+
+    missvcols <- unlist(lapply(data[, quantitative],
+                               function(x) TRUE %in% is.na(x)))
+    if (TRUE %in% missvcols) {
+      warning('Missing values are ignored for calculation of distances ',
+              'between traits.')
+    }
   }
 
   # # Prep phenotype

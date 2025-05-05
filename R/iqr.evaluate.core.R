@@ -24,8 +24,9 @@
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return A data frame with the IQR values of the EC and CS for the traits
-#'   specified as \code{quantitative}.
+#' @return A data frame with the accession count (excluding missing  data) as
+#'   well as the IQR values of the EC and CS for the traits specified as
+#'   \code{quantitative}.
 #'
 #' @seealso \code{\link[stats]{IQR}}
 #'
@@ -84,12 +85,17 @@ iqr.evaluate.core <- function(data, names, quantitative, selected) {
   dataf <- tibble::as_tibble(dataf)
 
   outdf <- data.frame(`Trait` = quantitative,
+                      `Count` = unlist(lapply(dataf[dataf$`[Type]` == "EC",
+                                                    quantitative],
+                                              function(x) {
+                                                sum(!is.na(x))
+                                              })),
                       `EC_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "EC",
                                                      quantitative],
-                                               stats::IQR)),
+                                               stats::IQR, na.rm = TRUE)),
                       `CS_IQR` = unlist(lapply(dataf[dataf$`[Type]` == "CS",
                                                      quantitative],
-                                               stats::IQR)))
+                                               stats::IQR, na.rm = TRUE)))
   rownames(outdf) <- NULL
   return(outdf)
 }

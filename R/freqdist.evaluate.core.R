@@ -34,6 +34,8 @@
 #'   the plot as a character vector of the same length as \code{highlight}. Must
 #'   be valid colour values in R (named colours, hexadecimal representation,
 #'   index of colours [\code{1:8}] in default R \code{palette()} etc.).
+#' @param show.count logical. If \code{TRUE}, the accession count excluding
+#'   missing values will also be displayed. Default is \code{FALSE}.
 #'
 #' @return A list with the \code{ggplot} objects of stacked frequency
 #'   distribution histograms plots for each trait specified as
@@ -100,13 +102,20 @@
 #'                        selected = core,
 #'                        highlight = checks, highlight.col = "red",
 #'                        highlight.se = quant.se)
+#'
+#' freqdist.evaluate.core(data = ec, names = "genotypes",
+#'                        quantitative = quant, qualitative = qual,
+#'                        selected = core,
+#'                        highlight = checks, highlight.col = "red",
+#'                        show.count = TRUE)
 #' }
 #'
 freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
                                    selected, highlight = NULL,
                                    include.highlight = TRUE,
                                    highlight.se = NULL,
-                                   highlight.col = "red") {
+                                   highlight.col = "red",
+                                   show.count = FALSE) {
 
   if (missing(quantitative)) {
     quantitative <- NULL
@@ -241,6 +250,23 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
 
   for (i in seq_along(traits)) {
 
+    if (show.count) {
+
+      dataf_type_levels <-  levels(dataf$`[Type]`)
+
+      dataf_count <-
+        dplyr::summarise(.data = dataf[!is.na(dataf[, traits[i]]),],
+                         .by = c("[Type]"),
+                         Count = dplyr::n())
+      dataf_count <- dataf_count[order(dataf_count$`[Type]`), ]
+
+      levels(dataf$`[Type]`) <- paste(dataf_count$`[Type]`,
+                                      " (n = ", dataf_count$Count, ")",
+                                      sep = "")
+
+      rm(dataf_count)
+    }
+
     # Generate the freq dist histogram
     bw <- binw(as.numeric(dataf[, traits[i]]), "sturges")
     NN <- length(dataf[, traits[i]])
@@ -357,6 +383,11 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
       outlist[[i]] <- G1
 
     }
+
+    if (show.count) {
+      levels(dataf$`[Type]`) <- dataf_type_levels
+    }
+
     rm(bw, NN)
   }
 

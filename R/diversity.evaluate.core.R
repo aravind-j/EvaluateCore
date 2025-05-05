@@ -222,6 +222,9 @@
 #'   }
 #'
 #' @inheritParams chisquare.evaluate.core
+#' @param na.omit logical. If \code{TRUE}, missing values (\code{NA}) are
+#'   ignored and not included as a distinct factor level for computation.
+#'   Default is \code{TRUE}.
 #' @param base The logarithm base to be used for computation of Shannon-Weaver
 #'   Diversity Index (\mjseqn{I}). Default is 2.
 #' @param R The number of bootstrap replicates. Default is 1000.
@@ -325,7 +328,7 @@
 #' }
 #'
 diversity.evaluate.core <- function(data, names, qualitative, selected,
-                                    base = 2, R = 1000) {
+                                    base = 2, R = 1000, na.omit = TRUE) {
 
   # Checks
   checks.evaluate.core(data = data, names = names,
@@ -348,6 +351,16 @@ diversity.evaluate.core <- function(data, names, qualitative, selected,
   rm(datafcore)
 
   dataf$`[Type]` <- as.factor(dataf$`[Type]`)
+
+  if (!na.omit) {
+    dataf[, qualitative] <- lapply(dataf[, qualitative], function(x) {
+      if (any(is.na(x))) {
+        addNA(x)
+      } else {
+        x
+      }
+    })
+  }
 
   dataf <- tibble::as_tibble(dataf)
 

@@ -94,12 +94,14 @@ scv.evaluate.core <- function(data, names, quantitative, selected) {
   dataf$`[Type]` <- as.factor(dataf$`[Type]`)
 
   scv_ec <- lapply(dataf[dataf$`[Type]` == "EC", quantitative],
-                function(x) sd(x) / sqrt(length(x)))
+                function(x) {sd(x, na.rm = TRUE) /
+                    sqrt(length(x[!is.na(x)]))})
   scv_ec <- unlist(scv_ec)
   scv_ec <- mean(scv_ec) * 100
 
   scv_cs <- lapply(dataf[dataf$`[Type]` == "CS", quantitative],
-                function(x) sd(x) / sqrt(length(x)))
+                function(x) {sd(x, na.rm = TRUE) /
+                    sqrt(length(x[!is.na(x)]))})
   scv_cs <- unlist(scv_cs)
   scv_cs <- mean(scv_cs) * 100
 

@@ -38,10 +38,15 @@
 #'   the eigen vector values of principal components for EC and CS as specified
 #'   by \code{npc.plot} as a \code{ggplot2} object.}
 #'
+#' @note If there are missing values in the quantitative data, then they will be
+#'   imputed using the \code{\link[missMDA]{imputePCA}} function from
+#'   \code{\link[missMDA]{missMDA}}.
+#'
 #' @seealso \code{\link[stats]{prcomp}}
 #'
 #' @importFrom stats prcomp
 #' @importFrom reshape2 melt
+#' @importFrom missMDA imputePCA
 #' @import ggplot2
 #' @export
 #'
@@ -93,6 +98,18 @@ pca.evaluate.core <- function(data, names, quantitative, selected,
     data <- as.data.frame(data)
   }
 
+  # Imputation if missing data is present
+
+  missvcols <- unlist(lapply(data[, quantitative],
+                             function(x) TRUE %in% is.na(x)))
+  if (TRUE %in% missvcols) {
+    warning('Missing values in "data" have been imputed.')
+
+    data_impt <- missMDA::imputePCA(data[, quantitative], scale = scale)
+    data[, quantitative] <- data_impt$completeObs[, quantitative]
+  }
+
+
   dataf <- data[, c(names, quantitative)]
 
   datafcore <- dataf[dataf[, names] %in% selected, ]
@@ -105,6 +122,7 @@ pca.evaluate.core <- function(data, names, quantitative, selected,
 
   outlist <- vector(mode = "list", length = length(quantitative))
   names(outlist) <- quantitative
+
 
   ecpca <- prcomp(dataf[dataf$`[Type]` == "EC", quantitative],
                   center = center, scale = scale)

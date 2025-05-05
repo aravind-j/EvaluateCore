@@ -4,7 +4,7 @@
 \alias{rpr.evaluate.core}
 \title{Ratio of Phenotype Retained}
 \usage{
-rpr.evaluate.core(data, names, qualitative, selected)
+rpr.evaluate.core(data, names, qualitative, selected, na.omit = TRUE)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -18,6 +18,10 @@ vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
+
+\item{na.omit}{logical. If \code{TRUE}, missing values (\code{NA}) are
+ignored and not included as a distinct factor level for analysis. Default
+is \code{TRUE}.}
 }
 \value{
 The Ratio of Phenotype Retained value.

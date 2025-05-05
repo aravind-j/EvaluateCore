@@ -26,6 +26,9 @@
 #' @inheritParams snk.evaluate.core
 #' @param qualitative Name of columns with the qualitative traits as a character
 #'   vector.
+#' @param na.omit logical. If \code{TRUE}, missing values (\code{NA}) are
+#'   ignored and not included as a distinct factor level for analysis. Default
+#'   is \code{TRUE}.
 #'
 #' @return A a data frame with the following columns. \item{Trait}{The
 #'   qualitative trait.} \item{EC_No.Classes}{The number of classes in the trait
@@ -72,7 +75,8 @@
 #' chisquare.evaluate.core(data = ec, names = "genotypes",
 #'                         qualitative = qual, selected = core)
 #'
-chisquare.evaluate.core <- function(data, names, qualitative, selected) {
+chisquare.evaluate.core <- function(data, names, qualitative, selected,
+                                    na.omit = TRUE) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
@@ -95,6 +99,16 @@ chisquare.evaluate.core <- function(data, names, qualitative, selected) {
 
   dataf$`[Type]` <- as.factor(dataf$`[Type]`)
 
+  if (!na.omit) {
+    dataf[, qualitative] <- lapply(dataf[, qualitative], function(x) {
+      if (any(is.na(x))) {
+        addNA(x)
+      } else {
+        x
+      }
+    })
+  }
+
   outdf <- vector(mode = "list", length = length(qualitative))
   names(outdf) <- qualitative
 
@@ -110,20 +124,23 @@ chisquare.evaluate.core <- function(data, names, qualitative, selected) {
                                  sep = "")
     CSclasses$classfreq <- paste(CSclasses$Var1, "(", CSclasses$Freq, ")",
                                  sep = "")
-    outdf[[qualitative[i]]] <- data.frame(`Trait` = qualitative[i],
-                                          `EC_No.Classes` = length(levels(droplevels(dataf[dataf$`[Type]` == "EC",
-                                                                                           qualitative[i]]))),
-                                          `EC_Classes` =
-                                            paste(ECclasses$classfreq,
-                                                  collapse = "; "),
-                                          `CS_No.Classes` = length(levels(droplevels(dataf[dataf$`[Type]` == "CS",
-                                                                                           qualitative[i]]))),
-                                          `CS_Classes` =
-                                            paste(CSclasses$classfreq,
-                                                  collapse = "; "),
-                                          `chisq_statistic` = chiout$statistic,
-                                          `chisq_pvalue` = chiout$p.value,
-                                           stringsAsFactors = FALSE)
+    outdf[[qualitative[i]]] <-
+      data.frame(`Trait` = qualitative[i],
+                 `Count` = sum(!is.na(dataf[dataf$`[Type]` == "EC",
+                                            qualitative[i]])),
+                 `EC_No.Classes` =
+                   length(levels(droplevels(dataf[dataf$`[Type]` == "EC",
+                                                  qualitative[i]]))),
+                 `EC_Classes` = paste(ECclasses$classfreq,
+                                      collapse = "; "),
+                 `CS_No.Classes` =
+                   length(levels(droplevels(dataf[dataf$`[Type]` == "CS",
+                                                  qualitative[i]]))),
+                 `CS_Classes` = paste(CSclasses$classfreq,
+                                      collapse = "; "),
+                 `chisq_statistic` = chiout$statistic,
+                 `chisq_pvalue` = chiout$p.value,
+                 stringsAsFactors = FALSE)
     rm(chiout, ECclasses, CSclasses)
   }
 

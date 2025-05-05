@@ -25,8 +25,9 @@
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return \item{Trait}{The quantitative trait.} \item{EC_Med}{The median value
-#'   of the trait in EC.} \item{CS_Med}{The median value of the trait in CS.}
+#' @return \item{Trait}{The quantitative trait.} \item{Count}{The accession
+#'   count (excluding missing data).} \item{EC_Med}{The median value of the
+#'   trait in EC.} \item{CS_Med}{The median value of the trait in CS.}
 #'   \item{Wilcox_pvalue}{The p value of the Wilcoxon test for equality of
 #'   medians of EC and CS.} \item{Wilcox_significance}{The significance of the
 #'   Wilcoxon test for equality of medians of EC and CS.}
@@ -92,13 +93,18 @@ wilcox.evaluate.core <- function(data, names, quantitative, selected) {
   for (i in seq_along(quantitative)) {
     wilcoxout <- wilcox.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
                              dataf[dataf$`[Type]` == "CS", quantitative[i]],
-                             alternative = "two.sided")
+                             alternative = "two.sided", na.action = na.omit)
 
-    outdf[[quantitative[i]]] <- data.frame(`Trait` = quantitative[i],
-                                           `EC_Med` = stats::median(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `CS_Med` = stats::median(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `Wilcox_pvalue` = wilcoxout$p.value,
-                                           stringsAsFactors = FALSE)
+    outdf[[quantitative[i]]] <-
+      data.frame(`Trait` = quantitative[i],
+                 `Count` = sum(!is.na(dataf[dataf$`[Type]` == "EC",
+                                            quantitative[i]])),
+                 `EC_Med` = stats::median(dataf[dataf$`[Type]` == "EC",
+                                                quantitative[i]], na.rm = TRUE),
+                 `CS_Med` = stats::median(dataf[dataf$`[Type]` == "CS",
+                                                quantitative[i]], na.rm = TRUE),
+                 `Wilcox_pvalue` = wilcoxout$p.value,
+                 stringsAsFactors = FALSE)
 
     rm(wilcoxout)
   }

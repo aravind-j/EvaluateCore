@@ -137,7 +137,7 @@ checks.evaluate.core <- function(data, names, quantitative = NULL,
   missvcols <- unlist(lapply(data[, quantitative],
                              function(x) TRUE %in% is.na(x)))
   if (TRUE %in% missvcols) {
-    stop(paste('The following column(s) in "data" have missing values:\n',
+    warning(paste('The following column(s) in "data" have missing values:\n',
                paste(names(missvcols[missvcols]), collapse = ", ")))
   }
 

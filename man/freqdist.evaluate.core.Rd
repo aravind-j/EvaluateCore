@@ -13,7 +13,8 @@ freqdist.evaluate.core(
   highlight = NULL,
   include.highlight = TRUE,
   highlight.se = NULL,
-  highlight.col = "red"
+  highlight.col = "red",
+  show.count = FALSE
 )
 }
 \arguments{
@@ -45,6 +46,9 @@ names as in \code{data}.}
 the plot as a character vector of the same length as \code{highlight}. Must
 be valid colour values in R (named colours, hexadecimal representation,
 index of colours [\code{1:8}] in default R \code{palette()} etc.).}
+
+\item{show.count}{logical. If \code{TRUE}, the accession count excluding
+missing values will also be displayed. Default is \code{FALSE}.}
 }
 \value{
 A list with the \code{ggplot} objects of stacked frequency
@@ -105,6 +109,12 @@ freqdist.evaluate.core(data = ec, names = "genotypes",
                        selected = core,
                        highlight = checks, highlight.col = "red",
                        highlight.se = quant.se)
+
+freqdist.evaluate.core(data = ec, names = "genotypes",
+                       quantitative = quant, qualitative = qual,
+                       selected = core,
+                       highlight = checks, highlight.col = "red",
+                       show.count = TRUE)
 }
 
 }

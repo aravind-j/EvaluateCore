@@ -19,22 +19,25 @@
 #' Student's t Test
 #'
 #' Test difference between means of entire collection (EC) and core set (CS) for
-#' quantitative traits by Student's t test
-#' \insertCite{student_probable_1908}{EvaluateCore}.
+#' quantitative traits by Student's t test (in particular it's adaptation for
+#' comparison of groups with unequal variances known as Welch's two sample
+#' t-test)
+#' \insertCite{student_probable_1908,welch_generalization_1947}{EvaluateCore}.
 #'
 #' @inheritParams snk.evaluate.core
 #'
-#' @return \item{Trait}{The
-#'   quantitative trait.} \item{EC_Min}{The minimum value of the trait in EC.}
-#'   \item{EC_Max}{The maximum value of the trait in EC.} \item{EC_Mean}{The
-#'   mean value of the trait in EC.} \item{EC_SE}{The standard error of the
-#'   trait in EC.} \item{CS_Min}{The minimum value of the trait in CS.}
-#'   \item{CS_Max}{The maximum value of the trait in CS.} \item{CS_Mean}{The
-#'   mean value of the trait in CS.} \item{CS_SE}{The standard error of the
-#'   trait in CS.} \item{ttest_pvalue}{The p value of the Student's t
-#'   test for equality of means of EC and CS.} \item{ttest_significance}{The
-#'   significance of the Student's t test for equality of means of EC
-#'   and CS.}
+#' @return \item{Trait}{The quantitative trait.} \item{Count}{The accession
+#'   count (excluding missing data).} \item{Df}{The degrees of freedom for the
+#'   test.} \item{EC_Min}{The minimum value of the trait in EC.}
+#'   \item{EC_Max}{The maximum value of the trait in EC.}
+#'   \item{EC_Mean}{The mean value of the trait in EC.} \item{EC_SE}{The
+#'   standard error of the trait in EC.} \item{CS_Min}{The minimum value of the
+#'   trait in CS.} \item{CS_Max}{The maximum value of the trait in CS.}
+#'   \item{CS_Mean}{The mean value of the trait in CS.} \item{CS_SE}{The
+#'   standard error of the trait in CS.} \item{ttest_pvalue}{The p value of the
+#'   Student's t test for equality of means of EC and CS.}
+#'   \item{ttest_significance}{The significance of the Student's t test for
+#'   equality of means of EC and CS.}
 #'
 #' @seealso \code{\link[stats]{t.test}}
 #'
@@ -96,19 +99,42 @@ ttest.evaluate.core <- function(data, names, quantitative, selected) {
   for (i in seq_along(quantitative)) {
 
     tout <- t.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
-                  dataf[dataf$`[Type]` == "CS", quantitative[i]])
+                  dataf[dataf$`[Type]` == "CS", quantitative[i]],
+                  na.action = na.omit)
 
-    outdf[[quantitative[i]]] <- data.frame(`Trait` = quantitative[i],
-                                           `EC_Min` = min(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `EC_Max` = max(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `EC_Mean` = mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `EC_SE` = sd(dataf[dataf$`[Type]` == "EC", quantitative[i]]) / sqrt(length(dataf[dataf$`[Type]` == "EC", quantitative[i]])),
-                                           `CS_Min` = min(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `CS_Max` = max(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `CS_Mean` = mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `CS_SE` = sd(dataf[dataf$`[Type]` == "CS", quantitative[i]]) / sqrt(length(dataf[dataf$`[Type]` == "CS", quantitative[i]])),
-                                           `ttest_pvalue` = tout$p.value,
-                                           stringsAsFactors = FALSE)
+    outdf[[quantitative[i]]] <-
+      data.frame(`Trait` = quantitative[i],
+                 `Count` = sum(!is.na(dataf[dataf$`[Type]` == "EC",
+                                            quantitative[i]])),
+                 `Df` = tout$parameter,
+                 `EC_Min` = min(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                                na.rm = TRUE),
+                 `EC_Max` = max(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                                na.rm = TRUE),
+                 `EC_Mean` = mean(dataf[dataf$`[Type]` == "EC",
+                                        quantitative[i]],
+                                  na.rm = TRUE),
+                 `EC_SE` = stats::sd(dataf[dataf$`[Type]` == "EC",
+                                           quantitative[i]],
+                                     na.rm = TRUE) /
+                   sqrt(length(dataf[dataf$`[Type]` == "EC" &
+                                       !is.na(dataf[, quantitative[i]]),
+                                     quantitative[i]])),
+                 `CS_Min` = min(dataf[dataf$`[Type]` == "CS", quantitative[i]],
+                                na.rm = TRUE),
+                 `CS_Max` = max(dataf[dataf$`[Type]` == "CS", quantitative[i]],
+                                na.rm = TRUE),
+                 `CS_Mean` = mean(dataf[dataf$`[Type]` == "CS",
+                                        quantitative[i]],
+                                  na.rm = TRUE),
+                 `CS_SE` = stats::sd(dataf[dataf$`[Type]` == "CS",
+                                           quantitative[i]],
+                                     na.rm = TRUE) /
+                   sqrt(length(dataf[dataf$`[Type]` == "CS" &
+                                       !is.na(dataf[, quantitative[i]]),
+                                     quantitative[i]])),
+                 `ttest_pvalue` = tout$p.value,
+                 stringsAsFactors = FALSE)
 
     rm(tout)
   }

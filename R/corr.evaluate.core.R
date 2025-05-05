@@ -36,6 +36,9 @@
 #'   correlation matrices, it's p value and significance (*: p \mjseqn{\leq}
 #'   0.01; **: p \mjseqn{\leq} 0.05; ns: p \mjseqn{ > } 0.05).}
 #'
+#' @note Missing values are ignored for the computation of correlation
+#'   coefficient.
+#'
 #' @seealso \code{\link[stats]{cor}},
 #'   \code{\link[ggcorrplot:ggcorrplot]{cor_pmat}}
 #'   \code{\link[ggcorrplot]{ggcorrplot}}, \code{\link[vegan]{mantel}}
@@ -118,7 +121,8 @@ corr.evaluate.core <- function(data, names, quantitative, qualitative,
   # EC corr
   #########
   eccorr <- stats::cor(dataf[dataf$`[Type]` == "EC",
-                             c(quantitative, qualitative)])
+                             c(quantitative, qualitative)],
+                       use = "complete.obs")
   ecpmat <- ggcorrplot::cor_pmat(dataf[dataf$`[Type]` == "EC",
                                        c(quantitative, qualitative)])
 
@@ -131,7 +135,8 @@ corr.evaluate.core <- function(data, names, quantitative, qualitative,
  # CS corr
   #########
   cscorr <- stats::cor(dataf[dataf$`[Type]` == "CS",
-                             c(quantitative, qualitative)])
+                             c(quantitative, qualitative)],
+                       use = "complete.obs")
   cspmat <- ggcorrplot::cor_pmat(dataf[dataf$`[Type]` == "CS",
                                        c(quantitative, qualitative)])
 

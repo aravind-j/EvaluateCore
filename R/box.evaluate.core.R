@@ -24,12 +24,15 @@
 #' between entire collection (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
+#' @param show.count logical. If \code{TRUE}, the accession count excluding
+#'   missing values will also be displayed. Default is \code{FALSE}.
 #'
 #' @return A list with the \code{ggplot} objects of box plots of CS and EC for
 #'   each trait specified as \code{quantitative}.
 #'
 #' @seealso \code{\link[graphics]{boxplot}}, \code{\link[ggplot2]{geom_boxplot}}
 #'
+#' @importFrom dplyr summarise n
 #' @import ggplot2
 #' @export
 #'
@@ -60,7 +63,11 @@
 #' box.evaluate.core(data = ec, names = "genotypes",
 #'                   quantitative = quant, selected = core)
 #'
-box.evaluate.core <- function(data, names, quantitative, selected) {
+#' box.evaluate.core(data = ec, names = "genotypes",
+#'                   quantitative = quant, selected = core, show.count = TRUE)
+#'
+box.evaluate.core <- function(data, names, quantitative, selected,
+                              show.count = FALSE) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        quantitative = quantitative,
@@ -88,16 +95,35 @@ box.evaluate.core <- function(data, names, quantitative, selected) {
 
   for (i in seq_along(quantitative)) {
 
+    if (show.count) {
+      dataf_count <-
+        dplyr::summarise(.data = dataf[!is.na(dataf[, quantitative[i]]),],
+                         .by = c("[Type]"),
+                         Count = dplyr::n(),
+                         Mean = mean(get(quantitative[i]), na.rm = TRUE))
+      dataf_count <- dataf_count[order(dataf_count$`[Type]`), ]
+    }
+
     # Generate the box plot
-    outlist[[i]] <- ggplot(dataf, aes_string(y = quantitative2[i],
-                                             x = "`[Type]`")) +
+    outlist[[i]] <- ggplot(dataf[!is.na(dataf[, quantitative[i]]), ],
+                           aes_string(y = quantitative2[i],
+                                      x = "`[Type]`")) +
       geom_boxplot(fill = "lemonchiffon") +
       stat_summary(fun = mean, geom = "point",
-                   shape = 18, size = 3, color = "red") +
+                   shape = 18, size = 3, color = "red", na.rm = TRUE) +
       xlab("Collection") +
       ylab(quantitative[i]) +
       theme_bw() +
       theme(axis.text = element_text(colour = "black"))
+
+    if (show.count) {
+      outlist[[i]] <-
+        outlist[[i]] +
+        scale_x_discrete(labels = paste(dataf_count$`[Type]`,
+                                        "\n(n = ", dataf_count$Count, ")",
+                                        sep = ""))
+      rm(dataf_count)
+    }
 
   }
 

@@ -25,13 +25,14 @@
 #' @inheritParams snk.evaluate.core
 #'
 #' @return A data frame with the following columns \item{Trait}{The quantitative
-#'   trait.} \item{EC_V}{The variance of the EC.} \item{CS_V}{The variance of
-#'   the CS.} \item{EC_CV}{The coefficient of variance of the EC.}
-#'   \item{CS_CV}{The coefficient of variance of the CS.}
-#'   \item{Levene_Fvalue}{The test statistic.} \item{Levene_pvalue}{The p value
-#'   for the test statistic.} \item{Levene_significance}{The significance of the
-#'   test statistic (*: p \mjseqn{\leq} 0.01; **: p \mjseqn{\leq} 0.05; ns: p
-#'   \mjseqn{ > } 0.05).}
+#'   trait.} \item{Count}{The accession count (excluding missing data).}
+#'   \item{Df}{The degrees of freedom for the test.} \item{EC_V}{The variance of
+#'   the EC.} \item{CS_V}{The variance of the CS.} \item{EC_CV}{The coefficient
+#'   of variance of the EC.} \item{CS_CV}{The coefficient of variance of the
+#'   CS.} \item{Levene_Fvalue}{The test statistic.} \item{Levene_pvalue}{The p
+#'   value for the test statistic.} \item{Levene_significance}{The significance
+#'   of the test statistic (*: p \mjseqn{\leq} 0.01; **: p \mjseqn{\leq} 0.05;
+#'   ns: p \mjseqn{ > } 0.05).}
 #'
 #' @seealso \code{\link[car]{leveneTest}}
 #'
@@ -99,18 +100,32 @@ levene.evaluate.core <- function(data, names, quantitative, selected) {
     frmla <- stats::formula(paste("`", quantitative[i], "` ~ `[Type]`",
                                   sep = ""))
 
-    leveneout <- car::leveneTest(frmla, data = dataf)
+    leveneout <-
+      car::leveneTest(frmla,
+                      data = dataf[!is.na(dataf[, quantitative[i]]), ])
 
-    outdf[[quantitative[i]]] <- data.frame(`Trait` = quantitative[i],
-                                           `EC_V` = stats::var(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `CS_V` = stats::var(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `EC_CV` = stats::sd(dataf[dataf$`[Type]` == "EC", quantitative[i]]) / mean(dataf[dataf$`[Type]` == "EC", quantitative[i]]),
-                                           `CS_CV` = stats::sd(dataf[dataf$`[Type]` == "CS", quantitative[i]]) / mean(dataf[dataf$`[Type]` == "CS", quantitative[i]]),
-                                           `Levene_Fvalue` =
-                                             leveneout["group", "F value"],
-                                           `Levene_pvalue` =
-                                             leveneout["group", "Pr(>F)"],
-                                           stringsAsFactors = FALSE)
+    outdf[[quantitative[i]]] <-
+      data.frame(`Trait` = quantitative[i],
+                 `Count` = sum(!is.na(dataf[dataf$`[Type]` == "EC",
+                                            quantitative[i]])),
+                 `Df` = leveneout["group", "Df"],
+                 `EC_V` = stats::var(dataf[dataf$`[Type]` == "EC",
+                                           quantitative[i]], na.rm = TRUE),
+                 `CS_V` = stats::var(dataf[dataf$`[Type]` == "CS",
+                                           quantitative[i]], na.rm = TRUE),
+                 `EC_CV` = stats::sd(dataf[dataf$`[Type]` == "EC",
+                                           quantitative[i]], na.rm = TRUE) /
+                   mean(dataf[dataf$`[Type]` == "EC",
+                              quantitative[i]], na.rm = TRUE),
+                 `CS_CV` = stats::sd(dataf[dataf$`[Type]` == "CS",
+                                           quantitative[i]], na.rm = TRUE) /
+                   mean(dataf[dataf$`[Type]` == "CS",
+                              quantitative[i]], na.rm = TRUE),
+                 `Levene_Fvalue` =
+                   leveneout["group", "F value"],
+                 `Levene_pvalue` =
+                   leveneout["group", "Pr(>F)"],
+                 stringsAsFactors = FALSE)
 
     rm(leveneout, frmla)
   }

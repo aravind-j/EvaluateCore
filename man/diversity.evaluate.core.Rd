@@ -4,7 +4,15 @@
 \alias{diversity.evaluate.core}
 \title{Diversity Indices}
 \usage{
-diversity.evaluate.core(data, names, qualitative, selected, base = 2, R = 1000)
+diversity.evaluate.core(
+  data,
+  names,
+  qualitative,
+  selected,
+  base = 2,
+  R = 1000,
+  na.omit = TRUE
+)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -23,6 +31,10 @@ core collection and present in the \code{names} column.}
 Diversity Index (\mjseqn{I}). Default is 2.}
 
 \item{R}{The number of bootstrap replicates. Default is 1000.}
+
+\item{na.omit}{logical. If \code{TRUE}, missing values (\code{NA}) are
+ignored and not included as a distinct factor level for computation.
+Default is \code{TRUE}.}
 }
 \value{
 A list with three data frames as follows. \item{simpson}{

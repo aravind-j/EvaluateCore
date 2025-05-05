@@ -67,7 +67,8 @@
 #' coverage.evaluate.core(data = ec, names = "genotypes",
 #'                        qualitative = qual, selected = core)
 #'
-coverage.evaluate.core <- function(data, names, qualitative, selected) {
+coverage.evaluate.core <- function(data, names, qualitative, selected,
+                                   na.omit = TRUE) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
@@ -79,7 +80,7 @@ coverage.evaluate.core <- function(data, names, qualitative, selected) {
   }
 
   cdiff <- chisquare.evaluate.core(data, names, qualitative,
-                                   selected)
+                                   selected, na.omit = na.omit)
 
   coverage <- (sum(cdiff$CS_No.Classes /
                      cdiff$EC_No.Classes) / length(qualitative)) * 100

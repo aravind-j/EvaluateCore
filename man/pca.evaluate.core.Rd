@@ -55,6 +55,11 @@ Compute Principal Component Analysis Statistics
 probability distributions of quantitative traits between entire collection
 (EC) and core set (CS).
 }
+\note{
+If there are missing values in the quantitative data, then they will be
+  imputed using the \code{\link[missMDA]{imputePCA}} function from
+  \code{\link[missMDA]{missMDA}}.
+}
 \examples{
 
 data("cassava_CC")

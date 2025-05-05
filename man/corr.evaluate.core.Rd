@@ -39,6 +39,10 @@ between traits, plot correlation matrices as correlograms
 correlation \insertCite{legendre_interpretation_2012}{EvaluateCore} between
 them to compare entire collection (EC) and core set (CS). \loadmathjax
 }
+\note{
+Missing values are ignored for the computation of correlation
+  coefficient.
+}
 \examples{
 
 data("cassava_CC")

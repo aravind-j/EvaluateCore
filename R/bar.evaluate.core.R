@@ -22,6 +22,11 @@
 #' qualitative traits between entire collection (EC) and core set (CS).
 #'
 #' @inheritParams chisquare.evaluate.core
+#' @param na.omit logical. If \code{TRUE}, missing values (\code{NA}) are
+#'   ignored and not included in the plot as a distinct factor level. Default is
+#'   \code{TRUE}.
+#' @param show.count logical. If \code{TRUE}, the accession count excluding
+#'   missing values will also be displayed. Default is \code{FALSE}.
 #'
 #' @return A list with the \code{ggplot} objects of relative frequency bar plots
 #'   of CS and EC for each trait specified as \code{qualitative}.
@@ -29,6 +34,7 @@
 #'
 #' @seealso \code{\link[graphics]{barplot}}, \code{\link[ggplot2]{geom_bar}}
 #'
+#' @importFrom dplyr summarise n
 #' @import ggplot2
 #' @export
 #'
@@ -54,8 +60,12 @@
 #'
 #' bar.evaluate.core(data = ec, names = "genotypes",
 #'                   qualitative = qual, selected = core)
+#' bar.evaluate.core(data = ec, names = "genotypes",
+#'                   qualitative = qual, selected = core,
+#'                   show.count = TRUE)
 #'
-bar.evaluate.core <- function(data, names, qualitative, selected) {
+bar.evaluate.core <- function(data, names, qualitative, selected,
+                              na.omit = TRUE, show.count = FALSE) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
@@ -76,6 +86,8 @@ bar.evaluate.core <- function(data, names, qualitative, selected) {
   dataf <- rbind(dataf, datafcore)
   rm(datafcore)
 
+  dataf$`[Type]` <- as.factor(dataf$`[Type]`)
+
   outlist <- vector(mode = "list", length = length(qualitative))
   names(outlist) <- qualitative
 
@@ -83,8 +95,32 @@ bar.evaluate.core <- function(data, names, qualitative, selected) {
 
   for (i in seq_along(qualitative)) {
 
+    if (show.count) {
+
+      dataf_type_levels <-  levels(dataf$`[Type]`)
+
+      dataf_count <-
+        dplyr::summarise(.data = dataf[!is.na(dataf[, qualitative[i]]),],
+                         .by = c("[Type]"),
+                         Count = dplyr::n())
+      dataf_count <- dataf_count[order(dataf_count$`[Type]`), ]
+
+      levels(dataf$`[Type]`) <- paste(dataf_count$`[Type]`,
+                                      " (n = ", dataf_count$Count, ")",
+                                      sep = "")
+
+      rm(dataf_count)
+    }
+
+    if(na.omit) {
+      outlist[[i]] <- ggplot(dataf[!is.na(dataf[, qualitative[i]]), ],
+                             aes_string(qualitative2[i]))
+    } else {
+      outlist[[i]] <- ggplot(dataf, aes_string(qualitative2[i]))
+    }
+
     # Generate the bar plot
-    outlist[[i]] <- ggplot(dataf, aes_string(qualitative2[i])) +
+    outlist[[i]] <- outlist[[i]] +
       geom_bar(aes(y = ..prop.., group = 1),
                fill = "gray80", colour = "black") +
       ylab("Relative frequency") +
@@ -93,6 +129,10 @@ bar.evaluate.core <- function(data, names, qualitative, selected) {
       theme_bw() +
       theme(axis.text = element_text(colour = "black"),
             axis.text.x = element_text(angle = 45, hjust = 1))
+
+    if (show.count) {
+      levels(dataf$`[Type]`) <- dataf_type_levels
+    }
 
   }
 

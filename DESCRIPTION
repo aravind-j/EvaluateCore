@@ -52,6 +52,7 @@ Imports:
     gridExtra,
     kSamples,
     mathjaxr,
+    missMDA,
     psych,
     reshape2,
     Rdpack,

@@ -9,7 +9,8 @@ qq.evaluate.core(
   names,
   quantitative,
   selected,
-  annotate = c("none", "kl", "ks", "ad")
+  annotate = c("none", "kl", "ks", "ad"),
+  show.count = FALSE
 )
 }
 \arguments{
@@ -30,6 +31,9 @@ distributions of CS and EC as an annotation to the QQ plot. Either
 \code{"none"} (no annotation (Default)) or \code{"kl"} (Kullback-Leibler
 divergence) or  \code{"ks"} (Kolmogorov-Smirnov distance) or  \code{"ad"}
 (Anderson-Darling distance).}
+
+\item{show.count}{logical. If \code{TRUE}, the accession count excluding
+missing values will also be displayed. Default is \code{FALSE}.}
 }
 \value{
 A list with the \code{ggplot} objects of QQ plots of CS vs EC for
@@ -63,6 +67,9 @@ ec[, qual] <- lapply(ec[, qual],
 
 qq.evaluate.core(data = ec, names = "genotypes",
                  quantitative = quant, selected = core)
+
+qq.evaluate.core(data = ec, names = "genotypes",
+                 quantitative = quant, selected = core, show.count = TRUE)
 
 qq.evaluate.core(data = ec, names = "genotypes",
                  quantitative = quant, selected = core, annotate = "kl")

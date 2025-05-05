@@ -4,7 +4,7 @@
 \alias{box.evaluate.core}
 \title{Box Plots}
 \usage{
-box.evaluate.core(data, names, quantitative, selected)
+box.evaluate.core(data, names, quantitative, selected, show.count = FALSE)
 }
 \arguments{
 \item{data}{The data as a data frame object. The data frame should possess
@@ -18,6 +18,9 @@ character vector.}
 
 \item{selected}{Character vector with the names of individuals selected in
 core collection and present in the \code{names} column.}
+
+\item{show.count}{logical. If \code{TRUE}, the accession count excluding
+missing values will also be displayed. Default is \code{FALSE}.}
 }
 \value{
 A list with the \code{ggplot} objects of box plots of CS and EC for
@@ -51,6 +54,9 @@ ec[, qual] <- lapply(ec[, qual],
 
 box.evaluate.core(data = ec, names = "genotypes",
                   quantitative = quant, selected = core)
+
+box.evaluate.core(data = ec, names = "genotypes",
+                  quantitative = quant, selected = core, show.count = TRUE)
 
 }
 \references{

@@ -29,7 +29,8 @@
 #' @inheritParams snk.evaluate.core
 #'
 #' @return A data frame with the following columns. \item{Trait}{The
-#'   quantitative trait.} \item{KL_Distance}{The Kullback-Leibler distance
+#'   quantitative trait.} \item{Count}{The accession count (excluding missing
+#'   data).} \item{KL_Distance}{The Kullback-Leibler distance
 #'   \insertCite{kullback_information_1951}{EvaluateCore} between EC and CS.}
 #'   \item{KS_Distance}{The Kolmogorov-Smirnov distance
 #'   \insertCite{kolmogorov_sulla_1933,smirnov_table_1948}{EvaluateCore} between
@@ -104,30 +105,44 @@ pdfdist.evaluate.core <- function(data, names, quantitative, selected) {
   for (i in seq_along(quantitative)) {
 
     # Kullback–Leibler distance
-    nbinscs <- grDevices::nclass.FD(dataf[dataf$`[Type]` == "CS",
+    nbinscs <- grDevices::nclass.FD(dataf[dataf$`[Type]` == "CS" &
+                                            !is.na(dataf[, quantitative[i]]),
                                           quantitative[i]])
-    rangeec <- range(dataf[dataf$`[Type]` == "EC", quantitative[i]])
+    rangeec <- range(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+                     na.rm = TRUE)
 
-    g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC", quantitative[i]],
+    g1 <- entropy::discretize(dataf[dataf$`[Type]` == "EC" &
+                                      !is.na(dataf[, quantitative[i]]),
+                                    quantitative[i]],
                               nbinscs, rangeec)
     g1[g1 == 0] <- 0.000000001 #Smoothing
-    g2 <- entropy::discretize(dataf[dataf$`[Type]` == "CS", quantitative[i]],
+    g2 <- entropy::discretize(dataf[dataf$`[Type]` == "CS" &
+                                      !is.na(dataf[, quantitative[i]]),
+                                    quantitative[i]],
                               nbinscs, rangeec)
     g2[g2 == 0] <- 0.000000001 #Smoothing
 
     kl <- entropy::KL.plugin(g1, g2)
 
     # Kolmogorov-Smirnov distance
-    ks <- ks.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
-                  dataf[dataf$`[Type]` == "CS", quantitative[i]],
+    ks <- ks.test(dataf[dataf$`[Type]` == "EC" &
+                          !is.na(dataf[, quantitative[i]]), quantitative[i]],
+                  dataf[dataf$`[Type]` == "CS" &
+                          !is.na(dataf[, quantitative[i]]), quantitative[i]],
                   exact = FALSE)
 
     # Anderson-Darling distance
-    ad <- kSamples::ad.test(dataf[dataf$`[Type]` == "EC", quantitative[i]],
-                            dataf[dataf$`[Type]` == "CS", quantitative[i]],
+    ad <- kSamples::ad.test(dataf[dataf$`[Type]` == "EC" &
+                                    !is.na(dataf[, quantitative[i]]),
+                                  quantitative[i]],
+                            dataf[dataf$`[Type]` == "CS" &
+                                    !is.na(dataf[, quantitative[i]]),
+                                  quantitative[i]],
                             dist = TRUE)
 
     outdf[[i]] <- data.frame(Trait = quantitative[i],
+                             `Count` = sum(!is.na(dataf[dataf$`[Type]` == "EC",
+                                                        quantitative[i]])),
                              `KL_Distance` = kl,
                              `KS_Distance` = ks$statistic,
                              `KS_pvalue` = ks$p.value,

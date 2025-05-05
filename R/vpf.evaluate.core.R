@@ -68,7 +68,8 @@
 #' vpf.evaluate.core(data = ec, names = "genotypes",
 #'                   qualitative = qual, selected = core)
 #'
-vpf.evaluate.core <- function(data, names, qualitative, selected) {
+vpf.evaluate.core <- function(data, names, qualitative, selected,
+                              na.omit = TRUE) {
   # Checks
   checks.evaluate.core(data = data, names = names,
                        qualitative = qualitative,
@@ -90,6 +91,16 @@ vpf.evaluate.core <- function(data, names, qualitative, selected) {
   rm(datafcore)
 
   dataf$`[Type]` <- as.factor(dataf$`[Type]`)
+
+  if (!na.omit) {
+    dataf[, qualitative] <- lapply(dataf[, qualitative], function(x) {
+      if (any(is.na(x))) {
+        addNA(x)
+      } else {
+        x
+      }
+    })
+  }
 
   vpf_ec <- lapply(dataf[dataf$`[Type]` == "EC", qualitative],
                 pf_deviance)

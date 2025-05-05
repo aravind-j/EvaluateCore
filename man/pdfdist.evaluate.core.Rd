@@ -21,7 +21,8 @@ core collection and present in the \code{names} column.}
 }
 \value{
 A data frame with the following columns. \item{Trait}{The
-  quantitative trait.} \item{KL_Distance}{The Kullback-Leibler distance
+  quantitative trait.} \item{Count}{The accession count (excluding missing
+  data).} \item{KL_Distance}{The Kullback-Leibler distance
   \insertCite{kullback_information_1951}{EvaluateCore} between EC and CS.}
   \item{KS_Distance}{The Kolmogorov-Smirnov distance
   \insertCite{kolmogorov_sulla_1933,smirnov_table_1948}{EvaluateCore} between
