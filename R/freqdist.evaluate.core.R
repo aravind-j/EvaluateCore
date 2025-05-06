@@ -229,7 +229,7 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
   outlist <- vector(mode = "list", length = length(traits))
   names(outlist) <- traits
 
-  traits2 <- paste("`", traits, "`", sep = "")
+  # traits2 <- paste("`", traits, "`", sep = "")
 
   dataf$`[Type]` <- factor(dataf$`[Type]`)
   dataf$`[Type]` <- factor(dataf$`[Type]`, levels(dataf$`[Type]`)[c(2, 1)])
@@ -272,7 +272,8 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
     NN <- length(dataf[, traits[i]])
 
     if (traits[i] %in% quantitative) {
-      G1 <- ggplot(dataf, aes_string(x = traits2[i], fill = "`[Type]`")) +
+      G1 <- ggplot(data = dataf,
+                   aes(x = .data[[traits[i]]], fill = `[Type]`)) +
         geom_histogram(position = "stack", alpha = 0.5,
                        colour = "black", binwidth = bw) +
         scale_fill_manual(values = c("lemonchiffon", "grey20")) +
@@ -281,7 +282,8 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
         theme_bw() +
         theme(axis.text = element_text(colour = "black"))
     } else {
-      G1 <- ggplot(dataf, aes_string(x = traits2[i], fill = "`[Type]`")) +
+      G1 <- ggplot(data = dataf,
+                   aes(x = .data[[traits[i]]], fill = `[Type]`)) +
         # geom_histogram(position = "stack", alpha = 0.5,
         #                colour = "black", stat = "count") +
         stat_count(position = "stack", alpha = 0.5,
@@ -334,7 +336,8 @@ freqdist.evaluate.core <- function(data, names, quantitative, qualitative,
 
       }
 
-      G2 <- ggplot(sedf, aes_string(y = names, x = traits2[i])) +
+      G2 <- ggplot(data = sedf,
+                   aes(y = .data[[names]], x = .data[[traits[i]]])) +
         geom_point(colour = highlight.col) +
         labs(x = NULL, y = NULL) +
         theme_bw() +

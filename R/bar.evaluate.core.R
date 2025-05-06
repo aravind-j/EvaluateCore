@@ -91,7 +91,7 @@ bar.evaluate.core <- function(data, names, qualitative, selected,
   outlist <- vector(mode = "list", length = length(qualitative))
   names(outlist) <- qualitative
 
-  qualitative2 <- paste("`", qualitative, "`", sep = "")
+  # qualitative2 <- paste("`", qualitative, "`", sep = "")
 
   for (i in seq_along(qualitative)) {
 
@@ -114,14 +114,14 @@ bar.evaluate.core <- function(data, names, qualitative, selected,
 
     if(na.omit) {
       outlist[[i]] <- ggplot(dataf[!is.na(dataf[, qualitative[i]]), ],
-                             aes_string(qualitative2[i]))
+                             aes(.data[[qualitative[i]]]))
     } else {
-      outlist[[i]] <- ggplot(dataf, aes_string(qualitative2[i]))
+      outlist[[i]] <- ggplot(dataf, aes(.data[[qualitative[i]]]))
     }
 
     # Generate the bar plot
     outlist[[i]] <- outlist[[i]] +
-      geom_bar(aes(y = ..prop.., group = 1),
+      geom_bar(aes(y = after_stat(prop), group = 1),
                fill = "gray80", colour = "black") +
       ylab("Relative frequency") +
       xlab(qualitative[i]) +
