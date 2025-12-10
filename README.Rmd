@@ -108,6 +108,8 @@ news(package='EvaluateCore')
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.3875930)
 
+<!--
+
 ## CRAN checks
 
 ```{r, echo = FALSE}
@@ -140,7 +142,7 @@ library(RCurl)
 if (url.exists(chkurl)) {
   chklink <- paste("(", chkurl,  ")", sep = "")
 } else {
-  chklink <- "(https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)"
+  chklink <- "(https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.org.in.html)"
 }
 
 osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
@@ -209,6 +211,8 @@ names(os_index) <- c(paste("[![Linux](https://shields.io/badge/Linux--9cf?logo=L
 pack_rows(kosdf2, index = os_index)
 
 ```
+
+-->
 
 ## Citing `EvaluateCore`
 To cite the methods in the package use:
