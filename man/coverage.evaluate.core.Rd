@@ -29,7 +29,7 @@ The Class Coverage value.
 \description{
 Compute the Class Coverage \insertCite{kim_PowerCore_2007}{EvaluateCore} to
 compare the distribution frequencies of qualitative traits between entire
-collection (EC) and core set (CS). \loadmathjax
+collection (EC) and core set (CS).
 }
 \details{
 Class Coverage \insertCite{kim_PowerCore_2007}{EvaluateCore} is computed as

@@ -27,7 +27,6 @@ Compute the Synthetic Variation Coefficient
 (\mjteqn{CV\\\%}{CV\\\\\\\%}{CV\%})
 \insertCite{dong_exploration_1998,dong_genetic_2001}{EvaluateCore} to compare
 quantitative traits of the entire collection (EC) and core set (CS).
-\loadmathjax
 }
 \details{
 Synthetic Variation Coefficient (\mjteqn{CV\\\%}{CV\\\\\\\%}{CV\%})

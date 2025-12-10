@@ -20,7 +20,7 @@
 #'
 #' Compute the Variable Rate of Coefficient of Variation (\mjseqn{VR})
 #' \insertCite{hu_methods_2000}{EvaluateCore} to compare quantitative traits of
-#' the entire collection (EC) and core set (CS). \loadmathjax
+#' the entire collection (EC) and core set (CS).
 #'
 #' The Variable Rate of Coefficient of Variation (\mjseqn{VR}) is computed as
 #' follows.

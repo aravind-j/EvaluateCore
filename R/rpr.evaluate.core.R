@@ -20,7 +20,7 @@
 #'
 #' Compute the Ratio of Phenotype Retained (\mjseqn{RPR})
 #' \insertCite{li_studies_2002}{EvaluateCore} to compare qualitative traits
-#' between entire collection (EC) and core set (CS). \loadmathjax
+#' between entire collection (EC) and core set (CS).
 #'
 #' Ratio of Phenotype Retained (\mjseqn{RPR})
 #' \insertCite{kim_PowerCore_2007}{EvaluateCore} is computed as follows.

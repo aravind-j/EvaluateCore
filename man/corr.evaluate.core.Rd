@@ -37,7 +37,7 @@ Compute phenotypic correlations \insertCite{pearson_note_1895}{EvaluateCore}
 between traits, plot correlation matrices as correlograms
 \insertCite{friendly_corrgrams_2002}{EvaluateCore} and calculate mantel
 correlation \insertCite{legendre_interpretation_2012}{EvaluateCore} between
-them to compare entire collection (EC) and core set (CS). \loadmathjax
+them to compare entire collection (EC) and core set (CS).
 }
 \note{
 Missing values are ignored for the computation of correlation

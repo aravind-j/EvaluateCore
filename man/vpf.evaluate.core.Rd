@@ -29,7 +29,7 @@ The Variance of Phenotypic Frequency values for EC and CS.
 \description{
 Compute the Variance of Phenotypic Frequency (\mjseqn{VPF})
 \insertCite{li_studies_2002}{EvaluateCore} to compare qualitative traits
-between entire collection (EC) and core set (CS). \loadmathjax
+between entire collection (EC) and core set (CS).
 }
 \details{
 Variance of Phenotypic Frequency (\mjseqn{VPF})

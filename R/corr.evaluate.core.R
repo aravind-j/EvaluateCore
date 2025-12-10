@@ -22,7 +22,7 @@
 #' between traits, plot correlation matrices as correlograms
 #' \insertCite{friendly_corrgrams_2002}{EvaluateCore} and calculate mantel
 #' correlation \insertCite{legendre_interpretation_2012}{EvaluateCore} between
-#' them to compare entire collection (EC) and core set (CS). \loadmathjax
+#' them to compare entire collection (EC) and core set (CS).
 #'
 #' @inheritParams snk.evaluate.core
 #' @inheritParams chisquare.evaluate.core

@@ -22,7 +22,6 @@
 #' core set (CS) for quantitative traits by Sign test (\mjseqn{+} versus
 #' \mjseqn{-})
 #' \insertCite{basigalup_development_1995,tai_core_2001}{EvaluateCore}.
-#' \loadmathjax
 #'
 #' The test statistic for Sign test (\mjseqn{\chi^{2}}) is computed as follows.
 #'

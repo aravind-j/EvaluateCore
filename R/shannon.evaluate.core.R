@@ -22,7 +22,7 @@
 #' (\mjseqn{H'_{max}}) and Shannon Equitability Index (\mjseqn{E_{H}})
 #' \insertCite{shannon_mathematical_1949}{EvaluateCore} to compare the
 #' phenotypic diversity for qualitative traits between entire collection (EC)
-#' and core set (CS). \loadmathjax
+#' and core set (CS).
 #'
 #' Shannon-Weaver Diversity Index (\mjseqn{H'}) is computed as follows.
 #'

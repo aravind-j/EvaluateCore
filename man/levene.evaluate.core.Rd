@@ -33,7 +33,7 @@ A data frame with the following columns \item{Trait}{The quantitative
 \description{
 Test for  of variances of the entire collection (EC) and core set (CS) for
 quantitative traits by Levene's test
-\insertCite{levene_robust_1960}{EvaluateCore}. \loadmathjax
+\insertCite{levene_robust_1960}{EvaluateCore}.
 }
 \examples{
 

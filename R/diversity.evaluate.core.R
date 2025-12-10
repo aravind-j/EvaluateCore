@@ -43,7 +43,6 @@
 #' \insertCite{hennink_interpretation_1990}{EvaluateCore}} } \item{McIntosh
 #' Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
 #' \insertCite{mcintosh_index_1967,peet_measurement_1974}{EvaluateCore}} } }
-#' \loadmathjax
 #'
 #' @section Details: The diversity indices and the corresponding statistical
 #'   tests implemented in \code{diversity.evaluate.core} are as follows.

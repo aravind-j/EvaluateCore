@@ -26,7 +26,7 @@
 #' \insertCite{wang_assessment_2007}{EvaluateCore}} \item{Changeable Rate of
 #' Minimum (\mjseqn{CR_{\min}}) \insertCite{wang_assessment_2007}{EvaluateCore}}
 #' \item{Changeable Rate of Mean (\mjseqn{CR_{\mu}})
-#' \insertCite{wang_assessment_2007}{EvaluateCore}} } \loadmathjax
+#' \insertCite{wang_assessment_2007}{EvaluateCore}} }
 #'
 #' The Coincidence Rate of Range (\mjseqn{CR}) is computed as follows.
 #'

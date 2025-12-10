@@ -24,7 +24,6 @@
 #' Entry-to-entry distance (\mjteqn{E\textrm{-}E}{E\text{-}EN}{E-E})
 #' \insertCite{odong_quality_2013}{EvaluateCore}
 #' to evaluate a core set (CS) selected from an entire collection (EC).
-#' \loadmathjax
 #'
 # #' This function is a wrapper around the
 # #' \code{\link[corehunter]{evaluateCore}}

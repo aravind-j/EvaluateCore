@@ -56,7 +56,7 @@ between the mean squared Euclidean distance among accessions
 (\mjteqn{\overline{d}D\\\%}{\overline{d}D\\\\\\\%}{\overline{d}D\%})
 \insertCite{studnicki_comparing_2013}{EvaluateCore} \item Percentage of range
 ratios smaller than 0.70 (\mjseqn{S_{RR_{0.7}}})
-\insertCite{diwan_methods_1995}{EvaluateCore} } \loadmathjax
+\insertCite{diwan_methods_1995}{EvaluateCore} }
 }
 \details{
 The differences are computed as follows.

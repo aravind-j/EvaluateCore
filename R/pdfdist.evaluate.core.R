@@ -24,7 +24,6 @@
 #' Anderson-Darling distances
 #' \insertCite{anderson_asymptotic_1952}{EvaluateCore} between the probability
 #' distributions of collection (EC) and core set (CS) for quantitative traits.
-#' \loadmathjax
 #'
 #' @inheritParams snk.evaluate.core
 #'
