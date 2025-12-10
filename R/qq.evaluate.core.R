@@ -73,6 +73,7 @@
 #' ec[, qual] <- lapply(ec[, qual],
 #'                      function(x) factor(as.factor(x)))
 #'
+#' \donttest{
 #' qq.evaluate.core(data = ec, names = "genotypes",
 #'                  quantitative = quant, selected = core)
 #'
@@ -87,6 +88,7 @@
 #'
 #' qq.evaluate.core(data = ec, names = "genotypes",
 #'                  quantitative = quant, selected = core, annotate = "ad")
+#' }
 #'
 qq.evaluate.core <- function(data, names, quantitative, selected,
                              annotate = c("none", "kl", "ks", "ad"),

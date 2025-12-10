@@ -60,11 +60,13 @@
 #' ec[, qual] <- lapply(ec[, qual],
 #'                      function(x) factor(as.factor(x)))
 #'
+#' \donttest{
 #' box.evaluate.core(data = ec, names = "genotypes",
 #'                   quantitative = quant, selected = core)
 #'
 #' box.evaluate.core(data = ec, names = "genotypes",
 #'                   quantitative = quant, selected = core, show.count = TRUE)
+#' }
 #'
 box.evaluate.core <- function(data, names, quantitative, selected,
                               show.count = FALSE) {

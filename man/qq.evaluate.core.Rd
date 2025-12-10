@@ -65,6 +65,7 @@ qual <- c("CUAL", "LNGS", "PTLC", "DSTA", "LFRT", "LBTEF", "CBTR", "NMLB",
 ec[, qual] <- lapply(ec[, qual],
                      function(x) factor(as.factor(x)))
 
+\donttest{
 qq.evaluate.core(data = ec, names = "genotypes",
                  quantitative = quant, selected = core)
 
@@ -79,6 +80,7 @@ qq.evaluate.core(data = ec, names = "genotypes",
 
 qq.evaluate.core(data = ec, names = "genotypes",
                  quantitative = quant, selected = core, annotate = "ad")
+}
 
 }
 \references{

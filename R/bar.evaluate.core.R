@@ -58,11 +58,13 @@
 #' ec[, qual] <- lapply(ec[, qual],
 #'                      function(x) factor(as.factor(x)))
 #'
+#' \donttest{
 #' bar.evaluate.core(data = ec, names = "genotypes",
 #'                   qualitative = qual, selected = core)
 #' bar.evaluate.core(data = ec, names = "genotypes",
 #'                   qualitative = qual, selected = core,
 #'                   show.count = TRUE)
+#' }
 #'
 bar.evaluate.core <- function(data, names, qualitative, selected,
                               na.omit = TRUE, show.count = FALSE) {
