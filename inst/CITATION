@@ -1,11 +1,7 @@
 citHeader("To cite the R package 'EvaluateCore' in publications use:")
 
-if(!exists("meta") || is.null(meta)) meta <- packageDescription("EvaluateCore")
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
-if (!length(year)) {
- year <- format(packageDate("EvaluateCore"), "%Y")
-}
-vers <- paste("R package version", meta$Version)
+year <- "2025"
+vers <- "R package version 0.1.4"
 
 bibentry(bibtype  = "Manual",
          title  = "EvaluateCore: Quality Evaluation of Core Collections",

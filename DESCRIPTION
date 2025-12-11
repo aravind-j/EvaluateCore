@@ -1,6 +1,6 @@
 Package: EvaluateCore
 Title: Quality Evaluation of Core Collections
-Version: 0.1.3.9000
+Version: 0.1.4
 Authors@R: c(
     person(given = "J.", family = "Aravind",
            email = "j.aravind@icar.org.in",
