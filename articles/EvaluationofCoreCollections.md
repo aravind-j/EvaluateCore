@@ -59,7 +59,7 @@ library(EvaluateCore)
 ```
 
     --------------------------------------------------------------------------------
-    Welcome to EvaluateCore version 0.1.3.9000
+    Welcome to EvaluateCore version 0.1.4
 
 
     # To know whats new in this version type:
@@ -75,8 +75,8 @@ library(EvaluateCore)
 
 ## Version History
 
-The current version of the package is 0.1.3.9000. The previous versions
-are as follows.
+The current version of the package is 0.1.4. The previous versions are
+as follows.
 
 **Table 1.** Version history of `EvaluateCore` `R` package.
 
