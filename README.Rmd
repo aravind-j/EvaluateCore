@@ -108,8 +108,6 @@ news(package='EvaluateCore')
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.3875930)
 
-<!--
-
 ## CRAN checks
 
 ```{r, echo = FALSE}
@@ -212,8 +210,6 @@ pack_rows(kosdf2, index = os_index)
 
 ```
 
--->
-
 ## Citing `EvaluateCore`
 To cite the methods in the package use:
 
@@ -236,6 +232,9 @@ cit <- citation("EvaluateCore")
 # class(cit) <- oc
 if (is.null(cit[1]$year)) {
   cit[1]$year <- format(Sys.Date(), "%Y")
+  cit$textVersion <- gsub("()", 
+                          paste("(", format(Sys.Date(), "%Y"), ")", sep =""), 
+                          cit$textVersion, fixed = TRUE)
 }
 cit
 ```

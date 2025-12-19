@@ -1,7 +1,7 @@
 citHeader("To cite the R package 'EvaluateCore' in publications use:")
 
-year <- "2025"
-vers <- "R package version 0.1.4"
+year <- sub("-.*", "", meta$Date)
+vers <- sprintf("R package version %s", meta$Version)
 
 bibentry(bibtype  = "Manual",
          title  = "EvaluateCore: Quality Evaluation of Core Collections",
