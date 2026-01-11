@@ -526,7 +526,7 @@ diversity.test <- function(ECx, CSx, base = 2, R = 1000) {
     EC_I.rel <- EC_I / EC_I.max
     CS_I.rel <- CS_I / CS_I.max
 
-    # Hutcheson t-test (SShannon-Weaver Index)
+    # Hutcheson t-test (Shannon-Weaver Index)
     #---------------------------------------------------------------------------
 
     EC_I.V <- ((sum(count1 * ((log(count1, base = base)) ^ 2))) -
