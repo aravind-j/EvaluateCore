@@ -59,7 +59,7 @@ library(EvaluateCore)
 ```
 
     --------------------------------------------------------------------------------
-    Welcome to EvaluateCore version 0.1.4
+    Welcome to EvaluateCore version 0.1.4.9000
 
 
     # To know whats new in this version type:

@@ -473,7 +473,7 @@ sessionInfo()
 
     ## R version 4.5.2 (2025-10-31)
     ## Platform: aarch64-apple-darwin20
-    ## Running under: macOS Sequoia 15.7.2
+    ## Running under: macOS Sequoia 15.7.3
     ## 
     ## Matrix products: default
     ## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
@@ -492,16 +492,16 @@ sessionInfo()
     ## [1] corehunter_3.2.3 rJava_1.0-11     readxl_1.4.5    
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] vctrs_0.6.5        cli_3.6.5          knitr_1.50         rlang_1.1.6       
-    ##  [5] xfun_0.54          generics_0.1.4     textshaping_1.0.4  jsonlite_2.0.0    
-    ##  [9] glue_1.8.0         DT_0.34.0          htmltools_0.5.9    ragg_1.5.0        
-    ## [13] sass_0.4.10        rmarkdown_2.30     cellranger_1.1.0   crosstalk_1.2.2   
-    ## [17] tibble_3.3.0       evaluate_1.0.5     jquerylib_0.1.4    fastmap_1.2.0     
-    ## [21] yaml_2.3.12        lifecycle_1.0.4    naturalsort_0.1.3  compiler_4.5.2    
-    ## [25] dplyr_1.1.4        fs_1.6.6           pkgconfig_2.0.3    htmlwidgets_1.6.4 
-    ## [29] systemfonts_1.3.1  digest_0.6.39      R6_2.6.1           tidyselect_1.2.1  
-    ## [33] pillar_1.11.1      magrittr_2.0.4     bslib_0.9.0        tools_4.5.2       
-    ## [37] pkgdown_2.2.0.9000 cachem_1.1.0       desc_1.4.3
+    ##  [1] vctrs_0.6.5        cli_3.6.5          knitr_1.51         rlang_1.1.7       
+    ##  [5] xfun_0.55          otel_0.2.0         generics_0.1.4     textshaping_1.0.4 
+    ##  [9] jsonlite_2.0.0     glue_1.8.0         DT_0.34.0          htmltools_0.5.9   
+    ## [13] ragg_1.5.0         sass_0.4.10        rmarkdown_2.30     cellranger_1.1.0  
+    ## [17] crosstalk_1.2.2    tibble_3.3.1       evaluate_1.0.5     jquerylib_0.1.4   
+    ## [21] fastmap_1.2.0      naturalsort_0.1.3  yaml_2.3.12        lifecycle_1.0.5   
+    ## [25] compiler_4.5.2     dplyr_1.1.4        fs_1.6.6           pkgconfig_2.0.3   
+    ## [29] htmlwidgets_1.6.4  systemfonts_1.3.1  digest_0.6.39      R6_2.6.1          
+    ## [33] tidyselect_1.2.1   pillar_1.11.1      magrittr_2.0.4     bslib_0.9.0       
+    ## [37] tools_4.5.2        pkgdown_2.2.0.9000 cachem_1.1.0       desc_1.4.3
 
 ## References
 

@@ -31,7 +31,7 @@ traits between entire collection (EC) and core set (CS).
     Zeven 1990)
 
   - Relative Shannon-Weaver Diversity Index or Shannon Equitability
-    Index (\\H'\\) (Hennink and Zeven 1990)
+    Index (\\H'\\) or Pielou's Evenness (\\J\\) (Hennink and Zeven 1990)
 
 - McIntosh Diversity Index
 
@@ -391,8 +391,8 @@ accessions.
 \\H\_{max} = \log\_{2}(k)\\\\ \textrm{OR} \\\\ H\_{max} = \ln(k)\\
 
 The relative Shannon-Weaver diversity index or Shannon equitability
-index (\\H'\\) is the Shannon diversity index (\\I\\) divided by the
-maximum diversity (\\H\_{max}\\).
+index (\\H'\\) or Pielou's Evenness (\\J\\) is the Shannon diversity
+index (\\I\\) divided by the maximum diversity (\\H\_{max}\\).
 
 \\H' = \frac{H}{H\_{max}}\\
 

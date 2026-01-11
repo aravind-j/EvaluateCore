@@ -2,6 +2,8 @@
 
 ## EvaluateCore 0.1.4
 
+CRAN release: 2025-12-18
+
 ### NEW FUNCTIONS:
 
 - `rpr.evaluate.core` - Added Ratio of Phenotype Retained (Li et al.,
