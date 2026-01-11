@@ -122,6 +122,7 @@ Shannon-Weaver or Shannon-Weiner Diversity Index (\mjseqn{H})
 \item{Maximum Shannon-Weaver Diversity Index (\mjseqn{H_{max}})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Relative
 Shannon-Weaver Diversity Index or Shannon Equitability Index (\mjseqn{H'})
+or Pielou's Evenness (\mjseqn{J})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} } \item{McIntosh
 Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
 \insertCite{mcintosh_index_1967,peet_measurement_1974}{EvaluateCore}} } }
@@ -222,8 +223,8 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
   \mjsdeqn{H_{max} = \log_{2}(k)\;\; \textrm{OR} \;\; H_{max} = \ln(k)}
 
   The relative Shannon-Weaver diversity index or Shannon equitability index
-  (\mjseqn{H'}) is the Shannon diversity index (\mjseqn{I}) divided by the
-  maximum diversity (\mjseqn{H_{max}}).
+  (\mjseqn{H'}) or Pielou's Evenness (\mjseqn{J}) is the Shannon diversity
+  index (\mjseqn{I}) divided by the maximum diversity (\mjseqn{H_{max}}).
 
   \mjsdeqn{H' = \frac{H}{H_{max}}}
 
