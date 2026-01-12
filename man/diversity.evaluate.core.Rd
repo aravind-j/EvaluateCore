@@ -46,8 +46,9 @@ A list with three data frames as follows. \item{simpson}{
   \item{EC_D.max}{The Maximum Simpson's Index of Diversity
   (\mjseqn{D_{max}}) for EC.} \item{EC_D.inv}{The Simpson's Reciprocal
   Index (\mjseqn{D_{R}}) for EC.} \item{EC_D.rel}{The Relative
-  Reciprocal Index (\mjseqn{D'}) for EC.} \item{EC_d.V}{The variance
-  of \mjseqn{d} for EC according to
+  Reciprocal Index (\mjseqn{D'}) for EC.} \item{EC_D.e}{The Shannon's
+  evenness or equitability (\mjseqn{D_{e}}) for EC.} \item{EC_d.V}{The
+  variance of \mjseqn{d} for EC according to
   \insertCite{simpson_measurement_1949}{EvaluateCore}.}
   \item{EC_d.boot.V}{The bootstrap variance of \mjseqn{d} for EC.}
   \item{CS_d}{The Simpson's Index (\mjseqn{d}) for CS.}
@@ -55,8 +56,9 @@ A list with three data frames as follows. \item{simpson}{
   \item{CS_D.max}{The Maximum Simpson's Index of Diversity
   (\mjseqn{D_{max}}) for CS.} \item{CS_D.inv}{The Simpson's Reciprocal
   Index (\mjseqn{D_{R}}) for CS.} \item{CS_D.rel}{The Relative
-  Reciprocal Index (\mjseqn{D'}) for CS.} \item{CS_d.V}{The variance
-  of \mjseqn{d} for CS according to
+  Reciprocal Index (\mjseqn{D'}) for CS.} \item{CS_D.e}{The Shannon's
+  evenness or equitability (\mjseqn{D_{e}}) for CS.} \item{CS_d.V}{The
+  variance of \mjseqn{d} for CS according to
   \insertCite{simpson_measurement_1949}{EvaluateCore}.}
   \item{CS_d.boot.V}{The bootstrap variance of \mjseqn{d} for CS.}
   \item{d.t.df}{The degrees of freedom for t test.}
@@ -72,16 +74,18 @@ A list with three data frames as follows. \item{simpson}{
   CS.} \item{EC_I}{The Shannon-Weaver Diversity Index (\mjseqn{I}) for
   EC.} \item{EC_I.max}{The Maximum Shannon-Weaver Diversity Index
   (\mjseqn{I_{max}}) for EC.} \item{EC_I.rel}{The Relative
-  Shannon-Weaver Diversity Index (\mjseqn{I'}) for EC.}
-  \item{EC_I.V}{The variance of \mjseqn{I} for EC according to
-  \insertCite{hutcheson_test_1970}{EvaluateCore}.}
+  Shannon-Weaver Diversity Index (\mjseqn{I'}) for EC.} \item{EC_I.ens}{The
+  Effective Number of Species for Shannon-Weaver Diversity Index
+  (\mjseqn{ENS_{H}}) for EC} \item{EC_I.V}{The variance of \mjseqn{I} for EC
+  according to \insertCite{hutcheson_test_1970}{EvaluateCore}.}
   \item{EC_I.boot.V}{The bootstrap variance of \mjseqn{I} for EC.}
   \item{CS_I}{The Shannon-Weaver Diversity Index (\mjseqn{I}) for CS.}
   \item{CS_I.max}{The Maximum Shannon-Weaver Diversity Index
   (\mjseqn{I_{max}}) for CS.} \item{CS_I.rel}{The Relative
-  Shannon-Weaver Diversity Index (\mjseqn{I'}) for CS.}
-  \item{CS_I.V}{The variance of \mjseqn{I} for CS according to
-  \insertCite{hutcheson_test_1970}{EvaluateCore}.}
+  Shannon-Weaver Diversity Index (\mjseqn{I'}) for CS.} \item{CS_I.ens}{The
+  Effective Number of Species for Shannon-Weaver Diversity Index
+  (\mjseqn{ENS_{H}}) for CS.} \item{CS_I.V}{The variance of \mjseqn{I} for
+  CS according to \insertCite{hutcheson_test_1970}{EvaluateCore}.}
   \item{CS_I.boot.V}{The bootstrap variance of \mjseqn{I} for CS.}
   \item{I.t.stat}{The t statistic.} \item{I.t.df}{The degrees
   of freedom for t test.} \item{I.t.pvalue}{The p value for t test.}
@@ -106,26 +110,34 @@ entire collection (EC) and core set (CS). \itemize{ \item{Simpson's and
 related indices} \itemize{ \item{Simpson's Index (\mjseqn{d})
 \insertCite{simpson_measurement_1949,peet_measurement_1974}{EvaluateCore}}
 \item{Simpson's Index of Diversity or Gini's Diversity Index or Gini-Simpson
-Index or Nei's Diversity Index or Nei's Variation Index (\mjseqn{D})
-\insertCite{gini_variabilita_1912,gini_variabilita_1912-2,greenberg_measurement_1956,berger_diversity_1970,nei_analysis_1973,peet_measurement_1974}{EvaluateCore}}
+Index or Nei's Diversity Index or Nei's Variation Index (\mjseqn{D}) or
+Hurlbert’s probability of interspecific encounter (\mjseqn{PIE})
+\insertCite{gini_variabilita_1912,gini_variabilita_1912-2,greenberg_measurement_1956,berger_diversity_1970,hurlbert_nonconcept_1971,nei_analysis_1973,peet_measurement_1974}{EvaluateCore}}
 \item{Maximum Simpson's Index of Diversity or Maximum Nei's
 Diversity/Variation Index (\mjseqn{D_{max}})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Simpson's
-Reciprocal Index or Hill's \mjseqn{N_{2}} (\mjseqn{D_{R}})
+Reciprocal Index or Hill's \mjseqn{N_{2}} (\mjseqn{D_{R}}) or Effective
+number of Species (\mjseqn{ENS_{d}})
 \insertCite{williams_patterns_1964,hill_diversity_1973}{EvaluateCore}}
 \item{Relative Simpson's Index of Diversity or Relative Nei's
 Diversity/Variation Index (\mjseqn{D'})
-\insertCite{hennink_interpretation_1990}{EvaluateCore}} }
+\insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Simpson’s
+evenness or equitability (\mjseqn{D_{e}}) } }
 \item{Shannon-Weaver and related indices} \itemize{ \item{Shannon or
-Shannon-Weaver or Shannon-Weiner Diversity Index (\mjseqn{H})
-\insertCite{shannon_mathematical_1949,peet_measurement_1974}{EvaluateCore}}
+Shannon-Weaver or Shannon-Wiener Diversity Index or Shannon entropy
+(\mjseqn{H}) \insertCite{shannon_mathematical_1949,peet_measurement_1974}{EvaluateCore}}
 \item{Maximum Shannon-Weaver Diversity Index (\mjseqn{H_{max}})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Relative
 Shannon-Weaver Diversity Index or Shannon Equitability Index (\mjseqn{H'})
 or Pielou's Evenness (\mjseqn{J})
-\insertCite{hennink_interpretation_1990}{EvaluateCore}} } \item{McIntosh
-Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
-\insertCite{mcintosh_index_1967,peet_measurement_1974}{EvaluateCore}} } }
+\insertCite{pielou_measurement_1966,hennink_interpretation_1990}{EvaluateCore}}
+\item{Effective number of species for the Shannon -Weaver Diversity Index
+(\mjseqn{ENS_{H}}) or Hill's \mjseqn{N_{1}}
+\insertCite{macarthur_Patterns_1965,hill_diversity_1973}{EvaluateCore}} }
+\item{McIntosh's measures of diversity} \itemize{ \item{McIntosh Diversity
+Index (\mjseqn{D_{Mc}}) \insertCite{mcintosh_index_1967,peet_measurement_1974}{EvaluateCore}}
+\item{McIntosh Evenness Index (\mjseqn{E_{Mc}})
+\insertCite{pielou_Ecological_1975}{EvaluateCore}} } }
 }
 \section{Details}{
  The diversity indices and the corresponding statistical
@@ -147,7 +159,7 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
 
   \mjseqn{d} is subtracted from 1 to give Simpson's index of diversity
   (\mjseqn{D})
-  \insertCite{greenberg_measurement_1956,berger_diversity_1970,peet_measurement_1974,hennink_interpretation_1990}{EvaluateCore}
+  \insertCite{greenberg_measurement_1956,berger_diversity_1970,hurlbert_nonconcept_1971,peet_measurement_1974,hennink_interpretation_1990}{EvaluateCore}
    originally suggested by
   \insertCite{gini_variabilita_1912,gini_variabilita_1912-2;textual}{EvaluateCore}
    and described in literature as Gini's diversity index or Gini-Simpson
@@ -168,7 +180,8 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
   (\mjseqn{D_{R}})
   \insertCite{williams_patterns_1964,hennink_interpretation_1990}{EvaluateCore}
    and can range from 1 to \mjseqn{k}. This was also described in
-  \insertCite{hill_diversity_1973;textual}{EvaluateCore} as (\mjseqn{N_{2}}).
+  \insertCite{hill_diversity_1973;textual}{EvaluateCore} as \mjseqn{N_{2}} or
+  as Effective number of Species (\mjseqn{ENS_{d}}).
 
   \mjsdeqn{D_{R} = \frac{1}{d}}
 
@@ -177,6 +190,11 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
   is defined as follows \insertCite{peet_measurement_1974}{EvaluateCore}.
 
   \mjsdeqn{D' = \frac{D}{D_{max}}}
+
+  Simpson’s evenness or equitability (\mjseqn{D_{e}} is described as follows
+  \insertCite{pielou_measurement_1966,hill_diversity_1973}{EvaluateCore}.
+
+  \mjsdeqn{D_{e} = \frac{1}{d \cdot k}}
 
   Differences in Simpson's diversity index for qualitative traits of EC and
   CS can be tested by a t-test using the associated variance estimate
@@ -208,8 +226,9 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
 
   \mjsdeqn{H = -\sum_{i=1}^{k}p_{i} \log_{2}(p_{i})}
 
-  \mjseqn{H} is described as Shannon or Shannon-Weaver or Shannon-Weiner
-  diversity index in literature.
+  \mjseqn{H} is described as Shannon or Shannon-Weaver or Shannon-Wiener
+  diversity index or Shannon entropy in literature
+  \insertCite{shannon_mathematical_1949,peet_measurement_1974}{EvaluateCore}.
 
   Alternatively, \mjseqn{H} is also computed using natural logarithm instead
   of logarithm to base 2.
@@ -218,15 +237,21 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
 
   The maximum value of \mjseqn{H} (\mjseqn{H_{max}}) is \mjseqn{\ln(k)}. This
   value occurs when each phenotypic class for a trait has the same proportion
-  of accessions.
+  of accessions \insertCite{hennink_interpretation_1990}{EvaluateCore}.
 
   \mjsdeqn{H_{max} = \log_{2}(k)\;\; \textrm{OR} \;\; H_{max} = \ln(k)}
 
   The relative Shannon-Weaver diversity index or Shannon equitability index
   (\mjseqn{H'}) or Pielou's Evenness (\mjseqn{J}) is the Shannon diversity
-  index (\mjseqn{I}) divided by the maximum diversity (\mjseqn{H_{max}}).
+  index (\mjseqn{I}) divided by the maximum diversity (\mjseqn{H_{max}})
+  \insertCite{pielou_measurement_1966,hennink_interpretation_1990}{EvaluateCore}.
 
   \mjsdeqn{H' = \frac{H}{H_{max}}}
+
+  \insertCite{macarthur_Patterns_1965}{EvaluateCore} described the Effective
+  number of species for the Shannon index (\mjseqn{ENS_{H}}) as follows.
+
+  \mjsdeqn{ ENS_{H} = e^{H}}
 
   Differences in Shannon-Weaver diversity index for qualitative traits of EC
   and CS can be tested by Hutcheson t-test
@@ -254,7 +279,7 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
 
   }
 
-  \subsection{McIntosh Diversity Index}{A similar index of diversity was
+  \subsection{McIntosh's Measure of Diversity}{A similar index of diversity was
   described by \insertCite{mcintosh_index_1967;textual}{EvaluateCore} as
   follows (\mjseqn{D_{Mc}}) \insertCite{peet_measurement_1974}{EvaluateCore}.
 
@@ -263,6 +288,12 @@ Diversity Index} \itemize{ \item{McIntosh Diversity Index (\mjseqn{D_{Mc}})
   Where, \mjseqn{n_{i}} denotes the number of accessions in the \mjseqn{i}th
   phenotypic class for a trait and \mjseqn{N} is the total number of
   accessions so that \mjseqn{p_{i} = {n_{i}}/{N}}.}
+
+  An additional measure of evenness was proposed by
+  \insertCite{pielou_Ecological_1975;textual}{EvaluateCore} as follows.
+
+  \mjsdeqn{E_{Mc} = \frac{N - \sqrt{\sum_{i=1}^{k}n_{i}^2}}{N -
+  \frac{N}{\sqrt{S}}}}
 
   \subsection{Testing for difference with bootstrapping}{Bootstrap statistics
   are employed to test the difference between the Simpson, Shannon-Weaver and
