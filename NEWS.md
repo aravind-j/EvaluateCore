@@ -1,4 +1,9 @@
 
+# EvaluateCore  0.1.5
+
+## UPDATED FUNCTIONS:
+* `diversity.evaluate.core` - Added more diversity indices such as Simpson’s evenness or equitability, Effective number of species for the Shannon -Weaver Diversity Index and McIntosh Evenness Index.
+
 # EvaluateCore  0.1.4
 
 ## NEW FUNCTIONS:
