@@ -411,8 +411,8 @@ diversity.evaluate.core <- function(data, names, qualitative, selected,
                      lapply(div.indices,
                             function(x) {x[["shannon"]]}))
   mcintosh <- do.call(rbind,
-                     lapply(div.indices,
-                            function(x) {x[["mcintosh"]]}))
+                      lapply(div.indices,
+                             function(x) {x[["mcintosh"]]}))
 
   out <- list(simpson = data.frame(simpson),
               shannon = data.frame(shannon),
@@ -606,14 +606,14 @@ diversity.test <- function(ECx, CSx, base = 2, R = 1000) {
     }
 
     EC_I.boot <- boot(data = x1,
-                    statistic = shannon.boot,
-                    R = 1000,
-                    base = base)
+                      statistic = shannon.boot,
+                      R = 1000,
+                      base = base)
 
     CS_I.boot <-  boot(data = x2,
-                     statistic = shannon.boot,
-                     R = 1000,
-                     base = base)
+                       statistic = shannon.boot,
+                       R = 1000,
+                       base = base)
 
     EC_I.boot.V <- as.vector(var(EC_I.boot$t))
     CS_I.boot.V <- as.vector(var(CS_I.boot$t))
@@ -731,8 +731,8 @@ diversity.test <- function(ECx, CSx, base = 2, R = 1000) {
                             I.boot.z.stat = I.boot.z.stat,
                             I.boot.z.pvalue = I.boot.z.pvalue,
                             I.boot.z.significance = ifelse(I.boot.z.pvalue <= 0.01, "**",
-                                                      ifelse(I.boot.z.pvalue <= 0.05,
-                                                             "*", "ns"))),
+                                                           ifelse(I.boot.z.pvalue <= 0.05,
+                                                                  "*", "ns"))),
                 mcintosh = c(EC_No.Classes = k1,
                              CS_No.Classes = k2,
                              EC_D.Mc = EC_D.Mc,
