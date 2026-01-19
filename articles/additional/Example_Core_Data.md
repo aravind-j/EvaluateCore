@@ -492,8 +492,8 @@ sessionInfo()
     ## [1] corehunter_3.2.3 rJava_1.0-11     readxl_1.4.5    
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] vctrs_0.6.5        cli_3.6.5          knitr_1.51         rlang_1.1.7       
-    ##  [5] xfun_0.55          otel_0.2.0         generics_0.1.4     textshaping_1.0.4 
+    ##  [1] vctrs_0.7.0        cli_3.6.5          knitr_1.51         rlang_1.1.7       
+    ##  [5] xfun_0.56          otel_0.2.0         generics_0.1.4     textshaping_1.0.4 
     ##  [9] jsonlite_2.0.0     glue_1.8.0         DT_0.34.0          htmltools_0.5.9   
     ## [13] ragg_1.5.0         sass_0.4.10        rmarkdown_2.30     cellranger_1.1.0  
     ## [17] crosstalk_1.2.2    tibble_3.3.1       evaluate_1.0.5     jquerylib_0.1.4   

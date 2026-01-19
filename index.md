@@ -30,7 +30,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/EvaluateCore.s
 [![Project Status:
 WIP](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2026--01--12-yellowgreen.svg)](https://github.com/aravind-j/EvaluateCore/)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2026--01--19-yellowgreen.svg)](https://github.com/aravind-j/EvaluateCore/)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3875930.svg)](https://doi.org/10.5281/zenodo.3875930)
 [![Website -
