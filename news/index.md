@@ -10,8 +10,6 @@
 
 ## EvaluateCore 0.1.4
 
-CRAN release: 2025-12-18
-
 ### NEW FUNCTIONS:
 
 - `rpr.evaluate.core` - Added Ratio of Phenotype Retained (Li et al.,
@@ -43,8 +41,6 @@ CRAN release: 2025-12-18
 
 ## EvaluateCore 0.1.3
 
-CRAN release: 2022-07-03
-
 ### NEW FUNCTIONS:
 
 - `diversity.evaluate.core` - Upgraded `shannon.evaluate.core` (now
@@ -67,8 +63,6 @@ CRAN release: 2022-07-03
 
 ## EvaluateCore 0.1.2
 
-CRAN release: 2021-06-12
-
 ### OTHER NOTES:
 
 - Converted all equations in Rd files to `MathJax`using `mathjaxr`.
@@ -76,8 +70,6 @@ CRAN release: 2021-06-12
   no `/data` folder).
 
 ## EvaluateCore 0.1.1
-
-CRAN release: 2020-06-03
 
 - First release
 
