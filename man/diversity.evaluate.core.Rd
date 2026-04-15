@@ -75,7 +75,7 @@ A list with three data frames as follows. \item{simpson}{
   EC.} \item{EC_I.max}{The Maximum Shannon-Weaver Diversity Index
   (\mjseqn{I_{max}}) for EC.} \item{EC_I.rel}{The Relative
   Shannon-Weaver Diversity Index (\mjseqn{I'}) for EC.} \item{EC_I.ens}{The
-  Effective Number of Species for Shannon-Weaver Diversity Index
+  Effective Number of Species (or Classes) for Shannon-Weaver Diversity Index
   (\mjseqn{ENS_{H}}) for EC} \item{EC_I.V}{The variance of \mjseqn{I} for EC
   according to \insertCite{hutcheson_test_1970}{EvaluateCore}.}
   \item{EC_I.boot.V}{The bootstrap variance of \mjseqn{I} for EC.}
@@ -83,7 +83,7 @@ A list with three data frames as follows. \item{simpson}{
   \item{CS_I.max}{The Maximum Shannon-Weaver Diversity Index
   (\mjseqn{I_{max}}) for CS.} \item{CS_I.rel}{The Relative
   Shannon-Weaver Diversity Index (\mjseqn{I'}) for CS.} \item{CS_I.ens}{The
-  Effective Number of Species for Shannon-Weaver Diversity Index
+  Effective Number of Species (or Classes) for Shannon-Weaver Diversity Index
   (\mjseqn{ENS_{H}}) for CS.} \item{CS_I.V}{The variance of \mjseqn{I} for
   CS according to \insertCite{hutcheson_test_1970}{EvaluateCore}.}
   \item{CS_I.boot.V}{The bootstrap variance of \mjseqn{I} for CS.}
@@ -96,9 +96,11 @@ A list with three data frames as follows. \item{simpson}{
   \item{I.boot.z.significance}{The significance of z score.}} }
   \item{mcintosh}{ \describe{\item{EC_No.Classes}{The number of
   classes in the trait for EC.} \item{CS_No.Classes}{The number of
-  classes in the trait for CS.} \item{EC_D.Mc}{The McIntosh Index
-  (\mjseqn{D_{Mc}}) for EC.} \item{CS_D.Mc}{The McIntosh Index
-  (\mjseqn{D_{Mc}}) for CS.} \item{M.boot.z.stat}{The bootstrap z
+  classes in the trait for CS.} \item{EC_D.Mc}{The McIntosh Diversity Index
+  (\mjseqn{D_{Mc}}) for EC.} \item{EC_E.Mc}{The McIntosh Evenness Index
+  (\mjseqn{E_{Mc}}) for EC.} \item{CS_D.Mc}{The McIntosh Diversity Index
+  (\mjseqn{D_{Mc}}) for CS.} \item{CS_E.Mc}{The McIntosh Evenness Index
+  (\mjseqn{E_{Mc}}) for CS.} \item{M.boot.z.stat}{The bootstrap z
   score.} \item{M.boot.z.df}{The degrees of freedom for bootstrap z
   score.} \item{M.boot.z.pvalue}{The p value of z score.}
   \item{M.boot.z.significance}{The significance of z score.}} }
@@ -117,12 +119,13 @@ Hurlbert’s probability of interspecific encounter (\mjseqn{PIE})
 Diversity/Variation Index (\mjseqn{D_{max}})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Simpson's
 Reciprocal Index or Hill's \mjseqn{N_{2}} (\mjseqn{D_{R}}) or Effective
-number of Species (\mjseqn{ENS_{d}})
+number of Species (or Classes) (\mjseqn{ENS_{d}})
 \insertCite{williams_patterns_1964,hill_diversity_1973}{EvaluateCore}}
 \item{Relative Simpson's Index of Diversity or Relative Nei's
 Diversity/Variation Index (\mjseqn{D'})
 \insertCite{hennink_interpretation_1990}{EvaluateCore}} \item{Simpson’s
-evenness or equitability (\mjseqn{D_{e}}) } }
+evenness or equitability (\mjseqn{D_{e}})
+\insertCite{pielou_measurement_1966,hill_diversity_1973}{EvaluateCore}} }
 \item{Shannon-Weaver and related indices} \itemize{ \item{Shannon or
 Shannon-Weaver or Shannon-Wiener Diversity Index or Shannon entropy
 (\mjseqn{H}) \insertCite{shannon_mathematical_1949,peet_measurement_1974}{EvaluateCore}}
@@ -131,9 +134,9 @@ Shannon-Weaver or Shannon-Wiener Diversity Index or Shannon entropy
 Shannon-Weaver Diversity Index or Shannon Equitability Index (\mjseqn{H'})
 or Pielou's Evenness (\mjseqn{J})
 \insertCite{pielou_measurement_1966,hennink_interpretation_1990}{EvaluateCore}}
-\item{Effective number of species for the Shannon -Weaver Diversity Index
-(\mjseqn{ENS_{H}}) or Hill's \mjseqn{N_{1}}
-\insertCite{macarthur_Patterns_1965,hill_diversity_1973}{EvaluateCore}} }
+\item{Effective number of species (or Classes) for the Shannon - Weaver
+Diversity Index (\mjseqn{ENS_{H}}) or Hill's \mjseqn{N_{1}}
+\insertCite{macarthur_patterns_1965,hill_diversity_1973}{EvaluateCore}} }
 \item{McIntosh's measures of diversity} \itemize{ \item{McIntosh Diversity
 Index (\mjseqn{D_{Mc}}) \insertCite{mcintosh_index_1967,peet_measurement_1974}{EvaluateCore}}
 \item{McIntosh Evenness Index (\mjseqn{E_{Mc}})
@@ -143,7 +146,7 @@ Index (\mjseqn{D_{Mc}}) \insertCite{mcintosh_index_1967,peet_measurement_1974}{E
  The diversity indices and the corresponding statistical
   tests implemented in \code{diversity.evaluate.core} are as follows.
 
-  \subsection{Simpson's and related indices}{Simpson's index (\mjseqn{d})
+  \subsection{Simpson's and Related Indices}{Simpson's index (\mjseqn{d})
   which estimates the probability that two accessions randomly selected will
   belong to the same phenotypic class of a trait, is computed as follows
   \insertCite{simpson_measurement_1949,peet_measurement_1974}{EvaluateCore}.
@@ -181,7 +184,7 @@ Index (\mjseqn{D_{Mc}}) \insertCite{mcintosh_index_1967,peet_measurement_1974}{E
   \insertCite{williams_patterns_1964,hennink_interpretation_1990}{EvaluateCore}
    and can range from 1 to \mjseqn{k}. This was also described in
   \insertCite{hill_diversity_1973;textual}{EvaluateCore} as \mjseqn{N_{2}} or
-  as Effective number of Species (\mjseqn{ENS_{d}}).
+  as Effective number of Species (or Classes) (\mjseqn{ENS_{d}}).
 
   \mjsdeqn{D_{R} = \frac{1}{d}}
 
@@ -220,7 +223,7 @@ Index (\mjseqn{D_{Mc}}) \insertCite{mcintosh_index_1967,peet_measurement_1974}{E
 
   }
 
-  \subsection{Shannon-Weaver and related indices}{An index of information
+  \subsection{Shannon-Weaver and Related Indices}{An index of information
   \mjseqn{H}, was described by
   \insertCite{shannon_mathematical_1949;textual}{EvaluateCore} as follows.
 
@@ -248,10 +251,11 @@ Index (\mjseqn{D_{Mc}}) \insertCite{mcintosh_index_1967,peet_measurement_1974}{E
 
   \mjsdeqn{H' = \frac{H}{H_{max}}}
 
-  \insertCite{macarthur_Patterns_1965}{EvaluateCore} described the Effective
-  number of species for the Shannon index (\mjseqn{ENS_{H}}) as follows.
+  \insertCite{macarthur_patterns_1965;textual}{EvaluateCore} described the
+  Effective number of Species (or Classes) for the Shannon index
+  (\mjseqn{ENS_{H}}) as follows.
 
-  \mjsdeqn{ ENS_{H} = e^{H}}
+  \mjsdeqn{ENS_{H} = e^{H}}
 
   Differences in Shannon-Weaver diversity index for qualitative traits of EC
   and CS can be tested by Hutcheson t-test
