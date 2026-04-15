@@ -1,6 +1,6 @@
 ## `EvaluateCore`: Quality Evaluation of Core Collections ![logo](https://raw.githubusercontent.com/aravind-j/EvaluateCore/master/inst/extdata/EvaluateCore.png)
 
-###### Version : [0.1.4.9000](https://aravind-j.github.io/EvaluateCore/); Copyright (C) 2018-2025: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.4.9000](https://aravind-j.github.io/EvaluateCore/); Copyright (C) 2018-2026: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J.¹, Kaur, V.², Wankhede, D. P.³ and Nanjundan, J.⁴*
 
@@ -30,7 +30,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/EvaluateCore.s
 [![Project Status:
 WIP](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2025--12--19-yellowgreen.svg)](https://github.com/aravind-j/EvaluateCore/)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2026--04--15-yellowgreen.svg)](https://github.com/aravind-j/EvaluateCore/)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3875930.svg)](https://doi.org/10.5281/zenodo.3875930)
 [![Website -
@@ -119,8 +119,9 @@ citation("EvaluateCore")
 ``` R
 To cite the R package 'EvaluateCore' in publications use:
 
-  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2025).  EvaluateCore:
-  Quality Evaluation of Core Collections. R package version 0.1.4.9000,
+  Aravind, J., Kaur, V., Wankhede, D. P. and Nanjundan, J. (2026).
+  EvaluateCore: Quality Evaluation of Core Collections. R package
+  version 0.1.4.9000,
   https://aravind-j.github.io/EvaluateCore/https://CRAN.R-project.org/package=EvaluateCore.
 
 A BibTeX entry for LaTeX users is
@@ -129,9 +130,10 @@ A BibTeX entry for LaTeX users is
     title = {EvaluateCore: Quality Evaluation of Core Collections},
     author = {J. Aravind and Vikender Kaur and Dhammaprakash Pandhari Wankhede and J. Nanjundan},
     note = {R package version 0.1.4.9000 https://aravind-j.github.io/EvaluateCore/ https://CRAN.R-project.org/package=EvaluateCore},
-    year = {2025},
+    year = {2026},
   }
 
-This free and open-source software implements academic research by the authors and
-co-workers. If you use it, please support the project by citing the package.
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by
+citing the package.
 ```

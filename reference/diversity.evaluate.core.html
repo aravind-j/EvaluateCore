@@ -21,13 +21,14 @@ Diversity/Variation Index (\(D_{max}\))
 (Hennink and Zeven 1990)
 Simpson's
 Reciprocal Index or Hill's \(N_{2}\) (\(D_{R}\)) or Effective
-number of Species (\(ENS_{d}\))
+number of Species (or Classes) (\(ENS_{d}\))
 (Williams 1964; Hill 1973)
 Relative Simpson's Index of Diversity or Relative Nei's
 Diversity/Variation Index (\(D'\))
 (Hennink and Zeven 1990)
 Simpson’s
 evenness or equitability (\(D_{e}\))
+(Pielou 1966; Hill 1973)
 
 Shannon-Weaver and related indices
 Shannon or
@@ -39,9 +40,9 @@ Relative
 Shannon-Weaver Diversity Index or Shannon Equitability Index (\(H'\))
 or Pielou's Evenness (\(J\))
 (Pielou 1966; Hennink and Zeven 1990)
-Effective number of species for the Shannon -Weaver Diversity Index
-(\(ENS_{H}\)) or Hill's \(N_{1}\)
-(Macarthur 1965; Hill 1973)
+Effective number of species (or Classes) for the Shannon - Weaver
+Diversity Index (\(ENS_{H}\)) or Hill's \(N_{1}\)
+(Hill 1973)
 
 McIntosh's measures of diversity
 McIntosh Diversity
@@ -66,13 +67,14 @@ Diversity/Variation Index (\(D_{max}\))
 (Hennink and Zeven 1990)
 Simpson's
 Reciprocal Index or Hill's \(N_{2}\) (\(D_{R}\)) or Effective
-number of Species (\(ENS_{d}\))
+number of Species (or Classes) (\(ENS_{d}\))
 (Williams 1964; Hill 1973)
 Relative Simpson's Index of Diversity or Relative Nei's
 Diversity/Variation Index (\(D'\))
 (Hennink and Zeven 1990)
 Simpson’s
 evenness or equitability (\(D_{e}\))
+(Pielou 1966; Hill 1973)
 
 Shannon-Weaver and related indices
 Shannon or
@@ -84,9 +86,9 @@ Relative
 Shannon-Weaver Diversity Index or Shannon Equitability Index (\(H'\))
 or Pielou's Evenness (\(J\))
 (Pielou 1966; Hennink and Zeven 1990)
-Effective number of species for the Shannon -Weaver Diversity Index
-(\(ENS_{H}\)) or Hill's \(N_{1}\)
-(Macarthur 1965; Hill 1973)
+Effective number of species (or Classes) for the Shannon - Weaver
+Diversity Index (\(ENS_{H}\)) or Hill's \(N_{1}\)
+(Hill 1973)
 
 McIntosh's measures of diversity
 McIntosh Diversity
@@ -165,13 +167,14 @@ Diversity/Variation Index (<em></em>\(D_{max}\))
 (Hennink and Zeven 1990)</p></li>
 <li><p>Simpson's
 Reciprocal Index or Hill's <em></em>\(N_{2}\) (<em></em>\(D_{R}\)) or Effective
-number of Species (<em></em>\(ENS_{d}\))
+number of Species (or Classes) (<em></em>\(ENS_{d}\))
 (Williams 1964; Hill 1973)</p></li>
 <li><p>Relative Simpson's Index of Diversity or Relative Nei's
 Diversity/Variation Index (<em></em>\(D'\))
 (Hennink and Zeven 1990)</p></li>
 <li><p>Simpson’s
-evenness or equitability (<em></em>\(D_{e}\))</p></li>
+evenness or equitability (<em></em>\(D_{e}\))
+(Pielou 1966; Hill 1973)</p></li>
 </ul></li>
 <li><p>Shannon-Weaver and related indices</p><ul><li><p>Shannon or
 Shannon-Weaver or Shannon-Wiener Diversity Index or Shannon entropy
@@ -182,9 +185,9 @@ Shannon-Weaver or Shannon-Wiener Diversity Index or Shannon entropy
 Shannon-Weaver Diversity Index or Shannon Equitability Index (<em></em>\(H'\))
 or Pielou's Evenness (<em></em>\(J\))
 (Pielou 1966; Hennink and Zeven 1990)</p></li>
-<li><p>Effective number of species for the Shannon -Weaver Diversity Index
-(<em></em>\(ENS_{H}\)) or Hill's <em></em>\(N_{1}\)
-(Macarthur 1965; Hill 1973)</p></li>
+<li><p>Effective number of species (or Classes) for the Shannon - Weaver
+Diversity Index (<em></em>\(ENS_{H}\)) or Hill's <em></em>\(N_{1}\)
+(Hill 1973)</p></li>
 </ul></li>
 <li><p>McIntosh's measures of diversity</p><ul><li><p>McIntosh Diversity
 Index (<em></em>\(D_{Mc}\)) (McIntosh 1967; Peet 1974)</p></li>
@@ -352,7 +355,7 @@ Default is <code>TRUE</code>.</p></dd>
   Shannon-Weaver Diversity Index (<em></em>\(I'\)) for EC.</p></dd>
  <dt>EC_I.ens</dt>
 <dd><p>The
-  Effective Number of Species for Shannon-Weaver Diversity Index
+  Effective Number of Species (or Classes) for Shannon-Weaver Diversity Index
   (<em></em>\(ENS_{H}\)) for EC</p></dd>
  <dt>EC_I.V</dt>
 <dd><p>The variance of <em></em>\(I\) for EC
@@ -373,7 +376,7 @@ Default is <code>TRUE</code>.</p></dd>
   Shannon-Weaver Diversity Index (<em></em>\(I'\)) for CS.</p></dd>
  <dt>CS_I.ens</dt>
 <dd><p>The
-  Effective Number of Species for Shannon-Weaver Diversity Index
+  Effective Number of Species (or Classes) for Shannon-Weaver Diversity Index
   (<em></em>\(ENS_{H}\)) for CS.</p></dd>
  <dt>CS_I.V</dt>
 <dd><p>The variance of <em></em>\(I\) for
@@ -413,11 +416,17 @@ Default is <code>TRUE</code>.</p></dd>
 <dd><p>The number of
   classes in the trait for CS.</p></dd>
  <dt>EC_D.Mc</dt>
-<dd><p>The McIntosh Index
+<dd><p>The McIntosh Diversity Index
   (<em></em>\(D_{Mc}\)) for EC.</p></dd>
+ <dt>EC_E.Mc</dt>
+<dd><p>The McIntosh Evenness Index
+  (<em></em>\(E_{Mc}\)) for EC.</p></dd>
  <dt>CS_D.Mc</dt>
-<dd><p>The McIntosh Index
+<dd><p>The McIntosh Diversity Index
   (<em></em>\(D_{Mc}\)) for CS.</p></dd>
+ <dt>CS_E.Mc</dt>
+<dd><p>The McIntosh Evenness Index
+  (<em></em>\(E_{Mc}\)) for CS.</p></dd>
  <dt>M.boot.z.stat</dt>
 <dd><p>The bootstrap z
   score.</p></dd>
@@ -438,7 +447,7 @@ Default is <code>TRUE</code>.</p></dd>
     <p>The diversity indices and the corresponding statistical
   tests implemented in <code>diversity.evaluate.core</code> are as follows.</p>
 <p></p><div class="section">
-<h3 id="simpson-s-and-related-indices">Simpson's and related indices<a class="anchor" aria-label="anchor" href="#simpson-s-and-related-indices"></a></h3>
+<h3 id="simpson-s-and-related-indices">Simpson's and Related Indices<a class="anchor" aria-label="anchor" href="#simpson-s-and-related-indices"></a></h3>
 <p>Simpson's index (<em></em>\(d\))
   which estimates the probability that two accessions randomly selected will
   belong to the same phenotypic class of a trait, is computed as follows
@@ -476,7 +485,7 @@ Default is <code>TRUE</code>.</p></dd>
    and can range from 1 to <em></em>\(k\). This was also described in
   Hill (1973)
  as <em></em>\(N_{2}\) or
-  as Effective number of Species (<em></em>\(ENS_{d}\)).</p>
+  as Effective number of Species (or Classes) (<em></em>\(ENS_{d}\)).</p>
 <p>\[D_{R} = \frac{1}{d}\]</p>
 <p>Relative Simpson's index of diversity or Relative Nei's diversity/variation
   index (<em></em>\(H'\)) (Hennink and Zeven 1990)
@@ -508,7 +517,7 @@ Default is <code>TRUE</code>.</p></dd>
 </div>
 
 <p></p><div class="section">
-<h3 id="shannon-weaver-and-related-indices">Shannon-Weaver and related indices<a class="anchor" aria-label="anchor" href="#shannon-weaver-and-related-indices"></a></h3>
+<h3 id="shannon-weaver-and-related-indices">Shannon-Weaver and Related Indices<a class="anchor" aria-label="anchor" href="#shannon-weaver-and-related-indices"></a></h3>
 <p>An index of information
   <em></em>\(H\), was described by
   Shannon and Weaver (1949)
@@ -532,10 +541,10 @@ Default is <code>TRUE</code>.</p></dd>
   (Pielou 1966; Hennink and Zeven 1990)
 .</p>
 <p>\[H' = \frac{H}{H_{max}}\]</p>
-<p>(Macarthur 1965)
- described the Effective
-  number of species for the Shannon index (<em></em>\(ENS_{H}\)) as follows.</p>
-<p>\[ ENS_{H} = e^{H}\]</p>
+<p>described the
+  Effective number of Species (or Classes) for the Shannon index
+  (<em></em>\(ENS_{H}\)) as follows.</p>
+<p>\[ENS_{H} = e^{H}\]</p>
 <p>Differences in Shannon-Weaver diversity index for qualitative traits of EC
   and CS can be tested by Hutcheson t-test
   (Hutcheson 1970)
@@ -607,7 +616,11 @@ Default is <code>TRUE</code>.</p></dd>
     </div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
-    <p>Berger WH, Parker FL (1970).
+    <p>Adummy A (2026).
+“Some keys from package EvaluateCore are not avalable.”
+Failed to insert reference with keys:
+    simpson_measurement_1949, peet_measurement_1974, gini_variabilita_1912, gini_variabilita_1912-2, greenberg_measurement_1956, berger_diversity_1970, hurlbert_nonconcept_1971, nei_analysis_1973, hennink_interpretation_1990, williams_patterns_1964, hill_diversity_1973, pielou_measurement_1966, shannon_mathematical_1949, macarthur_patterns_1965, mcintosh_index_1967, pielou_Ecological_1975, hutcheson_test_1970, lyons_c20_1978, solow_simple_1993
+from package = 'EvaluateCore'. Possible cause - missing REFERENCES.bib in package 'EvaluateCore' or 'EvaluateCore' not installed.<br><br> Berger WH, Parker FL (1970).
 “Diversity of planktonic foraminifera in deep-sea sediments.”
 <em>Science</em>, <b>168</b>(3937), 1345–1347.<br><br> Gini C (1912).
 <em>Variabilita e Mutabilita. Contributo allo Studio delle Distribuzioni e delle Relazioni Statistiche. [Fasc. I.]</em>.
@@ -626,9 +639,7 @@ Liberia Eredi Virgilio Veschi, Roma, Italy.<br><br> Greenberg JH (1956).
 “A test for comparing diversities based on the Shannon formula.”
 <em>Journal of Theoretical Biology</em>, <b>29</b>(1), 151–154.<br><br> Lyons NI, Hutcheson K (1978).
 “C20. Comparing diversities: Gini's index.”
-<em>Journal of Statistical Computation and Simulation</em>, <b>8</b>(1), 75–78.<br><br> Macarthur RH (1965).
-“Patterns of species diversity.”
-<em>Biological Reviews</em>, <b>40</b>(4), 510–533.<br><br> McIntosh RP (1967).
+<em>Journal of Statistical Computation and Simulation</em>, <b>8</b>(1), 75–78.<br><br> McIntosh RP (1967).
 “An index of diversity and the relation of certain concepts to diversity.”
 <em>Ecology</em>, <b>48</b>(3), 392–404.<br><br> Nei M (1973).
 “Analysis of gene diversity in subdivided populations.”
@@ -715,22 +726,22 @@ Academic Press.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15               0.5  1.9595331707216 0.979348739851389  1.02108672764693</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16 0.666666666666667 1.80080646697613 0.667039863801265 0.749580388120504</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  EC_d.V          EC_d.boot.V              CS_d</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   6.2401326584027e-05 6.68750117708326e-05 0.378472222222222</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2.66303075243519e-05 2.65811066561584e-05 0.387755102040816</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  6.43256463380354e-05 6.50509760875086e-05 0.421343537414966</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4.49202770089222e-05 4.79613335074667e-05 0.303500566893424</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  3.64033438958825e-05 3.49448546349972e-05 0.426587301587302</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  1.01110395238633e-05 9.78006680330427e-06 0.200538548752834</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  4.63756492257553e-05 4.76343377864573e-05 0.487244897959184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  1.57355754103247e-05 1.55372775046521e-05 0.198058390022676</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  3.10366375721298e-05 3.19525542264521e-05 0.342120181405896</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 1.34905804296262e-05 1.35415192137175e-05 0.288052721088435</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 4.98247003940663e-05 4.74038435990513e-05 0.388676303854875</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2.56650302792209e-05   2.636407723636e-05   0.2218679138322</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 3.79031161219323e-06 3.95703022757023e-06 0.500283446712018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 9.34647324671549e-06 9.00340235241142e-06 0.311862244897959</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 1.21791747807758e-05 1.11330159341353e-05 0.518140589569161</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  6.1357244865428e-05 5.80204406696967e-05 0.555555555555556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   6.2401326584027e-05 6.68533450338314e-05 0.378472222222222</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2.66303075243519e-05 2.65879113857189e-05 0.387755102040816</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  6.43256463380354e-05 6.50363094034534e-05 0.421343537414966</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4.49202770089222e-05 4.79746735208086e-05 0.303500566893424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  3.64033438958825e-05 3.49356184489191e-05 0.426587301587302</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  1.01110395238633e-05 9.78416887814862e-06 0.200538548752834</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  4.63756492257553e-05 4.76384743057889e-05 0.487244897959184</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  1.57355754103247e-05 1.55424381336112e-05 0.198058390022676</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  3.10366375721298e-05 3.19616815160651e-05 0.342120181405896</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 1.34905804296262e-05 1.35390135457135e-05 0.288052721088435</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 4.98247003940663e-05 4.73810044068571e-05 0.388676303854875</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2.56650302792209e-05 2.63678232813366e-05   0.2218679138322</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 3.79031161219323e-06 3.95700024252201e-06 0.500283446712018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 9.34647324671549e-06 9.00891406453171e-06 0.311862244897959</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 1.21791747807758e-05 1.11259330666434e-05 0.518140589569161</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  6.1357244865428e-05 5.79882678523648e-05 0.555555555555556</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 CS_D          CS_D.max         CS_D.inv          CS_D.rel</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.621527777777778              0.75 2.64220183486239 0.828703703703704</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.612244897959184 0.666666666666667 2.57894736842105 0.918367346938775</span>
@@ -749,22 +760,22 @@ Academic Press.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15 0.481859410430839               0.5 1.92997811816193 0.963718820861678</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16 0.444444444444444               0.5              1.8 0.888888888888889</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               CS_D.e               CS_d.V          CS_d.boot.V d.t.df</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.402234636871508 0.000664974207441761 0.000711254556902111      7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.544444444444444 0.000253494320337725 0.000240257761836584      4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.345628214548126  0.00106773305088108  0.00104798654736355      8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.287150269610337 0.000464316667250201 0.000464735179959108      8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   0.43598615916955 0.000434218289438062 0.000428477928488368      7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   0.20847367488034 6.05627470284696e-05  6.0452161171105e-05     10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.650082918739635 0.000257136051752956 0.000270835513259535      4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.138552619952284 0.000216132859442877 0.000204518681279425     17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.380008616975442 0.000360254817691854 0.000352890437968318      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.280919677515676 0.000144703074224106 0.000152287794801069      8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 0.327158919670801 0.000503057233986995 0.000487240519916225      8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 0.257025771787633 0.000134121919501297 0.000143697014401447      8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13  1.00056721497448 2.11737525161229e-05 1.40416164854234e-05      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 0.363299351251158 8.69838142388246e-05 8.63936473121947e-05      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  1.03764705882353  0.00022467592663519 0.000201952305242796      2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16             1.125 0.000601970661850899 0.000601207763998725      3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.402234636871508 0.000664974207441761 0.000711409006695385      7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.544444444444444 0.000253494320337725 0.000240277035602111      4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.345628214548126  0.00106773305088108  0.00104909427501709      8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.287150269610337 0.000464316667250201   0.0004640806330644      8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   0.43598615916955 0.000434218289438062 0.000428639235160984      7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   0.20847367488034 6.05627470284696e-05 6.05634678928432e-05     10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.650082918739635 0.000257136051752956 0.000271330248841789      4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.138552619952284 0.000216132859442877 0.000204816497715932     17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.380008616975442 0.000360254817691854   0.0003537099748542      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.280919677515676 0.000144703074224106 0.000152475008559194      8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 0.327158919670801 0.000503057233986995 0.000488621895795101      8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 0.257025771787633 0.000134121919501297 0.000143869065469617      8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  1.00056721497448 2.11737525161229e-05  1.4057939053243e-05      3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 0.363299351251158 8.69838142388246e-05 8.64975280349916e-05      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  1.03764705882353  0.00022467592663519 0.000201749293623147      2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16             1.125 0.000601970661850899 0.000601085481209453      3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                d.t.stat         d.t.pvalue d.t.significance d.boot.z.df</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1      0.02815376878219  0.978325351754391               ns           7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2      2.06997700767549   0.10723294813912               ns           4</span>
@@ -783,22 +794,22 @@ Academic Press.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15   -0.507791421657648  0.662061546648583               ns           2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16 -0.00966012858117729   0.99289893656246               ns           3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          d.boot.z.stat    d.boot.z.pvalue d.boot.z.significance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   0.0275212882188481  0.978812135373164                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     2.14817887304654  0.098182032704849                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     1.68166677243456   0.13113810025065                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     2.09891549611266  0.069053916740305                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     1.03166697933988  0.336549450852584                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     2.82533970685804 0.0179951522790031                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7     1.73767783492423  0.157264335515885                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    0.581591476650998  0.568474385095018                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    0.426083455919101  0.684908883579996                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10     1.6305427679191  0.141633454275904                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11    1.56637783409065  0.155893973673908                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12     1.9863174533999 0.0822405673333897                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13    0.38950879498154  0.722904437177963                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14    1.05400674082793  0.332462522918394                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   0.542596692443321  0.641786855685194                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 0.00948924181640027  0.993024548633537                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   0.0276014468259671   0.97875044140037                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     2.11134701701347   0.10233493680879                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     1.67600791343304  0.132263448642767                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     2.12071979935888 0.0667503673247065                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     1.03756609320658  0.333978621629479                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     2.77065034924187 0.0197652293840094                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     1.76028327597653  0.153166166195353                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    0.577008613944405  0.571496330602201                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    0.425217529507766  0.685506175360378                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10    1.63791870182241  0.140072980275729                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11    1.58556233614025  0.151499007860614                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12    1.93374355649653 0.0892037747747804                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13    0.39244722767569   0.72094875991824                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14    1.03972126692463  0.338541348748645                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15    0.54146070930643   0.64244084391876                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 0.00959298293692684     0.992948292625                    ns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $shannon</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     Trait EC_No.Classes CS_No.Classes              EC_I          EC_I.max</span>
@@ -819,22 +830,22 @@ Academic Press.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15   STRC             2             2 0.985051563686417 0.693147180559945</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16   PSTR             3             2 0.932902628052214  1.09861228866811</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             EC_I.rel         EC_I.ens               EC_I.V          EC_I.boot.V</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.994869227718287 4.95888170692978 0.000495550546246209 0.000483712338849248</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   1.22552873323805 3.84349045523356  0.00026683714279372 0.000270031896212135</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.806231732681647 3.66042740085471  0.00076741293709653 0.000765753466729798</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   1.08868934988106 5.76714936682217 0.000644551217715297 0.000699114782445066</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     0.820289054412 3.74418624882682   0.0005480962422548 0.000517967395505657</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   1.26193231630002 9.59343660098374 0.000259759685726472 0.000270960747240493</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.955211987086096 2.85595882482654 0.000312696844542415 0.000303746752454349</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   1.06855402234261  11.709922542064 0.000496178249738945 0.000505419831711688</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   1.17710410864701 5.11313535399957 0.000306008701151613 0.000308011811117831</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  1.13018173567856 6.16542661257166 0.000397228605602063 0.000382066367282386</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  0.90578990458197 4.29655102280072 0.000698631874341118  0.00066531132699232</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  1.34168818571345 8.66562311895419 0.000264448274894998 0.000279996361013181</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 0.932023360340673 2.78412131411744 0.000100041535943681 0.000101885631821939</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  1.22969291586506 5.49982544890899  0.00021912035039574 0.000213669110846319</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  1.42112900595031 2.67794996583331 2.53468656861686e-05 2.75749116254995e-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 0.849164566676391 2.54187660232952 0.000206905486943159 0.000215626202139427</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.994869227718287 4.95888170692978 0.000495550546246209 0.000483808510194458</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   1.22552873323805 3.84349045523356  0.00026683714279372 0.000269948802236365</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.806231732681647 3.66042740085471  0.00076741293709653 0.000765752404583755</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   1.08868934988106 5.76714936682217 0.000644551217715297 0.000699283275380162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     0.820289054412 3.74418624882682   0.0005480962422548 0.000517842713945963</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   1.26193231630002 9.59343660098374 0.000259759685726472 0.000271033385039332</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.955211987086096 2.85595882482654 0.000312696844542415 0.000303798121154971</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   1.06855402234261  11.709922542064 0.000496178249738945 0.000505626109031182</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   1.17710410864701 5.11313535399957 0.000306008701151613  0.00030810953251426</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  1.13018173567856 6.16542661257166 0.000397228605602063 0.000382025104334203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  0.90578990458197 4.29655102280072 0.000698631874341118 0.000665418478253527</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  1.34168818571345 8.66562311895419 0.000264448274894998 0.000279879360986154</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 0.932023360340673 2.78412131411744 0.000100041535943681 0.000101884272024935</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  1.22969291586506 5.49982544890899  0.00021912035039574 0.000213652548557445</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  1.42112900595031 2.67794996583331 2.53468656861686e-05 2.75676958917147e-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 0.849164566676391 2.54187660232952 0.000206905486943159 0.000215549640442331</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 CS_I          CS_I.max          CS_I.rel         CS_I.ens</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   1.60715392433211  1.38629436111989  1.15931649828959 4.98859309107096</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2   1.44881563572518  1.09861228866811  1.31876882378736 4.25806842343285</span>
@@ -853,22 +864,22 @@ Academic Press.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15  0.97366806454962 0.693147180559945  1.40470608819769 2.64763837799998</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16  0.91829583405449 0.693147180559945  1.32482084585941 2.50501778435487</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  CS_I.V          CS_I.boot.V           I.t.stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   0.00466900952090494  0.00480057355817968 -0.083123660050637</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   0.00183098114336171  0.00187582523489003  -2.23647066374941</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   0.00915269666156106  0.00931692085852008  -3.10514822627186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   0.00501290672204481  0.00517355690951426  -2.58385107753543</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   0.00481441616742965  0.00488793329864121  -1.00646624014807</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   0.00172264312694065  0.00188540992637979  -2.74217439229004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   0.00290287113955504  0.00298363121894339  -1.30452382793487</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   0.00546163553548553  0.00546757466250246   -1.3003275918761</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   0.00354899161566695  0.00363110411244662  -1.04992396937323</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  0.00380714696318465  0.00434151206919941  -1.66442333074281</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  0.00676974620846264  0.00669096782843366  -1.61083557606938</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  0.00129552549169971  0.00131598463869385  -2.22646968440541</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 7.02197242512667e-06 4.25209205129464e-05   2.35246259571922</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   0.0020863467552808  0.00212048454008538 -0.926646485957522</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 0.000443961107972778 0.000440238137447901   0.52546865211132</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  0.00132275132275134  0.00145971081458055  0.373471875118422</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   0.00466900952090494   0.0047929123394758 -0.083123660050637</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   0.00183098114336171  0.00187875640207067  -2.23647066374941</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   0.00915269666156106  0.00931911218476163  -3.10514822627186</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   0.00501290672204481  0.00517797969455639  -2.58385107753543</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   0.00481441616742965  0.00488761731418891  -1.00646624014807</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   0.00172264312694065  0.00187862560896072  -2.74217439229004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   0.00290287113955504  0.00298070544341396  -1.30452382793487</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   0.00546163553548553  0.00547694938695042   -1.3003275918761</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   0.00354899161566695  0.00362924040839815  -1.04992396937323</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  0.00380714696318465  0.00434669657011922  -1.66442333074281</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  0.00676974620846264  0.00669021208688097  -1.61083557606938</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  0.00129552549169971   0.0013166833981556  -2.22646968440541</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 7.02197242512667e-06 4.24533303750304e-05   2.35246259571922</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   0.0020863467552808  0.00212088460832853 -0.926646485957522</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 0.000443961107972778 0.000438689236849775   0.52546865211132</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  0.00132275132275134  0.00146139768748281  0.373471875118422</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              I.t.df          I.t.pvalue I.t.significance I.boot.z.df</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  205.323489838581   0.933834195011031               ns           7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  220.068588438007  0.0263241034578902                *           4</span>
@@ -887,22 +898,22 @@ Academic Press.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15 187.669671190779   0.599877733009115               ns           2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16 224.120762900574   0.709150296735105               ns           3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         I.boot.z.stat    I.boot.z.pvalue I.boot.z.significance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.0816151261682393  0.937237366880844                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    2.20804536110578 0.0918257677192241                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    3.08699009808722 0.0149576074571947                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    2.53734329919595 0.0348546381941696                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   0.989361829502098  0.355443761348068                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    2.63447567425041 0.0249696070188221                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    1.27767390552231  0.270478762219057                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    1.30252773052818  0.210106229408213                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    1.03779040230213  0.339369867309314                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   1.57822986458477  0.153165342145742                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   1.60829881122977  0.146436407724478                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   2.18775796377732 0.0601308095874048                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   2.02010593122144  0.136642216305489                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  0.920412488631991   0.39285907429174                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  0.529555857008772  0.649326086935845                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  0.358406267034263  0.743776008270476                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.0817336348245371  0.937146464242981                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     2.2064267784542 0.0919914613051522                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    3.08665470359158 0.0149652109934245                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    2.57117798516249 0.0330669187074517                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    1.01631020857175  0.343315003404297                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    2.66359626201418 0.0237522092011334                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    1.28540612042092  0.268024804385408                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     1.2958056339159  0.212360842372221                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    1.04598381571325  0.335865437056982                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10    1.5855588008592  0.151499807281787                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   1.60319190075875  0.147559909191939                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12   2.20200971458306 0.0588093099330856                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13   1.98106680901202  0.141910185247115                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  0.935780231278676  0.385503284430038                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  0.532654452382285  0.647528455859605                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  0.355800409404779  0.745538558892587                    ns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $mcintosh</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     Trait EC_No.Classes CS_No.Classes           EC_D.Mc           EC_E.Mc</span>
@@ -923,39 +934,39 @@ Academic Press.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15   STRC             2             2 0.292763414762376 0.571258413744031</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16   PSTR             3             2 0.261175379595452 0.382216387533749</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              CS_D.Mc           CS_E.Mc     M.boot.z.stat M.boot.z.df</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.416968887221027 0.513065385542589  0.99460293625151           7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   0.40884307929476 0.565950226384141  3.46783277479897           4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.380225207834671 0.438612745225263   2.2738192752375           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.486635921075666 0.561363930823417  3.25064028587058           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.375861861492538 0.462484652422527  2.15010573810129           7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.598348264293068 0.662621632177028  5.92988531160087          10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.327215963767637 0.452956056123639  2.96146258220075           4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.601358283540837 0.624332795289677  2.43902555318006          17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.449791785009108 0.553452793870588  1.80927337245031           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.502026774187731 0.579118209592271  3.88926220676601           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 0.408042032313971 0.470701132572847  2.52849788059365           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 0.573194332783244 0.661214287399217  4.19030542335567           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 0.317162433070916 0.585385640236862  4.50532682556703           3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 0.478468357680793  0.58873829661372  3.85325830114453           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 0.303603702882552 0.560360337349431 0.911854542963119           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 0.275932675604997  0.50928801500014 0.819045753756123           3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.416968887221027 0.513065385542589  1.00391168633292           7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   0.40884307929476 0.565950226384141  3.39520672163674           4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.380225207834671 0.438612745225263  2.28323260882762           8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.486635921075666 0.561363930823417   3.3110316235721           8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.375861861492538 0.462484652422527  2.15395666678097           7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.598348264293068 0.662621632177028  5.96821850593738          10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.327215963767637 0.452956056123639  2.99754729409007           4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.601358283540837 0.624332795289677  2.42994156651831          17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.449791785009108 0.553452793870588  1.80568141934553           6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.502026774187731 0.579118209592271   3.8867793107122           8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 0.408042032313971 0.470701132572847  2.53855378664644           8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 0.573194332783244 0.661214287399217  4.24645671583821           8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 0.317162433070916 0.585385640236862  4.42355476586344           3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 0.478468357680793  0.58873829661372  3.81879071089912           6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 0.303603702882552 0.560360337349431 0.913484492624288           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 0.275932675604997  0.50928801500014   0.8043452846734           3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         M.boot.z.pvalue M.boot.z.significance</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     0.353059203135146                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    0.0256341480264864                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     0.052576089898046                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    0.0116898700454197                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    0.0686029150382776                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.000145105134520755                    **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    0.0414941513850029                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    0.0259867089753573                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9     0.120396110387685                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  0.00461403041701568                    **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   0.0353379983338816                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  0.00303649104150158                    **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   0.0204253515117484                     *</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  0.00842801033696131                    **</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15    0.458100293127608                    ns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16    0.472768376779912                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     0.348854575801086                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    0.0273980949692247                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     0.051809250272037                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    0.0106817822611812                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    0.0682139277106039                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.000137837562706689                    **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    0.0400387096312927                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    0.0264706618143546                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9      0.12099659678039                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  0.00463023359089327                    **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   0.0347890152183959                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  0.00281266593084537                    **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13   0.0214543888693413                     *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  0.00877307594548063                    **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15    0.457416629856141                    ns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16    0.480033356696624                    ns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>

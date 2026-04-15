@@ -58,6 +58,10 @@ Then the package can be loaded using the function
 library(EvaluateCore)
 ```
 
+    Registered S3 method overwritten by 'lme4':
+      method           from
+      na.action.merMod car 
+
     --------------------------------------------------------------------------------
     Welcome to EvaluateCore version 0.1.4.9000
 
