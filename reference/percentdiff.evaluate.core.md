@@ -115,7 +115,7 @@ computed as follows.
 \\RR\\\_{0.7} = \left ( \frac{S\_{RR\_{0.7}}}{n} \right ) \times 100\\
 
 Where, \\S\_{RR\_{0.7}}\\ is the number of traits with a range ratio
-smaller than 0.7 (\\\frac{R\_{CS\_{i}}}{R\_{EC\_{i}}} \lt 0.7\\).
+smaller than 0.7 (\\\frac{R\_{CS\_{i}}}{R\_{EC\_{i}}} \< 0.7\\).
 \\R\_{CS\_{i}}\\ is the range of the \\i\\th trait in the CS,
 \\R\_{EC\_{i}}\\ is the range of the \\i\\th trait in the EC and \\n\\
 is the total number of traits.

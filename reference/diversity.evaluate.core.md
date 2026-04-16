@@ -40,7 +40,8 @@ traits between entire collection (EC) and core set (CS).
     and Zeven 1990)
 
   - Effective number of species (or Classes) for the Shannon - Weaver
-    Diversity Index (\\ENS\_{H}\\) or Hill's \\N\_{1}\\ (Hill 1973)
+    Diversity Index (\\ENS\_{H}\\) or Hill's \\N\_{1}\\ (Macarthur 1965;
+    Hill 1973)
 
 - McIntosh's measures of diversity
 
@@ -441,8 +442,8 @@ index (\\I\\) divided by the maximum diversity (\\H\_{max}\\) (Pielou
 
 \\H' = \frac{H}{H\_{max}}\\
 
-described the Effective number of Species (or Classes) for the Shannon
-index (\\ENS\_{H}\\) as follows.
+Macarthur (1965) described the Effective number of Species (or Classes)
+for the Shannon index (\\ENS\_{H}\\) as follows.
 
 \\ENS\_{H} = e^{H}\\
 
@@ -527,18 +528,6 @@ The corresponding degrees of freedom is estimated as follows.
 
 ## References
 
-Adummy A (2026). “Some keys from package EvaluateCore are not avalable.”
-Failed to insert reference with keys: simpson_measurement_1949,
-peet_measurement_1974, gini_variabilita_1912, gini_variabilita_1912-2,
-greenberg_measurement_1956, berger_diversity_1970,
-hurlbert_nonconcept_1971, nei_analysis_1973,
-hennink_interpretation_1990, williams_patterns_1964,
-hill_diversity_1973, pielou_measurement_1966, shannon_mathematical_1949,
-macarthur_patterns_1965, mcintosh_index_1967, pielou_Ecological_1975,
-hutcheson_test_1970, lyons_c20_1978, solow_simple_1993 from package =
-'EvaluateCore'. Possible cause - missing REFERENCES.bib in package
-'EvaluateCore' or 'EvaluateCore' not installed.  
-  
 Berger WH, Parker FL (1970). “Diversity of planktonic foraminifera in
 deep-sea sediments.” *Science*, **168**(3937), 1345–1347.  
   
@@ -570,6 +559,9 @@ Shannon formula.” *Journal of Theoretical Biology*, **29**(1),
 Lyons NI, Hutcheson K (1978). “C20. Comparing diversities: Gini's
 index.” *Journal of Statistical Computation and Simulation*, **8**(1),
 75–78.  
+  
+Macarthur RH (1965). “Patterns of species diversity.” *Biological
+Reviews*, **40**(4), 510–533.  
   
 McIntosh RP (1967). “An index of diversity and the relation of certain
 concepts to diversity.” *Ecology*, **48**(3), 392–404.  
