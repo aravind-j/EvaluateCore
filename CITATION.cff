@@ -10,8 +10,10 @@ license:
 - GPL-2.0-only
 - GPL-3.0-only
 title: 'EvaluateCore: Quality Evaluation of Core Collections'
-version: 0.1.3.9000
+version: 0.1.5
 identifiers:
+- type: doi
+  value: 10.32614/CRAN.package.EvaluateCore
 - type: url
   value: https://aravind-j.github.io/EvaluateCore/
 - type: url
@@ -55,8 +57,8 @@ preferred-citation:
   - family-names: Nanjundan
     given-names: J.
     email: j.nanjundan@icar.org.in
-  year: '2025'
-  notes: R package version 0.1.3.9000 https://aravind-j.github.io/EvaluateCore/ https://CRAN.R-project.org/package=EvaluateCore
+  notes: R package version 0.1.5 https://aravind-j.github.io/EvaluateCore/ https://CRAN.R-project.org/package=EvaluateCore
+repository: https://CRAN.R-project.org/package=EvaluateCore
 repository-code: https://github.com/aravind-j/EvaluateCore
 url: https://CRAN.R-project.org/package=EvaluateCore
 contact:

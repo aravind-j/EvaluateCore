@@ -8,13 +8,19 @@
   "codeRepository": "https://github.com/aravind-j/EvaluateCore",
   "issueTracker": "https://github.com/aravind-j/EvaluateCore/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.1.3.9000",
+  "version": "0.1.5",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2025-11-16 r89026 ucrt)",
+  "runtimePlatform": "R Under development (unstable) (2026-04-17 r89908 ucrt)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
   "author": [
     {
       "@type": "Person",
@@ -370,11 +376,10 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "796.946KB",
+  "fileSize": "441.478KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
-      "datePublished": "2025",
       "author": [
         {
           "@type": "Person",
@@ -403,9 +408,10 @@
         }
       ],
       "name": "EvaluateCore: Quality Evaluation of Core Collections",
-      "description": "R package version 0.1.3.9000 https://aravind-j.github.io/EvaluateCore/ https://CRAN.R-project.org/package=EvaluateCore"
+      "description": "R package version 0.1.5 https://aravind-j.github.io/EvaluateCore/ https://CRAN.R-project.org/package=EvaluateCore"
     }
   ],
+  "releaseNotes": "https://github.com/aravind-j/EvaluateCore/blob/main/NEWS.md",
   "readme": "https://github.com/aravind-j/EvaluateCore/blob/master/README.md",
   "contIntegration": "https://github.com/aravind-j/EvaluateCore/actions",
   "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#stable"],

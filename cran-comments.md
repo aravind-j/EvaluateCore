@@ -1,106 +1,13 @@
-# Version 0.1.4 - Second submission
+# Version 0.1.5 - First submission
 
-* Fixed problem with CITATION file.
+* Fixed `vnu` errors.
 
 ### Test environments
-* local Windows 10 Pro 25H2, R-release (R 4.5.2) & R-devel (R 4.6.0 Pre-release).
-* local Ubuntu 20.04, R-release (R 4.5.2) & R-devel (R 4.6.0 Pre-release).
-* win-builder, R-release (R 4.5.2) & R-devel (R 4.6.0 Pre-release).
-* github macos 15.7.2 24G325, R-release (R 4.5.2).
-* github Ubuntu 24.04.3, R-release (R 4.5.2), R-oldrel-1 (R 4.4.3) & R-devel (R 4.6.0 Pre-release).
+* local Windows 10 Pro 25H2, R-release (R 4.5.3) & R-devel (R 4.6.0 Pre-release).
+* local Ubuntu 20.04, R-release (R 4.5.3) & R-devel (R 4.6.0 Pre-release).
+* win-builder, R-release (R 4.5.3) & R-devel (R 4.6.0 Pre-release).
+* github macOS Sequoia 15.7.4, R-release (R 4.5.3).
+* github Ubuntu 24.04.4, R-release (R 4.5.3), R-oldrel-1 (R 4.4.3) & R-devel (R 4.6.0 Pre-release).
 
 ### R CMD check results
 * There were no ERRORs or WARNINGs.
-* There was one NOTE. 
-
-> Possibly misspelled words in DESCRIPTION:
->   Odong (26:53)
->   al (26:62)
->   et (26:59)
->   germplasm (25:20)
-
-They are falsely flagged as misspellings. 
-
-# Version 0.1.4 - First submission
-
-* The email address of the maintainer is updated from j.aravind@icar.gov.in to j.aravind@icar.org.in. I am unable to send the confirmation for the same from the older email.
-
-### Test environments
-* local Windows 10 Pro 25H2, R-release (R 4.5.2) & R-devel (R 4.6.0 Pre-release).
-* local Ubuntu 20.04, R-release (R 4.5.2) & R-devel (R 4.6.0 Pre-release).
-* win-builder, R-release (R 4.5.2) & R-devel (R 4.6.0 Pre-release).
-* github macos 15.7.2 24G325, R-release (R 4.5.2).
-* github Ubuntu 24.04.3, R-release (R 4.5.2), R-oldrel-1 (R 4.4.3) & R-devel (R 4.6.0 Pre-release).
-
-# Version 0.1.3 - Second submission
-
-Resubmission with missing manual included.
-
-# Version 0.1.3 - First submission
-
-* Removed dependency on deprecated package `ccChooser`, because of which `EvaluateCore` was also deprecated.
-
-### Test environments
-* local Windows 10 Pro 21H2, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
-* local Ubuntu 20.04, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
-* win-builder, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
-* rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.2.0).
-
-### R CMD check results
-Misspelled words in DESCRIPTION are false positives - Odong; et; al; germplasm.
-
-# Version 0.1.2 - First submission
-
-* Fixed `'LazyData' is specified without a 'data' directory` NOTE (as there is no `/data` folder).
-
-### Test environments
-* local Windows 10 Pro v19042.1052, R-release (R 4.1.0) & R-devel (R 4.2.0 Pre-release).
-* local Ubuntu 16.04, R-release (R 4.1.0) & R-devel (R 4.2.0 Pre-release).
-* win-builder, R-release (R 4.1.0) & R-devel (R 4.2.0 Pre-release).
-* rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.1.0).
-
-### R CMD check results
-* There were no ERRORs, NOTES or WARNINGs.
-
-# Version 0.1.1 - Fourth (Revised) submission
-
-* Updated references in Description field of the DESCRIPTION file to correct format.
-
-### Test environments
-* local Windows 10 Home v1803, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-* local Ubuntu 16.04, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-* win-builder, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-# Version 0.1.0 - Third submission
-
-* Removed dependency on java.
-
-### Test environments
-* local Windows 10 Home v1803, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-* local Ubuntu 16.04, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-* win-builder, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-
-### R CMD check results
-* There were no ERRORs, NOTES or WARNINGs.
-
-# Version 0.1.0 - Second submission
-
-* JRE 8 is already specified in the SystemRequirements field in DESCRIPTION. Added JRE syterm requirements to the README as well.
-
-### Test environments
-* local Windows 10 Home v1803, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-* local Ubuntu 16.04, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-* win-builder, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-
-### R CMD check results
-* There were no ERRORs, NOTES or WARNINGs.
-
-# Version 0.1.0 - First submission
-
-### Test environments
-* local Windows 10 Home v1803, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-* local Ubuntu 16.04, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-* win-builder, R-release (R 4.0.0) & R-devel (R 4.1.0 Pre-release).
-
-### R CMD check results
-* There were no ERRORs, NOTES or WARNINGs.
-
