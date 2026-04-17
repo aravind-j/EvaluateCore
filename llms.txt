@@ -35,7 +35,7 @@ WIP](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatu
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3875930.svg)](https://doi.org/10.5281/zenodo.3875930)
 [![Website -
 pkgdown](https://img.shields.io/website-up-down-green-red/https/aravind-j.github.io/EvaluateCore.svg)](https://aravind-j.github.io/EvaluateCore/)
-[![.](https://pro-pulsar-193905.appspot.com/UA-148941781-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
+[![GoatCounter](https://evaluatecore-gh.goatcounter.com/count?p=/test)](https://evaluatecore-gh.goatcounter.com/)
 
 ------------------------------------------------------------------------
 
