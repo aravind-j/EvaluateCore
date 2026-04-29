@@ -89,6 +89,7 @@ as follows.
 | 0.1.1   | 2020-06-03 |
 | 0.1.2   | 2021-06-12 |
 | 0.1.3   | 2022-07-03 |
+| 0.1.4   | 2025-12-18 |
 
 To know detailed history of changes use `news(package='EvaluateCore')`.
 

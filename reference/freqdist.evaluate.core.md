@@ -109,6 +109,162 @@ ec[, qual] <- lapply(ec[, qual],
 freqdist.evaluate.core(data = ec, names = "genotypes",
                        quantitative = quant, qualitative = qual,
                        selected = core)
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 #> $NMSR
 
 #> 
@@ -194,31 +350,187 @@ freqdist.evaluate.core(data = ec, names = "genotypes",
                        quantitative = quant, qualitative = qual,
                        selected = core,
                        highlight = checks, highlight.col = "red")
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
 #> $NMSR
 #> TableGrob (1 x 2) "arrange": 2 grobs
@@ -394,15 +706,75 @@ freqdist.evaluate.core(data = ec, names = "genotypes",
                        selected = core,
                        highlight = checks, highlight.col = "red",
                        highlight.se = quant.se)
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
 #> $NMSR
 #> TableGrob (1 x 2) "arrange": 2 grobs
@@ -470,31 +842,187 @@ freqdist.evaluate.core(data = ec, names = "genotypes",
                        selected = core,
                        highlight = checks, highlight.col = "red",
                        show.count = TRUE)
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
+#> Warning: In pretty.default(range(x, na.rm = TRUE), n = nclass.Sturges(na.omit(x)), 
+#>     min.n = 1, right = TRUE) :
+#>  extra argument ‘right’ will be disregarded
 
 #> $NMSR
 #> TableGrob (1 x 2) "arrange": 2 grobs

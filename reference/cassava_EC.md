@@ -136,34 +136,34 @@ International Institute of Tropical Agriculture, Benjamin F, Marimagne T
 ``` r
 data(cassava_EC)
 summary(cassava_EC)
-#>      CUAL               LNGS               PTLC               DSTA          
-#>  Length:1684        Length:1684        Length:1684        Length:1684       
-#>  Class :character   Class :character   Class :character   Class :character  
-#>  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-#>                                                                             
-#>                                                                             
-#>                                                                             
-#>      LFRT              LBTEF               CBTR               NMLB          
-#>  Length:1684        Length:1684        Length:1684        Length:1684       
-#>  Class :character   Class :character   Class :character   Class :character  
-#>  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-#>                                                                             
-#>                                                                             
-#>                                                                             
-#>      ANGB              CUAL9M             LVC9M              TNPR9M         
-#>  Length:1684        Length:1684        Length:1684        Length:1684       
-#>  Class :character   Class :character   Class :character   Class :character  
-#>  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-#>                                                                             
-#>                                                                             
-#>                                                                             
-#>      PL9M               STRP               STRC               PSTR          
-#>  Length:1684        Length:1684        Length:1684        Length:1684       
-#>  Class :character   Class :character   Class :character   Class :character  
-#>  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-#>                                                                             
-#>                                                                             
-#>                                                                             
+#>         CUAL             LNGS             PTLC             DSTA     
+#>  Length   :1684   Length   :1684   Length   :1684   Length   :1684  
+#>  N.unique :   5   N.unique :   3   N.unique :   5   N.unique :   5  
+#>  N.blank  :   0   N.blank  :   0   N.blank  :   0   N.blank  :   0  
+#>  Min.nchar:   5   Min.nchar:   4   Min.nchar:   3   Min.nchar:   6  
+#>  Max.nchar:  12   Max.nchar:   6   Max.nchar:  12   Max.nchar:  17  
+#>                                                                     
+#>         LFRT            LBTEF             CBTR             NMLB     
+#>  Length   :1684   Length   :1684   Length   :1684   Length   :1684  
+#>  N.unique :   5   N.unique :   6   N.unique :   3   N.unique :  10  
+#>  N.blank  :   0   N.blank  :   0   N.blank  :   0   N.blank  :   0  
+#>  Min.nchar:  19   Min.nchar:   1   Min.nchar:   5   Min.nchar:   1  
+#>  Max.nchar:  21   Max.nchar:   1   Max.nchar:   6   Max.nchar:   1  
+#>                                                                     
+#>         ANGB            CUAL9M           LVC9M            TNPR9M    
+#>  Length   :1684   Length   :1684   Length   :1684   Length   :1684  
+#>  N.unique :   4   N.unique :   5   N.unique :   5   N.unique :   5  
+#>  N.blank  :   0   N.blank  :   0   N.blank  :   0   N.blank  :   0  
+#>  Min.nchar:   7   Min.nchar:   5   Min.nchar:   5   Min.nchar:   1  
+#>  Max.nchar:  12   Max.nchar:  12   Max.nchar:  12   Max.nchar:   1  
+#>                                                                     
+#>         PL9M             STRP             STRC             PSTR     
+#>  Length   :1684   Length   :1684   Length   :1684   Length   :1684  
+#>  N.unique :   3   N.unique :   4   N.unique :   2   N.unique :   3  
+#>  N.blank  :   0   N.blank  :   0   N.blank  :   0   N.blank  :   0  
+#>  Min.nchar:  14   Min.nchar:   4   Min.nchar:   6   Min.nchar:   9  
+#>  Max.nchar:  16   Max.nchar:  12   Max.nchar:   7   Max.nchar:  25  
+#>                                                                     
 #>       NMSR            TTRN            TFWSR             TTRW       
 #>  Min.   : 1.00   Min.   : 0.250   Min.   : 0.000   Min.   : 0.000  
 #>  1st Qu.: 6.00   1st Qu.: 2.500   1st Qu.: 2.200   1st Qu.: 0.900  

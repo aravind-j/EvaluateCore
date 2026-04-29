@@ -2,6 +2,8 @@
 
 ## EvaluateCore 0.1.5
 
+CRAN release: 2026-04-22
+
 ### UPDATED FUNCTIONS:
 
 - `diversity.evaluate.core` - Added more diversity indices such as
