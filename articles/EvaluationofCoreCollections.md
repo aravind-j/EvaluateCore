@@ -63,7 +63,7 @@ library(EvaluateCore)
       na.action.merMod car 
 
     --------------------------------------------------------------------------------
-    Welcome to EvaluateCore version 0.1.5
+    Welcome to EvaluateCore version 0.1.5.900
 
 
     # To know whats new in this version type:
